@@ -378,7 +378,7 @@
             <div id="Login" class="input-group">
 
 
-                <form action="LogIn" method="post" onsubmit="return validateLogin()">
+                <form method="post">
                     <label for="Uname" class="inputs"> UserId or Email : </label> <br>
                     <input class="inputs" type="text" id="Uname" name="name" tabindex="1" placeholder="E.x. : user#123">
                     <div class="Error" id="alertUname"></div>
@@ -389,7 +389,7 @@
                     <div class="Error" id="alertPass"></div>
 
                     <a href="../forgot/forgotpass.html" class="inputs" id="fpassword">Forgot Password?</a><br>
-                    <button id="submit_btn" class="inputs"> submit </button>
+                    <button id="submit_btn_login" class="inputs"> submit </button>
                 </form>
 
 
@@ -435,7 +435,7 @@ session.removeAttribute("Message");
                     <input class="inputs" type="password" id="URcpassword" name="pass" tabindex="4"><br>
                     <div class="Error" id="bothCheck"></div>
 
-                    <input type="submit" name="Login Now" value="Register" id="submit_btn" tabindex="5"
+                    <input type="submit" name="Login Now" value="Register" id="submit_btn_signup" tabindex="5"
                         class="inputs"><br>
                 </form>
 
@@ -697,26 +697,29 @@ session.removeAttribute("Message");
                 return false;
             }
         }
+        
 
     </script>
     
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script>
-        
         $(document).ready(function(){
-            $("#submit_btn").click(function(){
-                var name = $("#Uname").val();
-                var password = $("#Upassword").val();
-                
-                let obj = { "name" : name, "password": password };
-                let conn = $.post("Login.java",obj)
-               conn.fail(function(res){
-                   $("$alertPass").text(res);
-               });
-            });
+            $("#submit_btn_login").click(function(e){
+                e.preventDefault();
+                if(validateLogin() === true){
+                    var name = $("#Uname").val();
+                    var password = $("#Upassword").val();
+                    console.log(name);
+                    console.log(password);
+                    $.post("LogIn",{"name":name, "password":password}, function(response){
+                        $("#alertPass").text(response);
+                    });
+                }
+            })
         })
     </script>
+
 </body>
 
 </html>

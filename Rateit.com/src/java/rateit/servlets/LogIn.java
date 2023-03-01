@@ -21,12 +21,12 @@ public class LogIn extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet NewServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
+//            out.println("<!DOCTYPE html>");
+//            out.println("<html>");
+//            out.println("<head>");
+//            out.println("<title>Servlet NewServlet</title>");            
+//            out.println("</head>");
+//            out.println("<body>");
            
             String username = request.getParameter("name");
             String password = request.getParameter("password");
@@ -37,12 +37,16 @@ public class LogIn extends HttpServlet {
                 HttpSession session = request.getSession();
              
              if(obj == null){
+<<<<<<< Upstream, based on origin/master
 
                  Message msg = new Message("incorrect password or username","error");
                  session.setAttribute("Message", msg);
                   response.sendRedirect("LogIn&SignUp.jsp");
 
 
+=======
+             out.println("Incorrect password ");
+>>>>>>> 4a3b2a3 Login page file modified with jquery
              }
              else{
              
@@ -53,8 +57,8 @@ public class LogIn extends HttpServlet {
              }
              
              
-            out.println("</body>");
-            out.println("</html>");
+//            out.println("</body>");
+//            out.println("</html>");
         }
     }
 
