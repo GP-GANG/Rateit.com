@@ -3,7 +3,7 @@
 <% Message msg = (Message)session.getAttribute("Message");
 if(msg != null){
 String msg_name = msg.getMsg_name();
-    }
+    } 
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +36,7 @@ String msg_name = msg.getMsg_name();
                     <label for="Uname" class="inputs"> OTP : </label> <br>
                     <input class="inputs" type="password" id="UserOTP" name="pass"><br>
                     <input type="button" name="Login Now" value="Continue" id="submit_btn" class="inputs"
-                       onClick="validateTheOTP()" ><br>
+                       onClick="" ><br>
             </div>
 
 

@@ -48,13 +48,15 @@ public class Forgot extends HttpServlet {
                
                Message msg = new Message("done","success");
                session.setAttribute("Message", msg);
-               response.sendRedirect("forgot_page.jsp");
+//               response.sendRedirect("forgot_page.jsp");
+out.println("done");
            }
            else{
 
                Message msg = new Message("email does not exists","error");
                session.setAttribute("Message", msg);
-               response.sendRedirect("forgot_page.jsp");           
+//               response.sendRedirect("forgot_page.jsp");    
+out.println("not done");
            }
             out.println("</body>");
             out.println("</html>");
