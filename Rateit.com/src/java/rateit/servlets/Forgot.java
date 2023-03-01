@@ -12,6 +12,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import rateit.entities.Customer;
 import rateit.entities.Message;
 import rateit.helper.ConnectionProvider;
 
@@ -44,24 +45,39 @@ public class Forgot extends HttpServlet {
               Customer_database c = new Customer_database(ConnectionProvider.getConnection());
             String email = request.getParameter("email");
             HttpSession session = request.getSession();
-           if(c.validateCustomerByEmail(email)){
-               
-               Message msg = new Message("done","success");
-               session.setAttribute("Message", msg);
-//               response.sendRedirect("forgot_page.jsp");
-out.println("done");
-           }
-           else{
-
-               Message msg = new Message("email does not exists","error");
-               session.setAttribute("Message", msg);
-//               response.sendRedirect("forgot_page.jsp");    
-out.println("not done");
-           }
-            out.println("</body>");
-            out.println("</html>");
+//           if(c.validateCustomerByEmail(email) == false){
+//               
+//               Message msg = new Message("done","success");
+//               session.setAttribute("Message", msg);
+////               response.sendRedirect("forgot_page.jsp");
+//out.println("done");
+//out.println(email);
+//
+//           }
+//           else if(c.validateCustomerByEmail(email) == ture){
+//
+//               Message msg = new Message("email does not exists","error");
+//               session.setAttribute("Message", msg);
+////               response.sendRedirect("forgot_page.jsp");    
+//out.println("not done");
+//           }
+//            out.println("</body>");
+//            out.println("</html>");
+//        }
+//    }
+ 
+Customer customer = c.getCustomerByEmail(email);
+      if(customer != null){
+          
+          
+          out.println("done");
+      }else{
+          
+          out.println("not done");
+      }}
+        
+        
         }
-    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
