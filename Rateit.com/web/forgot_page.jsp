@@ -1,4 +1,10 @@
+<%@page import="rateit.entities.Message"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<% Message msg = (Message)session.getAttribute("Message");
+if(msg != null){
+String msg_name = msg.getMsg_name();
+    }
+%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,7 +36,7 @@
                     <label for="Uname" class="inputs"> OTP : </label> <br>
                     <input class="inputs" type="password" id="UserOTP" name="pass"><br>
                     <input type="button" name="Login Now" value="Continue" id="submit_btn" class="inputs"
-                        ><br>
+                       onClick="validateTheOTP()" ><br>
             </div>
 
 

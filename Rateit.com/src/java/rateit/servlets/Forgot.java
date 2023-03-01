@@ -11,6 +11,8 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+import rateit.entities.Message;
 import rateit.helper.ConnectionProvider;
 
 /**
@@ -36,17 +38,24 @@ public class Forgot extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Forgot</title>");
+            out.println("<title>Servlet Forgot</title>");            
             out.println("</head>");
             out.println("<body>");
-
-            Customer_database c = new Customer_database(ConnectionProvider.getConnection());
+              Customer_database c = new Customer_database(ConnectionProvider.getConnection());
             String email = request.getParameter("email");
-            if (c.validateCustomerByEmail(email)) {
-                out.println("done");
-            } else {
-                out.println("email does not exists..");
-            }
+            HttpSession session = request.getSession();
+           if(c.validateCustomerByEmail(email)){
+               
+               Message msg = new Message("done","success");
+               session.setAttribute("Message", msg);
+               response.sendRedirect("forgot_page.jsp");
+           }
+           else{
+
+               Message msg = new Message("email does not exists","error");
+               session.setAttribute("Message", msg);
+               response.sendRedirect("forgot_page.jsp");           
+           }
             out.println("</body>");
             out.println("</html>");
         }

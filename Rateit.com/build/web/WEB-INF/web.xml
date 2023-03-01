@@ -8,10 +8,10 @@
         <servlet-name>LogIn</servlet-name>
         <servlet-class>rateit.servlets.LogIn</servlet-class>
     </servlet>
-<!--    <servlet>
+    <servlet>
         <servlet-name>Forgot</servlet-name>
         <servlet-class>rateit.servlets.Forgot</servlet-class>
-    </servlet>-->
+    </servlet>
     <servlet-mapping>
         <servlet-name>SignUp</servlet-name>
         <url-pattern>/SignUp</url-pattern>
@@ -19,14 +19,14 @@
     <servlet-mapping>
         <servlet-name>LogIn</servlet-name>
         <url-pattern>/LogIn</url-pattern>
-<!--    </servlet-mapping>
-   
-    <servlet-name>Forgot</servlet-name>
-    <url-pattern>/Forgot</url-pattern>
-</servlet-mapping>-->
-<session-config>
-    <session-timeout>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Forgot</servlet-name>
+        <url-pattern>/Forgot</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
         30
     </session-timeout>
-</session-config>
+    </session-config>
 </web-app>
