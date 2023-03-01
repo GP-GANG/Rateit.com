@@ -20,21 +20,21 @@
             <div id="Login" class="input-group">
                 <h3><b>Forgot Password</b></h3><br>
 
-                <form action="">
+                <form action="Forgot" method="POST">
                     <label for="Email" class="inputs"> Email : </label><input class="inputs" type="email" id="Uemail"
-                        name="name" onkeydown="clearAlert()" required>
+                        name="email" onkeydown="clearAlert()" required>
                     <span id="emailAlert"></span>
-                    <input type="button" name="OTP" value="Get OTP" id="submit_btn1" class="inputs"><br><br>
+                    <input type="submit" name="OTP" value="Get OTP" id="submit_btn1" class="inputs"><br><br>
 
 
                     <label for="Uname" class="inputs"> OTP : </label> <br>
-                    <input class="inputs" type="password" id="UserOTP" name="pass" required><br>
+                    <input class="inputs" type="password" id="UserOTP" name="pass"><br>
                     <input type="button" name="Login Now" value="Continue" id="submit_btn" class="inputs"
-                        onclick="validateTheOTP()"><br>
+                        ><br>
             </div>
 
 
-            <div id="Signup" class="input-group">
+<!--            <div id="Signup" class="input-group">
                 <h3><b>New Password</b></h3><br>
                 <label for="Uname" class="inputs"> New Password : </label> <br> <input class="inputs" type="text"
                     id="Upassword" name="name" onchange="newCheck()" required>
@@ -46,7 +46,7 @@
             </div>
         </form>
         </div>
-    </div>
+    </div>-->
 
 
     <script src="javascript/forgot.js"></script>

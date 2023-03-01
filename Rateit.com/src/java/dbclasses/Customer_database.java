@@ -75,4 +75,27 @@ Customer customer = null;
         
     }
 
+    public boolean validateCustomerByEmail(String email){
+    boolean f =false;
+    
+    try{
+        String query = "select EMAIL from customer_info where EMAIL=?";
+        
+        
+        PreparedStatement stmt = this.con.prepareStatement(query);
+        stmt.setString(1, email);
+        
+        stmt.executeQuery();
+        
+        f = true;
+        
+    
+        
+    }
+    catch(Exception e){e.printStackTrace();}
+        
+    
+    
+    return f;
+    }
 }
