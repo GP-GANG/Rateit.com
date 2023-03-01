@@ -51,6 +51,18 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
             font-size: 13px;
             cursor: pointer;
         }
+        
+        #showError{
+            height:auto; width:100%;
+            background-color:red;
+            color:white;
+            position:absolute;
+            top:0; left:0;
+            text-align: center;
+            font-size:20px;
+            padding-top:5px;
+            box-sizing: border-box;
+        }
 
         #btn {
             top: 0;

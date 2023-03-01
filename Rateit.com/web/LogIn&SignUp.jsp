@@ -14,7 +14,21 @@
 
 <body>
     <div class="main_container">
+        
+         <span id="showError">
+             <%
+    Message message =(Message)session.getAttribute("Message");
+    if(message != null){
+
+%>
+<p><%=message.getMsg_name() %></p>
+<%}
+session.removeAttribute("Message");
+%>
+        </span>
+        
         <div class="form-box">
+                   
             <div class="button-box">
                 <div id="btn"></div>
                 <button type="button" class="upper-btn" onclick="changeBack()">Log In</button>
@@ -23,7 +37,7 @@
             <div id="Login" class="input-group">
 
 
-                <form method="post">
+                <form action="LogIn" method="post" onsubmit="return validateLogin()">
                     <label for="Uname" class="inputs"> UserId or Email : </label> <br>
                     <input class="inputs" type="text" id="Uname" name="name" tabindex="1" placeholder="E.x. : user#123">
                     <div class="Error" id="alertUname"></div>
@@ -41,15 +55,7 @@
 
                 <label for="Uname" class="inputs" id="low_lbl"> Not a Member? </label>
                 <button type="button" class="lower-btn" onclick="changeBack()"><b> Signup Now</b></button> <br>
-<%
-    Message message =(Message)session.getAttribute("Message");
-    if(message != null){
 
-%>
-<p><%=message.getMsg_name() %></p>
-<%}
-session.removeAttribute("Message");
-%>
                 <div class="social-media">
                     <a href="https://www.facebook.com/profile.php?id=100088785978857" target="_blank"><i
                             class="fa-brands fa-facebook"></i></a>
