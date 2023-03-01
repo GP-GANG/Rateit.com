@@ -37,16 +37,13 @@ public class LogIn extends HttpServlet {
                 HttpSession session = request.getSession();
              
              if(obj == null){
-<<<<<<< Upstream, based on origin/master
 
                  Message msg = new Message("incorrect password or username","error");
                  session.setAttribute("Message", msg);
                   response.sendRedirect("LogIn&SignUp.jsp");
 
 
-=======
              out.println("Incorrect password ");
->>>>>>> 4a3b2a3 Login page file modified with jquery
              }
              else{
              
