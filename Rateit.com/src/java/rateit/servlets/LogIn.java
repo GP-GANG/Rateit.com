@@ -10,6 +10,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import rateit.entities.Customer;
+import rateit.entities.Message;
 import rateit.helper.ConnectionProvider;
 
 public class LogIn extends HttpServlet {
@@ -33,13 +34,19 @@ public class LogIn extends HttpServlet {
             Customer_database customer = new Customer_database(ConnectionProvider.getConnection());
            
              Customer obj = customer.getCustomerByEmail(username, password);
+                HttpSession session = request.getSession();
              
              if(obj == null){
-             out.println("Incorrect password or username");
+
+                 Message msg = new Message("incorrect password or username","error");
+                 session.setAttribute("Message", msg);
+                  response.sendRedirect("LogIn&SignUp.jsp");
+
+
              }
              else{
              
-                 HttpSession session = request.getSession();
+              
                  
                  session.setAttribute("Customer", obj);
                  response.sendRedirect("index.jsp");

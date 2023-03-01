@@ -1,4 +1,5 @@
 
+<%@page import="rateit.entities.Message"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -395,8 +396,15 @@
 
                 <label for="Uname" class="inputs" id="low_lbl"> Not a Member? </label>
                 <button type="button" class="lower-btn" onclick="changeBack()"><b> Signup Now</b></button> <br>
+<%
+    Message message =(Message)session.getAttribute("Message");
+    if(message != null){
 
-
+%>
+<p><%=message.getMsg_name() %></p>
+<%}
+session.removeAttribute("Message");
+%>
                 <div class="social-media">
                     <a href="https://www.facebook.com/profile.php?id=100088785978857" target="_blank"><i
                             class="fa-brands fa-facebook"></i></a>
