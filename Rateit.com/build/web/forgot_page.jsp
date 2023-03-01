@@ -17,6 +17,8 @@ String msg_name = msg.getMsg_name();
     <title>forgot password | rateit.com</title>
     <link rel="stylesheet" href="css/forgot_page.css">
     <script src="https://smtpjs.com/v3/smtp.js"></script>
+            <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -26,11 +28,11 @@ String msg_name = msg.getMsg_name();
             <div id="Login" class="input-group">
                 <h3><b>Forgot Password</b></h3><br>
 
-                <form action="Forgot" method="POST">
+                <form method="POST">
                     <label for="Email" class="inputs"> Email : </label><input class="inputs" type="text" id="Uemail"
                         name="email" onkeydown="clearAlert()" required>
                     <span id="emailAlert"></span>
-                    <input type="submit" name="OTP" value="Get OTP" id="submit_btn1" class="inputs"><br><br>
+                    <input type="button" name="OTP" value="Get OTP" id="submit_btn1" class="inputs"><br><br>
 
 
                     <label for="Uname" class="inputs"> OTP : </label> <br>

@@ -36,12 +36,12 @@ public class Forgot extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet Forgot</title>");            
-            out.println("</head>");
-            out.println("<body>");
+//            out.println("<!DOCTYPE html>");
+//            out.println("<html>");
+//            out.println("<head>");
+//            out.println("<title>Servlet Forgot</title>");            
+//            out.println("</head>");
+//            out.println("<body>");
               Customer_database c = new Customer_database(ConnectionProvider.getConnection());
             String email = request.getParameter("email");
             HttpSession session = request.getSession();
@@ -70,10 +70,10 @@ Customer customer = c.getCustomerByEmail(email);
       if(customer != null){
           
           
-          out.println("done");
+          out.println("1");
       }else{
           
-          out.println("not done");
+          out.println("0");
       }}
         
         
