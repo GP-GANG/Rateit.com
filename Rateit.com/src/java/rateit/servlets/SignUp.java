@@ -11,7 +11,9 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import rateit.entities.Customer;
+import rateit.entities.Message;
 import rateit.helper.ConnectionProvider;
 
 public class SignUp extends HttpServlet {
@@ -38,8 +40,11 @@ public class SignUp extends HttpServlet {
             
             Customer_database cData = new Customer_database(ConnectionProvider.getConnection());
             
+            HttpSession session = request.getSession();
             if(cData.saveCustomer(customer)){
-            out.println("done");
+            Message msg = new Message("Registered Successfully","success");
+            session.setAttribute("Message", msg);
+            response.sendRedirect("LogIn&SignUp.jsp");
             }
             else{
               out.println("invalid");

@@ -20,7 +20,7 @@
             <div id="Login" class="input-group">
                 <h3><b>Forgot Password</b></h3><br>
 
-                <form action="../sign_in_page/sign_in.html">
+                <form action="">
                     <label for="Email" class="inputs"> Email : </label><input class="inputs" type="email" id="Uemail"
                         name="name" onkeydown="clearAlert()" required>
                     <span id="emailAlert"></span>

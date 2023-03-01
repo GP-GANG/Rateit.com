@@ -47,7 +47,7 @@ session.removeAttribute("Message");
                     <input class="inputs" type="password" id="Upassword" name="password" tabindex="2"><br>
                     <div class="Error" id="alertPass"></div>
 
-                    <a href="../forgot/forgotpass.html" class="inputs" id="fpassword">Forgot Password?</a><br>
+                    <a href="forgot_page.jsp" class="inputs" id="fpassword">Forgot Password?</a><br>
                     <button id="submit_btn_login" class="inputs submit_btn"> submit </button>
                 </form>
 
