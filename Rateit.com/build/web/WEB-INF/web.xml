@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
-   
-  
-   
-    
     <servlet>
         <servlet-name>SignUp</servlet-name>
         <servlet-class>rateit.servlets.SignUp</servlet-class>
@@ -11,6 +7,10 @@
     <servlet>
         <servlet-name>LogIn</servlet-name>
         <servlet-class>rateit.servlets.LogIn</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Forgot</servlet-name>
+        <servlet-class>rateit.servlets.Forgot</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>SignUp</servlet-name>
@@ -20,9 +20,13 @@
         <servlet-name>LogIn</servlet-name>
         <url-pattern>/LogIn</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Forgot</servlet-name>
+        <url-pattern>/Forgot</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
-            30
-        </session-timeout>
+        30
+    </session-timeout>
     </session-config>
 </web-app>

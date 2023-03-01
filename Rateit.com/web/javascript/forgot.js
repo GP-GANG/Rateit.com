@@ -13,72 +13,72 @@
         }
 
 
-        sendMail.addEventListener("click", () => {
-            const toMail = document.getElementById('Uemail').value;
-
-            if (toMail == "") {
-                eAlert.innerText = "Please Enter Your Email";
-                return;
-            }
-            else {
-                const reg = new RegExp(/@/g);
-                flag = reg.test(toMail);
-                console.log("Flag value = " + flag)
-
-                if (flag == true) {
-                    const index = toMail.indexOf("@");
-
-                    console.log("index of @ = " + index)
-                    if (index > 0) {
-
-                        console.log("test = " + toMail.charAt(0))
-                        if (!(toMail.charAt(0) >= 'a' && toMail.charAt(0) <= 'z')) {
-                            eAlert.innerText = "Invalid Email";
-                            return;
-                        }
-
-                        console.log("test -1  = " + toMail.indexOf('.'))
-                        if (toMail.indexOf('.') != (-1)) {
-                            const i = toMail.lastIndexOf('.');
-
-                            console.log("test -2 ")
-                            console.log("index of . = " + i)
-                            if (i == (toMail.length - 3) || i == (toMail.length - 4)) {
-                                console.log(toMail.charAt(toMail.length - 3))
-                                console.log(toMail.charAt(toMail.length - 4))
-                            }
-                            else {
-                                document.getElementById('Uemail').focus()
-                                return false;
-                            }
-                        }//vinay@koshti.com (16) 
-                    }
-                    else {
-                        eAlert.innerText = "Invalid Email"
-                        document.getElementById('Uemail').focus()
-                        return false;
-                    }
-                }
-                else {
-                    eAlert.innerText = "Invalid Email"
-                    document.getElementById('Uemail').focus()
-                    return;
-                }
-            }
-
-            secretUotp = parseInt(Math.random() * 10000);
-            var secretCode = secretUotp.toString().padStart(4, '0');
-
-            Email.send({
-                SecureToken: "361ab572-fa6a-4d36-be67-4df54bf85368",
-                To: `${toMail}`,
-                From: "rateit.contact@gmail.com",
-                Subject: "Rete it : Authentication",
-                Body: `Dear User, <br><br> You are welcome to our site we want customers like you .<br><br> Your OTP is :  ${secretCode} <br> <b style="color:red;"> Good to have you on our site... </b> <br> keep visit our site, Thanks !`
-            }).then(
-                message => alert("send mail successfully")
-            );
-        })
+//        sendMail.addEventListener("click", () => {
+//            const toMail = document.getElementById('Uemail').value;
+//
+//            if (toMail == "") {
+//                eAlert.innerText = "Please Enter Your Email";
+//                return;
+//            }
+//            else {
+//                const reg = new RegExp(/@/g);
+//                flag = reg.test(toMail);
+//                console.log("Flag value = " + flag)
+//
+//                if (flag == true) {
+//                    const index = toMail.indexOf("@");
+//
+//                    console.log("index of @ = " + index)
+//                    if (index > 0) {
+//
+//                        console.log("test = " + toMail.charAt(0))
+//                        if (!(toMail.charAt(0) >= 'a' && toMail.charAt(0) <= 'z')) {
+//                            eAlert.innerText = "Invalid Email";
+//                            return;
+//                        }
+//
+//                        console.log("test -1  = " + toMail.indexOf('.'))
+//                        if (toMail.indexOf('.') != (-1)) {
+//                            const i = toMail.lastIndexOf('.');
+//
+//                            console.log("test -2 ")
+//                            console.log("index of . = " + i)
+//                            if (i == (toMail.length - 3) || i == (toMail.length - 4)) {
+//                                console.log(toMail.charAt(toMail.length - 3))
+//                                console.log(toMail.charAt(toMail.length - 4))
+//                            }
+//                            else {
+//                                document.getElementById('Uemail').focus()
+//                                return false;
+//                            }
+//                        }//vinay@koshti.com (16) 
+//                    }
+//                    else {
+//                        eAlert.innerText = "Invalid Email"
+//                        document.getElementById('Uemail').focus()
+//                        return false;
+//                    }
+//                }
+//                else {
+//                    eAlert.innerText = "Invalid Email"
+//                    document.getElementById('Uemail').focus()
+//                    return;
+//                }
+//            }
+//
+//            secretUotp = parseInt(Math.random() * 10000);
+//            var secretCode = secretUotp.toString().padStart(4, '0');
+//
+//            Email.send({
+//                SecureToken: "361ab572-fa6a-4d36-be67-4df54bf85368",
+//                To: `${toMail}`,
+//                From: "rateit.contact@gmail.com",
+//                Subject: "Rete it : Authentication",
+//                Body: `Dear User, <br><br> You are welcome to our site we want customers like you .<br><br> Your OTP is :  ${secretCode} <br> <b style="color:red;"> Good to have you on our site... </b> <br> keep visit our site, Thanks !`
+//            }).then(
+//                message => alert("send mail successfully")
+//            );
+//        })
 
         function clearAlert() {
             eAlert.innerText = "";
