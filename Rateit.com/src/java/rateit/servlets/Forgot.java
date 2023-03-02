@@ -42,7 +42,7 @@ public class Forgot extends HttpServlet {
 //            out.println("<title>Servlet Forgot</title>");            
 //            out.println("</head>");
 //            out.println("<body>");
-              Customer_database c = new Customer_database(ConnectionProvider.getConnection());
+            Customer_database c = new Customer_database(ConnectionProvider.getConnection());
             String email = request.getParameter("email");
             HttpSession session = request.getSession();
 //           if(c.validateCustomerByEmail(email) == false){
@@ -65,21 +65,35 @@ public class Forgot extends HttpServlet {
 //            out.println("</html>");
 //        }
 //    }
- 
-Customer customer = c.getCustomerByEmail(email);
-      if(customer != null){
-          
-          
-          out.println("1");
-      }else{
-          
-          out.println("0");
-      }}
-        
-        
+            String password = null;
+            Customer customer = c.getCustomerByEmail(email);
+            if (customer != null) {
+
+                out.println("1");
+
+            } else {
+
+                out.println("0");
+
+            }
+            password = request.getParameter("password");
+
+            if (password != null) {
+
+                if (c.UpdatePassword(email, password)) {
+
+                    Message msg = new Message("password changed Successfully", "success");
+                    session.setAttribute("Message", msg);
+                    response.sendRedirect("LogIn&SignUp.jsp");
+
+                }
+
+            }
         }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    }
+
+// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *

@@ -69,7 +69,8 @@ public class Customer_database {
         return customer;
 
     }
-public Customer getCustomerByEmail(String email) {
+
+    public Customer getCustomerByEmail(String email) {
         Customer customer = null;
         try {
             String query = "select * from customer_info where EMAIL=?";
@@ -101,5 +102,30 @@ public Customer getCustomerByEmail(String email) {
         return customer;
 
     }
- 
+    
+    public boolean UpdatePassword(String email , String password){
+      boolean f = false;
+    
+      try{
+      PreparedStatement stmt  = this.con.prepareStatement("update customer_info set PASSWORD=? where EMAIL=?");
+      
+      stmt.setString(1,password);
+      stmt.setString(2,email);
+        
+     if(stmt.executeUpdate() == 1){
+      f= true;
+     }
+      
+      
+      }
+      catch(Exception e){e.printStackTrace();}
+    
+      
+      return f;
+    }
+  
+    
+    
+    
+
 }

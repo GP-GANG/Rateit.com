@@ -12,8 +12,6 @@ String msg_name = msg.getMsg_name();
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    </script>
     <title>forgot password | rateit.com</title>
     <link rel="stylesheet" href="css/forgot_page.css">
     <script src="https://smtpjs.com/v3/smtp.js"></script>
@@ -28,24 +26,24 @@ String msg_name = msg.getMsg_name();
             <div id="Login" class="input-group">
                 <h3><b>Forgot Password</b></h3><br>
 
-                <form method="POST">
+                <form method="POST" action="Forgot">
                     <label for="Email" class="inputs"> Email : </label><input class="inputs" type="text" id="Uemail"
-                        name="email" onkeydown="clearAlert()" required>
-                    <span id="emailAlert"></span>
+                       name="email" onkeydown="clearAlert()" required>
+                    <span id="emailAlert"></span><br><br>
                     <input type="button" name="OTP" value="Get OTP" id="submit_btn1" class="inputs"><br><br>
 
 
                     <label for="Uname" class="inputs"> OTP : </label> <br>
                     <input class="inputs" type="password" id="UserOTP" name="pass"><br>
                     <input type="button" name="Login Now" value="Continue" id="submit_btn" class="inputs"
-                       onClick="" ><br>
+                       onClick="validateTheOTP()" ><br>
             </div>
 
 
-<!--            <div id="Signup" class="input-group">
+            <div id="Signup" class="input-group">
                 <h3><b>New Password</b></h3><br>
                 <label for="Uname" class="inputs"> New Password : </label> <br> <input class="inputs" type="text"
-                    id="Upassword" name="name" onchange="newCheck()" required>
+                    id="Upassword" name="password" onchange="newCheck()" required>
                 <label for="Ucpassword" class="inputs"> Confirm Password : </label> <br> <input class="inputs"
                     type="password" id="Ucpassword" name="pass" required><br>
                 <input type="submit" name="Login Now" value="Submit" id="submit_btn" class="inputs"
@@ -54,7 +52,7 @@ String msg_name = msg.getMsg_name();
             </div>
         </form>
         </div>
-    </div>-->
+    </div>
 
 
     <script src="javascript/forgot.js"></script>

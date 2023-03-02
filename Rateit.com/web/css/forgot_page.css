@@ -13,7 +13,7 @@
 }
 
 .form-box {
-    height: 350px;
+    height: 400px;
     width: 400px;
     background-color: white;
     position: relative;
@@ -107,11 +107,11 @@
 }
 
 #Login {
-    left: 0px;
+    left: -420px;
 }
 
 #Signup {
-    left: 420px;
+    left: 0px;
 }
 
 #umail {
