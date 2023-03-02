@@ -8,7 +8,7 @@
 build/
 nbbuild/
 dist/
-**/nbproject/**
+**/nbproject/
 nbdist/
 .nb-gradle/
 
