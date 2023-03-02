@@ -9,7 +9,7 @@ String msg_name = msg.getMsg_name();
 <html lang="en">
 
 <head>
-
+<new></new>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>forgot password | rateit.com</title>
