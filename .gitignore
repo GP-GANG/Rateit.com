@@ -1,5 +1,5 @@
-/src/
-/nbproject/
-/dist/
-/build/
+test/
+nbproject/
+dist/
+build/
 build.xml
