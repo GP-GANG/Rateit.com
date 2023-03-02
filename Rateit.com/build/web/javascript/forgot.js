@@ -1,4 +1,4 @@
-
+let abcd;
         let login = document.getElementById('Login');
         let signUp = document.getElementById('Signup');
         let sendMail = document.getElementById('submit_btn1');
