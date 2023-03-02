@@ -1,5 +1,8 @@
 test/
-nbproject/
+project.properties
+private.properties
+/Rateit.com/nbproject/
 dist/
 build/
 build.xml
+Rateit.com/nbproject/project.properties
