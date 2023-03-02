@@ -107,11 +107,11 @@
 }
 
 #Login {
-    left: -420px;
+    left: 0px;
 }
 
 #Signup {
-    left: 0px;
+    left: 420px;
 }
 
 #umail {
