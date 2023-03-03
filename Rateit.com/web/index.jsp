@@ -9,6 +9,8 @@
         <title>Rate it | Home Page</title>
         <script src="https://kit.fontawesome.com/c2a4c35825.js" crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/20a4a662a5.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <!-- <link rel="stylesheet" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" href="" crossorigin="anonymous"> -->
 
         <style>
@@ -1337,8 +1339,13 @@
             <div id="profile_div"></div>
         </div>
 
-
+                
         <script type="text/javascript">
+            
+            $(document).ready(function(){ 
+                $("#profile_div").load("profile.jsp");
+            });
+            
             let searchlogo = 750;
 
 //            window.addEventListener("DOMContentLoaded", () => {
@@ -1377,7 +1384,9 @@
                     arr[i].setAttribute("disabled", "true");
                     // console.log(arr[i])
                 }
+                updateData();
                 document.getElementById("save_btn").style.display = "none";
+                document.getElementById("newImageContainer").style.display = "none";
             }
 
             function editProfile() {
@@ -1388,23 +1397,26 @@
                     arr[i].removeAttribute("disabled");
                     // console.log(arr[i])
                 }
+                document.getElementById("newImageContainer").style.display = "table-row";
             }
 
             searchLogo.addEventListener("click", () => {
                 document.getElementById("search-logo").style.left = searchlogo + 320 + "px";
                 document.querySelector("#search input").style.opacity = "1";
             })
+            
+            
+                function updateData(){
+                    const name = document.getElementById("name").value;
+                    const image = document.getElementById("profile_pic").value;
+        $.post("Update_user_profile",{"name":name},function(response){
+                        alert(response);
+                    }).fail(function(){
+                        alert("Some error occured");
+                    });
+                }
+            
 
-        </script>
-
-            <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-        <script>
-            $(document).ready(function(){
-                 
-                $("#profile_div").load("profile.jsp");
-                            
-            });
         </script>
     </body>
 
