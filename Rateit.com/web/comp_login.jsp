@@ -35,7 +35,7 @@
                 <div id="Login" class="input-group">
     
     
-                    <form action="LogIn" method="post" onsubmit="return validateLogin()">
+                    <form action="#" method="post" onsubmit="return validateLogin()">
                         <label for="Uname" class="inputs"> Company_Id or Email : </label> <br>
                         <input class="inputs" type="text" id="Uname" name="name" tabindex="1" placeholder="E.x. : user#123">
                         <div class="Error" id="alertUname"></div>
@@ -64,9 +64,13 @@
                     </div>
     
                 </div>
+                
+               <!--             **********Sign up form***********               -->
+               
+               
                 <div id="Signup" class="input-group">
     
-                    <form action="SignUp" id="register" onsubmit="return validateReg()" method="post">
+                    <form action="Register_company" id="register" onsubmit="return validateReg()" method="post">
     
                         <label for="URname" class="inputs"> Companyname : </label> <br>
                         <input class="inputs" type="text" id="URname" name="name" tabindex="1">
@@ -77,7 +81,7 @@
                         <div class="Error" id="emailAlert"></div>
 
                         <label for="URphone" class="inputs"> Phone No. :</label><br>
-                        <input type="tel" name="phoneNo." class="inputs" id="URphone" autocomplete="off" tabindex="3">
+                        <input type="tel" name="phone" class="inputs" id="URphone" autocomplete="off" tabindex="3">
                         <div class="Error" id="emaillAlert"></div>
 
                         <label for="URurl" class="inputs"> Website URL :</label><br>

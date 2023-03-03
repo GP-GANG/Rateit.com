@@ -114,12 +114,10 @@
         <div class="block">
             <h1>COMPANY PROFILE</h1>
             <div class="imag">
-                <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/TCS.png?raw=true">
+                <img src="img/profile_photo3.png">
             </div>
             <table rules="rows">
-                <tr>
-                    <td> <<img src="img/tiger.jpeg" width="width" height="height" alt="alt"/>></td>
-                </tr>
+
                 <tr>
                     <td class="t1">User Name :</td>
                     <td class="t2"><input type="text" class="profile_input" value="<%=cus.getUSER_NAME()%>" disabled> </td>

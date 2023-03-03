@@ -12,6 +12,10 @@
         <servlet-name>Forgot</servlet-name>
         <servlet-class>rateit.servlets.Forgot</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Register_company</servlet-name>
+        <servlet-class>rateit.servlets.Register_company</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SignUp</servlet-name>
         <url-pattern>/SignUp</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>Forgot</servlet-name>
         <url-pattern>/Forgot</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Register_company</servlet-name>
+        <url-pattern>/Register_company</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
