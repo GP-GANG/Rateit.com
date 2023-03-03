@@ -107,6 +107,18 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
             background-color: #a3acada6;
         }
 
+        #URname,
+        #URpassword,
+        #URcpassword,
+        #URmail,
+        #URphone,
+        #URurl {
+            height: 20px;
+            border: 1.5px solid gray;
+            padding-left: 10px;
+            background-color: #a3acada6;
+        }
+
         #fpassword {
             margin-top: 3vh;
             text-decoration: none;
@@ -165,7 +177,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
             font-size: 32px;
             margin-left: 115px;
             margin-top: 30px;
+        }
 
+        .social-media1 {
+            font-size: 32px;
+            margin-left: 115px;
+            margin-top: 10px;
         }
 
         .social-media i {
@@ -175,6 +192,22 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
         }
 
         .social-media i:hover {
+            color: red;
+        }
+
+        .social-media1 {
+            font-size: 32px;
+            margin-left: 115px;
+            margin-top: 10px;
+        }
+
+        .social-media1 i {
+            padding-right: 10px;
+            cursor: pointer;
+            color: black;
+        }
+
+        .social-media1 i:hover {
             color: red;
         }
 

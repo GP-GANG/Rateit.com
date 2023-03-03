@@ -305,6 +305,13 @@
                 transform: scale(1.07);
             }
 
+            #header_button1{
+                margin-left: 0px;
+                position: relative;
+                left:-40px; top: 17px;
+                background-color: rgb(237, 75, 75);
+            }
+
             /*------- Main page styling ---------*/
             body {
                 background-color: #a3acada6;
@@ -1279,6 +1286,12 @@
                             </dd>
                             <dd><a href="https://www.linkedin.com/in/rate-it-76513b263/"><img
                                         src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/linkedin.png?raw=true"></a>
+                            </dd>
+
+                            <dd>
+                                <a href="comp_login.jsp"> <button class="header-btn" id="header_button1" onclick=""><b>&nbsp;Log In
+                                &nbsp;/&nbsp;
+                                Sign Up&nbsp;</b></button></a>
                             </dd>
                         </div>
                     </div>
