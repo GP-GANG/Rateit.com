@@ -1381,7 +1381,7 @@
             }
 
             function editProfile() {
-                let arr = document.getElementsByClassName("profile_input");
+                let arr = document.getElementsByClassName("editable");
                 // console.log(arr);
                 document.getElementById("save_btn").style.display = "block"
                 for (var i = 0; i < arr.length; i++) {

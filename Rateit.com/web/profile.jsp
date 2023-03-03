@@ -113,41 +113,52 @@
     <div class="profile_container">
         <div class="block">
             <h1>COMPANY PROFILE</h1>
+            
+            <<form method="post" enctype="multipart/form-data" >
+            
             <div class="imag">
-                <img src="img/profile_photo3.png">
+                <img src="img/profile_photo3.png" id="profile_pic">
             </div>
             <table rules="rows">
 
                 <tr>
                     <td class="t1">User Name :</td>
-                    <td class="t2"><input type="text" class="profile_input" value="<%=cus.getUSER_NAME()%>" disabled> </td>
+                    <td class="t2"><input type="text" name="name" class="profile_input editable" value="<%=cus.getUSER_NAME()%>" disabled> </td>
                 </tr>
-                <tr>
+<!--                <tr>
                     <td class="t1">User ID :</td>
-                    <td class="t2"><input type="text" class="profile_input" value="<%=cus.getUSER_ID() %>" disabled></td>
-                </tr>
+                    <td class="t2"><input type="text" name="id" class="profile_input editable"  value="<%=cus.getUSER_ID() %>" disabled></td>
+                </tr>-->
                 <tr>
                     <td class="t1">Email ID :</td>
-                    <td class="t2"><input type="text" class="profile_input" value="<%=cus.getEMAIL()%>" disabled></td>
+                    <td class="t2"><input type="text" name="email" class="profile_input" value="<%=cus.getEMAIL()%>" disabled></td>
                 </tr>
 <!--                <tr>
                     <td class="t1">Category :</td>
                     <td class="t2"><input type="text" class="profile_input" value="" disabled></td>
                 </tr>
--->                <tr>
-                    <td class="t1">Joining Date :</td>
-                    <td class="t2"><input type="text" class="profile_input" value="10/10/2010" disabled></td>
+-->                
+                <tr>
+                    <td class="t1">Joined Date :</td>
+                    <td class="t2"><input type="text" name="join" class="profile_input" value="<%=cus.getEMAIL()%>" disabled></td>
                 </tr>
                 <tr>
-                    <td class="t1">Polls Registered :</td>
-                    <td class="t2"><input type="text" class="profile_input" value="<%=cus.getATTENDED_POLL() %>" disabled></td>
+                    <td class="t1"> Attended Poll :</td>
+                    <td class="t2"><input type="text" name="attended_poll" class="profile_input" value="<%=cus.getATTENDED_POLL() %>" disabled></td>
+                </tr>
+                <tr>
+                    <td> Upload Profile Image : </td>
+                    <td> <input type="file" name="profile" id="profile_pic" class="editable" disabled></td>
                 </tr>
             </table>
-            <button class="profile_btn" id="save_btn" onclick="saveProfile()"> Save Profile </button>
-            <button class="profile_btn" onclick="editProfile()" id="profile_edit_btn">Edit Profile</button>
-            <button class="profile_btn" onclick="closeProfile()" id="profile_close_btn"> close </button>
+                
+            <input type="submit" value="Save Profile" class="profile_btn" id="save_btn" onclick="saveProfile()">
+            <input type="button" value="Edit Profile" class="profile_btn" onclick="editProfile()" id="profile_edit_btn">
+            <input type="button" value="Close" class="profile_btn" onclick="closeProfile()" id="profile_close_btn"> 
             
         </div>
+        </form> 
+               
     </div>
 
 

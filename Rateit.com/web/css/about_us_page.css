@@ -6,9 +6,6 @@
     font-family: 'Unbounded', cursive;
 }
 
-body {
-    background-color: #b1babb47;
-}
 
 header {
     background-color: black;
@@ -61,11 +58,11 @@ nav ul {
     margin: 2px;
 }
 
-.btn:hover {
+/*.btn:hover {
     transform: scale(1.03);
     color: white;
     border: none;
-}
+}*/
 
 #about {
     margin-top: 50px;
