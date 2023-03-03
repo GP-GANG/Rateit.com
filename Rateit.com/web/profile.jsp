@@ -118,6 +118,9 @@
             </div>
             <table rules="rows">
                 <tr>
+                    <td> <<img src="img/tiger.jpeg" width="width" height="height" alt="alt"/>></td>
+                </tr>
+                <tr>
                     <td class="t1">User Name :</td>
                     <td class="t2"><input type="text" class="profile_input" value="<%=cus.getUSER_NAME()%>" disabled> </td>
                 </tr>
@@ -133,10 +136,10 @@
                     <td class="t1">Category :</td>
                     <td class="t2"><input type="text" class="profile_input" value="" disabled></td>
                 </tr>
-                <tr>
+-->                <tr>
                     <td class="t1">Joining Date :</td>
                     <td class="t2"><input type="text" class="profile_input" value="10/10/2010" disabled></td>
-                </tr>-->
+                </tr>
                 <tr>
                     <td class="t1">Polls Registered :</td>
                     <td class="t2"><input type="text" class="profile_input" value="<%=cus.getATTENDED_POLL() %>" disabled></td>
