@@ -102,9 +102,10 @@
 /*        #profile_edit_btn{
             margin-left: 45%;
         }*/
-        #save_btn{
+        #save_btn, #newImageContainer{
             display: none;
         }
+
         
     </style>
 </head>
@@ -123,7 +124,7 @@
 
                 <tr>
                     <td class="t1">User Name :</td>
-                    <td class="t2"><input type="text" name="name" class="profile_input editable" value="<%=cus.getUSER_NAME()%>" disabled> </td>
+                    <td class="t2"><input type="text" id="name" name="name" class="profile_input editable" value="<%=cus.getUSER_NAME()%>" disabled> </td>
                 </tr>
 <!--                <tr>
                     <td class="t1">User ID :</td>
@@ -146,13 +147,16 @@
                     <td class="t1"> Attended Poll :</td>
                     <td class="t2"><input type="text" name="attended_poll" class="profile_input" value="<%=cus.getATTENDED_POLL() %>" disabled></td>
                 </tr>
-                <tr>
-                    <td> Upload Profile Image : </td>
+                
+                <tr style="display:none" id="newImageContainer">
+                    <td > Upload Profile Image : </td>
                     <td> <input type="file" name="profile" id="profile_pic" class="editable" disabled></td>
+                    
                 </tr>
+                
             </table>
                 
-            <input type="submit" value="Save Profile" class="profile_btn" id="save_btn" onclick="saveProfile()">
+            <input type="button" value="Save Profile" class="profile_btn" id="save_btn" onclick="saveProfile()">
             <input type="button" value="Edit Profile" class="profile_btn" onclick="editProfile()" id="profile_edit_btn">
             <input type="button" value="Close" class="profile_btn" onclick="closeProfile()" id="profile_close_btn"> 
             
