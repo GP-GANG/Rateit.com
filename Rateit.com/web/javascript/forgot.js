@@ -5,6 +5,7 @@
         const eAlert = document.getElementById('emailAlert');
         const pAlert = document.getElementById('passwordAlert');
 
+
         let secretUotp;
 
         function changeBack() {
@@ -15,7 +16,7 @@
 
         sendMail.addEventListener("click", () => {
             const toMail = document.getElementById('Uemail').value;
-
+            
             if (toMail == "") {
                 eAlert.innerText = "Please Enter Your Email";
                 return;
@@ -46,8 +47,8 @@
                             console.log("test -2 ")
                             console.log("index of . = " + i)
                             if (i == (toMail.length - 3) || i == (toMail.length - 4)) {
-                                console.log(toMail.charAt(toMail.length - 3))
-                                console.log(toMail.charAt(toMail.length - 4))
+                                console.log(toMail.charAt(toMail.length - 3));
+                                console.log(toMail.charAt(toMail.length - 4));
                             }
                             else {
                                 document.getElementById('Uemail').focus()
@@ -64,7 +65,7 @@
                 else {
                     eAlert.innerText = "Invalid Email"
                     document.getElementById('Uemail').focus()
-                    return;
+                    return false;
                 }
             }
 
@@ -87,6 +88,9 @@
         })
         
         function valEmail(email){
+            
+            document.getElementById("notifyMsg").innerText = "sending email";
+            
             console.log(email)
             var flag = true;
             
@@ -106,9 +110,10 @@
             }).then(
                 message => alert("send mail successfully")
             );  
+  
         }
         else{
-            $("#emailAlert").text("User Does Not Exixts")
+            $("#emailAlert").text("User doesn't exist")
         }
         
             });

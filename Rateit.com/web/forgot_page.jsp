@@ -29,7 +29,9 @@ String msg_name = msg.getMsg_name();
                 <form method="POST" action="Forgot">
                     <label for="Email" class="inputs"> Email : </label><input class="inputs" type="text" id="Uemail"
                        name="email" onkeydown="clearAlert()" required>
-                    <span id="emailAlert"></span><br><br>
+                    <span id="emailAlert">
+                        
+                    </span><br><br>
                     <input type="button" name="OTP" value="Get OTP" id="submit_btn1" class="inputs"><br><br>
 
 
@@ -37,6 +39,8 @@ String msg_name = msg.getMsg_name();
                     <input class="inputs" type="password" id="UserOTP" name="pass"><br>
                     <input type="button" name="Login Now" value="Continue" id="submit_btn" class="inputs"
                        onClick="validateTheOTP()" ><br>
+                    
+                    
             </div>
 
 

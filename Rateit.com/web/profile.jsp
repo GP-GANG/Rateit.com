@@ -143,7 +143,7 @@
                 </tr>
             </table>
             <button class="profile_btn" id="save_btn" onclick="saveProfile()"> Save Profile </button>
-            <a href=""><button class="profile_btn" onclick="editProfile()" id="profile_edit_btn">Edit Profile</button></a>
+            <button class="profile_btn" onclick="editProfile()" id="profile_edit_btn">Edit Profile</button>
             <button class="profile_btn" onclick="closeProfile()" id="profile_close_btn"> close </button>
             
         </div>
