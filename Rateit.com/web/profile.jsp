@@ -105,41 +105,64 @@
                 display: none;
             }
 
-        </style>
-    </head>
-
-    <body>
-        <div class="profile_container">
-            <div class="block">
-                <h1>USER PROFILE</h1>
-                <div class="imag">
-                    <img src="img/profile_photo3.png">
-                </div>
-                <table rules="rows">
-
-                    <tr>
-                        <td class="t1">User Name :</td>
-                        <td class="t2"><input type="text" class="profile_input" value="<%=cus.getUSER_NAME()%>" disabled> </td>
-                    </tr>
-                    <tr>
-                        <td class="t1">User ID :</td>
-                        <td class="t2"><input type="text" class="profile_input" value="<%=cus.getUSER_ID()%>" disabled></td>
-                    </tr>
-                    <tr>
-                        <td class="t1">Email ID :</td>
-                        <td class="t2"><input type="text" class="profile_input" value="<%=cus.getEMAIL()%>" disabled></td>
-                    </tr>
-                    <tr>
-                        <td class="t1">Polls Registered :</td>
-                        <td class="t2"><input type="text" class="profile_input" value="<%=cus.getATTENDED_POLL()%>" disabled></td>
-                    </tr>
-                </table>
-                <button class="profile_btn" id="save_btn" onclick="saveProfile()"> Save Profile </button>
-                <button class="profile_btn" onclick="editProfile()" id="profile_edit_btn">Edit Profile</button>
-                <button class="profile_btn" onclick="closeProfile()" id="profile_close_btn"> close </button>
-
+<body>
+    <div class="profile_container">
+        <div class="block">
+            <h1>COMPANY PROFILE</h1>
+            
+            <<form method="post" enctype="multipart/form-data" >
+            
+            <div class="imag">
+                <img src="img/profile_photo3.png" id="profile_pic">
             </div>
+<<<<<<< HEAD
+=======
+            <table rules="rows">
+
+                <tr>
+                    <td class="t1">User Name :</td>
+                    <td class="t2"><input type="text" name="name" class="profile_input editable" value="<%=cus.getUSER_NAME()%>" disabled> </td>
+                </tr>
+<!--                <tr>
+                    <td class="t1">User ID :</td>
+                    <td class="t2"><input type="text" name="id" class="profile_input editable"  value="<%=cus.getUSER_ID() %>" disabled></td>
+                </tr>-->
+                <tr>
+                    <td class="t1">Email ID :</td>
+                    <td class="t2"><input type="text" name="email" class="profile_input" value="<%=cus.getEMAIL()%>" disabled></td>
+                </tr>
+<!--                <tr>
+                    <td class="t1">Category :</td>
+                    <td class="t2"><input type="text" class="profile_input" value="" disabled></td>
+                </tr>
+-->                
+                <tr>
+                    <td class="t1">Joined Date :</td>
+                    <td class="t2"><input type="text" name="join" class="profile_input" value="<%=cus.getEMAIL()%>" disabled></td>
+                </tr>
+                <tr>
+                    <td class="t1"> Attended Poll :</td>
+                    <td class="t2"><input type="text" name="attended_poll" class="profile_input" value="<%=cus.getATTENDED_POLL() %>" disabled></td>
+                </tr>
+                <tr>
+                    <td> Upload Profile Image : </td>
+                    <td> <input type="file" name="profile" id="profile_pic" class="editable" disabled></td>
+                </tr>
+            </table>
+                
+            <input type="submit" value="Save Profile" class="profile_btn" id="save_btn" onclick="saveProfile()">
+            <input type="button" value="Edit Profile" class="profile_btn" onclick="editProfile()" id="profile_edit_btn">
+            <input type="button" value="Close" class="profile_btn" onclick="closeProfile()" id="profile_close_btn"> 
+            
+>>>>>>> origin/master
         </div>
+<<<<<<< HEAD
+
+=======
+        </form> 
+               
+    </div>
+>>>>>>> origin/master
 
 
 
