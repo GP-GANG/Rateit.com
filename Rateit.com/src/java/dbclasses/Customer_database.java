@@ -102,30 +102,45 @@ public class Customer_database {
         return customer;
 
     }
-    
-    public boolean UpdatePassword(String email , String password){
-      boolean f = false;
-    
-      try{
-      PreparedStatement stmt  = this.con.prepareStatement("update customer_info set PASSWORD=? where EMAIL=?");
-      
-      stmt.setString(1,password);
-      stmt.setString(2,email);
-        
-     if(stmt.executeUpdate() == 1){
-      f= true;
-     }
-      
-      
-      }
-      catch(Exception e){e.printStackTrace();}
-    
-      
-      return f;
+
+    public boolean UpdatePassword(String email, String password) {
+        boolean f = false;
+
+        try {
+            PreparedStatement stmt = this.con.prepareStatement("update customer_info set PASSWORD=? where EMAIL=?");
+
+            stmt.setString(1, password);
+            stmt.setString(2, email);
+
+            if (stmt.executeUpdate() == 1) {
+                f = true;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return f;
     }
-  
-    
-    
-    
+
+    public boolean UpdateProfile(Customer customer) {
+        boolean f = false;
+        try {
+            String query = "update customer_info set USER_NAME=?, USER_PROFILE=?";
+
+            PreparedStatement stmt = this.con.prepareStatement(query);
+            stmt.setString(1, customer.getUSER_NAME());
+
+            if (stmt.executeUpdate() > 0) {
+                f = true;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return f;
+
+    }
 
 }
