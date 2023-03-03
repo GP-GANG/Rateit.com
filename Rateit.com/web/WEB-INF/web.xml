@@ -16,6 +16,10 @@
         <servlet-name>Register_company</servlet-name>
         <servlet-class>rateit.servlets.Register_company</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Update_user_profile</servlet-name>
+        <servlet-class>rateit.servlets.Update_user_profile</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SignUp</servlet-name>
         <url-pattern>/SignUp</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>Register_company</servlet-name>
         <url-pattern>/Register_company</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Update_user_profile</servlet-name>
+        <url-pattern>/Update_user_profile</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

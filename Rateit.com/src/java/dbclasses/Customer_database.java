@@ -123,13 +123,14 @@ public class Customer_database {
         return f;
     }
 
-    public boolean UpdateProfile(Customer customer) {
+    public boolean UpdateProfile(String USER_NAME, int  USER_ID) {
         boolean f = false;
         try {
-            String query = "update customer_info set USER_NAME=?, USER_PROFILE=?";
+            String query = "update customer_info set USER_NAME=? where USER_ID=?";
 
             PreparedStatement stmt = this.con.prepareStatement(query);
-            stmt.setString(1, customer.getUSER_NAME());
+            stmt.setString(1, USER_NAME);
+            stmt.setInt(2, USER_ID);
 
             if (stmt.executeUpdate() > 0) {
                 f = true;

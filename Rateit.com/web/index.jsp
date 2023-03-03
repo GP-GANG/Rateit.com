@@ -1401,11 +1401,9 @@
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script>
             $(document).ready(function(){
-                $("#profile_btn").click(function(){
-                    console.log("working")   
+                 
                 $("#profile_div").load("profile.jsp");
-                });
-            
+                            
             });
         </script>
     </body>
