@@ -852,9 +852,11 @@
                             Sign Up&nbsp;</b></button></a>
 
                 <%}else{%>
+                
                                               
-                <button id="profile_btn" class="header-btn"><%=customer.getUSER_NAME() %></button>
-              
+                <button id="profile_btn" class="header-btn" ><%=customer.getUSER_NAME() %></button>
+                
+                <a href="LogOut"><button class="header-btn" onclick="alert('log out successfully')"> Logout </button></a>
                
                 
                 <%}%>
