@@ -850,6 +850,7 @@
                 <a href="LogIn&SignUp.jsp"> <button class="header-btn" id="header_button" onclick=""><b>&nbsp;Log In
                             &nbsp;/&nbsp;
                             Sign Up&nbsp;</b></button></a>
+                
 
                 <%}else{%>
                 
@@ -857,6 +858,7 @@
                 <button id="profile_btn" class="header-btn" ><%=customer.getUSER_NAME() %></button>
                 
                 <a href="LogOut"><button class="header-btn" onclick="alert('log out successfully')"> Logout </button></a>
+
                
                 
                 <%}%>
