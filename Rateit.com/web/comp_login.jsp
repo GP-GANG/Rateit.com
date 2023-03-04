@@ -35,7 +35,7 @@
                 <div id="Login" class="input-group">
     
     
-                    <form action="#" method="post" onsubmit="return validateLogin()">
+                    <form action="Company_Login" method="post" onsubmit="return validateLogin()">
                         <label for="Uname" class="inputs"> Company_Id or Email : </label> <br>
                         <input class="inputs" type="text" id="Uname" name="name" tabindex="1" placeholder="E.x. : user#123">
                         <div class="Error" id="alertUname"></div>
@@ -46,7 +46,7 @@
                         <div class="Error" id="alertPass"></div>
     
                         <a href="forgot_page.jsp" class="inputs" id="fpassword">Forgot Password?</a><br>
-                        <button id="submit_btn_login" class="inputs submit_btn"> submit </button>
+                        <button type="submit" id="submit_btn_login" class="inputs submit_btn"> submit </button>
                     </form>
     
     

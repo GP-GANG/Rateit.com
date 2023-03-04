@@ -20,6 +20,14 @@
         <servlet-name>Update_user_profile</servlet-name>
         <servlet-class>rateit.servlets.Update_user_profile</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LogOut</servlet-name>
+        <servlet-class>rateit.servlets.LogOut</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Company_Login</servlet-name>
+        <servlet-class>rateit.servlets.Company_Login</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SignUp</servlet-name>
         <url-pattern>/SignUp</url-pattern>
@@ -39,6 +47,14 @@
     <servlet-mapping>
         <servlet-name>Update_user_profile</servlet-name>
         <url-pattern>/Update_user_profile</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogOut</servlet-name>
+        <url-pattern>/LogOut</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Company_Login</servlet-name>
+        <url-pattern>/Company_Login</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

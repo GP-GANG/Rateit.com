@@ -853,9 +853,12 @@
                 
 
                 <%}else{%>
+                
                                               
-                <button id="profile_btn" class="header-btn"><%=customer.getUSER_NAME() %></button>
-                <button class="header-btn" onclick="alert('log out successfully')"> Logout </button>
+                <button id="profile_btn" class="header-btn" ><%=customer.getUSER_NAME() %></button>
+                
+                <a href="LogOut"><button class="header-btn" onclick="alert('log out successfully')"> Logout </button></a>
+
                
                 
                 <%}%>
