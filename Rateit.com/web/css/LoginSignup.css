@@ -24,9 +24,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
         .form-box {
             height: 420px;
             width: 400px;
-            background-color: white;
+            background-color: red;
             position: relative;
-            margin: 6% auto;
+            margin: 2% auto;
             padding: 5px;
             overflow: hidden;
             transition: 0.3s;
@@ -76,9 +76,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
         }
 
         .input-group {
-            top: 80px;
             position: absolute;
-            width: 280px;
+            width: 280px; top: 80px;
             margin-left: 9px;
             transition: .3s;
         }
