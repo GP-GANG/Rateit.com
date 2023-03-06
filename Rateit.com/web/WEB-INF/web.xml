@@ -28,6 +28,10 @@
         <servlet-name>Company_Login</servlet-name>
         <servlet-class>rateit.servlets.Company_Login</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DisplayImage</servlet-name>
+        <servlet-class>rateit.servlets.DisplayImage</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SignUp</servlet-name>
         <url-pattern>/SignUp</url-pattern>
@@ -55,6 +59,10 @@
     <servlet-mapping>
         <servlet-name>Company_Login</servlet-name>
         <url-pattern>/Company_Login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DisplayImage</servlet-name>
+        <url-pattern>/DisplayImage</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

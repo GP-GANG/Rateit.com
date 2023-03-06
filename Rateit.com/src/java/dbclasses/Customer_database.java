@@ -1,9 +1,12 @@
 package dbclasses;
 
+import java.io.InputStream;
+import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import javax.sql.rowset.serial.SerialBlob;
 import rateit.entities.Customer;
 
 public class Customer_database {
@@ -123,7 +126,7 @@ public class Customer_database {
         return f;
     }
 
-    public boolean UpdateProfile(String USER_NAME, int  USER_ID) {
+    public boolean UpdateProfile(String USER_NAME, int USER_ID) {
         boolean f = false;
         try {
             String query = "update customer_info set USER_NAME=? where USER_ID=?";
@@ -144,4 +147,41 @@ public class Customer_database {
 
     }
 
+    public boolean UploadPhoto(InputStream is, int USER_ID) {
+        boolean f = false;
+        try {
+            String query = "Update customer_info set PROFILE_IMG=? where USER_ID=?";
+            byte[] b = new byte[is.available()];
+            is.read(b);
+            Blob blob = new SerialBlob(b);
+            PreparedStatement stmt = this.con.prepareStatement(query);
+            stmt.setBlob(1, blob);
+            stmt.setInt(2, USER_ID);
+            stmt.executeUpdate();
+            f = true;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return f;
+    }
+
+    public Blob getImage(int USER_ID) {
+        Blob blob = null;
+
+        try {
+            String query = "select PROFILE_IMG from customer_info where USER_ID=?";
+            PreparedStatement stmt = this.con.prepareStatement(query);
+            stmt.setInt(1, USER_ID);
+            ResultSet set = stmt.executeQuery();
+           while(set.next()) {
+                blob = set.getBlob("PROFILE_IMG");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+      return blob;
+    }
 }

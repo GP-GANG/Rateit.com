@@ -1,3 +1,6 @@
+<%@page import="java.sql.Blob"%>
+<%@page import="rateit.helper.ConnectionProvider"%>
+<%@page import="dbclasses.Customer_database"%>
 <%@page import="rateit.entities.Customer"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%Customer cus = (Customer) session.getAttribute("Customer");%>
@@ -8,6 +11,11 @@
             response.sendRedirect("LogIn&SignUp.jsp");
 
         }
+        
+     Customer_database cd = new Customer_database(ConnectionProvider.getConnection());
+     
+     Blob blob=cd.getImage(cus.getUSER_ID());
+     
     %>
 
     <head>
@@ -114,10 +122,14 @@
         <div class="block">
             <h1>COMPANY PROFILE</h1>
 
-            <form method="post">
+            <form action="Update_user_profile" method="post"  enctype="multipart/form-data">
 
             <div class="imag">
+               <%if(blob == null){%>
             <img src="img/profile_photo3.png" id="profile_pic">
+            <%}else{%>
+             <img src="HelperJSP/DisplayImage.jsp" id="profile_pic">
+             <%}%>
             </div>
          
             <table rules="rows">
@@ -150,13 +162,13 @@
                 
                 <tr style="display:none" id="newImageContainer">
                     <td > Upload Profile Image : </td>
-                    <td> <input type="file" name="profile" id="profile_pic" class="editable" disabled></td>
+                    <td> <input type="file" name="profile_image" id="profile_pic" class="editable" disabled></td>
                     
                 </tr>
                 
             </table>
                 
-            <input type="button" value="Save Profile" class="profile_btn" id="save_btn" onclick="saveProfile()">
+            <input type="submit" value="Save Profile" class="profile_btn" id="save_btn" >
             <input type="button" value="Edit Profile" class="profile_btn" onclick="editProfile()" id="profile_edit_btn">
             <input type="button" value="Close" class="profile_btn" onclick="closeProfile()" id="profile_close_btn">
 
