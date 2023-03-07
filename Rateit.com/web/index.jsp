@@ -785,8 +785,8 @@
 
             #profile_div {
                 position: fixed;
-                top: 10%;
-                left: 35%;
+                top: 15%;
+                left: 32%;
                 height: auto;
                 width: auto;
                 z-index: 2;
@@ -1388,7 +1388,7 @@
                     arr[i].setAttribute("disabled", "true");
                     // console.log(arr[i])
                 }
-                $("#loading").show();
+                $("#Profile_loading").show();
                 updateData();
                 document.getElementById("save_btn").style.display = "none";
                 document.getElementById("newImageContainer").style.display = "none";
@@ -1396,6 +1396,7 @@
 
             function editProfile() {
                 let arr = document.getElementsByClassName("editable");
+                
                 // console.log(arr);
                 document.getElementById("save_btn").style.display = "block"
                 for (var i = 0; i < arr.length; i++) {
@@ -1412,18 +1413,21 @@
         
             function updateData(){
                 const name = document.getElementById("name").value;
-                const image = document.getElementById("get_profile_pic");
+                const image = document.getElementById("get_profile_pic").files;
                 
                 let form = new FormData();
-                form.append('profile_image',image.files[0]);
+                
+                if(image.length != 0){
+                form.append('profile_image',image[0]);}
                 form.append('name',name);
+                
                 
                 let xhr = new XMLHttpRequest();
                 xhr.open("post","Update_user_profile");
                 xhr.send(form);
                 
                 xhr.upload.onerror = function(){
-                    console.log("some Error occured")
+                    alert("some Error occured")
                 }
                 xhr.upload.onloadend = function(){
                     console.log("success")
