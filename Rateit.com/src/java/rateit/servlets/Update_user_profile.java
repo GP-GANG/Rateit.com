@@ -15,6 +15,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.Part;
 import rateit.entities.Customer;
+import rateit.entities.Message;
 import rateit.helper.ConnectionProvider;
 
 @MultipartConfig
@@ -24,28 +25,26 @@ public class Update_user_profile extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-
+             Message msg =null;
             //fetching 
             String user_name = request.getParameter("name");
             Part image = request.getPart("profile_image");
             HttpSession session = request.getSession();
+            //creating obj
             Customer customer = (Customer) session.getAttribute("Customer");
-            
             Customer_database cd = new Customer_database(ConnectionProvider.getConnection());
-            
-            if (cd.UploadPhoto(image.getInputStream(), customer.getUSER_ID())) {
-                out.println("11");
-            } else {
-                out.println("00");
-            }
-            
-            if (cd.UpdateProfile(user_name , customer.getUSER_ID())) {
-                Customer c = cd.getCustomerByEmail(customer.getEMAIL(), customer.getPASSWORD());
-                session.setAttribute("Customer", c);
 
-                out.println("1");
+            if (cd.UpdateProfile(user_name, customer.getUSER_ID())) {
+                cd.UploadPhoto(image.getInputStream(), customer.getUSER_ID());
+                Customer c = cd.getCustomerByEmail(customer.getEMAIL(), customer.getPASSWORD());
+                msg = new Message("Profile Updated Successfully", "success");
+                session.setAttribute("Customer", c);
+                session.setAttribute("Message", msg);
+                response.sendRedirect("index.jsp");
             } else {
-                out.println("0");
+                msg = new Message("Sorry ! Could not Update Your profile", "Error");
+                session.setAttribute("Message", msg);
+                response.sendRedirect("index.jsp");
             }
 
         }
