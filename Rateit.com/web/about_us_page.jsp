@@ -33,7 +33,8 @@
 
     <main>
         <div class="main1">
-            <div class="container_com">
+            <div class="container_com" style="background-image:url('https://escapetheroom.com/wp-content/uploads/2020/01/Teamwork-1.jpg');
+                 background-size:cover;">
             </div>
 
             <div id="container1" class="container-right">
