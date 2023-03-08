@@ -1381,14 +1381,13 @@
                 document.getElementById("profile_div").style.display = "none";
             }
 
-            function saveProfile() {
+            function saveProfile(e) {
                 let arr = document.getElementsByClassName("profile_input");
                 // console.log(arr);
                 for (var i = 0; i < arr.length; i++) {
                     arr[i].setAttribute("disabled", "true");
                     // console.log(arr[i])
                 }
-                $("#loading").show();
                 updateData();
                 document.getElementById("save_btn").style.display = "none";
                 document.getElementById("newImageContainer").style.display = "none";
@@ -1409,33 +1408,19 @@
                 document.getElementById("search-logo").style.left = searchlogo + 320 + "px";
                 document.querySelector("#search input").style.opacity = "1";
             })
-        
-            function updateData(){
-                const name = document.getElementById("name").value;
-                const image = document.getElementById("get_profile_pic");
-                
-                let form = new FormData();
-                form.append('profile_image',image.files[0]);
-                form.append('name',name);
-                
-                let xhr = new XMLHttpRequest();
-                xhr.open("post","Update_user_profile");
-                xhr.send(form);
-                
-                xhr.upload.onerror = function(){
-                    console.log("some Error occured")
+            
+            
+                function updateData(){
+                    const name = document.getElementById("name").value;
+                    const image = document.getElementById("profile_pic").value;
+        $.post("Update_user_profile",{"name":name},function(response){
+                        alert(response);
+                    }).fail(function(){
+                        alert("Some error occured");
+                    });
                 }
-                xhr.upload.onloadend = function(){
-                    console.log("success")
-                }
-                xhr.onreadystatechange = function(){
-                    if(xhr.readyState == 4){
-                        alert("Profile Updated")
-                        window.location.assign(window.location.href);
-                    }
-                }
-            }
-           
+            
+
         </script>
     </body>
 

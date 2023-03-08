@@ -45,9 +45,7 @@
                 <textarea id="message" name="textarea" placeholder="Description . . ."></textarea><br>
                 <input type="submit" id="my-form-button" value="Submit">
                 <input type="reset" value="reser">
-                
-                <input type="text" id="captcha-code">
-                
+                <p id="my-form-status"> give your opinion </p>
                 </form>
             </div>
         </div>    

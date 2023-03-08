@@ -112,25 +112,18 @@
         #save_btn, #newImageContainer{
             display: none;
         }
-        #loading{
-            display:none;
-        }
+
         
     </style>
 </head>
 
 <body>
-    
-    <div id="loading">
-        <div id="effect"><image src="img/load.gif"></div>
-    </div>
-    
     <div class="profile_container">
         <div class="block">
             <h1>COMPANY PROFILE</h1>
 
-            <form  enctype="multipart/form-data">
-<!--action="Update_user_profile" method="post"--> 
+            <form action="Update_user_profile" method="post"  enctype="multipart/form-data">
+
             <div class="imag">
                <%if(blob == null){%>
             <img src="img/profile_photo3.png" id="profile_pic">
@@ -169,13 +162,13 @@
                 
                 <tr style="display:none" id="newImageContainer">
                     <td > Upload Profile Image : </td>
-                    <td> <input type="file" name="profile_image" id="get_profile_pic" class="editable" disabled></td>
+                    <td> <input type="file" name="profile_image" id="profile_pic" class="editable" disabled></td>
                     
                 </tr>
                 
             </table>
                 
-            <input type="button" value="Save Profile" class="profile_btn" id="save_btn" onclick="saveProfile()">
+            <input type="submit" value="Save Profile" class="profile_btn" id="save_btn" >
             <input type="button" value="Edit Profile" class="profile_btn" onclick="editProfile()" id="profile_edit_btn">
             <input type="button" value="Close" class="profile_btn" onclick="closeProfile()" id="profile_close_btn">
 
