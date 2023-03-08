@@ -1,11 +1,4 @@
-/*
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
-*/
-/* 
-    Created on : 01-Mar-2023, 1:10:29 pm
-    Author     : asus
-*/
+
         @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@300&display=swap');
 
         * {
@@ -24,7 +17,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
         .form-box {
             height: 420px;
             width: 400px;
-            background-color: red;
+            background-color: white;
             position: relative;
             margin: 2% auto;
             padding: 5px;
