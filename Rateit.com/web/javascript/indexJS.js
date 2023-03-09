@@ -40,7 +40,7 @@
                     arr[i].setAttribute("disabled", "true");
                     // console.log(arr[i])
                 }
-
+                $("#Profile_loading").show("slow");
                 updateData();
                 document.getElementById("save_btn").style.display = "none";
                 document.getElementById("newImageContainer").style.display = "none";
@@ -84,8 +84,8 @@
                 }
                 xhr.onreadystatechange = function(){
                     if(xhr.readyState == 4){
-                        document.getElementById("profile_effect").style.display = "none";
-                        alert("Profile Updated")
+                        $("#Profile_loading").hide("slow");
+                        alert("Profile Updated");
                         window.location.assign(window.location.href);
                     }
                 }
