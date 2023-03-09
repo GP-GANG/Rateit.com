@@ -5,7 +5,6 @@ import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
 import javax.sql.rowset.serial.SerialBlob;
 import rateit.entities.Customer;
 
@@ -175,13 +174,13 @@ public class Customer_database {
             PreparedStatement stmt = this.con.prepareStatement(query);
             stmt.setInt(1, USER_ID);
             ResultSet set = stmt.executeQuery();
-           while(set.next()) {
+            while (set.next()) {
                 blob = set.getBlob("PROFILE_IMG");
             }
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-      return blob;
+        return blob;
     }
 }

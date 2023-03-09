@@ -18,13 +18,14 @@ public class Company {
     private int SCP_COUNT;
     private Timestamp JOIN_DATE;
     private boolean CURRENT_POLL_STATUS;
-    private Blob COMP_PROFILE_IMAGE;
+    private Blob COMPANY_IMG;
     private String COMPANY_URL;
     private long COMPANY_PHONE;
+    private int COMPANY_RATE;
     public Company() {
     }
 
-    public Company(int COMPANY_ID, String COMPANY_NAME, String COMPANY_MAIL, String COMPANY_LOGIN, String COMPANY_PASSWORD, String CATEGORY, int RANK, int POLL, int ACP_COUNT, int SCP_COUNT, Timestamp JOIN_DATE, boolean CURRENT_POLL_STATUS, Blob COMP_PROFILE_IMAGE, String COMPANY_URL, long COMPANY_PHONE) {
+    public Company(int COMPANY_ID, String COMPANY_NAME, String COMPANY_MAIL, String COMPANY_LOGIN, String COMPANY_PASSWORD, String CATEGORY, int RANK, int POLL, int ACP_COUNT, int SCP_COUNT, Timestamp JOIN_DATE, boolean CURRENT_POLL_STATUS, Blob COMPANY_IMG, String COMPANY_URL, long COMPANY_PHONE, int COMPANY_RATE) {
         this.COMPANY_ID = COMPANY_ID;
         this.COMPANY_NAME = COMPANY_NAME;
         this.COMPANY_MAIL = COMPANY_MAIL;
@@ -37,11 +38,13 @@ public class Company {
         this.SCP_COUNT = SCP_COUNT;
         this.JOIN_DATE = JOIN_DATE;
         this.CURRENT_POLL_STATUS = CURRENT_POLL_STATUS;
-        this.COMP_PROFILE_IMAGE = COMP_PROFILE_IMAGE;
+        this.COMPANY_IMG = COMPANY_IMG;
         this.COMPANY_URL = COMPANY_URL;
         this.COMPANY_PHONE = COMPANY_PHONE;
+        this.COMPANY_RATE = COMPANY_RATE;
     }
 
+    
     public Company(String COMPANY_NAME, String COMPANY_MAIL, String COMPANY_PASSWORD, String COMPANY_URL, long COMPANY_PHONE) {
         this.COMPANY_NAME = COMPANY_NAME;
         this.COMPANY_MAIL = COMPANY_MAIL;
@@ -150,12 +153,12 @@ public class Company {
         this.CURRENT_POLL_STATUS = CURRENT_POLL_STATUS;
     }
 
-    public Blob getCOMP_PROFILE_IMAGE() {
-        return COMP_PROFILE_IMAGE;
+    public Blob getCOMPANY_IMG() {
+        return COMPANY_IMG;
     }
 
-    public void setCOMP_PROFILE_IMAGE(Blob COMP_PROFILE_IMAGE) {
-        this.COMP_PROFILE_IMAGE = COMP_PROFILE_IMAGE;
+    public void setCOMPANY_IMG(Blob COMPANY_IMG) {
+        this.COMPANY_IMG = COMPANY_IMG;
     }
 
     public String getCOMPANY_URL() {
@@ -172,6 +175,14 @@ public class Company {
 
     public void setCOMPANY_PHONE(long COMPANY_PHONE) {
         this.COMPANY_PHONE = COMPANY_PHONE;
+    }
+
+    public int getCOMPANY_RATE() {
+        return COMPANY_RATE;
+    }
+
+    public void setCOMPANY_RATE(int COMPANY_RATE) {
+        this.COMPANY_RATE = COMPANY_RATE;
     }
     
     

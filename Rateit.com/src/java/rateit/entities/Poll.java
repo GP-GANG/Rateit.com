@@ -11,15 +11,15 @@ public class Poll {
     private int POLL_ID;
     private Timestamp START_DATE;
     private Timestamp END_DATE;
-    private int COMPANY1;
-    private int COMPANY2;
+    private String COMPANY1;
+    private String COMPANY2;
     private String CATEGORY;
     private int REMOVE_THIS;
 
     public Poll() {
     }
 
-    public Poll(int POLL_NO, int POLL_ID, Timestamp START_DATE, Timestamp END_DATE, int COMPANY1, int COMPANY2, String CATEGORY, int REMOVE_THIS) {
+    public Poll(int POLL_NO, int POLL_ID, Timestamp START_DATE, Timestamp END_DATE, String COMPANY1, String COMPANY2, String CATEGORY, int REMOVE_THIS) {
         this.POLL_NO = POLL_NO;
         this.POLL_ID = POLL_ID;
         this.START_DATE = START_DATE;
@@ -62,19 +62,19 @@ public class Poll {
         this.END_DATE = END_DATE;
     }
 
-    public int getCOMPANY1() {
+    public String getCOMPANY1() {
         return COMPANY1;
     }
 
-    public void setCOMPANY1(int COMPANY1) {
+    public void setCOMPANY1(String COMPANY1) {
         this.COMPANY1 = COMPANY1;
     }
 
-    public int getCOMPANY2() {
+    public String getCOMPANY2() {
         return COMPANY2;
     }
 
-    public void setCOMPANY2(int COMPANY2) {
+    public void setCOMPANY2(String COMPANY2) {
         this.COMPANY2 = COMPANY2;
     }
 

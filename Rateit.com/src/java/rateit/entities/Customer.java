@@ -1,6 +1,7 @@
 
 package rateit.entities;
 
+import java.sql.Blob;
 import java.sql.Timestamp;
 
 
@@ -14,7 +15,8 @@ public class Customer {
     private int ATTENDED_POLL;
     private int REMAINDER;
     private Timestamp JOIN_DATE;
-
+    private Blob PROFILE_IMG;
+    
     public Customer(int USER_ID, String USER_NAME, String EMAIL, String PASSWORD, boolean LOGIN_STATUS, int ATTENDED_POLL, int REMAINDER, Timestamp JOIN_DATE) {
         this.USER_ID = USER_ID;
         this.USER_NAME = USER_NAME;
@@ -25,6 +27,20 @@ public class Customer {
         this.REMAINDER = REMAINDER;
         this.JOIN_DATE = JOIN_DATE;
     }
+
+    public Customer(int USER_ID, String USER_NAME, String EMAIL, String PASSWORD, boolean LOGIN_STATUS, int ATTENDED_POLL, int REMAINDER, Timestamp JOIN_DATE, Blob PROFILE_IMG) {
+        this.USER_ID = USER_ID;
+        this.USER_NAME = USER_NAME;
+        this.EMAIL = EMAIL;
+        this.PASSWORD = PASSWORD;
+        this.LOGIN_STATUS = LOGIN_STATUS;
+        this.ATTENDED_POLL = ATTENDED_POLL;
+        this.REMAINDER = REMAINDER;
+        this.JOIN_DATE = JOIN_DATE;
+        this.PROFILE_IMG = PROFILE_IMG;
+    }
+    
+    
 
     public Customer() {
     }
@@ -112,6 +128,15 @@ public class Customer {
     public Timestamp getJOIN_DATE() {
         return JOIN_DATE;
     }
+
+    public Blob getPROFILE_IMG() {
+        return PROFILE_IMG;
+    }
+
+    public void setPROFILE_IMG(Blob PROFILE_IMG) {
+        this.PROFILE_IMG = PROFILE_IMG;
+    }
+    
     
     
     
