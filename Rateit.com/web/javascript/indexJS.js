@@ -69,6 +69,7 @@
                 const image = document.getElementById("get_profile_pic");
                 
                 let form = new FormData();
+                if(image.files.length !== 0)
                 form.append('profile_image',image.files[0]);
                 form.append('name',name);
                 

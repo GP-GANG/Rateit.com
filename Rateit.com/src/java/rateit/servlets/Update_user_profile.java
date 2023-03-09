@@ -28,15 +28,19 @@ public class Update_user_profile extends HttpServlet {
             //fetching 
             String user_name = request.getParameter("name");
             Part image = request.getPart("profile_image");
+            
+            
             HttpSession session = request.getSession();
             Customer customer = (Customer) session.getAttribute("Customer");
             
             Customer_database cd = new Customer_database(ConnectionProvider.getConnection());
             
+            if(image != null){
             if (cd.UploadPhoto(image.getInputStream(), customer.getUSER_ID())) {
                 out.println("11");
             } else {
                 out.println("00");
+            }
             }
             
             if (cd.UpdateProfile(user_name , customer.getUSER_ID())) {
