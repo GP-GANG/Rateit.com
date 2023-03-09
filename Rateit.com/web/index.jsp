@@ -1,3 +1,4 @@
+<%@page import="rateit.entities.Message"%>
 <%@page import="rateit.entities.Customer"%>
 <!-- <%@page contentType="text/html" pageEncoding="UTF-8" %> -->
 <!DOCTYPE html>
@@ -20,8 +21,9 @@
     <body>
         <%
             Customer customer = (Customer) session.getAttribute("Customer");
-
+            Message msg = (Message)session.getAttribute("Message");
         %>
+          
         <header>
             <nav>
                 <img class="main_logo" src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/logo.png?raw=true" alt="RATE-IT.COM">
@@ -36,6 +38,7 @@
                             <li>
                                 <div class="dropdown-text ">
                                     <b>Polls</b>
+                                         
                                     <div class="dropdown-content">
                                         <a href="#">Previous Polls</a>
                                         <a href="recent_poll_page.jsp">Recent Polls</a>
@@ -98,6 +101,11 @@
                             <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/TCS.png?raw=true"
                                  class="logo" id="l1" style="height: 25px; width: 30px; margin-top: 5px;">
                         </div>
+                        <%if(msg != null){%>
+        <p><%=msg.getMsg_name() %></p>
+<%}
+ session.removeAttribute("Message");
+%> 
                         <p class="company_name">Tata consultancy Service</p>
                         <div class="star-1">
                             <span class="label">Ratings:</span>
