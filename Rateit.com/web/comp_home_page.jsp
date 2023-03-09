@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <title>Company-Home Page</title>
     <link rel="stylesheet" href="css\comp_home_page.css">
 </head>
@@ -17,7 +19,7 @@
                 src="https://raw.githubusercontent.com/GP-GANG/rateit.github.io/main/Other%20Files/photos/logo.png"
                 alt="RATE-IT.COM">
             <ul id="navTool">
-                <li><a href="../comp_profile_page/comp_profile.html" class="header-content"><b>Profile</b></a></li>
+                <li><a href="comp_profile_page.jsp" class="header-content"><b>Profile</b></a></li>
                 <li><a href="#" class="header-content"><b>Request Poll</b></a></li>
                 <li><a href="#" class="header-content"><b>Poll Result</b></a></li>
                 <li><a href="../about_us_page/about_us.html" class="header-content"><b>About Us</b></a></li>
@@ -30,7 +32,7 @@
         </nav>
     </header>
     <main>
-
+        <div id="container"></div>
     </main>
 
     <footer>
@@ -138,5 +140,10 @@
     </footer>
 </body>
 
+<script>
+    $(document).ready(function(){
+        $("#container").load("comp_profile_page.jsp")
+    })
+</script>
 </html>
 

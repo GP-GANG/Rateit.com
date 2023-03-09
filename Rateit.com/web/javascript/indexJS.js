@@ -54,8 +54,8 @@
                     arr[i].removeAttribute("disabled");
                     // console.log(arr[i])
                 }
-                                console.log($("#Profile_loading"))
-                                console.log("in the edit profile")
+                                
+                  
                 document.getElementById("newImageContainer").style.display = "table-row";
             }
 

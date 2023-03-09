@@ -125,7 +125,7 @@
         <div class="block">
             <div id="profile_title" style=" background-color: lightgrey; padding-right:15px; height:35px; padding-top:5px; margin-bottom:10px;">
                 <span style="float:left; font-size:20px; margin-left:15px; font-weight:bolder;"> Profile </span> 
-                <span style="float:right;"><a> Logout </a></span>
+                <span style="float:right;"><a href="LogOut"> Logout </a></span>
             </div>
 
             <form  enctype="multipart/form-data">
