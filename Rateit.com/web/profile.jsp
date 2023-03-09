@@ -31,70 +31,57 @@
                 padding: 0;
                 box-sizing: border-box;
                 font-family: 'Unbounded', cursive;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-size:calc(+1);
+                
             }
 
             .profile_container {
                 background-color: transparent;
                 height: 100vh;
-                width: 100%;
-
+                width: 100vw;
+                
+            }
+            .profile_input{
+                height:30px;
+                width:230px;
+                text-align: center;
+                
             }
 
             .block {
                 background-color: white;
-                height: 530px;
-                width: 650px;
-                /*            position: relative;
-                padding-top: 15px;
-                left:24%;top:5%;*/
-
+                height: 480px;
+                width: 500px;
+                box-shadow: 0px 10px 17px 1px rgba(0,0,0,0.75);
+-webkit-box-shadow: 0px 10px 17px 1px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 10px 17px 1px rgba(0,0,0,0.75);
             }
-
-            h1 {
-                text-align: center;
-                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-                font-weight: 500;
-                font-size: 30px;
-            }
-
-            h2 {
-                position: relative;
-                top: 200px;
-                left: 10%;
-                font-size: 18px;
-                font-weight: 200;
-            }
-
             .imag img {
-                height: 70px;
+                height: 100px;
                 width: 100px;
+                border-radius:50%;
+            }
+            .imag{
                 display: flex;
-                position: relative;
-                top: 25px;
-                left: 42%;
                 justify-content: center;
                 align-items: center;
             }
-
-            table {
-                height: 300px;
-                width: 86%;
+            table{
+                /*margin-top:20px;*/
+                padding:3px;
+                width:93%;
+                height:285px;
                 margin-left: 7%;
-                margin-top: 30px;
-                margin-bottom: 40px;
-                border-bottom: 1px solid black;
+                margin-top: 10px;
+                
             }
 
-            .t1 {
-                width: 40%;
-                padding: 0px 10px;
-                font-weight: bold;
-            }
 
-            .t2 {
-                width: 40%;
-            }
-
+.t1{
+    font-weight:bold;
+    font-size:17px;
+}
             .profile_btn {
                 height: 30px;
                 width: 150px;
@@ -103,27 +90,46 @@
                 color: white;
                 border: none;
                 letter-spacing: 1px;
-                display:inline-block;
+                margin-left:10px;
+                margin-right:10px;
+                font-weight:bold;
+                box-shadow: -1px 0px 5px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: -1px 0px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: -1px 0px 5px 0px rgba(0,0,0,0.75);
             }
-
-/*        #profile_edit_btn{
-            margin-left: 45%;
-        }*/
+            tr{
+                margin:2px; padding:2px;
+            }
+            
         #save_btn, #newImageContainer{
             display: none;
         }
 
-        
+        #profile_buttons{
+            display:flex;
+            flex-direction: row;
+        }
+        #Profile_loading{
+            display:none;
+        }
     </style>
 </head>
 
 <body>
+    
+    <div id="Profile_loading">
+        <div id="profile_effect"><image src="img/load.gif" height="20px" width="20px" style="border-radius: 50%;"> Processing...</div>
+    </div>
+    
     <div class="profile_container">
         <div class="block">
-            <h1>COMPANY PROFILE</h1>
+            <div id="profile_title" style=" background-color: lightgrey; padding-right:15px; height:35px; padding-top:5px; margin-bottom:10px;">
+                <span style="float:left; font-size:20px; margin-left:15px; font-weight:bolder;"> Profile </span> 
+                <span style="float:right;"><a> Logout </a></span>
+            </div>
 
-            <form action="Update_user_profile" method="post"  enctype="multipart/form-data">
-
+            <form  enctype="multipart/form-data">
+<!--action="Update_user_profile" method="post"--> 
             <div class="imag">
                <%if(blob == null){%>
             <img src="img/profile_photo3.png" id="profile_pic">
@@ -132,7 +138,7 @@
              <%}%>
             </div>
          
-            <table rules="rows">
+            <table>
 
                 <tr>
                     <td class="t1">User Name :</td>
@@ -160,18 +166,17 @@
                     <td class="t2"><input type="text" name="attended_poll" class="profile_input" value="<%=cus.getATTENDED_POLL() %>" disabled></td>
                 </tr>
                 
-                <tr style="display:none" id="newImageContainer">
-                    <td > Upload Profile Image : </td>
-                    <td> <input type="file" name="profile_image" id="profile_pic" class="editable" disabled></td>
-                    
-                </tr>
-                
+                <tr id="newImageContainer">
+                        <td colspan="2"class="t1"> Upload Profile Image : 
+                       <input type="file" name="profile_image" id="get_profile_pic" class="editable" disabled></td>
+                    </tr>
             </table>
                 
-            <input type="submit" value="Save Profile" class="profile_btn" id="save_btn" >
+                <div id="profile_buttons">
+            <input type="button" value="Save Profile" class="profile_btn" id="save_btn" onclick="saveProfile()">
             <input type="button" value="Edit Profile" class="profile_btn" onclick="editProfile()" id="profile_edit_btn">
             <input type="button" value="Close" class="profile_btn" onclick="closeProfile()" id="profile_close_btn">
-
+                </div>
 
             </div>
 

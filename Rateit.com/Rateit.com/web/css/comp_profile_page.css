@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Unbounded', cursive;
+}
+
+.profile_container {
+    background-color: transparent;
+    height: 100vh;
+    width: 100%;
+}
+
+.block {
+    background-color: white;
+    height: 530px;
+    width: 650px;
+}
+
+h1 {
+    margin-left: 140px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+}
+
+h2 {
+    position: relative;
+    top: 200px;
+    left: 10%;
+    font-size: 18px;
+    font-weight: 200;
+}
+
+.imag img {
+    height: 70px;
+    width: 100px;
+    display: flex;
+    position: relative;
+    top: 25px;
+    left: 32%;
+    justify-content: center;
+    align-items: center;
+}
+
+table {
+    height: 300px;
+    width: 70%;
+    margin-left: 7%;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid black;
+}
+
+.t1 {
+    width: 50%;
+    padding: 0px 10px;
+    font-weight: bold;
+}
+
+.t2 {
+    width: 50%;
+}
+
+.profile_btn {
+    height: 30px;
+    width: 110px;
+    font-size: 13px;
+    background-color: rgb(237, 75, 75);
+    color: white;
+    border: none;
+    letter-spacing: 1px;
+}
+
+#profile_edit_btn {
+    margin-left: 15%;
+}
+
+.profile_input {
+    border: none;
+    outline: none;
+    background-color: white;
+}

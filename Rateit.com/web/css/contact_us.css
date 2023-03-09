@@ -22,7 +22,10 @@ body {
 
 #heading {
     color: rgba(70, 68, 68, 0.87);
-    text-align: center;
+    font-family: 'Unbounded', cursive;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-top:10px;
+    padding-left:20px;
 }
 
 #cont1 {
@@ -67,7 +70,8 @@ body {
 }
 
 #content {
-    margin-top: 40px;
+    margin-top: 20px;
+    padding-top:15px;
 }
 
 input,
@@ -96,7 +100,7 @@ textarea {
     background-color: rgba(233, 230, 230, 0.76);
 }
 
-button {
+.btn {
     height: 40px;
     width: 44.8%;
     margin-right: 5px;
@@ -112,7 +116,6 @@ button {
 button:hover, .box:hover{
     transform: scale(1.01);
 }
-
 @media (max-width: 1100px) {
 
     #main_cont {

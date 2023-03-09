@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <h1 id="heading">CONTACT US</h1>
+    <h2 id="heading"><img class="main_logo" src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/logo.png?raw=true" alt="RATE-IT.COM" height="40px"></h2>
     <div id="main_cont">
         <div id="cont1">
             <div id="add-box1">
@@ -38,50 +38,20 @@
         </div>
         <div id="cont2">
             <div id="content">
+                <CENTER><b> CONTACT US </b></center>
                 <form action="https://formspree.io/f/mqkobyvd" method="post">
                     <input class="name" type="text" id="username" name="username" placeholder="Name :">
                     <input class="name" type="text" id="subject" name="subject" placeholder="Subject :"><br>
                 <input type="email" name="email" id="email" placeholder="E-mail Address :"><br>
                 <textarea id="message" name="textarea" placeholder="Description . . ."></textarea><br>
-                <input type="submit" id="my-form-button" value="Submit">
-                <input type="reset" value="reser">
-                <p id="my-form-status"> give your opinion </p>
+                <input type="submit" id="my-form-button" class="btn" value="Submit">
+                <input type="reset" value="reser" class="btn">
+                
+                <!--<input type="text" id="captcha-code" class="btn">-->
+                
                 </form>
             </div>
         </div>    
     </div>
-    
-    <script>
-//        const LIMIT_MAIL = 3;
-//        let maxLimit = LIMIT_MAIL;
-//        window.addEventListener("load", ()=>{
-//            sessionStorage.setItem("maxLimit",maxLimit) 
-//            console.log(sessionStorage.getItem("maxLimit"))
-//        });
-//        
-//        function checkLimit(){
-//            
-//            
-//            maxLimit = sessionStorage.getItem("maxLimit");
-//            if(maxLimit <= 0){
-//                alert("Maximum limit reached.<br><b>try to refresh the session</b>");
-//                return false;
-//        }
-//            else{
-//                const username = document.getElementById("username").value;
-//                const subject = document.getElementById("subject").value;
-//                const email = document.getElementById("email").value;
-//                const message = document.getElementById("message").value;
-//                
-//                $.post("https://formspree.io/f/mqkobyvd",
-//                {"username":username,
-//                 "subject":subject,
-//                 "email":email,
-//                 "message":message});
-//                sessionStorage.setItem("maxLimit",--maxLimit);
-//            }
-//        }
-        
-    </script>
 </body>
 </html>
