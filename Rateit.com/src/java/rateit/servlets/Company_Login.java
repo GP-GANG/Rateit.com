@@ -11,7 +11,9 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import rateit.entities.Company;
+import rateit.entities.Message;
 import rateit.helper.ConnectionProvider;
 
 /**
@@ -37,23 +39,26 @@ public class Company_Login extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Company_Login</title>");            
+            out.println("<title>Servlet Company_Login</title>");
             out.println("</head>");
             out.println("<body>");
-            
-            String email = request.getParameter("name");
+
+            String login = request.getParameter("name");
             String password = request.getParameter("password");
             Company_database cd = new Company_database(ConnectionProvider.getConnection());
-           Company cmp= cd.getCompanyByEmail(email, password);
+            Company cmp = cd.getCompanyByEmail(login, password);
+            HttpSession session = request.getSession(true);
            
-           if(cmp == null){out.println("error");}else{out.println("success");}
-            
-            
-            
-            
-            
-            
-            
+            if (cmp == null) {
+              Message msg  = new Message("incorrect password or id","error");
+              session.setAttribute("Message", msg);
+              response.sendRedirect("comp_login.jsp");
+            } else {
+               session.setAttribute("Company", cmp);
+               response.sendRedirect("comp_home_page.jsp");
+
+            }
+
             out.println("</body>");
             out.println("</html>");
         }

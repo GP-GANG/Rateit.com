@@ -39,14 +39,14 @@ public class Company_database {
         return f;
     }
 
-    public Company getCompanyByEmail(String email, String password) {
+    public Company getCompanyByEmail(String Login, String password) {
         Company cmp = null;
         try {
-            String query = "select * from company where COMPANY_MAIL=? and COMPANY_PASSWORD =?";
+            String query = "select * from company where COMPANY_LOGIN=? and COMPANY_PASSWORD =?";
 
             PreparedStatement stmt = this.con.prepareStatement(query);
 
-            stmt.setString(1, email);
+            stmt.setString(1, Login);
             stmt.setString(2, password);
 
             ResultSet set = stmt.executeQuery();
