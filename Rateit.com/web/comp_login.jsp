@@ -13,17 +13,17 @@
     <body>
         <div class="main_container">
             
-             <!-- <span id="showError">
-                 <% /*
+              <span id="showError">
+                 <% 
         Message message =(Message)session.getAttribute("Message");
         if(message != null){
     
-   */ %>
-    <p><% /*=message.getMsg_name() */ %></p>
-    <% /* }
+   %>
+    <p><%=message.getMsg_name() %></p>
+    <% }
     session.removeAttribute("Message");
-   */ %>
-            </span> -->
+    %>
+            </span> 
             
             <div class="form-box">
                        

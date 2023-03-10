@@ -1,4 +1,12 @@
+<%@page import="rateit.entities.Company"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+   Company cmp = (Company)session.getAttribute("Company");
+   if(cmp == null){
+    response.sendRedirect("comp_login.jsp");
+    }
+
+%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,34 +25,34 @@
                 <h1>COMPANY PROFILE</h1>
                 <div class="imag">
                     <img
-                        src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/TCS.png?raw=true">
+                        src="HelperJSP/DisplayCmpImage.jsp?name=<%=cmp.getCOMPANY_NAME()%>">
                 </div>
                 <table rules="rows">
                     <tr>
                         <td class="t1">Company Name :</td>
-                        <td class="t2"><input type="text" class="profile_input" value="TATA Consaltancy Service"
+                        <td class="t2"><input type="text" class="profile_input" value="<%=cmp.getCOMPANY_NAME()%>"
                                 disabled> </td>
                     </tr>
                     <tr>
                         <td class="t1">Company ID :</td>
-                        <td class="t2"><input type="text" class="profile_input" value="9726098765" disabled></td>
+                        <td class="t2"><input type="text" class="profile_input" value="<%=cmp.getCOMPANY_ID()%>" disabled></td>
                     </tr>
                     <tr>
                         <td class="t1">Email ID :</td>
-                        <td class="t2"><input type="text" class="profile_input" value="tataconsaltancyservice@gmail.com"
+                        <td class="t2"><input type="text" class="profile_input" value="<%=cmp.getCOMPANY_MAIL()%>"
                                 disabled></td>
                     </tr>
                     <tr>
                         <td class="t1">Category :</td>
-                        <td class="t2"><input type="text" class="profile_input" value="Service Based" disabled></td>
+                        <td class="t2"><input type="text" class="profile_input" value="<%=cmp.getCATEGORY() %>" disabled></td>
                     </tr>
                     <tr>
                         <td class="t1">Joining Date :</td>
-                        <td class="t2"><input type="text" class="profile_input" value="10/10/2010" disabled></td>
+                        <td class="t2"><input type="text" class="profile_input" value="<%=cmp.getJOIN_DATE().toString()%>" disabled></td>
                     </tr>
                     <tr>
                         <td class="t1">Polls Registered :</td>
-                        <td class="t2"><input type="text" class="profile_input" value="5" disabled></td>
+                        <td class="t2"><input type="text" class="profile_input" value="<%=cmp.getPOLL() %>" disabled></td>
                     </tr>
                 </table>
                 <a href="#"><button class="profile_btn" onclick="editProfile()" id="profile_edit_btn">Edit
