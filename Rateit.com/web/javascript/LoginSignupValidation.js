@@ -53,10 +53,10 @@
                 }
 
             }
-            else {
-                if (validateUserName(userName) == false)
-                    return false;
-            }
+//            else {
+//                if (validateUserName(userName) == false)
+//                    return false;
+//            }
 
             if (checkPassword(pass, pAlert) == false)
                 return false;

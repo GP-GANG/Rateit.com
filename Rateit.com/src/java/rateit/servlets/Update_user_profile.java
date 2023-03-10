@@ -45,7 +45,7 @@ public class Update_user_profile extends HttpServlet {
 
 
     
-                cd.UploadPhoto(image.getInputStream(), customer.getUSER_ID());
+               
 
                 Customer c = cd.getCustomerByEmail(customer.getEMAIL(), customer.getPASSWORD());
                 msg = new Message("Profile Updated Successfully", "success");

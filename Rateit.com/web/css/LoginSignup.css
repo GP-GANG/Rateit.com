@@ -24,9 +24,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
         .form-box {
             height: 420px;
             width: 400px;
-            background-color: red;
+            background-color: white;
             position: relative;
-            margin: 2% auto;
+            margin: 6% auto;
             padding: 5px;
             overflow: hidden;
             transition: 0.3s;
@@ -76,8 +76,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
         }
 
         .input-group {
+            top: 80px;
             position: absolute;
-            width: 280px; top: 80px;
+            width: 280px;
             margin-left: 9px;
             transition: .3s;
         }
@@ -101,18 +102,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
         #Umail,
         #RUpassword,
         #RUcpassword {
-            border: 1.5px solid gray;
-            padding-left: 10px;
-            background-color: #a3acada6;
-        }
-
-        #URname,
-        #URpassword,
-        #URcpassword,
-        #URmail,
-        #URphone,
-        #URurl {
-            height: 20px;
             border: 1.5px solid gray;
             padding-left: 10px;
             background-color: #a3acada6;
@@ -176,12 +165,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
             font-size: 32px;
             margin-left: 115px;
             margin-top: 30px;
-        }
 
-        .social-media1 {
-            font-size: 32px;
-            margin-left: 115px;
-            margin-top: 10px;
         }
 
         .social-media i {
@@ -191,22 +175,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
         }
 
         .social-media i:hover {
-            color: red;
-        }
-
-        .social-media1 {
-            font-size: 32px;
-            margin-left: 115px;
-            margin-top: 10px;
-        }
-
-        .social-media1 i {
-            padding-right: 10px;
-            cursor: pointer;
-            color: black;
-        }
-
-        .social-media1 i:hover {
             color: red;
         }
 

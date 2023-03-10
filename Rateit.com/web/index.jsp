@@ -21,7 +21,7 @@
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <!-- <link rel="stylesheet" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" href="" crossorigin="anonymous"> -->
 
-        <<link rel="stylesheet" href="css/index.css"/>
+        <<link rel="stylesheet" href="css/index.css?2"/>
 
     </head>
 
@@ -31,6 +31,19 @@
             Message msg = (Message)session.getAttribute("Message");
         %>
 
+        <%
+            if(customer == null){
+        %>
+            <div id="loginCheckContainer">
+            
+            <div id="loginCheck">
+                <span> To provide review, you have to login first.</span>
+                <button class="header-btn" id="alertClose"> Login </button>
+            </div>
+        </div>
+        <%  
+        }%>
+        
         <header>
             <nav>
                 <img class="main_logo" src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/logo.png?raw=true" alt="RATE-IT.COM">
@@ -225,7 +238,7 @@
                         </div>
                     </section>
 
-                    <button class="btn">Compare Now</button>
+                    <button class="btn compareBtn">Compare Now</button>
 
                 </div>
                 <%}%>

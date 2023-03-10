@@ -1,6 +1,15 @@
             $(document).ready(function(){ 
                 $("#profile_div").load("profile.jsp");
+                document.getElementById("search-logo").style.left = document.getElementById("search").getBoundingClientRect().x + 40 +"px";
+                
+                $("#alertClose").click(function(){
+                    $("#alertClose").parent().css("display","none");
+                });
+                
+                
             });
+            
+            
             
             let searchlogo = 750;
 
@@ -18,13 +27,20 @@
 //            })
 
             const searchLogo = document.getElementById("search-logo");
+            
+            searchLogo.addEventListener("click", () => {
+                document.getElementById("search-logo").style.left = document.getElementById("search").getBoundingClientRect().right +"px";
+                document.querySelector("#search input").style.opacity = "1";
+            })
 
             const profileBtn = document.getElementById("profile_btn");
 
-            profileBtn.addEventListener("click", () => {
+            profileBtn.addEventListener("click", showProfile);
+            
+            function showProfile(){
                 document.querySelector(".container").style.opacity = "0.2";
                 document.getElementById("profile_div").style.display = "block";
-            })
+            }
 
 
             // console.log(profileClose)
@@ -55,14 +71,11 @@
                     // console.log(arr[i])
                 }
                                 
-                  
+                document.getElementById("profile_edit_btn").style.display = "none";
                 document.getElementById("newImageContainer").style.display = "table-row";
             }
 
-            searchLogo.addEventListener("click", () => {
-                document.getElementById("search-logo").style.left = searchlogo + 320 + "px";
-                document.querySelector("#search input").style.opacity = "1";
-            })
+
         
             function updateData(){
                 const name = document.getElementById("name").value;
@@ -86,6 +99,8 @@
                 xhr.onreadystatechange = function(){
                     if(xhr.readyState == 4){
                         $("#Profile_loading").hide("slow");
+                        document.getElementById("profile_edit_btn").style.display = "block";
+                        document.getElementById("save_btn").style.display = "none";
                         alert("Profile Updated");
                         window.location.assign(window.location.href);
                     }
