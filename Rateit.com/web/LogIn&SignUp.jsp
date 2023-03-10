@@ -13,9 +13,8 @@
 </head>
 
 <body>
-    <div class="main_container">
-        
-         <span id="showError">
+
+    <span id="showError">
              <%
     Message message =(Message)session.getAttribute("Message");
     if(message != null){
@@ -26,7 +25,9 @@
 session.removeAttribute("Message");
 %>
         </span>
-        
+    
+    <div class="main_container">
+               
         <div class="form-box">
                    
             <div class="button-box">

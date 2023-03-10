@@ -1,4 +1,4 @@
-
+<%@page import="rateit.entities.Message"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -11,18 +11,9 @@
     </head>
     
     <body>
-        
-         <span id="showError">
-             <%
-    Message message =(Message)session.getAttribute("Message");
-    if(message != null){
+       
 
-%>
-<p><%=message.getMsg_name() %></p>
-<%}
-session.removeAttribute("Message");
-%>
-        </span>
+
         
         <div class="main_container">
             
@@ -36,7 +27,6 @@ session.removeAttribute("Message");
     <% }
     session.removeAttribute("Message");
     %>
-            </span> 
             
             <div class="form-box">
                        
@@ -135,3 +125,4 @@ session.removeAttribute("Message");
     </body>
     
 </html>
+            </span> 
