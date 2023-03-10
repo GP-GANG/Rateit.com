@@ -31,17 +31,22 @@
             Message msg = (Message)session.getAttribute("Message");
         %>
 
+        <%
+            if(customer == null){
+        %>
             <div id="loginCheckContainer">
             
             <div id="loginCheck">
-                <span> To provide review, you have to login first.</span>
+                <span><i class="fa-solid fa-triangle-exclamation" style="font-size:25px; color:red"></i>
+                    <br><p style="font-size:13px;"> To provide review, you have to login first.</p></span>
                 <section>
                     <a href="LogIn&SignUp.jsp"><button class="header-btn alertBtn">Login</button></a>
                     <button class="header-btn alertBtn" id="alertClose">Remind me later</button>
                 </section>
             </div>
         </div>
-
+        <%  
+        }%>
         
         <header>
             <nav>
@@ -237,9 +242,7 @@
                         </div>
                     </section>
 
-                        <!--<a href="CheckForLogin">-->
-                            <button class="btn compareBtn">Compare Now</button>
-                <!--</a>-->
+                    <button class="btn compareBtn">Compare Now</button>
 
                 </div>
                 <%}%>
