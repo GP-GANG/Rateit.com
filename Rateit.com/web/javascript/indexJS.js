@@ -3,7 +3,7 @@
                 document.getElementById("search-logo").style.left = document.getElementById("search").getBoundingClientRect().x + 40 +"px";
                 
                 $("#alertClose").click(function(){
-                    $("#alertClose").parent().css("display","none");
+                    $("#loginCheck").css("display","none");
                 });
                 
                 

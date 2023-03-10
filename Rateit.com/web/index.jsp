@@ -38,7 +38,10 @@
             
             <div id="loginCheck">
                 <span> To provide review, you have to login first.</span>
-                <button class="header-btn" id="alertClose"> Login </button>
+                <section>
+                <a href="LogIn&SignUp.jsp"><button class="header-btn alertBtn"> Login </button></a>
+                <button class="header-btn alertBtn" id="alertClose"> Remind me later </button>
+                </section>
             </div>
         </div>
         <%  
