@@ -15,7 +15,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Rate it | Home Page</title>
- <script src="https://kit.fontawesome.com/719270a6fc.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/c2a4c35825.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/20a4a662a5.js" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <!-- <link rel="stylesheet" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" href="" crossorigin="anonymous"> -->
@@ -33,8 +34,7 @@
             <div id="loginCheckContainer">
             
             <div id="loginCheck">
-                <span><i class="fa-solid fa-triangle-exclamation" style="font-size:25px; color:red"></i>
-                    <br><p style="font-size:13px;"> To provide review, you have to login first.</p></span>
+                <span> To provide review, you have to login first.</span>
                 <section>
                     <a href="LogIn&SignUp.jsp"><button class="header-btn alertBtn">Login</button></a>
                     <button class="header-btn alertBtn" id="alertClose">Remind me later</button>
