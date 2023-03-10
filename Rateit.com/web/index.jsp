@@ -32,20 +32,20 @@
         %>
 
         <%
-            if(customer == null){
+            if(msg != null){
         %>
             <div id="loginCheckContainer">
             
             <div id="loginCheck">
-                <span> To provide review, you have to login first.</span>
+                <span><%=msg.getMsg_name() %></span>
                 <section>
-                <a href="LogIn&SignUp.jsp"><button class="header-btn alertBtn"> Login </button></a>
-                <button class="header-btn alertBtn" id="alertClose"> Remind me later </button>
+                    <a href="LogIn&SignUp.jsp"><button class="header-btn alertBtn">Login</button></a>
+                    <button class="header-btn alertBtn" id="alertClose">Remind me later</button>
                 </section>
             </div>
         </div>
         <%  
-        }%>
+        }session.removeAttribute("Message"); %>
         
         <header>
             <nav>
@@ -241,7 +241,7 @@
                         </div>
                     </section>
 
-                    <button class="btn compareBtn">Compare Now</button>
+                        <a href="CheckForLogin"><button class="btn compareBtn">Compare Now</button></a>
 
                 </div>
                 <%}%>
