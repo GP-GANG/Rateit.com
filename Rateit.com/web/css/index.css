@@ -767,6 +767,9 @@
                 }
             }
 
+            .compareBtn{
+                cursor: pointer;
+            }
             #profile_div {
                 position: fixed;
                 top: 15%;
@@ -807,4 +810,5 @@
                 padding:4px;
                 margin-bottom:10px;
                 height:30px;
+                cursor: pointer;
             }

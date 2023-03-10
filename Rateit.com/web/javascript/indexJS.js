@@ -1,7 +1,8 @@
             $(document).ready(function(){ 
                 $("#profile_div").load("profile.jsp");
                 document.getElementById("search-logo").style.left = document.getElementById("search").getBoundingClientRect().x + 40 +"px";
-                
+                $("#loginCheck").css("display","none");
+                    $("#loginCheckContainer").css({"zIndex":"-2", "opacity":"0"});
                 $("#alertClose").click(function(){
                     $("#loginCheck").css("display","none");
                     $("#loginCheckContainer").css({"zIndex":"-2", "opacity":"0"});
@@ -21,9 +22,11 @@
                     $("#loginCheckContainer").css({"zIndex":"2", "opacity":"1"});
                     }
                     else{
-                        window.location.assign("poll_review_page.jsp")
+                        window.location.assign("poll_review_page.jsp?a=10")
                     }
-                });
+                }).fail(function(){
+                    alert("Some error occured");
+                })
             });
             let searchlogo = 750;
 
