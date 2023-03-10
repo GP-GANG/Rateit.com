@@ -239,8 +239,8 @@
                         </div>
                     </section>
 
-                    <button class="btn compareBtn">Compare Now</button>
-
+                        <button class="btn compareBtn" value="<%=p.getPOLL_ID()%>">Compare Now</button>
+                    
                 </div>
                 <%}%>
                 <!-- Ratings and star code completes -->

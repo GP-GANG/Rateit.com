@@ -14,7 +14,7 @@
             $(".compareBtn").click(function(){
                 
                 // Ajax call to check for validation
-                
+                let query = this.value;
                 $.post("CheckForLogin",function(response){
                     console.log(response)
                     if(response == false){
@@ -22,7 +22,8 @@
                     $("#loginCheckContainer").css({"zIndex":"2", "opacity":"1"});
                     }
                     else{
-                        window.location.assign("poll_review_page.jsp?a=10")
+                        
+                        window.location.assign("poll_review_page.jsp?a="+query);
                     }
                 }).fail(function(){
                     alert("Some error occured");
