@@ -11,6 +11,19 @@
     </head>
     
     <body>
+        
+         <span id="showError">
+             <%
+    Message message =(Message)session.getAttribute("Message");
+    if(message != null){
+
+%>
+<p><%=message.getMsg_name() %></p>
+<%}
+session.removeAttribute("Message");
+%>
+        </span>
+        
         <div class="main_container">
             
               <span id="showError">

@@ -112,6 +112,11 @@
         #Profile_loading{
             display:none;
         }
+        td,#profile_title span,span a,.profile_btn{
+                            font-family: 'Unbounded', cursive;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-size:calc(+1);
+        }
     </style>
 </head>
 

@@ -781,12 +781,13 @@
                 width:100vw;
                 /*background-color: gray;*/
                 /*opacity:0.4;*/
-                position:absolute;
+                position:fixed;
                 left:0; top:0;
-                /*z-index:0;*/
+                z-index:-2;
                 display:flex;
                 justify-content: center;
                 align-items: center;
+                opacity: 0;
             }
             #loginCheck{
                 height:200px;
@@ -799,7 +800,7 @@
                 padding:30px;
                 z-index:4;
             }
-            #loginCheck section{
+            #loginCheck span{
                 width:70%;
             }
             #loginCheck button{

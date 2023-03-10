@@ -4,13 +4,27 @@
                 
                 $("#alertClose").click(function(){
                     $("#loginCheck").css("display","none");
+                    $("#loginCheckContainer").css({"zIndex":"-2", "opacity":"0"});
                 });
                 
                 
             });
-            
-            
-            
+
+            $(".compareBtn").click(function(){
+                
+                // Ajax call to check for validation
+                
+                $.post("CheckForLogin",function(response){
+                    console.log(response)
+                    if(response == false){
+                    $("#loginCheck").css("display","flex");
+                    $("#loginCheckContainer").css({"zIndex":"2", "opacity":"1"});
+                    }
+                    else{
+                        window.location.assign("poll_review_page.jsp")
+                    }
+                });
+            });
             let searchlogo = 750;
 
 //            window.addEventListener("DOMContentLoaded", () => {
