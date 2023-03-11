@@ -36,6 +36,14 @@
         <servlet-name>CheckForLogin</servlet-name>
         <servlet-class>rateit.servlets.CheckForLogin</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SubmitReview</servlet-name>
+        <servlet-class>rateit.entities.SubmitReview</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Company_update_profile</servlet-name>
+        <servlet-class>rateit.servlets.Company_update_profile</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SignUp</servlet-name>
         <url-pattern>/SignUp</url-pattern>
@@ -72,9 +80,17 @@
         <servlet-name>CheckForLogin</servlet-name>
         <url-pattern>/CheckForLogin</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SubmitReview</servlet-name>
+        <url-pattern>/SubmitReview</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Company_update_profile</servlet-name>
+        <url-pattern>/Company_update_profile</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
-        30
+        1200
     </session-timeout>
     </session-config>
 </web-app>

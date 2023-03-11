@@ -27,7 +27,7 @@
     <% }
     session.removeAttribute("Message");
     %>
-            
+            </span>
             <div class="form-box">
                        
                 <div class="button-box">

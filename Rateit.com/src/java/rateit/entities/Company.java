@@ -22,10 +22,12 @@ public class Company {
     private String COMPANY_URL;
     private long COMPANY_PHONE;
     private int COMPANY_RATE;
+    private String COMPANY_DESC;
+    
     public Company() {
     }
 
-    public Company(int COMPANY_ID, String COMPANY_NAME, String COMPANY_MAIL, String COMPANY_LOGIN, String COMPANY_PASSWORD, String CATEGORY, int RANK, int POLL, int ACP_COUNT, int SCP_COUNT, Timestamp JOIN_DATE, boolean CURRENT_POLL_STATUS, Blob COMPANY_IMG, String COMPANY_URL, long COMPANY_PHONE, int COMPANY_RATE) {
+    public Company(int COMPANY_ID, String COMPANY_NAME, String COMPANY_MAIL, String COMPANY_LOGIN, String COMPANY_PASSWORD, String CATEGORY, int RANK, int POLL, int ACP_COUNT, int SCP_COUNT, Timestamp JOIN_DATE, boolean CURRENT_POLL_STATUS, Blob COMPANY_IMG, String COMPANY_URL, long COMPANY_PHONE, int COMPANY_RATE, String COMPANY_DESC) {
         this.COMPANY_ID = COMPANY_ID;
         this.COMPANY_NAME = COMPANY_NAME;
         this.COMPANY_MAIL = COMPANY_MAIL;
@@ -42,7 +44,9 @@ public class Company {
         this.COMPANY_URL = COMPANY_URL;
         this.COMPANY_PHONE = COMPANY_PHONE;
         this.COMPANY_RATE = COMPANY_RATE;
+        this.COMPANY_DESC = COMPANY_DESC;
     }
+
 
     
     public Company(String COMPANY_NAME, String COMPANY_MAIL, String COMPANY_PASSWORD, String COMPANY_URL, long COMPANY_PHONE) {
@@ -183,6 +187,14 @@ public class Company {
 
     public void setCOMPANY_RATE(int COMPANY_RATE) {
         this.COMPANY_RATE = COMPANY_RATE;
+    }
+
+    public String getCOMPANY_DESC() {
+        return COMPANY_DESC;
+    }
+
+    public void setCOMPANY_DESC(String COMPANY_DESC) {
+        this.COMPANY_DESC = COMPANY_DESC;
     }
     
     

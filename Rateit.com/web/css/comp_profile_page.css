@@ -8,22 +8,16 @@
 }
 
 .profile_container {
-    background-color: transparent;
-    height: 100vh;
-    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .block {
     background-color: white;
-    height: 530px;
-    width: 650px;
-}
-
-h1 {
-    margin-left: 140px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-weight: 500;
-    font-size: 30px;
+    width: 60%;
 }
 
 h2 {
@@ -48,8 +42,7 @@ h2 {
 table {
     height: 300px;
     width: 70%;
-    margin-left: 7%;
-    margin-top: 30px;
+    margin-top: 50px;
     margin-bottom: 40px;
     border-bottom: 1px solid black;
 }
@@ -64,14 +57,8 @@ table {
     width: 50%;
 }
 
-.profile_btn {
-    height: 30px;
-    width: 110px;
-    font-size: 13px;
-    background-color: rgb(237, 75, 75);
-    color: white;
-    border: none;
-    letter-spacing: 1px;
+#btn-box {
+    margin: 7% 17% 1% 17%;
 }
 
 #profile_edit_btn {
@@ -82,4 +69,65 @@ table {
     border: none;
     outline: none;
     background-color: white;
+}
+
+#services {
+    width: 145%;
+}
+
+#add-text {
+    width: 78%;
+    height: 27px;
+}
+
+.profile_btn,
+.selector button {
+    background-color: rgb(237, 75, 75);
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+.profile_btn:hover, .selector button:hover{
+    background-color: rgb(179, 23, 23);
+}
+
+.profile_btn {
+    height: 40px;
+    width: 25%;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.selector button {
+    height: 27px;
+    width: 20%;
+}
+
+@media (max-width: 900px) {
+    .profile_container {
+        flex-direction: column;
+    }
+
+    .block {
+        width: 100%;
+        padding-left: 20%;
+    }
+
+    #btn-box {
+        margin: 7% 7% 2% 7%;
+    }
+}
+
+@media(max-width: 650px) {
+    .block {
+        padding-left: 5%;
+    }
+}
+
+#addnewDiv{
+    display: none;
+}
+#save_btn{
+    display:none;
 }

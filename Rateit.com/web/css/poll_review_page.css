@@ -13,12 +13,12 @@
         }
 
         .container {
-            display: grid;
+            width: 50%;
             height: 100%;
             border: 1.5px solid black;
             border-radius: 5px;
             box-shadow: 5px 5px 5px lightgray;
-            margin: 20px 20px 20px 20px;
+            margin: 20px 20px 20px 25%;
             grid-template-columns: 1fr 1fr;
             background-image:linear-gradient(to left, rgba(247, 211, 211, 0.301) 10%,rgba(183, 229, 243, 0.37) 65%);
             box-sizing: border-box;
@@ -30,14 +30,15 @@
             position: relative;
             background-color: transparent;
             margin-top: 10px;
+            padding-bottom: 50px;
+            border-bottom: 4px solid black;
         }
 
         #section2 {
             /* background-image:  linear-gradient(rgba(238, 130, 238, 0.242),rgba(0, 149, 255, 0.292)); */
-            border-left: 1px solid black;
             position: relative;
             background-color: transparent;
-            margin-top: 10px;
+            margin-top: 40px;
         }
 
         .logo-name-box {
@@ -84,12 +85,11 @@
         }
 
         .description {
-            margin: 20px 10px 0px 10px;
+            margin: 20px 10px -40px 10px;
             padding-bottom: 10px;
             color: rgb(44, 44, 44);
             font-size: 15px;
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            border-bottom: 1px solid black;
         }
 
         .c-service {
@@ -121,7 +121,6 @@
             letter-spacing: 0.5px;
             font-weight: bold;
             font-size: 16px;
-
         }
 
         tr {
@@ -131,11 +130,11 @@
         #comm-box {
             margin-top: 20px;
             margin-left: 5%;
-            
         }
 
         textarea {
             margin-top: 10px;
+            width: 120%;
             border: none;
             resize: none;
             box-shadow: 0.2px 0.2px 2px black;
@@ -161,7 +160,7 @@
             margin: 0px 10px;
             margin-bottom: 25px;
             top: 15px;
-            left: 66%;
+            left: 17%;
             border: none;
             border-radius: 3px;
             letter-spacing: 2px;

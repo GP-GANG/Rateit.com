@@ -71,6 +71,7 @@ public class Company_database {
                 cmp.setCOMPANY_PHONE(set.getLong("COMPANY_PHONE"));
                 cmp.setCOMPANY_IMG(set.getBlob("COMPANY_IMG"));
                 cmp.setCOMPANY_RATE(set.getInt("COMPANY_RATE"));
+                cmp.setCOMPANY_DESC(set.getString("COMPANY_DESC"));
 
             }
 
@@ -110,14 +111,17 @@ public class Company_database {
                 cmp.setCOMPANY_PHONE(set.getLong("COMPANY_PHONE"));
                 cmp.setCOMPANY_IMG(set.getBlob("COMPANY_IMG"));
                 cmp.setCOMPANY_RATE(set.getInt("COMPANY_RATE"));
+                cmp.setCOMPANY_DESC(set.getString("COMPANY_DESC"));
+
                 list.add(cmp);
             }
 
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        catch(Exception e){e.printStackTrace();}
-         return list;
+        return list;
     }
-    
+
     public Company getCompanyByName(String COMPANY_NAME) {
         Company cmp = null;
         try {
@@ -125,8 +129,7 @@ public class Company_database {
 
             PreparedStatement stmt = this.con.prepareStatement(query);
 
-            stmt.setString(1,COMPANY_NAME);
-  
+            stmt.setString(1, COMPANY_NAME);
 
             ResultSet set = stmt.executeQuery();
 
@@ -150,6 +153,7 @@ public class Company_database {
                 cmp.setCOMPANY_PHONE(set.getLong("COMPANY_PHONE"));
                 cmp.setCOMPANY_IMG(set.getBlob("COMPANY_IMG"));
                 cmp.setCOMPANY_RATE(set.getInt("COMPANY_RATE"));
+                cmp.setCOMPANY_DESC(set.getString("COMPANY_DESC"));
 
             }
 
@@ -160,7 +164,7 @@ public class Company_database {
         return cmp;
 
     }
-    
+
     public Blob getCompanyImage(String COMPANY_NAME) {
         Blob blob = null;
 
@@ -177,5 +181,27 @@ public class Company_database {
             e.printStackTrace();
         }
         return blob;
+    }
+    
+ public boolean UpdateCompanyProfile(String COMPANY_NAME, String COMPANY_MAIL,int COMPANY_ID) {
+        boolean f = false;
+        try {
+            String query = "update company set COMPANY_NAME=? ,COMPANY_MAIL=? where COMPANY_ID=?";
+
+            PreparedStatement stmt = this.con.prepareStatement(query);
+            stmt.setString(1, COMPANY_NAME);
+            stmt.setString(2, COMPANY_MAIL);
+            stmt.setInt(3, COMPANY_ID);
+
+            if (stmt.executeUpdate() > 0) {
+                f = true;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return f;
+
     }
 }
