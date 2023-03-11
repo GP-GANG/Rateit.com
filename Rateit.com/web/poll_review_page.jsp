@@ -26,7 +26,7 @@
     Company_services_database csd = new Company_services_database(ConnectionProvider.getConnection());
     ArrayList<Company_services> list1 = csd.getAllCategories(cmp1.getCOMPANY_ID());
     ArrayList<Company_services> list2 = csd.getAllCategories(cmp2.getCOMPANY_ID());
-    int temp1 = 0;
+    int temp1 = 1;
     int temp2 = 11;
 %>
 <!DOCTYPE html>
@@ -80,14 +80,14 @@
                                 <td><%=cmp1_s.getCATEGORY()%></td>
                                 <td>
                                     <div id="r1">
-                                        <input type="checkbox" name="<%=temp1%>" id="c1r1s1" value="1"> <label for="c1r1s1"><i class="fa-regular fa-star"></i></label>
-                                        <input type="checkbox" name="<%=temp1%>" id="c1r1s2" value="2"> <label for="c1r1s2"> <i class="fa-regular fa-star"></i>
+                                        <input type="checkbox" name="c<%=temp1%>" id="c1r<%=temp1%>s1" value="1"> <label for="c1r<%=temp1%>s1"><i class="fa-regular fa-star"></i></label>
+                                        <input type="checkbox" name="c<%=temp1%>" id="c1r<%=temp1%>s2" value="2"> <label for="c1r<%=temp1%>s2"> <i class="fa-regular fa-star"></i>
                                         </label>
-                                        <input type="checkbox" name="<%=temp1%>" id="c1r1s3" value="3"> <label for="c1r1s3"> <i class="fa-regular fa-star"></i>
+                                        <input type="checkbox" name="c<%=temp1%>" id="c1r<%=temp1%>s3" value="3"> <label for="c1r<%=temp1%>s3"> <i class="fa-regular fa-star"></i>
                                         </label>
-                                        <input type="checkbox" name="<%=temp1%>" id="c1r1s4" value="4" on> <label for="c1r1s4"> <i class="fa-regular fa-star"></i>
+                                        <input type="checkbox" name="c<%=temp1%>" id="c1r<%=temp1%>s4" value="4" on> <label for="c1r<%=temp1%>s4"> <i class="fa-regular fa-star"></i>
                                         </label>
-                                        <input type="checkbox" name="<%=temp1%>" id="c1r1s5" value="5" on> <label for="c1r1s5"> <i class="fa-regular fa-star"></i>
+                                        <input type="checkbox" name="c<%=temp1%>" id="c1r<%=temp1%>s5" value="5" on> <label for="c1r<%=temp1%>s5"> <i class="fa-regular fa-star"></i>
                                         </label>
                                     </div>
                                 </td>
@@ -134,14 +134,14 @@
                                 <td><b><%=cmp2_s.getCATEGORY()%></b></td>
                                 <td>
                                     <div id="r1">
-                                        <input type="checkbox" name="<%=temp2%>" id="c2r1s1" value="1"> <label for="c2r1s1"><i class="fa-regular fa-star"></i></label>
-                                        <input type="checkbox" name="<%=temp2%>" id="c2r1s2" value="2"> <label for="c2r1s2"> <i class="fa-regular fa-star"></i>
+                                        <input type="checkbox" name="c<%=temp2%>" id="c2r<%=temp2%>s1" value="1"> <label for="c2r<%=temp2%>s1"><i class="fa-regular fa-star"></i></label>
+                                        <input type="checkbox" name="c<%=temp2%>" id="c2r<%=temp2%>s2" value="2"> <label for="c2r<%=temp2%>s2"> <i class="fa-regular fa-star"></i>
                                         </label>
-                                        <input type="checkbox" name="<%=temp2%>" id="c2r1s3" value="3"> <label for="c2r1s3"> <i class="fa-regular fa-star"></i>
+                                        <input type="checkbox" name="c<%=temp2%>" id="c2r<%=temp2%>s3" value="3"> <label for="c2r<%=temp2%>s3"> <i class="fa-regular fa-star"></i>
                                         </label>
-                                        <input type="checkbox" name="<%=temp2%>" id="c2r1s4" value="4" on> <label for="c2r1s4"> <i class="fa-regular fa-star"></i>
+                                        <input type="checkbox" name="c<%=temp2%>" id="c2r<%=temp2%>s4" value="4" on> <label for="c2r<%=temp2%>s4"> <i class="fa-regular fa-star"></i>
                                         </label>
-                                        <input type="checkbox" name="<%=temp2%>" id="c2r1s5" value="5" on> <label for="c2r1s5"> <i class="fa-regular fa-star"></i>
+                                        <input type="checkbox" name="c<%=temp2%>" id="c2r<%=temp2%>s5" value="5" on> <label for="c2r<%=temp2%>s5"> <i class="fa-regular fa-star"></i>
                                         </label>
                                     </div>
 
@@ -193,22 +193,22 @@
 
 
                 rates[0] = 0;
-                rates[1] = document.getElementsByName('1');
-                rates[2] = document.getElementsByName('2');
-                rates[3] = document.getElementsByName('3');
-                rates[4] = document.getElementsByName('4');
-                rates[5] = document.getElementsByName('5');
-                rates[6] = document.getElementsByName('11');
-                rates[7] = document.getElementsByName('12');
-                rates[8] = document.getElementsByName('13');
-                rates[9] = document.getElementsByName('14');
-                rates[10] = document.getElementsByName('15');
+                rates[1] = document.getElementsByName('c1');
+                rates[2] = document.getElementsByName('c2');
+                rates[3] = document.getElementsByName('c3');
+                rates[4] = document.getElementsByName('c4');
+                rates[5] = document.getElementsByName('c5');
+                rates[6] = document.getElementsByName('c11');
+                rates[7] = document.getElementsByName('c12');
+                rates[8] = document.getElementsByName('c13');
+                rates[9] = document.getElementsByName('c14');
+                rates[10] = document.getElementsByName('c15');
 
 
                 console.log(rates)
                 $("input").change(function (a) {
 
-                    var index = a.target.name.substr(0, 2);
+                    var index = a.target.name.substr(1, 2);
                     index = index > 10 ? index -5 : index;
                     console.log(index)
 

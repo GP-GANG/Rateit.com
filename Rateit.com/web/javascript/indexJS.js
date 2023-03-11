@@ -11,6 +11,10 @@
                 
             });
 
+                
+            if($(window).width() < 800){
+                
+            }
             $(".compareBtn").click(function(){
                 
                 // Ajax call to check for validation

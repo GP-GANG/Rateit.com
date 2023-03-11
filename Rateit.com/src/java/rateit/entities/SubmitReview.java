@@ -49,18 +49,29 @@ public class SubmitReview extends HttpServlet {
             String review1 = request.getParameter("review1");
             String review2 = request.getParameter("review2");
             
-            int[] ratings1= new int[10];
-            int i=1;
-            while(ratings1[i] != 0){
+//            int[] ratings1= new int[10];
+//            int i=1;
+//            while(ratings1[i] != 0){
+//            
+////                 out.println(request.getParameter("c"+i));
+////                i++;
+//            }
+//            
+//            out.println(ratings1[0]);
+//            out.println(ratings1[1]);
+//            out.println(ratings1[2]);
             
-                 ratings1[i] = Integer.parseInt(request.getParameter(Integer.toString(i)));
+int [] ratings = new int[10];
+            int i=1;
+            while( i < 10 && (request.getParameter("c"+i) != null )){
+                ratings[i] = Integer.parseInt(request.getParameter("c"+i));
+                 out.println(request.getParameter("c"+i));
                 i++;
             }
-            
-            out.println(ratings1[0]);
-            out.println(ratings1[1]);
-            out.println(ratings1[2]);
-            
+//            out.println(ratings[1]);
+//            out.println(ratings[2]);
+//            out.println(ratings[3]);
+                
             Poll_database pd = new Poll_database(ConnectionProvider.getConnection());
             Poll p= pd.getPoll(POLL_ID);
             Company_database cd = new Company_database(ConnectionProvider.getConnection());
