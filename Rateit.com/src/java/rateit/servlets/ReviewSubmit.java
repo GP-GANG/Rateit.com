@@ -2,6 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
+package rateit.servlets;
 
 import dbclasses.Company_database;
 import dbclasses.Company_services_database;
@@ -22,7 +23,11 @@ import rateit.entities.Poll;
 import rateit.entities.Review;
 import rateit.helper.ConnectionProvider;
 
-public class SubmitReview extends HttpServlet {
+/**
+ *
+ * @author Dell
+ */
+public class ReviewSubmit extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -32,10 +37,10 @@ public class SubmitReview extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet SubmitReview</title>");
+            out.println("<title>Servlet ReviewSubmit</title>");            
             out.println("</head>");
             out.println("<body>");
-            /*-----------------------fetchig parameters from poll review page --------------------*/
+                        /*-----------------------fetchig parameters from poll review page --------------------*/
             int POLL_ID = Integer.parseInt(request.getParameter("POLL_ID"));
 
             String review1 = request.getParameter("review1");
@@ -82,6 +87,9 @@ public class SubmitReview extends HttpServlet {
 //                }
 //                
 //            }
+            
+            
+            
             out.println("</body>");
             out.println("</html>");
         }

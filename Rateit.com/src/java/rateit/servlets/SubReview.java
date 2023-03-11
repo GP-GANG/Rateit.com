@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
 
 import dbclasses.Company_database;
 import dbclasses.Company_services_database;
@@ -22,7 +18,7 @@ import rateit.entities.Poll;
 import rateit.entities.Review;
 import rateit.helper.ConnectionProvider;
 
-public class SubmitReview extends HttpServlet {
+public class SubReview extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -41,16 +37,6 @@ public class SubmitReview extends HttpServlet {
             String review1 = request.getParameter("review1");
             String review2 = request.getParameter("review2");
 
-            int[] ratings = new int[10];
-            int i = 1;
-            while (i < 10 && (request.getParameter("c" + i) != null)) {
-                ratings[i] = Integer.parseInt(request.getParameter("c" + i));
-                i++;
-            }
-
-            int ii = 1;
-            boolean f = true;
-
             Poll_database pd = new Poll_database(ConnectionProvider.getConnection());
             Poll p = pd.getPoll(POLL_ID);
             Company_database cd = new Company_database(ConnectionProvider.getConnection());
@@ -62,16 +48,27 @@ public class SubmitReview extends HttpServlet {
             Company_services_database csd = new Company_services_database(ConnectionProvider.getConnection());
             ArrayList<Company_services> list1 = csd.getAllCategories(cmp1.getCOMPANY_ID());
 
+            
+            
+             int[] ratings = new int[10];
+            int i = 1;
+            while (i < 10 && (request.getParameter("c" + i) != null)) {
+                ratings[i] = Integer.parseInt(request.getParameter("c" + i));
+                i++;
+            }
+            int ii = 1;
+            
             for (int l = 0; ratings[ii] != 0; ii++) {
-                Company_services e = list1.get(ii);
+                Company_services e = list1.get(l);
                 if (ii == 1) {
                     Review r = new Review(p.getPOLL_ID(), cmp1.getCOMPANY_ID(), customer.getUSER_ID(), e.getCOMPANY_SERVICES(), review1, ratings[ii]);
                     if(rd.submitReview(r)){
-                        out.println("1");}
+                        out.println("1st");}
                 }
 
                 Review r = new Review(p.getPOLL_ID(), cmp1.getCOMPANY_ID(), customer.getUSER_ID(), e.getCOMPANY_SERVICES(), ratings[ii]);
-
+                if(rd.submitReview(r)){
+                        out.println("1");}
             }
 
 //            for(Company_services e : list1){

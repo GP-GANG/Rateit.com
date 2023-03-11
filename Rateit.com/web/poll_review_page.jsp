@@ -47,7 +47,7 @@
 
     <body>
 
-        <form action="SubmitReview?POLL_ID=<%=p.getPOLL_ID()%>" method="post">
+        <form action="ReviewSubmit?POLL_ID=<%=p.getPOLL_ID()%>" method="post">
             <main class="container">
                 <section id="section1">
 
