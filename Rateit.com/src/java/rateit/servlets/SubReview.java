@@ -57,18 +57,19 @@ public class SubReview extends HttpServlet {
                 i++;
             }
             int ii = 1;
-            
-            for (int l = 0; ratings[ii] != 0; ii++) {
+            int l;
+            for (l = 0; (list1.size())>= l; ii++,l++) {
                 Company_services e = list1.get(l);
                 if (ii == 1) {
                     Review r = new Review(p.getPOLL_ID(), cmp1.getCOMPANY_ID(), customer.getUSER_ID(), e.getCOMPANY_SERVICES(), review1, ratings[ii]);
                     if(rd.submitReview(r)){
-                        out.println("1st");}
+                        out.println("one senu che");}
                 }
-
+                else{
                 Review r = new Review(p.getPOLL_ID(), cmp1.getCOMPANY_ID(), customer.getUSER_ID(), e.getCOMPANY_SERVICES(), ratings[ii]);
                 if(rd.submitReview(r)){
-                        out.println("1");}
+                        out.println("done");}
+                }
             }
 
 //            for(Company_services e : list1){

@@ -37,24 +37,14 @@ public class ReviewSubmit extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet ReviewSubmit</title>");            
+            out.println("<title>Servlet ReviewSubmit</title>");
             out.println("</head>");
             out.println("<body>");
-                        /*-----------------------fetchig parameters from poll review page --------------------*/
+            /*-----------------------fetchig parameters from poll review page --------------------*/
             int POLL_ID = Integer.parseInt(request.getParameter("POLL_ID"));
 
             String review1 = request.getParameter("review1");
             String review2 = request.getParameter("review2");
-
-            int[] ratings = new int[10];
-            int i = 1;
-            while (i < 10 && (request.getParameter("c" + i) != null)) {
-                ratings[i] = Integer.parseInt(request.getParameter("c" + i));
-                i++;
-            }
-
-            int ii = 1;
-            boolean f = true;
 
             Poll_database pd = new Poll_database(ConnectionProvider.getConnection());
             Poll p = pd.getPoll(POLL_ID);
@@ -66,30 +56,54 @@ public class ReviewSubmit extends HttpServlet {
             Review_database rd = new Review_database(ConnectionProvider.getConnection());
             Company_services_database csd = new Company_services_database(ConnectionProvider.getConnection());
             ArrayList<Company_services> list1 = csd.getAllCategories(cmp1.getCOMPANY_ID());
+            ArrayList<Company_services> list2 = csd.getAllCategories(cmp2.getCOMPANY_ID());
 
-            for (int l = 0; ratings[ii] != 0; ii++) {
-                Company_services e = list1.get(ii);
+            int[] ratings = new int[10];
+            int i = 1;
+            while (i < 10 && (request.getParameter("c" + i) != null)) {
+                ratings[i] = Integer.parseInt(request.getParameter("c" + i));
+                i++;
+            }
+            int ii = 1;
+            int l;
+            for (l = 0; l<list1.size(); ii++, l++) {
+                Company_services e = list1.get(l);
                 if (ii == 1) {
                     Review r = new Review(p.getPOLL_ID(), cmp1.getCOMPANY_ID(), customer.getUSER_ID(), e.getCOMPANY_SERVICES(), review1, ratings[ii]);
-                    if(rd.submitReview(r)){
-                        out.println("1");}
+                    if (rd.submitReview(r)) {
+                        out.println("11");
+                    }
+                } else {
+                    Review r = new Review(p.getPOLL_ID(), cmp1.getCOMPANY_ID(), customer.getUSER_ID(), e.getCOMPANY_SERVICES(), ratings[ii]);
+                    if (rd.submitReview(r)) {
+                        out.println("1");
+                    }
                 }
-
-                Review r = new Review(p.getPOLL_ID(), cmp1.getCOMPANY_ID(), customer.getUSER_ID(), e.getCOMPANY_SERVICES(), ratings[ii]);
-
+            }
+       i=11;     
+       ii=1;
+       
+      while (i < 10 && (request.getParameter("c" + i) != null)) {
+                ratings[i] = Integer.parseInt(request.getParameter("c" + i));
+                i++;
+            }
+               for (l = 0; l<list2.size(); ii++,l++) {
+                   
+                Company_services e = list2.get(l);
+                if (ii == 1) {
+                    Review r1 = new Review(p.getPOLL_ID(), cmp2.getCOMPANY_ID(), customer.getUSER_ID(), e.getCOMPANY_SERVICES(), review2, ratings[ii]);
+                    if (rd.submitReview(r1)) {
+                        out.println("11");
+                    }
+                } else {
+                    Review r2 = new Review(p.getPOLL_ID(), cmp2.getCOMPANY_ID(), customer.getUSER_ID(), e.getCOMPANY_SERVICES(), ratings[ii]);
+                    if (rd.submitReview(r2)) {
+                        out.println("1");
+                    }
+                }
             }
 
-//            for(Company_services e : list1){
-//                
-//                if(f){
-//            Review r = new Review(p.getPOLL_ID(),cmp1.getCOMPANY_ID(),customer.getUSER_ID(),e.getCOMPANY_SERVICES(),review1,ratings[1]);
-//              f =false;
-//                }
-//                
-//            }
-            
-            
-            
+
             out.println("</body>");
             out.println("</html>");
         }
