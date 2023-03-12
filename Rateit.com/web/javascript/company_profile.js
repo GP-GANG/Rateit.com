@@ -21,10 +21,6 @@ $(document).ready(function(){
 
 });
 
-//function closeProfile() {
-//                document.querySelector(".container").style.opacity = "1";
-//                document.getElementById("profile_div").style.display = "none";
-//            }
 
             function saveProfile() {
                 let arr = document.getElementsByClassName("profile_input");
@@ -32,20 +28,19 @@ $(document).ready(function(){
                 for (var i = 0; i < arr.length; i++) {
                     arr[i].setAttribute("disabled", "true");
                     arr[i].style.border = "none";
-                    // console.log(arr[i])
                 }
-//                $("#Profile_loading").show("slow");
                 $("#addnewDiv").hide(500); 
+
+                
                 updateData();
                 document.getElementById("save_btn").style.display = "none";
-//                document.getElementById("newImageContainer").style.display = "none";
                 $("#profile_edit_btn").show();
             }
 
             function editProfile() {
                 let arr = document.getElementsByClassName("editable");
-                 console.log(arr);
-//                document.getElementById("save_btn").style.display = "block";
+                console.log(arr);
+                 
                 for (var i = 0; i < arr.length; i++) {
                     arr[i].removeAttribute("disabled");
                     arr[i].style.borderBottom = "1px solid black";
@@ -53,17 +48,25 @@ $(document).ready(function(){
                 }
                   $("#addnewDiv").show(500);         
                 document.getElementById("profile_edit_btn").style.display = "none";
-                 document.getElementById("save_btn").style.display = "block";
-//                document.getElementById("newImageContainer").style.display = "table-row";
+                document.getElementById("save_btn").style.display = "block";
+
             }
 
             function updateData(){
                 
                 const name = document.getElementById("name").value;
                 const email = document.getElementById("email").value;
-                const category = document.getElementById("category").value;
-                let services = document.getElementsByName("services").value;
+                let category = document.getElementById("category").value;
+                let services = new Array();
                 
+                (document.getElementsByName("services")).forEach((val,i)=>{
+                        if(val.checked)
+                        services.push(val.value);
+                });
+                
+                services = services.join(",");
+                
+                console.log(services)
                 $.post("Company_Profile_Update",
                        {"name":name,
                         "email":email,
@@ -74,32 +77,3 @@ $(document).ready(function(){
                 });
             }
         
-//            function updateData(){
-//                const name = document.getElementById("name").value;
-//                const image = document.getElementById("get_profile_pic");
-//                
-//                let form = new FormData();
-//                if(image.files.length !== 0)
-//                form.append('profile_image',image.files[0]);
-//                form.append('name',name);
-//                
-//                let xhr = new XMLHttpRequest();
-//                xhr.open("post","Update_user_profile");
-//                xhr.send(form);
-//                
-//                xhr.upload.onerror = function(){
-//                    console.log("some Error occured")
-//                }
-//                xhr.upload.onloadend = function(){
-//                    console.log("success")
-//                }
-//                xhr.onreadystatechange = function(){
-//                    if(xhr.readyState == 4){
-//                        $("#Profile_loading").hide("slow");
-//                        document.getElementById("profile_edit_btn").style.display = "block";
-//                        document.getElementById("save_btn").style.display = "none";
-//                        alert("Profile Updated");
-//                        window.location.assign(window.location.href);
-//                    }
-//                }
-//            }

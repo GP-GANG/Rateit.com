@@ -30,7 +30,14 @@ public class Company_Profile_Update extends HttpServlet {
             
             out.println("Profile updated");
             
+            out.println( "name = " +request.getParameter("name"));
+            out.println( "email = " +request.getParameter("email"));
+            out.println( "category = " +request.getParameter("category"));
             
+            String val = request.getParameter("services");
+            String aa[]=val.split(",");
+            for(String x : aa )
+            out.println(x);
             
             
             out.println("</body>");
