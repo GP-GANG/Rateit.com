@@ -59,7 +59,7 @@ public class ReviewSubmit extends HttpServlet {
             ArrayList<Company_services> list2 = csd.getAllCategories(cmp2.getCOMPANY_ID());
 
                         /*------------------------------getting ratings of company1----------------------*/
-            int[] ratings = new int[10];
+            int[] ratings = new int[30];
             int i = 1;
             while (i < 10 && (request.getParameter("c" + i) != null)) {
                 ratings[i] = Integer.parseInt(request.getParameter("c" + i));
@@ -84,25 +84,26 @@ public class ReviewSubmit extends HttpServlet {
                 }
             }
             
-       i=11;     
-       ii=1;
+//       i=11;     
+//       ii=1;
+ int j =11;
                   /*------------------------------getting ratings of company2-----------------------------*/
-      while (i < 10 && (request.getParameter("c" + i) != null)) {
-                ratings[i] = Integer.parseInt(request.getParameter("c" + i));
-                i++;
+      while (j < 20 && (request.getParameter("c" + j) != null)) {
+                ratings[j] = Integer.parseInt(request.getParameter("c" + j));
+                j++;
             }
                   /*----------------------------------submitting review of company2-------------------------*/
-
-               for (l = 0; l<list2.size(); ii++,l++) {
+j =11;
+               for (l = 0; l<list2.size(); j++,l++) {
                    
                 Company_services e = list2.get(l);
-                if (ii == 1) {
-                    Review r1 = new Review(p.getPOLL_ID(), cmp2.getCOMPANY_ID(), customer.getUSER_ID(), e.getCOMPANY_SERVICES(), review2, ratings[ii]);
+                if (j == 11) {
+                    Review r1 = new Review(p.getPOLL_ID(), cmp2.getCOMPANY_ID(), customer.getUSER_ID(), e.getCOMPANY_SERVICES(), review2, ratings[j]);
                     if (rd.submitReview(r1)) {
                         out.println("11");
                     }
                 } else {
-                    Review r2 = new Review(p.getPOLL_ID(), cmp2.getCOMPANY_ID(), customer.getUSER_ID(), e.getCOMPANY_SERVICES(), ratings[ii]);
+                    Review r2 = new Review(p.getPOLL_ID(), cmp2.getCOMPANY_ID(), customer.getUSER_ID(), e.getCOMPANY_SERVICES(), ratings[j]);
                     if (rd.submitReview(r2)) {
                         out.println("1");
                     }
