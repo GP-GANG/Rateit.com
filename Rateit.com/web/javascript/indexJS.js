@@ -32,7 +32,7 @@
                     $("#errMsg").text(" You have already submitted review.");
                     $("#loginCheck").css("display","flex");
                     $("#loginCheckContainer").css({"zIndex":"2", "opacity":"1"});
-                    $("#errBtn2").text("Close");
+                    $("#alertClose").text("Close");
                     $("#errBtn1").css("display","none");
                            } 
                            else{
