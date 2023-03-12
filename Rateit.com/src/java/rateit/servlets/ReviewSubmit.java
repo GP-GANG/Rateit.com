@@ -109,7 +109,7 @@ j =11;
                     }
                 }
             }
-             response.sendRedirect("poll_review_page.jsp?a="+p.getPOLL_ID());
+             response.sendRedirect("submitted.jsp");
 
             out.println("</body>");
             out.println("</html>");
