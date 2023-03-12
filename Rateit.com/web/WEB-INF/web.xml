@@ -52,6 +52,10 @@
         <servlet-name>ReviewSubmit</servlet-name>
         <servlet-class>rateit.servlets.ReviewSubmit</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CheckReview</servlet-name>
+        <servlet-class>rateit.servlets.CheckReview</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SignUp</servlet-name>
         <url-pattern>/SignUp</url-pattern>
@@ -103,6 +107,10 @@
     <servlet-mapping>
         <servlet-name>ReviewSubmit</servlet-name>
         <url-pattern>/ReviewSubmit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CheckReview</servlet-name>
+        <url-pattern>/CheckReview</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
