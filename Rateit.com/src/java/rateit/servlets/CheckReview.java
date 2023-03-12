@@ -27,12 +27,12 @@ public class CheckReview extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet CheckReview</title>");            
-            out.println("</head>");
-            out.println("<body>");
+//            out.println("<!DOCTYPE html>");
+//            out.println("<html>");
+//            out.println("<head>");
+//            out.println("<title>Servlet CheckReview</title>");            
+//            out.println("</head>");
+//            out.println("<body>");
             
             HttpSession session  = request.getSession(false);
             Customer cus=(Customer)session.getAttribute("Customer");
@@ -45,9 +45,9 @@ public class CheckReview extends HttpServlet {
             {
             out.println("1");
             }
-            else{out.println("2");}
-            out.println("</body>");
-            out.println("</html>");
+            else{out.println("0");}
+//            out.println("</body>");
+//            out.println("</html>");
         }
     }
 

@@ -158,7 +158,7 @@
 
                 <div id="btn-box">
                     <button type="submit"class="btn-sub">Submit Review</button>
-                    <button class="btn-sub" type="reset">Reset</button>
+                    <input type="reset"  class="btn-sub">Reset</button>
                 </div>
                 <!-- <button class="Read-more_btn" id="btn2" onclick="moreContent('showContent2','btn2')">Show -->
                 <!-- More</button> -->

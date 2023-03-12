@@ -36,10 +36,10 @@
             
             <div id="loginCheck">
                 <span><i class="fa-solid fa-triangle-exclamation" style="font-size:25px; color:red"></i>
-                    <br><p style="font-size:13px;"><b> To provide review, you have to login first. </b></p></span>
+                    <br><p style="font-size:13px;" ><b id="errMsg"></b></p></span>
                 <section>
-                    <a href="LogIn&SignUp.jsp"><button class="header-btn alertBtn">Login</button></a>
-                    <button class="header-btn alertBtn" id="alertClose">Remind me later</button>
+                    <a href="LogIn&SignUp.jsp"><button class="header-btn alertBtn" id="errBtn1">Login</button></a>
+                    <button class="header-btn alertBtn" id="alertClose" id="errBtn2">Remind me later</button>
                 </section>
             </div>
         </div>

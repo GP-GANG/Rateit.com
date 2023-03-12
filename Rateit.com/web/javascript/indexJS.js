@@ -22,12 +22,24 @@
                 $.post("CheckForLogin",function(response){
                     console.log(response)
                     if(response == false){
+                    $("#errMsg").text(" To provide review, you have to login first. ");
                     $("#loginCheck").css("display","flex");
                     $("#loginCheckContainer").css({"zIndex":"2", "opacity":"1"});
                     }
                     else{
+                        $.post("CheckReview",{"id":query},function(response){
+                           if(response == true){
+                    $("#errMsg").text(" You have already submitted review.");
+                    $("#loginCheck").css("display","flex");
+                    $("#loginCheckContainer").css({"zIndex":"2", "opacity":"1"});
+                    $("#errBtn2").text("Close");
+                    $("#errBtn1").css("display","none");
+                           } 
+                           else{
+                            window.location.assign("poll_review_page.jsp?a="+query);
+                           }
+                        });
                         
-                        window.location.assign("poll_review_page.jsp?a="+query);
                     }
                 }).fail(function(){
                     alert("Some error occured");
