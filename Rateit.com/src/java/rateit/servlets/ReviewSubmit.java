@@ -23,10 +23,6 @@ import rateit.entities.Poll;
 import rateit.entities.Review;
 import rateit.helper.ConnectionProvider;
 
-/**
- *
- * @author Dell
- */
 public class ReviewSubmit extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)

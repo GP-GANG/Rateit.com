@@ -31,7 +31,6 @@ public class Review {
         this.RATE = RATE;
     }
     
-
     public Review(int POLL_ID, int COMPANY_ID, int USER_ID, String SERVICES, String COMMENT, float RATE) {
         this.POLL_ID = POLL_ID;
         this.COMPANY_ID = COMPANY_ID;
@@ -41,7 +40,6 @@ public class Review {
         this.RATE = RATE;
     }
 
-    
     public int getREVIEW_ID() {
         return REVIEW_ID;
     }

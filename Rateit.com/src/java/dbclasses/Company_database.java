@@ -183,7 +183,7 @@ public class Company_database {
         return blob;
     }
     
- public boolean UpdateCompanyProfile(String COMPANY_NAME, String COMPANY_MAIL,int COMPANY_ID) {
+    public boolean UpdateCompanyProfile(String COMPANY_NAME, String COMPANY_MAIL,int COMPANY_ID) {
         boolean f = false;
         try {
             String query = "update company set COMPANY_NAME=? ,COMPANY_MAIL=? where COMPANY_ID=?";
