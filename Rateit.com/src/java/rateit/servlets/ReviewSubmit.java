@@ -42,10 +42,10 @@ public class ReviewSubmit extends HttpServlet {
             out.println("<body>");
             /*-----------------------fetchig parameters from poll review page --------------------*/
             int POLL_ID = Integer.parseInt(request.getParameter("POLL_ID"));
-
             String review1 = request.getParameter("review1");
             String review2 = request.getParameter("review2");
 
+            //getting all neccessary object to get data of review...
             Poll_database pd = new Poll_database(ConnectionProvider.getConnection());
             Poll p = pd.getPoll(POLL_ID);
             Company_database cd = new Company_database(ConnectionProvider.getConnection());
@@ -58,6 +58,7 @@ public class ReviewSubmit extends HttpServlet {
             ArrayList<Company_services> list1 = csd.getAllCategories(cmp1.getCOMPANY_ID());
             ArrayList<Company_services> list2 = csd.getAllCategories(cmp2.getCOMPANY_ID());
 
+                        /*------------------------------getting ratings of company1----------------------*/
             int[] ratings = new int[10];
             int i = 1;
             while (i < 10 && (request.getParameter("c" + i) != null)) {
@@ -66,6 +67,8 @@ public class ReviewSubmit extends HttpServlet {
             }
             int ii = 1;
             int l;
+                        /*-----------------------submitting review of company1------------------------*/
+
             for (l = 0; l<list1.size(); ii++, l++) {
                 Company_services e = list1.get(l);
                 if (ii == 1) {
@@ -80,13 +83,16 @@ public class ReviewSubmit extends HttpServlet {
                     }
                 }
             }
+            
        i=11;     
        ii=1;
-       
+                  /*------------------------------getting ratings of company2-----------------------------*/
       while (i < 10 && (request.getParameter("c" + i) != null)) {
                 ratings[i] = Integer.parseInt(request.getParameter("c" + i));
                 i++;
             }
+                  /*----------------------------------submitting review of company2-------------------------*/
+
                for (l = 0; l<list2.size(); ii++,l++) {
                    
                 Company_services e = list2.get(l);
@@ -102,7 +108,7 @@ public class ReviewSubmit extends HttpServlet {
                     }
                 }
             }
-
+             response.sendRedirect("poll_review_page.jsp?a="+p.getPOLL_ID());
 
             out.println("</body>");
             out.println("</html>");
