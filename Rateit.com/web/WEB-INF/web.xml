@@ -42,7 +42,7 @@
     </servlet>
     <servlet>
         <servlet-name>Company_update_profile</servlet-name>
-        <servlet-class>rateit.servlets.Company_update_profile</servlet-class>
+        <servlet-class>rateit.servlets.Cup</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>SubReview</servlet-name>
@@ -55,6 +55,10 @@
     <servlet>
         <servlet-name>CheckReview</servlet-name>
         <servlet-class>rateit.servlets.CheckReview</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Company_Profile_Update</servlet-name>
+        <servlet-class>rateit.servlets.Company_Profile_Update</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>SignUp</servlet-name>
@@ -111,6 +115,10 @@
     <servlet-mapping>
         <servlet-name>CheckReview</servlet-name>
         <url-pattern>/CheckReview</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Company_Profile_Update</servlet-name>
+        <url-pattern>/Company_Profile_Update</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

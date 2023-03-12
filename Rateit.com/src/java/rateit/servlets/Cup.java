@@ -7,15 +7,13 @@ package rateit.servlets;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author Dell
- */
-public class Company_update_profile extends HttpServlet {
+@MultipartConfig
+public class Cup extends HttpServlet {
 
   
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)

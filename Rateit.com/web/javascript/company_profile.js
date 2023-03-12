@@ -36,7 +36,7 @@ $(document).ready(function(){
                 }
 //                $("#Profile_loading").show("slow");
                 $("#addnewDiv").hide(500); 
-//                updateData();
+                updateData();
                 document.getElementById("save_btn").style.display = "none";
 //                document.getElementById("newImageContainer").style.display = "none";
                 $("#profile_edit_btn").show();
@@ -57,7 +57,22 @@ $(document).ready(function(){
 //                document.getElementById("newImageContainer").style.display = "table-row";
             }
 
-
+            function updateData(){
+                
+                const name = document.getElementById("name").value;
+                const email = document.getElementById("email").value;
+                const category = document.getElementById("category").value;
+                let services = document.getElementsByName("services").value;
+                
+                $.post("Company_Profile_Update",
+                       {"name":name,
+                        "email":email,
+                        "category":category,
+                        "services":services}
+                ,function(response){
+                    document.write(response);
+                });
+            }
         
 //            function updateData(){
 //                const name = document.getElementById("name").value;

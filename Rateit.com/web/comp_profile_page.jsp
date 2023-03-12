@@ -26,16 +26,18 @@
         <div class="profile_container">
             <div class="block">
                 
-                <form action="Company_update_profile" method="post">
+                
                 
                 <div class="imag">
                     <img
                         src="HelperJSP/DisplayCmpImage.jsp?name=<%=cmp.getCOMPANY_NAME()%>">
                 </div>
+                
+                <form  enctype="multipart/form-data">
                 <table rules="rows">
                     <tr>
                         <td class="t1">Company Name :</td>
-                        <td class="t2"><input type="text" name="name" class="profile_input editable" value="<%=cmp.getCOMPANY_NAME()%>"
+                        <td class="t2"><input type="text" name="name" id="name" class="profile_input editable" value="<%=cmp.getCOMPANY_NAME()%>"
                                 id="name" disabled > </td>
                     </tr>
                     <tr>
@@ -91,10 +93,9 @@
             </div>
         </div>
         <div id="btn-box">
-            <a href="#"><button class="profile_btn" onclick="editProfile()" id="profile_edit_btn">Edit
-                    Profile</button></a>
-<!--            <button type="submit" class="profile_btn" onclick="saveProfile()" id="save_btn"> Save Profile </button>-->
-<input type="submit" onclick="saveProfile()"  value="save profil"/>
+            <input type="button" value="Edit Profile" class="profile_btn" onclick="editProfile()" id="profile_edit_btn" class="profile_btn">
+            <!--<button type="submit" class="profile_btn" onclick="saveProfile()" id="save_btn"> Save Profile </button>-->
+            <input type="submit" onclick="saveProfile()"  id="save_btn" value="save profile" class="profile_btn"/>
             <!--<button class="profile_btn" onclick="closeProfile()" id="profile_close_btn"> Close </button>-->
             
             </form>
