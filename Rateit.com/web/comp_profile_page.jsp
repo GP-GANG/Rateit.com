@@ -18,7 +18,7 @@
     <script src="javascript/company_profile.js?43"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <title>Conpany Profile | rateit.com</title>
+    <title>Company Profile | rateit.com</title>
     <link rel="stylesheet" href="css\comp_profile_page.css?23">
 </head>
 
@@ -95,7 +95,7 @@
         <div id="btn-box">
             <input type="button" value="Edit Profile" class="profile_btn" onclick="editProfile()" id="profile_edit_btn" class="profile_btn">
             <!--<button type="submit" class="profile_btn" onclick="saveProfile()" id="save_btn"> Save Profile </button>-->
-            <input type="submit" onclick="saveProfile()"  id="save_btn" value="save profile" class="profile_btn"/>
+            <input type="button" onclick="saveProfile()"  id="save_btn" value="save profile" class="profile_btn"/>
             <!--<button class="profile_btn" onclick="closeProfile()" id="profile_close_btn"> Close </button>-->
             
             </form>

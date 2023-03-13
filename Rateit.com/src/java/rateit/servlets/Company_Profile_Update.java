@@ -26,41 +26,41 @@ public class Company_Profile_Update extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet Company_update_profile</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            
-            out.println("Profile updated");
+//            out.println("<!DOCTYPE html>");
+//            out.println("<html>");
+//            out.println("<head>");
+//            out.println("<title>Servlet Company_update_profile</title>");            
+//            out.println("</head>");
+//            out.println("<body>");
+//            
+//            out.println("Profile updated");
             
             HttpSession session = request.getSession(false);
             Company cmp = (Company)session.getAttribute("Company");
-            out.println( "name = " +request.getParameter("name"));
-            out.println( "email = " +request.getParameter("email"));
-            out.println( "category = " +request.getParameter("category"));
+//            out.println( "name = " +request.getParameter("name"));
+//            out.println( "email = " +request.getParameter("email"));
+//            out.println( "category = " +request.getParameter("category"));
             
             String val = request.getParameter("services");
             String aa[]=val.split(",");
             
             Company_services_database csd = new Company_services_database(ConnectionProvider.getConnection());
             Company_database cd = new Company_database(ConnectionProvider.getConnection());
-            
+            byte flag = 0;
             
             if(cd.UpdateCompanyProfile(request.getParameter("name"), request.getParameter("email"), cmp.getCOMPANY_ID())){
-            out.println("1");
+            flag = 1;
             }
             for(String x : aa ){
             csd.addCategory(x, cmp.getCATEGORY(), cmp.getCOMPANY_ID()); 
-            out.println(x);
+//            out.println(x);
             }
            
+            out.println(flag);
             
             
-            
-            out.println("</body>");
-            out.println("</html>");
+//            out.println("</body>");
+//            out.println("</html>");
         }
     }
 

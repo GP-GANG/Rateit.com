@@ -40,7 +40,7 @@ $(document).ready(function(){
 
             function editProfile() {
                 let arr = document.getElementsByClassName("editable");
-                console.log(arr);
+//                console.log(arr);
                  
                 for (var i = 0; i < arr.length; i++) {
                     arr[i].removeAttribute("disabled");
@@ -67,14 +67,33 @@ $(document).ready(function(){
                 
                 services = services.join(",");
                 
-                console.log(services)
+//                console.log(services)
+                
                 $.post("Company_Profile_Update",
                        {"name":name,
                         "email":email,
                         "category":category,
                         "services":services}
                 ,function(response){
-                    document.write(response);
+                    if(response == false){
+                        alert("Invalid inputs");
+                    }
+                    else{
+                        alert("Saved data successfully.");
+                    }
                 });
+//                $.post("Company_Profile_Update",
+//                       {"name":name,
+//                        "email":email,
+//                        "category":category,
+//                        "services":services}
+//                ,function(response){
+//                    if(response == false){
+//                        console.log("Nope done");
+//                    }
+//                    else{
+//                        console.log("Done");
+//                    }
+//                });
             }
         
