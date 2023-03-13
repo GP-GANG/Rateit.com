@@ -165,7 +165,7 @@
             </main>
         </form>
 
-        <!-- <script type="text/javascript">
+<--        script type="text/javascript">
     
             window.addEventListener("load", () => {
                 document.getElementById("showContent").style.display = "none";
@@ -181,9 +181,9 @@
                     document.getElementById(extraContent).style.display = "none";
                     document.getElementById(btn).innerText = "Show More";
                 }
-            } -->
-
-        <script>
+            } 
+    </script -->
+            <script>
 
             let rates = new Array(11);
             const rated = `fa-solid fa-star`;
@@ -221,36 +221,6 @@
                     // retes[i]
                 });
             });
-
-  // 	rates.forEach(function(val,index){
-  // 		val.addEventListener("change",appChange)
-  // 	});
-
-  // 	function applyChange(){
-  // 		for (var i = 0; i < rates.length; i++){
-  // 			if (rates[i].checked == true) {
-  // 				rates[i].labels[0].innerHTML = rated;
-  // 			}
-  // 			else{
-  // 				rates[i].nextElementSibling.innerHTML = notRated;
-  // 			}
-  // 	}
-  // }
-
-  // 	function appChange(a){
-
-  // 		for (var i = 0; i < rates.length; i++) {
-  // 			if (rates[i] == a.target) { continue;}
-  // 			rates[i].checked = false;			
-  // 		}
-
-  // 		for (var i = 0; i < rates.length; i++) {
-  // 			if (rates[i] == a.target) { break;}
-  // 			rates[i].checked = true;			
-  // 		}
-
-  // 		applyChange();
-  // 	}
         </script>
 
     </body>

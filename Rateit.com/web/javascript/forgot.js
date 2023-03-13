@@ -76,15 +76,6 @@
             secretUotp = parseInt(Math.random() * 10000);
             var secretCode = secretUotp.toString().padStart(4, '0');
 
-//            Email.send({
-//                SecureToken: "361ab572-fa6a-4d36-be67-4df54bf85368",
-//                To: `${toMail}`,
-//                From: "rateit.contact@gmail.com",
-//                Subject: "Rete it : Authentication",
-//                Body: `Dear User, <br><br> You are welcome to our site we want customers like you .<br><br> Your OTP is :  ${secretCode} <br> <b style="color:red;"> Good to have you on our site... </b> <br> keep visit our site, Thanks !`
-//            }).then(
-//                message => alert("send mail successfully")
-//            );
         })
         
         function valEmail(email){

@@ -12,9 +12,6 @@
     
     <body>
        
-
-
-        
         <div class="main_container">
             
               <span id="showError">
@@ -125,4 +122,3 @@
     </body>
     
 </html>
-            </span> 

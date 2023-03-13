@@ -244,7 +244,7 @@
       var rates = new Array(6);
       $(document).ready(function () {
 
-
+         // array for the dynamic stars
          rates[0] = 0;
          rates[1] = document.getElementsByName("c1");
          rates[2] = document.getElementsByName("c2");
@@ -252,6 +252,7 @@
          rates[4] = document.getElementsByName("c4");
          rates[5] = document.getElementsByName("c5");
 
+         // star classes
          var filledStar = "fa-solid fa-star";
          var emptyStar = "fa-regular fa-star";
 
@@ -261,9 +262,12 @@
             var index = a.target.name.substr(1);
             console.log(index)
 
+            // Loop to empty all stars 
             for (var i = 0; i < a.target.value; i++) {
                rates[index][i].labels[0].children[0].setAttribute("class", filledStar);
             }
+            
+            // loop to fill the selected stars
             for (var i = rates[index].length - 1; i >= a.target.value; i--) {
                rates[index][i].labels[0].children[0].setAttribute("class", emptyStar);
             }

@@ -14,11 +14,6 @@
 
         document.getElementById('Uname').focus();
 
-
-        window.addEventListener("load",()=>{
-            if(sessionStorage.getItem("RateitLOGGEDIN") != "false");
-            sessionStorage.setItem("RateitLOGGEDIN","false");
-        })
         function changeBack() {
             if (left == 0) {
                 buttonBack.style.left = "200px";
@@ -53,10 +48,6 @@
                 }
 
             }
-//            else {
-//                if (validateUserName(userName) == false)
-//                    return false;
-//            }
 
             if (checkPassword(pass, pAlert) == false)
                 return false;

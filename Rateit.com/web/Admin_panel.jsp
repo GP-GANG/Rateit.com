@@ -555,8 +555,8 @@
 
 <script>
     $(document).ready(function () {
-
-
+        
+        // this will focus on  the clicked element
         $("tr a").click(function (a) {
             $("td").css({ "background-color": "white", "color": "black" });
             $(a.target).parent().css({ "background": " rgb(237, 75, 75)", "color": "white" })

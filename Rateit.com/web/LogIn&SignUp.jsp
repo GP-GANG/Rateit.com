@@ -109,6 +109,8 @@ session.removeAttribute("Message");
     
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        
+        <!--Alternate code for the login-->
 <!--    <script>
         $(document).ready(function(){
             $("#submit_btn_login").click(function(e){

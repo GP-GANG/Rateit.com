@@ -150,6 +150,7 @@
 
 <script>
     $(document).ready(function(){
+        // this will load the company profile
         $("#container").load("comp_profile_page.jsp")
     })
 </script>

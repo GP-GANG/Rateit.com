@@ -3,6 +3,7 @@ console.log("Jay Shree krishna")
 $(document).ready(function(){
     let count = 0;
     
+    // code to add new item in the checkbox list
     $("#add_item").click(function(){
        let text = $("#add-text").val();
        console.log(text)

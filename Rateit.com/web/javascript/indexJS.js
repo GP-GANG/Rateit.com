@@ -47,18 +47,6 @@
             });
             let searchlogo = 750;
 
-//            window.addEventListener("DOMContentLoaded", () => {
-//
-//                sessionStorage.setItem("RateitLOGGEDIN", "true")
-//                if (sessionStorage.getItem("RateitLOGGEDIN") == "true") {
-//                    searchlogo = 1040;
-//                    document.getElementById("header_button").style.display = "none";
-//                    document.getElementById("search").style.marginLeft = "80px";
-//                    document.getElementById("navTool").style.marginLeft = "220px";
-//                    document.getElementById("search-logo").style.position = "absolute";
-//                    document.getElementById("search-logo").style.left = searchlogo + "px";
-//                }
-//            })
 
             const searchLogo = document.getElementById("search-logo");
             
