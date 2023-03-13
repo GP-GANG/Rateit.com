@@ -54,8 +54,8 @@ public class SubmitReview extends HttpServlet {
             Poll_database pd = new Poll_database(ConnectionProvider.getConnection());
             Poll p = pd.getPoll(POLL_ID);
             Company_database cd = new Company_database(ConnectionProvider.getConnection());
-            Company cmp1 = cd.getCompanyByName(p.getCOMPANY1());
-            Company cmp2 = cd.getCompanyByName(p.getCOMPANY2());
+            Company cmp1 = cd.getCompanyById(p.getCOMPANY1());
+            Company cmp2 = cd.getCompanyById(p.getCOMPANY2());
             HttpSession session = request.getSession(false);
             Customer customer = (Customer) session.getAttribute("Customer");
             Review_database rd = new Review_database(ConnectionProvider.getConnection());

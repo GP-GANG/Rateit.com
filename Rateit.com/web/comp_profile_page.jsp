@@ -1,3 +1,7 @@
+<%@page import="rateit.entities.Company_services"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="rateit.helper.ConnectionProvider"%>
+<%@page import="dbclasses.Company_services_database"%>
 <%@page import="rateit.entities.Company"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
@@ -5,6 +9,9 @@
    if(cmp == null){
     response.sendRedirect("comp_login.jsp");
     }
+Company_services_database csd = new Company_services_database(ConnectionProvider.getConnection());
+
+ArrayList<Company_services> list = csd.getAllCategories(cmp.getCOMPANY_ID());
 
 %>
 <!DOCTYPE html>
@@ -77,11 +84,13 @@
                     </select>-->
 
 <div id="services">
-<input type="checkbox" value="Timing" name="services"> Timing <br>
-<input type="checkbox" value="Product" name="services"> Product <br>
+   <% for(Company_services e : list){%>
+   <input type="checkbox" value="<%=e.getCOMPANY_SERVICES()%>" name="services" checked><%=e.getCOMPANY_SERVICES() %><br>
+<%}%>
+<!--<input type="checkbox" value="Product" name="services"> Product <br>
 <input type="checkbox" value="Payment" name="services"> Payment <br>
 <input type="checkbox" value="Emploies" name="services"> Employee <br> 
-<input type="checkbox" value="Packing" name="services"> Packing <br>
+<input type="checkbox" value="Packing" name="services"> Packing <br>-->
 </div>              
             
             </div>

@@ -33,7 +33,7 @@
             </ul>
 
             <div id="button">
-                <a href="#"> <button class="header-btn" onclick="">
+                <a href="Company_Logout"> <button class="header-btn" onclick="">
                         <b> Log Out</b></button></a>
             </div>
         </nav>

@@ -121,8 +121,8 @@
  
    <%
    Company_database cd = new Company_database(ConnectionProvider.getConnection());
-   Company cmp1 = cd.getCompanyByName(p.getCOMPANY1());
-   Company cmp2 = cd.getCompanyByName(p.getCOMPANY2());
+   Company cmp1 = cd.getCompanyById(p.getCOMPANY1());
+   Company cmp2 = cd.getCompanyById(p.getCOMPANY2());
    int ratings1 = cmp1.getCOMPANY_RATE();
    int ratings2 = cmp1.getCOMPANY_RATE();
    %>
@@ -131,11 +131,11 @@
                     <section class="company1">
 
                         <div class="logoContainer">
-                            <img src="HelperJSP/DisplayCmpImage.jsp?name=<%=p.getCOMPANY1()%>"
+                            <img src="HelperJSP/DisplayCmpImage.jsp?name=<%=cmp1.getCOMPANY_NAME() %>"
                                  class="logo" id="l1" style="height: 25px; width: 30px; margin-top: 5px;">
                         </div>
 
-                        <p class="company_name"><%=p.getCOMPANY1() %></p>
+                        <p class="company_name"><%=cmp1.getCOMPANY_NAME() %></p>
                         <div class="star-1">
                             <span class="label">Ratings:</span>
                             <%if(ratings1 == 0){%>
@@ -188,10 +188,10 @@
 
                     <section class="company2">
                         <div class="logoContainer">
-                            <img src="HelperJSP/DisplayCmpImage.jsp?name=<%=p.getCOMPANY2()%>"
+                            <img src="HelperJSP/DisplayCmpImage.jsp?name=<%=cmp2.getCOMPANY_NAME()%>"
                                  class="logo" id="l2" style="height: 50px; width: 55px;">
                         </div>
-                        <p class="company_name"><%=p.getCOMPANY2()%></p>
+                        <p class="company_name"><%=cmp2.getCOMPANY_NAME()%></p>
                         <div class="star-2">
                             <span class="label">Ratings:</span>
                             <%if(ratings2 == 0){%>

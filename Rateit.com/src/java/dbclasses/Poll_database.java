@@ -29,8 +29,8 @@ public class Poll_database {
                 p.setPOLL_NO(set.getInt("POLL_NO"));
                 p.setPOLL_ID(set.getInt("POLL_ID"));
                 p.setSTART_DATE(set.getTimestamp("START_DATE"));
-                p.setCOMPANY2(set.getString("COMPANY2"));
-                p.setCOMPANY1(set.getString("COMPANY1"));
+                p.setCOMPANY2(set.getInt("COMPANY2"));
+                p.setCOMPANY1(set.getInt("COMPANY1"));
                 p.setCATEGORY(set.getString("CATEGORY"));
                 p.setEND_DATE(set.getTimestamp("END_DATE"));
                 list.add(p);
@@ -58,8 +58,8 @@ public class Poll_database {
                 p.setPOLL_NO(set.getInt("POLL_NO"));
                 p.setPOLL_ID(set.getInt("POLL_ID"));
                 p.setSTART_DATE(set.getTimestamp("START_DATE"));
-                p.setCOMPANY2(set.getString("COMPANY2"));
-                p.setCOMPANY1(set.getString("COMPANY1"));
+                p.setCOMPANY2(set.getInt("COMPANY2"));
+                p.setCOMPANY1(set.getInt("COMPANY1"));
                 p.setCATEGORY(set.getString("CATEGORY"));
                 p.setEND_DATE(set.getTimestamp("END_DATE"));
             }

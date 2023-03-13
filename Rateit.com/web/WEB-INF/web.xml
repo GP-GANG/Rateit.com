@@ -60,6 +60,10 @@
         <servlet-name>Company_Profile_Update</servlet-name>
         <servlet-class>rateit.servlets.Company_Profile_Update</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Company_Logout</servlet-name>
+        <servlet-class>rateit.servlets.Company_Logout</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SignUp</servlet-name>
         <url-pattern>/SignUp</url-pattern>
@@ -119,6 +123,10 @@
     <servlet-mapping>
         <servlet-name>Company_Profile_Update</servlet-name>
         <url-pattern>/Company_Profile_Update</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Company_Logout</servlet-name>
+        <url-pattern>/Company_Logout</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -57,10 +57,7 @@ public class Company_Profile_Update extends HttpServlet {
             }
            
             out.println(flag);
-            
-            
-//            out.println("</body>");
-//            out.println("</html>");
+ 
         }
     }
 

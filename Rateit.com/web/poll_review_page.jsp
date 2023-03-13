@@ -19,8 +19,8 @@
     Poll_database pd = new Poll_database(ConnectionProvider.getConnection());
     Poll p = pd.getPoll(id);
     Company_database cd = new Company_database(ConnectionProvider.getConnection());
-    Company cmp1 = cd.getCompanyByName(p.getCOMPANY1());
-    Company cmp2 = cd.getCompanyByName(p.getCOMPANY2());
+    Company cmp1 = cd.getCompanyById(p.getCOMPANY1());
+    Company cmp2 = cd.getCompanyById(p.getCOMPANY2());
     
     //getting services...
     Company_services_database csd = new Company_services_database(ConnectionProvider.getConnection());
@@ -36,7 +36,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title><%=p.getCOMPANY1()%> VS <%=p.getCOMPANY2()%> | Rateit.com</title>
+        <title><%=cmp1.getCOMPANY_NAME() %> VS <%=cmp2.getCOMPANY_NAME() %> | Rateit.com</title>
         <script src="https://kit.fontawesome.com/c2a4c35825.js" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
         <link rel="stylesheet" href="css/poll_review_page.css">
@@ -54,11 +54,11 @@
                     <div class="logo-name-box">
                         <div>
                             <div class="img_container">
-                                <img src="HelperJSP/DisplayCmpImage.jsp?name=<%=p.getCOMPANY1()%>"
+                                <img src="HelperJSP/DisplayCmpImage.jsp?name=<%=cmp1.getCOMPANY_NAME() %>"
                                      height="80px" width="80px" class="c-logo">
                             </div>
 
-                            <span><%=p.getCOMPANY1()%></span>
+                            <span><%=cmp1.getCOMPANY_NAME() %></span>
                         </div>
 
                         <div class="box" align="right">
@@ -107,11 +107,11 @@
                     <div class="logo-name-box">
                         <div>
                             <div class="img_container">
-                                <img src="HelperJSP/DisplayCmpImage.jsp?name=<%=p.getCOMPANY2()%>"
+                                <img src="HelperJSP/DisplayCmpImage.jsp?name=<%=cmp2.getCOMPANY_NAME() %>"
                                      height="80px" width="80px" class="c-logo">
                             </div>
 
-                            <span><%=p.getCOMPANY2()%></span>
+                            <span><%=cmp2.getCOMPANY_NAME() %></span>
                         </div>
 
                         <div class="box" align="right">
