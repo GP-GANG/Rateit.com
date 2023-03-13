@@ -28,7 +28,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
             position: relative;
             margin: 6% auto;
             padding: 5px;
-            overflow: hidden;
+            overflow-y:scroll;
             transition: 0.3s;
         }
 

@@ -88,6 +88,9 @@
                         <input type="url" name="websiteURL" class="inputs" id="URurl" autocomplete="off" tabindex="4">
                         <div class="Error" id="emaillAlert"></div>
     
+                        <label for="categoty" class="inputs"> Category :</label><br>
+                        <input type="text" name="category" class="inputs" id="category" autocomplete="off" tabindex="5"> 
+                        
                         <label for="URpassword" class="inputs"> Password : </label> <br>
                         <input class="inputs" type="password" id="URpassword" name="password" tabindex="6">
                         <div class="Error" id="alertRPass"></div>

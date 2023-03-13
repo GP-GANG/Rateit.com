@@ -51,7 +51,7 @@
                     </tr>
                     <tr>
                         <td class="t1">Category :</td>
-                        <td class="t2"><input type="text" id="category" name="category" class="profile_input editable" value="<%=cmp.getCATEGORY() %>" disabled></td>
+                        <td class="t2"><input type="text" id="category" name="category" class="profile_input" value="<%=cmp.getCATEGORY() %>" disabled></td>
                     </tr>
                     <tr>
                         <td class="t1">Joining Date :</td>
