@@ -47,14 +47,15 @@ public class Company {
         this.COMPANY_DESC = COMPANY_DESC;
     }
 
-
     
-    public Company(String COMPANY_NAME, String COMPANY_MAIL, String COMPANY_PASSWORD, String COMPANY_URL, long COMPANY_PHONE) {
+    
+    public Company(String COMPANY_NAME, String COMPANY_MAIL, String COMPANY_PASSWORD, String COMPANY_URL, long COMPANY_PHONE,String CATEGORY) {
         this.COMPANY_NAME = COMPANY_NAME;
         this.COMPANY_MAIL = COMPANY_MAIL;
         this.COMPANY_PASSWORD = COMPANY_PASSWORD;
         this.COMPANY_URL = COMPANY_URL;
         this.COMPANY_PHONE = COMPANY_PHONE;
+        this.CATEGORY = CATEGORY;
     }
 
     

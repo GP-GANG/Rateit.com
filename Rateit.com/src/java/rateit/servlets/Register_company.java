@@ -35,8 +35,8 @@ public class Register_company extends HttpServlet {
             long phone = Long.parseLong(request.getParameter("phone"));        
             String websiteURL = request.getParameter("websiteURL");
             String password = request.getParameter("password");
-          
-            Company cmp = new Company(cmp_name, cmp_mail, password, cmp_mail, phone);
+            String category = request.getParameter("category");
+            Company cmp = new Company(cmp_name, cmp_mail, password, cmp_mail, phone,category);
             Company_database cd = new Company_database(ConnectionProvider.getConnection());
             
            if( cd.RegisterCompany(cmp)){

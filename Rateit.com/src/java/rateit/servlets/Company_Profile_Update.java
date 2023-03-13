@@ -4,6 +4,8 @@
  */
 package rateit.servlets;
 
+import dbclasses.Company_database;
+import dbclasses.Company_services_database;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -11,6 +13,9 @@ import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+import rateit.entities.Company;
+import rateit.helper.ConnectionProvider;
 
 @MultipartConfig
 public class Company_Profile_Update extends HttpServlet {
@@ -30,14 +35,28 @@ public class Company_Profile_Update extends HttpServlet {
             
             out.println("Profile updated");
             
+            HttpSession session = request.getSession(false);
+            Company cmp = (Company)session.getAttribute("Company");
             out.println( "name = " +request.getParameter("name"));
             out.println( "email = " +request.getParameter("email"));
             out.println( "category = " +request.getParameter("category"));
             
             String val = request.getParameter("services");
             String aa[]=val.split(",");
-            for(String x : aa )
+            
+            Company_services_database csd = new Company_services_database(ConnectionProvider.getConnection());
+            Company_database cd = new Company_database(ConnectionProvider.getConnection());
+            
+            
+            if(cd.UpdateCompanyProfile(request.getParameter("name"), request.getParameter("email"), cmp.getCOMPANY_ID())){
+            out.println("1");
+            }
+            for(String x : aa ){
+            csd.addCategory(x, cmp.getCATEGORY(), cmp.getCOMPANY_ID()); 
             out.println(x);
+            }
+           
+            
             
             
             out.println("</body>");

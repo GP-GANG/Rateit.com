@@ -172,7 +172,7 @@
                 </tr>
                 
                 <tr id="newImageContainer">
-                        <td colspan="2"class="t1"> Upload Profile Image : 
+                        <td colspan="2" class="t1"> Upload Profile Image : 
                        <input type="file" name="profile_image" id="get_profile_pic" class="editable" disabled></td>
                     </tr>
             </table>

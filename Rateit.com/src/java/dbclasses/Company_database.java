@@ -19,7 +19,7 @@ public class Company_database {
         boolean f = false;
 
         try {
-            String query = "insert into company(COMPANY_NAME,COMPANY_MAIL,COMPANY_PHONE,COMPANY_URL,COMPANY_PASSWORD) values(?,?,?,?,?)";
+            String query = "insert into company(COMPANY_NAME,COMPANY_MAIL,COMPANY_PHONE,COMPANY_URL,COMPANY_PASSWORD,CATEGORY) values(?,?,?,?,?,?)";
 
             PreparedStatement stmt = this.con.prepareStatement(query);
             stmt.setString(1, cmp.getCOMPANY_NAME());
@@ -27,6 +27,7 @@ public class Company_database {
             stmt.setLong(3, cmp.getCOMPANY_PHONE());
             stmt.setString(4, cmp.getCOMPANY_URL());
             stmt.setString(5, cmp.getCOMPANY_PASSWORD());
+            stmt.setString(6, cmp.getCATEGORY());
 
             int i = stmt.executeUpdate();
             if (i > 0) {
@@ -182,8 +183,8 @@ public class Company_database {
         }
         return blob;
     }
-    
-    public boolean UpdateCompanyProfile(String COMPANY_NAME, String COMPANY_MAIL,int COMPANY_ID) {
+
+    public boolean UpdateCompanyProfile(String COMPANY_NAME, String COMPANY_MAIL, int COMPANY_ID) {
         boolean f = false;
         try {
             String query = "update company set COMPANY_NAME=? ,COMPANY_MAIL=? where COMPANY_ID=?";

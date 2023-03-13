@@ -61,11 +61,11 @@ public class Company_services_database {
     public boolean addCategory(String COMPANY_SERVICE, String CATEGORY,int COMPANY_ID) {
         boolean f = false;
         try {
-            String query = "insert into company_services(CATEGORY) values(?) where COMPANY_SERVICE=? and COMPANY_ID=?";
+            String query = "insert into company_services(COMPANY_SERVICE,CATEGORY,COMPANY_ID) values(?,?,?)";
 
             PreparedStatement stmt = this.con.prepareStatement(query);
-            stmt.setString(1, CATEGORY);
-            stmt.setString(2, COMPANY_SERVICE);
+            stmt.setString(2, CATEGORY);
+            stmt.setString(1, COMPANY_SERVICE);
             stmt.setInt(3, COMPANY_ID);
 
             if (stmt.executeUpdate() > 0) {

@@ -5,7 +5,6 @@
    if(cmp == null){
     response.sendRedirect("comp_login.jsp");
     }
-
 %>
 <!DOCTYPE html>
 <html lang="en">

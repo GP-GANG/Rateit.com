@@ -45,6 +45,7 @@ public class Company_Login extends HttpServlet {
 
             String login = request.getParameter("name");
             String password = request.getParameter("password");
+            
             Company_database cd = new Company_database(ConnectionProvider.getConnection());
             Company cmp = cd.getCompanyByEmail(login, password);
             HttpSession session = request.getSession(true);
