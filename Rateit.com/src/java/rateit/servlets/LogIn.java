@@ -35,7 +35,7 @@ public class LogIn extends HttpServlet {
            
              Customer obj = customer.getCustomerByEmail(username, password);
                 HttpSession session = request.getSession();
-             
+                session.setMaxInactiveInterval(20*60);
              if(obj == null){
 
                  Message msg = new Message("incorrect password or username","error");

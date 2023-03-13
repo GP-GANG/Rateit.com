@@ -165,7 +165,7 @@
             </main>
         </form>
 
-<--        script type="text/javascript">
+<!--<--        <script type="text/javascript">
     
             window.addEventListener("load", () => {
                 document.getElementById("showContent").style.display = "none";
@@ -182,7 +182,7 @@
                     document.getElementById(btn).innerText = "Show More";
                 }
             } 
-    </script -->
+    </script> -->
             <script>
 
             let rates = new Array(11);

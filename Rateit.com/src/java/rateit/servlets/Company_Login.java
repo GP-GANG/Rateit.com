@@ -49,7 +49,8 @@ public class Company_Login extends HttpServlet {
             Company_database cd = new Company_database(ConnectionProvider.getConnection());
             Company cmp = cd.getCompanyByEmail(login, password);
             HttpSession session = request.getSession(true);
-           
+            session.setMaxInactiveInterval(20*60);
+
             if (cmp == null) {
               Message msg  = new Message("incorrect password or id","error");
               session.setAttribute("Message", msg);

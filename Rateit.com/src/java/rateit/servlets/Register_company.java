@@ -11,7 +11,9 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import rateit.entities.Company;
+import rateit.entities.Message;
 import rateit.helper.ConnectionProvider;
 
 
@@ -38,10 +40,13 @@ public class Register_company extends HttpServlet {
             String category = request.getParameter("category");
             Company cmp = new Company(cmp_name, cmp_mail, password, cmp_mail, phone,category);
             Company_database cd = new Company_database(ConnectionProvider.getConnection());
-            
+            HttpSession session = request.getSession();
            if( cd.RegisterCompany(cmp)){
-           out.println("1");
-           }
+          
+           Message msg = new Message("Registered Successfully!","success");
+           session.setAttribute("Message", msg);
+           response.sendRedirect("comp_login.jsp");
+                   }
            else{
            out.println("0");
            }
