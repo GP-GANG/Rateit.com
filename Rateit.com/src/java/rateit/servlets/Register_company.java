@@ -43,7 +43,7 @@ public class Register_company extends HttpServlet {
             HttpSession session = request.getSession();
            if( cd.RegisterCompany(cmp)){
           
-           Message msg = new Message("Registered Successfully!","success");
+           Message msg = new Message("Authentication in Progress ! Your LogIn will be Provided through Mail","success");
            session.setAttribute("Message", msg);
            response.sendRedirect("comp_login.jsp");
                    }

@@ -1,10 +1,21 @@
-<%-- 
-    Document   : Admin_panel
-    Created on : 12-Mar-2023, 10:56:15 am
-    Author     : Dell
---%>
-
+<%@page import="dbclasses.Company_services_database"%>
+<%@page import="rateit.entities.Company_services"%>
+<%@page import="rateit.entities.Poll"%>
+<%@page import="dbclasses.Poll_database"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="rateit.entities.Company"%>
+<%@page import="rateit.helper.ConnectionProvider"%>
+<%@page import="dbclasses.Company_database"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    Company_database cd = new Company_database(ConnectionProvider.getConnection());
+    ArrayList<Company> list=cd.getAllCompanies();
+    
+    Poll_database pd = new Poll_database(ConnectionProvider.getConnection());
+    ArrayList<Poll> list2 = pd.getAllPoll();
+    
+    Company_services_database csd = new Company_services_database(ConnectionProvider.con);
+%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -104,18 +115,9 @@
                     </div>
                     <input class="input1" type="text" placeholder="Company Name :"><br>
                     <div class="selector">
-                        <div>
                             <form>
-                                <select name="Services" id="services" multiple>
-                                    <option value="Timing">Timing</option>
-                                    <option value="Product">Product</option>
-                                    <option value="Payment">Payment</option>
-                                    <option value="Employ">Emploies</option>
-                                    <option value="Packing">Packing</option>
-                                </select>
+                                <input type="checkbox" name="delivery"> delivery
                             </form>
-                        </div>
-                        <button>+ADD</button>
                     </div>
                 </div>
 
@@ -127,18 +129,9 @@
                     </div>
                     <input class="input1" type="text" placeholder="Company Name :"><br>
                     <div class="selector">
-                        <div>
                             <form>
-                                <select name="Services" id="services" multiple>
-                                    <option value="Timing">Timing</option>
-                                    <option value="Product">Product</option>
-                                    <option value="Payment">Payment</option>
-                                    <option value="Employ">Emploies</option>
-                                    <option value="Packing">Packing</option>
-                                </select>
+                                <input type="checkbox" name="delivery"> delivery
                             </form>
-                        </div>
-                        <button>+ADD</button>
                     </div>
                 </div>
                 <input class="dating" type="text" placeholder="Starting Date :">
@@ -161,57 +154,33 @@
 
         <!-- //////...............////............../ page-5 //////....................///.............../// -->
         <section id="page5">
+            <%for(Company e : list){%>
             <div class="box box-3">
-                <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/TCS.png?raw=true"
+                <img src="HelperJSP/DisplayCmpImage.jsp?name=<%=e.getCOMPANY_NAME()%>"
                     height="50px" width="60px" id="logo"><span id="l1">
-                    <b>Name:</b> TATA Consultancy Service</span><br>
-                <span id="l2"><b>Category:</b>Service Based</span><br>
+                    <b>Name:</b><%=e.getCOMPANY_NAME()%></span><br>
+                <span id="l2"><b>Category:</b><%=e.getCATEGORY()%></span><br>
                 <span id="l3" name=""><b>Status:</b>Individual/In-Poll</span>
             </div>
-
-            <div class="box box-2">
-                <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/TCS.png?raw=true"
-                    height="50px" width="60px" id="logo"><span id="l1">
-                    <b>Name:</b> TATA Consultancy Service</span><br>
-                <span id="l2"><b>Category:</b>Service Based</span><br>
-                <span id="l3" name=""><b>Status:</b>Individual/In-Poll</span>
-            </div>
-
-            <div class="box box-3">
-                <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/TCS.png?raw=true"
-                    height="50px" width="60px" id="logo"><span id="l1">
-                    <b>Name:</b> TATA Consultancy Service</span><br>
-                <span id="l2"><b>Category:</b>Service Based</span><br>
-                <span id="l3" name=""><b>Status:</b>Individual/In-Poll</span>
-            </div>
-
-            <div class="box box-2">
-                <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/TCS.png?raw=true"
-                    height="50px" width="60px" id="logo"><span id="l1">
-                    <b>Name:</b> TATA Consultancy Service</span><br>
-                <span id="l2"><b>Category:</b>Service Based</span><br>
-                <span id="l3" name=""><b>Status:</b>Individual/In-Poll</span>
-            </div>
-
-            <div class="box box-2">
-                <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/TCS.png?raw=true"
-                    height="50px" width="60px" id="logo"><span id="l1">
-                    <b>Name:</b> TATA Consultancy Service</span><br>
-                <span id="l2"><b>Category:</b>Service Based</span><br>
-                <span id="l3" name=""><b>Status:</b>Individual/In-Poll</span>
-            </div>
-
+<%}%>
         </section>
 
 
         <!-- //////...............////............../ page-6 //////....................///.............../// -->
+        
         <section id="page6">
+           <%for(Poll e : list2){
+        
+        Company_database cd1 = new Company_database(ConnectionProvider.getConnection());
+        Company cmp1=cd1.getCompanyById(e.getCOMPANY1());
+        Company cmp2=cd1.getCompanyById(e.getCOMPANY2());
+            %> 
             <div class="poll-box">
                 <div class="wole-box">
                 <div class="comp-cont-box1">
                     <div class="img-name">
-                        <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/amazon.png?raw=true" height="30px" width="40px">
-                        <p>amazon</p>
+                        <img src="HelperJSP/DisplayCmpImage.jsp?name=<%=cmp1.getCOMPANY_NAME() %>" height="30px" width="40px">
+                        <p><%=cmp1.getCOMPANY_NAME()%></p>
                     </div>
                     <div class="rcr-box">
                         <div class="star-1">
@@ -227,8 +196,8 @@
                 </div>
                 <div class="comp-cont-box2">
                     <div class="img-name">
-                        <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/flipkart.png?raw=true" height="30px" width="40px">
-                        <p>flipkart</p>
+                        <img src="HelperJSP/DisplayCmpImage.jsp?name=<%=cmp2.getCOMPANY_NAME()%>" height="30px" width="40px">
+                        <p><%=cmp2.getCOMPANY_NAME()%></p>
                     </div>
                     <div class="rcr-box">
                         <div class="star-1">
@@ -244,138 +213,23 @@
                 </div>
             </div>
                 <button class="poll-remove-btn">Remove</button>
-            </div>
-
-            <div class="poll-box">
-                <div class="wole-box">
-                <div class="comp-cont-box1">
-                    <div class="img-name">
-                        <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/amazon.png?raw=true" height="30px" width="40px">
-                        <p>amazon</p>
-                    </div>
-                    <div class="rcr-box">
-                        <div class="star-1">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                        </div>
-                        <span>online service</span>
-                        <span>32,43,332</span>
-                    </div>
-                </div>
-                <div class="comp-cont-box2">
-                    <div class="img-name">
-                        <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/flipkart.png?raw=true" height="30px" width="40px">
-                        <p>flipkart</p>
-                    </div>
-                    <div class="rcr-box">
-                        <div class="star-1">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                        </div>
-                        <span>online service</span>
-                        <span>32,43,332</span>
-                    </div>
-                </div>
-            </div>
-                <button class="poll-remove-btn">Remove</button>
-            </div>
-
-            <div class="poll-box">
-                <div class="wole-box">
-                <div class="comp-cont-box1">
-                    <div class="img-name">
-                        <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/amazon.png?raw=true" height="30px" width="40px">
-                        <p>amazon</p>
-                    </div>
-                    <div class="rcr-box">
-                        <div class="star-1">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                        </div>
-                        <span>online service</span>
-                        <span>32,43,332</span>
-                    </div>
-                </div>
-                <div class="comp-cont-box2">
-                    <div class="img-name">
-                        <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/flipkart.png?raw=true" height="30px" width="40px">
-                        <p>flipkart</p>
-                    </div>
-                    <div class="rcr-box">
-                        <div class="star-1">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                        </div>
-                        <span>online service</span>
-                        <span>32,43,332</span>
-                    </div>
-                </div>
-            </div>
-                <button class="poll-remove-btn">Remove</button>
-            </div>
-
-            <div class="poll-box">
-                <div class="wole-box">
-                <div class="comp-cont-box1">
-                    <div class="img-name">
-                        <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/amazon.png?raw=true" height="30px" width="40px">
-                        <p>amazon</p>
-                    </div>
-                    <div class="rcr-box">
-                        <div class="star-1">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                        </div>
-                        <span>online service</span>
-                        <span>32,43,332</span>
-                    </div>
-                </div>
-                <div class="comp-cont-box2">
-                    <div class="img-name">
-                        <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/flipkart.png?raw=true" height="30px" width="40px">
-                        <p>flipkart</p>
-                    </div>
-                    <div class="rcr-box">
-                        <div class="star-1">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                        </div>
-                        <span>online service</span>
-                        <span>32,43,332</span>
-                    </div>
-                </div>
-            </div>
-                <button class="poll-remove-btn">Remove</button>
-            </div>
+            </div><%}%>
         </section>
-
-
+            
         <!-- //////...............////............../ page-7 //////....................///.............../// -->
+       
         <section id="page7">
+             <%for(Company e : list){
+                
+Company_services cs1 = csd.getCategory(e.getCOMPANY_ID());          
+                    %>
             <div class="report-box">
+                
                 <div>
-                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/amazon.png?raw=true"
+                    <img src="HelperJSP/DisplayCmpImage.jsp?name=<%=e.getCOMPANY_NAME()%>"
                         height="30px" width="40px">
 
-                    <p class="com-name">amazon</p>
+                    <p class="com-name"><%=e.getCOMPANY_NAME()%></p>
                 </div>
                 <div class="com-content">
                     <div class="star-1">
@@ -386,114 +240,10 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-regular fa-star"></i>
                     </div>
-                    <p><b>Category:</b> online delivery</p>
+                    <p><b>Category:</b><%=cs1.getCATEGORY()%></p>
                 </div>
             </div>
-
-            <div class="report-box">
-                <div>
-                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/amazon.png?raw=true"
-                        height="30px" width="40px">
-
-                    <p class="com-name">amazon</p>
-                </div>
-
-                <div class="com-content">
-                    <div class="star-1">
-                        <span class="label"><b>Ratings:</b></span>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                    </div>
-                    <p><b>Category:</b> online delivery</p>
-                </div>
-            </div>
-
-            <div class="report-box">
-                <div>
-                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/amazon.png?raw=true"
-                        height="30px" width="40px">
-
-                    <p class="com-name">amazon</p>
-                </div>
-
-                <div class="com-content">
-                    <div class="star-1">
-                        <span class="label"><b>Ratings:</b></span>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                    </div>
-                    <p><b>Category:</b> online delivery</p>
-                </div>
-            </div>
-
-            <div class="report-box">
-                <div>
-                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/amazon.png?raw=true"
-                        height="30px" width="40px">
-
-                    <p class="com-name">amazon</p>
-                </div>
-
-                <div class="com-content">
-                    <div class="star-1">
-                        <span class="label"><b>Ratings:</b></span>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                    </div>
-                    <p><b>Category:</b> online delivery</p>
-                </div>
-            </div>
-
-            <div class="report-box">
-                <div>
-                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/amazon.png?raw=true"
-                        height="30px" width="40px">
-
-                    <p class="com-name">amazon</p>
-                </div>
-
-                <div class="com-content">
-                    <div class="star-1">
-                        <span class="label"><b>Ratings:</b></span>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                    </div>
-                    <p><b>Category:</b> online delivery</p>
-                </div>
-            </div>
-
-            <div class="report-box">
-                <div>
-                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/amazon.png?raw=true"
-                        height="30px" width="40px">
-
-                    <p class="com-name">amazon</p>
-                </div>
-
-                <div class="com-content">
-                    <div class="star-1">
-                        <span class="label"><b>Ratings:</b></span>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                    </div>
-                    <p><b>Category:</b> online delivery</p>
-                </div>
-            </div>
+<%}%>
         </section>
 
 
@@ -553,15 +303,24 @@
 
 </body>
 
-<script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<!--<script>
     $(document).ready(function () {
         
+        const Admin_password_forLogin = "1234";
+        
+        let pass = prompt("Enter Admin key");
+        
+        if(Admin_password_forLogin != pass){
+            alert("You are not authenticated user.");
+            window.location.assign("error_page.jsp");
+        }
         // this will focus on  the clicked element
         $("tr a").click(function (a) {
-            $("td").css({ "background-color": "white", "color": "black" });
-            $(a.target).parent().css({ "background": " rgb(237, 75, 75)", "color": "white" })
+            $("td").css({ "background-color": "black", "color": "white" });
+            $(a.target).parent().css({ "background": " white", "color": "black" })
         })
     })
-</script>
+</script>-->
 
 </html>

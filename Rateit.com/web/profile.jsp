@@ -164,7 +164,7 @@
 -->                
                 <tr>
                     <td class="t1">Joined Date :</td>
-                    <td class="t2"><input type="text" name="join" class="profile_input" value="<%=cus.getEMAIL()%>" disabled></td>
+                    <td class="t2"><input type="text" name="join" class="profile_input" value="<%=cus.getJOIN_DATE()%>" disabled></td>
                 </tr>
                 <tr>
                     <td class="t1"> Attended Poll :</td>

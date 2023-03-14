@@ -80,5 +80,26 @@ public class Company_services_database {
 
     }
 
+    public Company_services getCategory(int COMPANY_ID) {
+        Company_services cs = new Company_services();;
+
+        try {
+            String query = "select * from company_services where COMPANY_ID=?";
+            PreparedStatement stmt = this.con.prepareStatement(query);
+            stmt.setInt(1, COMPANY_ID);
+            ResultSet set = stmt.executeQuery();
+            while(set.next()) {
+             
+                cs.setCATEGORY(set.getString("CATEGORY"));
+                cs.setCOMPANY_SERVICES(set.getString("COMPANY_SERVICE"));
+                cs.setCOMPANY_ID(set.getInt("COMPANY_ID"));
+                
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return cs;
+    }
 }
    
