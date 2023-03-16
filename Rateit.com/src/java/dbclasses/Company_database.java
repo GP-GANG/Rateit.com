@@ -247,5 +247,46 @@ public class Company_database {
         return cmp;
 
     }
+public ArrayList<Company> getCompanyByName1(String COMPANY_NAME) {
+        ArrayList<Company> list = new ArrayList<>();
+        try {
+            String query = "select * from company where COMPANY_NAME LIKE ?";
 
+            PreparedStatement stmt = this.con.prepareStatement(query);
+
+            stmt.setString(1, COMPANY_NAME);
+
+            ResultSet set = stmt.executeQuery();
+
+            while (set.next()) {
+               Company cmp = new Company();
+
+                cmp.setCOMPANY_ID(set.getInt("COMPANY_ID"));
+                cmp.setCOMPANY_LOGIN(set.getString("COMPANY_LOGIN"));
+                cmp.setCOMPANY_PASSWORD(set.getString("COMPANY_PASSWORD"));
+                cmp.setCOMPANY_NAME(set.getString("COMPANY_NAME"));
+                cmp.setCOMPANY_MAIL(set.getString("COMPANY_MAIL"));
+                cmp.setCATEGORY(set.getString("CATEGORY"));
+                cmp.setRANK(set.getInt("RANK"));
+                cmp.setPOLL(set.getInt("POLLS"));
+                cmp.setACP_COUNT(set.getInt("ACP_COUNT"));
+                cmp.setSCP_COUNT(set.getInt("SCP_COUNT"));
+                cmp.setJOIN_DATE(set.getTimestamp("JOIN_DATE"));
+                cmp.setCURRENT_POLL_STATUS(set.getBoolean("CURRENT_POLL_STATUS"));
+                cmp.setCURRENT_POLL_STATUS(set.getBoolean("CURRENT_POLL_STATUS"));
+                cmp.setCOMPANY_URL(set.getString("COMPANY_URL"));
+                cmp.setCOMPANY_PHONE(set.getLong("COMPANY_PHONE"));
+                cmp.setCOMPANY_IMG(set.getBlob("COMPANY_IMG"));
+                cmp.setCOMPANY_RATE(set.getInt("COMPANY_RATE"));
+                cmp.setCOMPANY_DESC(set.getString("COMPANY_DESC"));
+                list.add(cmp);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return list;
+
+    }
 }
