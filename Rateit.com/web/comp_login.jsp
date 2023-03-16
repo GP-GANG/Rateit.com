@@ -70,7 +70,7 @@
                
                 <div id="Signup" class="input-group">
     
-                    <form action="Register_company" id="register" onsubmit="return validateReg()" method="post" enctype="multipart/form-data">
+                    <form action="Register_company" id="register" onsubmit="return validateReg()" method="post">
     
                         <label for="URname" class="inputs"> Companyname : </label> <br>
                         <input class="inputs" type="text" id="URname" name="name" tabindex="1">
@@ -98,9 +98,6 @@
                         <label for="URcpassword" class="inputs"> Confirm Password : </label> <br>
                         <input class="inputs" type="password" id="URcpassword" name="pass" tabindex="7"><br>
                         <div class="Error" id="bothCheck"></div>
-                        
-                        <label for="image" class="inputs"> Upload image :</label><br>
-                        <input type="file" name="image" class="inputs" id="image"> 
     
                         <input type="submit" name="Login Now" value="Register" id="submit_btn_signup" tabindex="8"
                             class="inputs submit_btn"><br>

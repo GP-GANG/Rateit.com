@@ -3,9 +3,7 @@ package dbclasses;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Date;
 import rateit.entities.Poll;
 
 public class Poll_database {
@@ -70,43 +68,5 @@ public class Poll_database {
             e.printStackTrace();
         }
         return p;
-    }
-    
-    public boolean removePoll(int Poll_id){
-        boolean f= false;
-    try{
-    String query = "delete from poll where POLL_ID=?";
-    PreparedStatement stmt = this.con.prepareStatement(query);
-    
-    stmt.setInt(1,Poll_id);
-    stmt.executeUpdate();
-    f=true;
-    
-    }
-    catch(Exception e){e.printStackTrace();}
-    
-    return f;
-    }
-    
-    public boolean addPoll(Poll p){
-    boolean b = false; 
-    try{
-    String query = "insert into poll(POLL_ID,START_DATE,COMPANY1,COMPANY2,CATEGORY,END_DATE) values(?,?,?,?,?,?)";
-    PreparedStatement stmt = this.con.prepareStatement(query);
-    stmt.setInt(1,p.getPOLL_ID());
-    Date date = new Date();
-    stmt.setTimestamp(2,  new Timestamp(date.getTime()));
-    stmt.setInt(3,p.getCOMPANY1());
-    stmt.setInt(4, p.getCOMPANY2());
-    stmt.setString(4, p.getCATEGORY());
-    stmt.setTimestamp(5, p.getEND_DATE());
-    
-    
-   
-    
-    }
-    catch(Exception e){e.printStackTrace();}
-    
-    return b;
     }
 }
