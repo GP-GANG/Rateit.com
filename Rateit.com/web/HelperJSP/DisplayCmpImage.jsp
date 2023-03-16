@@ -11,11 +11,13 @@
     byte[] b = null;
     Company_database cd = new Company_database(ConnectionProvider.getConnection());
     Blob blob = cd.getCompanyImage(name);
+    if(blob != null){
     try {
         b = blob.getBytes(1, (int) blob.length());
      
     } catch (Exception e) {
         e.printStackTrace();
+    }
     }
     response.setContentType("image/gif");
     OutputStream oo = response.getOutputStream();

@@ -64,6 +64,22 @@
         <servlet-name>Company_Logout</servlet-name>
         <servlet-class>rateit.servlets.Company_Logout</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>FilterCompany</servlet-name>
+        <servlet-class>rateit.servlets.FilterCompany</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddCompany</servlet-name>
+        <servlet-class>rateit.servlets.AddCompany</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RemoveCompany</servlet-name>
+        <servlet-class>rateit.servlets.RemoveCompany</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RemovePoll</servlet-name>
+        <servlet-class>rateit.servlets.RemovePoll</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SignUp</servlet-name>
         <url-pattern>/SignUp</url-pattern>
@@ -127,6 +143,22 @@
     <servlet-mapping>
         <servlet-name>Company_Logout</servlet-name>
         <url-pattern>/Company_Logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FilterCompany</servlet-name>
+        <url-pattern>/FilterCompany</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddCompany</servlet-name>
+        <url-pattern>/AddCompany</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RemoveCompany</servlet-name>
+        <url-pattern>/RemoveCompany</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RemovePoll</servlet-name>
+        <url-pattern>/RemovePoll</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
