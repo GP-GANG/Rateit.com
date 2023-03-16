@@ -29,6 +29,10 @@
         <%
             Customer customer = (Customer) session.getAttribute("Customer");
             Message msg = (Message)session.getAttribute("Message");
+             
+            Company_database cd1 = new Company_database(ConnectionProvider.getConnection());
+            ArrayList<Company> list5 = cd1.getAllCompanies();
+            
         %>
 
 
@@ -86,8 +90,15 @@
 
                     <div id="search-logo"><i class="fa-solid fa-magnifying-glass"></i></div>
                     <div id="search">
-                        <input type="search" placeholder="Search . . . .">
+                        <input  list="list" type="search" placeholder="Search . . . .">
+                        <datalist id="list">
+                           <% for(Company e : list5){%>
+                          <option value="<%=e.getCOMPANY_NAME()%>">
+                          <a href="comp_review_page.jsp">company</a></option>
+                            <%}%>
+                        </datalist>
                     </div>
+                    
 
                 </div>
                 <%if (customer == null) {%>
