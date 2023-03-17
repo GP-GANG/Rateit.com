@@ -1,10 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
+
 
 import dbclasses.Company_database;
 import dbclasses.Company_services_database;
+import dbclasses.Customer_database;
 import dbclasses.Poll_database;
 import dbclasses.Review_database;
 import java.io.IOException;
@@ -61,12 +59,17 @@ public class SubmitReview extends HttpServlet {
             Review_database rd = new Review_database(ConnectionProvider.getConnection());
             Company_services_database csd = new Company_services_database(ConnectionProvider.getConnection());
             ArrayList<Company_services> list1 = csd.getAllCategories(cmp1.getCOMPANY_ID());
-
+            Customer_database cd1 = new Customer_database(ConnectionProvider.getConnection());
+            
+            int num = customer.getATTENDED_POLL();
             for (int l = 0; ratings[ii] != 0; ii++) {
                 Company_services e = list1.get(ii);
+                
                 if (ii == 1) {
                     Review r = new Review(p.getPOLL_ID(), cmp1.getCOMPANY_ID(), customer.getUSER_ID(), e.getCOMPANY_SERVICES(), review1, ratings[ii]);
                     if(rd.submitReview(r)){
+                        num =num+1;
+                        cd1.updateAttendedPoll(customer.getUSER_ID(), num);
                         out.println("1");}
                 }
 

@@ -128,3 +128,9 @@
                     }
                 }
             }
+            function searchCompany(){
+                if($("#search input").val().length > 2){
+                    window.location.href = "comp_review_page.jsp?name="+ $("#search input").val();
+                }
+                
+            }

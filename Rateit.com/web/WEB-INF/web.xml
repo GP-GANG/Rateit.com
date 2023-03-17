@@ -38,7 +38,7 @@
     </servlet>
     <servlet>
         <servlet-name>SubmitReview</servlet-name>
-        <servlet-class>rateit.entities.SubmitReview</servlet-class>
+        <servlet-class>rateit.servlets.SubmitReview</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Company_update_profile</servlet-name>
@@ -67,6 +67,10 @@
     <servlet>
         <servlet-name>SearchCompany</servlet-name>
         <servlet-class>rateit.servlets.SearchCompany</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Rsubmit</servlet-name>
+        <servlet-class>rateit.servlets.Rsubmit</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>SignUp</servlet-name>
@@ -135,6 +139,10 @@
     <servlet-mapping>
         <servlet-name>SearchCompany</servlet-name>
         <url-pattern>/SearchCompany</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Rsubmit</servlet-name>
+        <url-pattern>/Rsubmit</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

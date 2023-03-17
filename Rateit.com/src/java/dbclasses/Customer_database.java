@@ -183,4 +183,25 @@ public class Customer_database {
         }
         return blob;
     }
+    
+    public boolean updateAttendedPoll(int cus_id,int num){
+      boolean f = false;
+        try {
+            String query = "update customer_info set ATTENDED_POLL=? where USER_ID=?";
+
+            PreparedStatement stmt = this.con.prepareStatement(query);
+            stmt.setInt(1, num);
+            stmt.setInt(2, cus_id);
+
+            if (stmt.executeUpdate() > 0) {
+                f = true;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return f;
+    
+    }
 }

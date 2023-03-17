@@ -1,10 +1,12 @@
 package dbclasses;
 
+import java.io.InputStream;
 import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import javax.sql.rowset.serial.SerialBlob;
 import rateit.entities.Company;
 
 public class Company_database {
@@ -165,7 +167,7 @@ public class Company_database {
         return cmp;
 
     }
-
+    
     public Blob getCompanyImage(String COMPANY_NAME) {
         Blob blob = null;
 
@@ -205,7 +207,8 @@ public class Company_database {
         return f;
 
     }
-        public Company getCompanyById(int Company_id) {
+
+    public Company getCompanyById(int Company_id) {
         Company cmp = null;
         try {
             String query = "select * from company where COMPANY_ID=?";
@@ -247,20 +250,39 @@ public class Company_database {
         return cmp;
 
     }
-public ArrayList<Company> getCompanyByName1(String COMPANY_NAME) {
-        ArrayList<Company> list = new ArrayList<>();
+
+    public boolean removeCompany(int cmp_id){
+        boolean f = false;
         try {
-            String query = "select * from company where COMPANY_NAME LIKE ?";
+            String query = "delete from company where COMPANY_ID=?";
+            PreparedStatement stmt = this.con.prepareStatement(query);
+
+            stmt.setInt(1, cmp_id);
+            stmt.executeUpdate();
+            f = true;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return f;
+    }
+    
+    public ArrayList<Company> getRegisterCompanies() {
+        ArrayList<Company> list = null;
+        try {
+            String query = "select * from company where COMPANY_LOGIN IS NULL";
 
             PreparedStatement stmt = this.con.prepareStatement(query);
 
-            stmt.setString(1, COMPANY_NAME);
-
             ResultSet set = stmt.executeQuery();
-
+            if(set.isBeforeFirst()){
+            list = new ArrayList<>();
+            
+            }
+           
             while (set.next()) {
-               Company cmp = new Company();
-
+                Company cmp = new Company();
                 cmp.setCOMPANY_ID(set.getInt("COMPANY_ID"));
                 cmp.setCOMPANY_LOGIN(set.getString("COMPANY_LOGIN"));
                 cmp.setCOMPANY_PASSWORD(set.getString("COMPANY_PASSWORD"));
@@ -280,6 +302,91 @@ public ArrayList<Company> getCompanyByName1(String COMPANY_NAME) {
                 cmp.setCOMPANY_RATE(set.getInt("COMPANY_RATE"));
                 cmp.setCOMPANY_DESC(set.getString("COMPANY_DESC"));
                 list.add(cmp);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }   
+
+    public boolean UpdateCompany(Company cmp) {
+        boolean f = false;
+
+        try {
+            String query = "Update company set COMPANY_NAME=?,COMPANY_MAIL=?,CATEGORY=?,COMPANY_LOGIN=? where COMPANY_ID=?";
+
+            PreparedStatement stmt = this.con.prepareStatement(query);
+            stmt.setString(1, cmp.getCOMPANY_NAME());
+            stmt.setString(2, cmp.getCOMPANY_MAIL());
+            stmt.setString(3, cmp.getCATEGORY());
+            stmt.setString(4, cmp.getCOMPANY_LOGIN());
+            stmt.setInt(5, cmp.getCOMPANY_ID());
+
+            int i = stmt.executeUpdate();
+            if (i > 0) {
+                f = true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return f;
+    }
+    
+    public boolean UploadImage(InputStream is, int COMPANY_ID) {
+        boolean f = false;
+        try {
+            String query = "Update company set COMPANY_IMG=? where COMPANY_ID=?";
+            byte[] b = new byte[is.available()];
+            is.read(b);
+            Blob blob = new SerialBlob(b);
+            PreparedStatement stmt = this.con.prepareStatement(query);
+            stmt.setBlob(1, blob);
+            stmt.setInt(2, COMPANY_ID);
+            if(stmt.executeUpdate()>0)
+            f = true;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return f;
+    }
+ 
+     public ArrayList<Company> getCompanyByName1(String COMPANY_NAME) {
+        ArrayList<Company> list = new ArrayList<>();
+        try {
+            String query = "select * from company where COMPANY_NAME LIKE ?";
+
+            PreparedStatement stmt = this.con.prepareStatement(query);
+
+            stmt.setString(1, COMPANY_NAME);
+
+            ResultSet set = stmt.executeQuery();
+
+            while (set.next()) {
+                Company cmp = new Company();
+
+                cmp.setCOMPANY_ID(set.getInt("COMPANY_ID"));
+                cmp.setCOMPANY_LOGIN(set.getString("COMPANY_LOGIN"));
+                cmp.setCOMPANY_PASSWORD(set.getString("COMPANY_PASSWORD"));
+                cmp.setCOMPANY_NAME(set.getString("COMPANY_NAME"));
+                cmp.setCOMPANY_MAIL(set.getString("COMPANY_MAIL"));
+                cmp.setCATEGORY(set.getString("CATEGORY"));
+                cmp.setRANK(set.getInt("RANK"));
+                cmp.setPOLL(set.getInt("POLLS"));
+                cmp.setACP_COUNT(set.getInt("ACP_COUNT"));
+                cmp.setSCP_COUNT(set.getInt("SCP_COUNT"));
+                cmp.setJOIN_DATE(set.getTimestamp("JOIN_DATE"));
+                cmp.setCURRENT_POLL_STATUS(set.getBoolean("CURRENT_POLL_STATUS"));
+                cmp.setCURRENT_POLL_STATUS(set.getBoolean("CURRENT_POLL_STATUS"));
+                cmp.setCOMPANY_URL(set.getString("COMPANY_URL"));
+                cmp.setCOMPANY_PHONE(set.getLong("COMPANY_PHONE"));
+                cmp.setCOMPANY_IMG(set.getBlob("COMPANY_IMG"));
+                cmp.setCOMPANY_RATE(set.getInt("COMPANY_RATE"));
+                cmp.setCOMPANY_DESC(set.getString("COMPANY_DESC"));
+                  list.add(cmp);
             }
 
         } catch (Exception e) {
