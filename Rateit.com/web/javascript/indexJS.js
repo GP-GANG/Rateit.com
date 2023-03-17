@@ -130,7 +130,11 @@
             }
             function searchCompany(){
                 if($("#search input").val().length > 2){
-                    window.location.href = "comp_review_page.jsp?name="+ $("#search input").val();
+//                    let linkref = "comp_review_page.jsp";
+//                    let query = "?name="+$("#search input").val();
+//                    
+//                    window.location.assign(linkref+query);
+                    window.location.href = ("comp_review_page.jsp?name=" + $("#search input").val());
                 }
                 
             }

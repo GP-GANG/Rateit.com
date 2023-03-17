@@ -576,7 +576,7 @@
                     display: flex;
                     position: fixed;
                     width: 250px;
-                    height: 350px;
+                    height: auto;
                     text-align: center;
                     background-color: black;
                     top: 8vh;
@@ -631,10 +631,10 @@
                 }
 
                 #search {
-                    position: relative;
-                    top: 9vh;
+                    /*position: relative;*/
+                    /*top: 9vh;*/
                     /* left:-85px;  this pixel is used when the three horizotal lines will click*/
-                    left: -100%;
+/*                    left: -100%;*/
                 }
 
                 #search input {
@@ -683,7 +683,7 @@
                     display: flex;
                     position: fixed;
                     width: 220px;
-                    height: 320px;
+                    height: auto;
                     text-align: center;
                     background-color: black;
                     top: 8vh;
@@ -738,10 +738,10 @@
                 }
 
                 #search {
-                    position: relative;
-                    top: 9vh;
+                    /*position: relative;*/
+                    /*top: 9vh;*/
                     /* left:-85px;  this pixel is used when the three horizotal lines will click*/
-                    left: -100%;
+                    /*left: -100%;*/
                 }
 
                 #search input {

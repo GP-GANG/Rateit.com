@@ -154,15 +154,15 @@ Company_database cd = new Company_database(ConnectionProvider.getConnection());
             <tr>
                <td><%=e.getCOMPANY_SERVICES() %></td>
                <td>
-                  <input type="radio" name="s01" id="staticr11" value="1"> <label for="staticr11"><i
+                  <input type="radio" name="c1" id="dynamic1" value="1"> <label for="dynamic1"><i
                         class="fa-regular fa-star"></i></label>
-                  <input type="radio" name="s01" id="staticr12" value="2"> <label for="staticr12"> <i
+                  <input type="radio" name="c1" id="dynamic2" value="2"> <label for="dynamic2"> <i
                         class="fa-regular fa-star"></i> </label>
-                  <input type="radio" name="s01" id="staticr13" value="3"> <label for="staticr33"> <i
+                  <input type="radio" name="c1" id="dynamic3" value="3"> <label for="dynamic3"> <i
                         class="fa-regular fa-star"></i> </label>
-                  <input type="radio" name="s01" id="staticr14" value="4"> <label for="staticr14"> <i
+                  <input type="radio" name="c1" id="dynamic4" value="4"> <label for="dynamic4"> <i
                         class="fa-regular fa-star"></i> </label>
-                  <input type="radio" name="s01" id="staticr15" value="5"> <label for="staticr15"> <i
+                  <input type="radio" name="c1" id="dynamic5" value="5"> <label for="dynamic5"> <i
                         class="fa-regular fa-star"></i> </label>
                </td>
             </tr>
@@ -197,11 +197,16 @@ Company_database cd = new Company_database(ConnectionProvider.getConnection());
          var filledStar = "fa-solid fa-star";
          var emptyStar = "fa-regular fa-star";
 
-         console.log(rates)
+//         console.log(rates)
          $("input").change(function (a) {
 
             var index = a.target.name.substr(1);
-            console.log(index)
+//            console.log(index);
+            
+            if(index.length != 1){
+                return;
+            }
+            
 
             // Loop to empty all stars 
             for (var i = 0; i < a.target.value; i++) {
