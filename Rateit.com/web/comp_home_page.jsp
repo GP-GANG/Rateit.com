@@ -26,10 +26,10 @@
                 src="https://raw.githubusercontent.com/GP-GANG/rateit.github.io/main/Other%20Files/photos/logo.png"
                 alt="RATE-IT.COM">
             <ul id="navTool">
-                <li><a href="comp_profile_page.jsp" class="header-content"><b>Profile</b></a></li>
-                <li><a href="Request_poll.jsp" class="header-content"><b>Request Poll</b></a></li>
+                <li><a data-value="comp_profile_page.jsp" class="header-content"><b>Profile</b></a></li>
+                <li><a data-value="Request_poll.jsp" class="header-content"><b>Request Poll</b></a></li>
                 <li><a href="#" class="header-content"><b>Poll Result</b></a></li>
-                <li><a href="../about_us_page/about_us.html" class="header-content"><b>About Us</b></a></li>
+                <li><a data-value="about_us_page.jsp" class="header-content"><b>About Us</b></a></li>
             </ul>
 
             <div id="button">
@@ -39,7 +39,7 @@
         </nav>
     </header>
     <main>
-        <div id="container"></div>
+        <div id="Jcontainer"></div>
     </main>
 
     <footer>
@@ -150,7 +150,11 @@
 <script>
     $(document).ready(function(){
         // this will load the company profile
-        $("#container").load("comp_profile_page.jsp")
+        $("#Jcontainer").load("comp_profile_page.jsp");
+        $("#navTool a").click(function(){
+            $("#Jcontainer").html("");
+            $("#Jcontainer").load(this.dataset.value);
+        })
     })
 </script>
 </html>
