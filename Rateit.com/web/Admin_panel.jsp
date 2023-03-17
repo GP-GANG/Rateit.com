@@ -7,14 +7,19 @@
 <%@page import="rateit.helper.ConnectionProvider"%>
 <%@page import="dbclasses.Company_database"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%
+<%  HttpSession s = request.getSession();
+     
     Company_database cd = new Company_database(ConnectionProvider.getConnection());
     ArrayList<Company> list=cd.getAllCompanies();
+    ArrayList<Company> list1=cd.getRegisterCompanies();
+    ArrayList<Company> list3=cd.getPollrequets();
     
     Poll_database pd = new Poll_database(ConnectionProvider.getConnection());
     ArrayList<Poll> list2 = pd.getAllPoll();
     
     Company_services_database csd = new Company_services_database(ConnectionProvider.con);
+    
+   
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +35,6 @@
 </head>
 
 <body>
-
     <nav>
         <table id="table1">
             <tr height="50px">
@@ -43,7 +47,10 @@
                 <td><a href="#page7" class="header-content">‎ ‎ REPORT</a></td>
             </tr>
             <tr height="50px">
-                <td><a href="#" class="header-content">‎ ‎ NOTIFICATION</a></td>
+                <td><a href="#page9" class="header-content">‎  Registered Company</a></td>
+            </tr>
+            <tr height="50px">
+                <td><a href="#page10" class="header-content">‎  Poll requests</a></td>
             </tr>
         </table>
         <table id="table2">
@@ -72,7 +79,11 @@
     <div id="container">
 
         <!-- //////...............////............../ page-1 //////....................///.............../// -->
+     
+       
         <section id="page1">
+               <%if(request.getParameter("aa")== null){%>
+            <h5>you can also add company from the registered company</h5>
             <main id="box-container">
                 <div class="block">
                     <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/TCS.png?raw=true"
@@ -90,6 +101,30 @@
                     <button id="submit-btn">Submit</button>
                 </div>
             </main>
+            <%}else{
+int id = Integer.parseInt(request.getParameter("aa"));
+Company cmp = cd.getCompanyById(id);
+%>
+            <main id="box-container">
+                <div class="block">
+                    <img src=""
+                        height="50px" width="70px"><br>
+                </div>
+
+                <div id="content-box1">
+                    <form action="AddCompany">
+                    <input class="content1" name="name" type="text" value="<%=cmp.getCOMPANY_NAME()%>"><br>
+                    <input class="content1" name="login" type="text" placeholder="Enter LOGIN"><br>
+                    <input class="content1" name="id" type="number" value="<%=cmp.getCOMPANY_ID()%>"><br>
+                    <input class="content1" name="mail" type="email" value="<%=cmp.getCOMPANY_MAIL()%>"><br>
+                    <input class="content1" name="joindate" type="datetime" value="<%=cmp.getJOIN_DATE()%>"><br>
+                    <input class="content1" name="category" type="text" value="<%=cmp.getCATEGORY()%>"><br>
+
+                    <input type="submit" id="submit-btn" value="submit">
+                    
+                </div>
+            </main>
+            <%}%>
         </section>
 
 
@@ -97,15 +132,18 @@
         <section id="page2">
             <div class="content-box2">
                 <p class="inside_header">REMOVE COMPANY</p>
+                <form action="RemoveCompany">
                 <input class="content2" id="comp_name" type="text" placeholder="Company User Name :"><br>
-                <input class="content2" id="comp_id" type="text" placeholder="Company ID :"><br>
-                <button class="remove_button">Remove</button>
+                <input class="content2" id="comp_id" name="id" type="text" placeholder="Company ID :"><br>
+                <input type="submit" class="remove_button" value="remove">
+                </form>
             </div>
         </section>
 
 
         <!-- //////...............////............../ page-3 //////....................///.............../// -->
         <section id="page3">
+            <%if(request.getParameter("id")== null){%>
             <main class="container">
                 <div id="company1">
                     <p class="inside_header">Company - 1</p>
@@ -113,7 +151,7 @@
                         <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/TCS.png?raw=true"
                             height="45px" width="60px"><br>
                     </div>
-                    <input class="input1" type="text" placeholder="Company Name :"><br>
+                    <input class="input1" type="text" placeholder="Company ID:"><br>
                     <div class="selector">
                             <form>
                                 <input type="checkbox" name="delivery"> delivery
@@ -127,7 +165,7 @@
                         <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/infosys.png?raw=true"
                             height="50px" width="60px"><br>
                     </div>
-                    <input class="input1" type="text" placeholder="Company Name :"><br>
+                    <input class="input1" type="text" placeholder="Company ID :"><br>
                     <div class="selector">
                             <form>
                                 <input type="checkbox" name="delivery"> delivery
@@ -138,6 +176,39 @@
                 <input class="dating" type="text" placeholder="Ending Date :">
                 <button class="Create_button">Create Poll</button>
             </main>
+            <%}else{%>
+            <main class="container">
+                <div id="company1">
+                    <p class="inside_header">Company - 1</p>
+                    <div class="block1">
+                        <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/TCS.png?raw=true"
+                            height="45px" width="60px"><br>
+                    </div>
+                    <input class="input1" type="text" placeholder="Company ID:"><br>
+                    <div class="selector">
+                            <form>
+                                <input type="checkbox" name="delivery"> delivery
+                            </form>
+                    </div>
+                </div>
+
+                <div id="company2">
+                    <p class="inside_header">Company - 2</p>
+                    <div class="block1">
+                        <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/infosys.png?raw=true"
+                            height="50px" width="60px"><br>
+                    </div>
+                    <input class="input1" type="text" placeholder="Company ID :"><br>
+                    <div class="selector">
+                            <form>
+                                <input type="checkbox" name="delivery"> delivery
+                            </form>
+                    </div>
+                </div>
+                <input class="dating" type="text" placeholder="Starting Date :">
+                <input class="dating" type="text" placeholder="Ending Date :">
+                <button class="Create_button">Create Poll</button>
+            </main><%}%>
         </section>
 
 
@@ -146,15 +217,16 @@
             <div class="content-box2">
                 <p class="inside_header">REMOVE &nbsp;POLL</p>
                 <input class="content2" id="poll_name" type="text" placeholder="  Poll_Name :"><br>
-                <input class="content2" id="poll_id" type="text" placeholder="  Poll ID :"><br>
-                <button class="remove_button">Remove</button>
+                <input class="content2" id="poll_id" name="id" type="text" placeholder="  Poll ID :"><br>
+                <input type="submit" class="remove_button" value="remove">
             </div>
         </section>
 
 
         <!-- //////...............////............../ page-5 //////....................///.............../// -->
+        
         <section id="page5">
-            <%for(Company e : list){%>
+                       <%for(Company e : list){%>
             <div class="box box-3">
                 <img src="HelperJSP/DisplayCmpImage.jsp?name=<%=e.getCOMPANY_NAME()%>"
                     height="50px" width="60px" id="logo"><span id="l1">
@@ -169,6 +241,7 @@
         <!-- //////...............////............../ page-6 //////....................///.............../// -->
         
         <section id="page6">
+
            <%for(Poll e : list2){
         
         Company_database cd1 = new Company_database(ConnectionProvider.getConnection());
@@ -299,11 +372,63 @@ Company_services cs1 = csd.getCategory(e.getCOMPANY_ID());
                 </div>
             </div>
         </section>
+        <!-- //////...............////............../ page-9 //////....................///.............../// -->
+        
+      <section id="page9">
+          <%if(list1 == null){%>
+          <p>there is no registered company</p><%}else{%>
+             <%for(Company e : list1){%>
+             <form action="Redirect?a=<%=e.getCOMPANY_ID()%>" method="POST">
+            <div class="box box-3">
+                <img src="HelperJSP/DisplayCmpImage.jsp?name=<%=e.getCOMPANY_NAME()%>"
+                    height="50px" width="60px" id="logo"><span id="l1">
+                    <b>Name:</b><%=e.getCOMPANY_NAME()%></span><br>
+                <span id="l2"><b>Category:</b><%=e.getCATEGORY()%></span><br>
+                <span id="l3" name=""><b>Status:</b>Individual/In-Poll</span>
+               
+<!--                <a href="#page1">  <button style="margin-top: -20px;" class="poll-remove-btn">add</button></a>-->
+<input type="submit" value="submit">
+            </div>
+             </form>
+<%}}%>
+        <!-- //////...............////............../ page-10 //////....................///.............../// -->
+
+        </section>
+      <section id="page10">
+          <%if(list1 == null){%>
+          <p>there is no Poll request</p><%}else{%>
+             <%for(Company e : list3){%>
+             <form action="FilterCompany?a=<%=e.getCOMPANY_ID()%>" method="POST">
+            <div class="box box-3">
+                <img src="HelperJSP/DisplayCmpImage.jsp?name=<%=e.getCOMPANY_NAME()%>"
+                    height="50px" width="60px" id="logo"><span id="l1">
+                    <b>Name:</b><%=e.getCOMPANY_NAME()%></span><br>
+                <span id="l2"><b>Category:</b><%=e.getCATEGORY()%></span><br>
+                <span id="l3" name=""><b>Status:</b>Individual/In-Poll</span>
+               
+<!--                <a href="#page1">  <button style="margin-top: -20px;" class="poll-remove-btn">add</button></a>-->
+<input type="submit" value="Add">
+            </div>
+             </form>
+<%}}%>
+        </section>
     </div>
 
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+    
+    $("#filter").change(function(){
+        let option = $("#filter").val();
+        
+        $.post("FilterCompany",{"value":option},function(response){
+           console.log(response) 
+        });
+    });
+    
+</script>
+
 <!--<script>
     $(document).ready(function () {
         
