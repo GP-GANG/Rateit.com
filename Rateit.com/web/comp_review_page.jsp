@@ -205,8 +205,8 @@ int temp2 =1;
       <br>
       <span class="Text-1">Review Your Experiance About Company:</span>
 
-      <form  method="post">
-          <!--action="IndividualReview?name=<%=name%>"-->
+      <form action="IndividualReview?name=<%=name%>" method="post" onsubmit="return validateSubmit(checkForLogin)">
+          
          <div class="c-service-dynamic c-service">
             <table>
                <%for(Company_services e : list1){%>
@@ -236,7 +236,7 @@ int temp2 =1;
          <div id="btn-box">
              <!--<button type="button" class="btn-sub" onclick="checkForLogin()">Submit Review</button>-->
             <input class="btn-sub" type="reset">
-            <input class="btn-sub" onclick="checkForLogin()" type="button">
+            <input class="btn-sub" type="submit">
          </div>
       </form>
    </div>
@@ -284,17 +284,28 @@ int temp2 =1;
                     $("#loginCheck").css("display","none");
                     $("#loginCheckContainer").css({"zIndex":"-2", "opacity":"0"});
                 });
-                
+      var flag =1 ;  
+      
+      function validateSubmit(valid){
+    valid();
+//    console.log(flag);
+    return flag;
+      }
+      
       function checkForLogin(){
+      
       $.post("CheckForLogin",function(response){
-                    console.log(response)
+//                    console.log(response)
                     if(response == 0){
-                       $("#errMsg").text(" To provide review, you have to login first. ");
+                    $("#errMsg").text(" To provide review, you have to login first. ");
                     $("#loginCheck").css("display","flex");
                     $("#loginCheckContainer").css({"zIndex":"2", "opacity":"1"}); 
+                    flag = 0;
                     }
-        })          
+        });
+        
       }
+
    </script>
 </body>
 
