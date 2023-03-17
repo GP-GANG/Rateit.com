@@ -22,6 +22,8 @@ import rateit.helper.ConnectionProvider;
  */
 public class Company_Login extends HttpServlet {
 
+    private static final long serialVersionUID = 1L;
+
   
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

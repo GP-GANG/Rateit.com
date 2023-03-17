@@ -1,4 +1,4 @@
-            $(document).ready(function(){ 
+$(document).ready(function(){ 
                 $("#profile_div").load("profile.jsp");
                 document.getElementById("search-logo").style.left = document.getElementById("search").getBoundingClientRect().x + 40 +"px";
                 $("#loginCheck").css("display","none");

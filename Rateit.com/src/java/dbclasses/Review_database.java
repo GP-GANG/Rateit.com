@@ -57,5 +57,49 @@ public class Review_database {
 
         return f;
     }
+    
+    public int getRatings(int cmp_id , String services){
+    int i = 0;
+    try{
+    String query ="select AVG(RATE) from review where COMPANY_ID=? and SERVICE=?";
+    
+    PreparedStatement stmt = this.con.prepareStatement(query);
+    stmt.setInt(1,cmp_id);
+    stmt.setString(2,services);
+    
+    ResultSet set = stmt.executeQuery();
+    
+    if(set.next()){
+           i = (int)set.getFloat("AVG(RATE)");
+    }
+    
+    }
+    catch(Exception e){e.printStackTrace(); }
+    
+    
+    
+    return i;
+    }
+    public boolean submitReview1(Review review) {
+        boolean b = false;
 
+        try {
+            String query = "insert into review(COMPANY_ID,USER_ID,SERVICE,RATE,COMMENT) values(?,?,?,?,?)";
+
+            PreparedStatement stmt = this.con.prepareStatement(query);
+           
+            stmt.setInt(1, review.getCOMPANY_ID());
+            stmt.setInt(2, review.getUSER_ID());
+            stmt.setString(3, review.getSERVICES());
+            stmt.setFloat(4, review.getRATE());
+            stmt.setString(5, review.getCOMMENT());
+
+            stmt.executeUpdate();
+            b = true;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return b;
+    }
 }

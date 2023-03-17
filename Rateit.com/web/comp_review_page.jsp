@@ -1,3 +1,4 @@
+<%@page import="dbclasses.Review_database"%>
 <%@page import="rateit.entities.Company_services"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="dbclasses.Company_services_database"%>
@@ -13,6 +14,10 @@ Company_database cd = new Company_database(ConnectionProvider.getConnection());
    Company cmp=cd.getCompanyByName(name);
     Company_services_database csd = new Company_services_database(ConnectionProvider.getConnection());
     ArrayList<Company_services> list1 = csd.getAllCategories(cmp.getCOMPANY_ID());
+    
+Review_database rd = new Review_database(ConnectionProvider.getConnection());
+int temp = 1;
+int temp2 =1;
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -48,13 +53,17 @@ Company_database cd = new Company_database(ConnectionProvider.getConnection());
       </div>
 
       <div class="description">‎<%=cmp.getCOMPANY_DESC() %></div>
-      <!-- <button class="Read-more_btn" id="btn1" onclick="moreContent('showContent','btn1')">Show More</button> -->
+     
 
       <div class="c-service-static c-service">
          <table>
              <%for(Company_services e : list1){%>
+             <%  int i = rd.getRatings(cmp.getCOMPANY_ID(), e.getCOMPANY_SERVICES());
+      
+               %>
             <tr>
                <td><%=e.getCOMPANY_SERVICES() %></td>
+               <%if(i == 0){%>
                <td>
                   <input type="radio" name="s01" id="staticr11" value="1"> <label for="staticr11"><i
                         class="fa-regular fa-star"></i></label>
@@ -67,79 +76,79 @@ Company_database cd = new Company_database(ConnectionProvider.getConnection());
                   <input type="radio" name="s01" id="staticr15" value="5"> <label for="staticr15"> <i
                         class="fa-regular fa-star"></i> </label>
                </td>
+               <%}%>
+               <%if(i == 1){%>
+               <td>
+                  <input type="radio" name="s01" id="staticr11" value="1"> <label for="staticr11"><i
+                        class="fa-solid fa-star"></i></label>
+                  <input type="radio" name="s01" id="staticr12" value="2"> <label for="staticr12"> <i
+                        class="fa-regular fa-star"></i> </label>
+                  <input type="radio" name="s01" id="staticr13" value="3"> <label for="staticr33"> <i
+                        class="fa-regular fa-star"></i> </label>
+                  <input type="radio" name="s01" id="staticr14" value="4"> <label for="staticr14"> <i
+                        class="fa-regular fa-star"></i> </label>
+                  <input type="radio" name="s01" id="staticr15" value="5"> <label for="staticr15"> <i
+                        class="fa-regular fa-star"></i> </label>
+               </td>
+               <%}%>
+               <%if(i == 2){%>
+               <td>
+                  <input type="radio" name="s01" id="staticr11" value="1"> <label for="staticr11"><i
+                        class="fa-solid fa-star"></i></label>
+                  <input type="radio" name="s01" id="staticr12" value="2"> <label for="staticr12"> <i
+                        class="fa-solid fa-star"></i> </label>
+                  <input type="radio" name="s01" id="staticr13" value="3"> <label for="staticr33"> <i
+                        class="fa-regular fa-star"></i> </label>
+                  <input type="radio" name="s01" id="staticr14" value="4"> <label for="staticr14"> <i
+                        class="fa-regular fa-star"></i> </label>
+                  <input type="radio" name="s01" id="staticr15" value="5"> <label for="staticr15"> <i
+                        class="fa-regular fa-star"></i> </label>
+               </td>
+               <%}%>
+               <%if(i == 3){%>
+               <td>
+                  <input type="radio" name="s01" id="staticr11" value="1"> <label for="staticr11"><i
+                        class="fa-solid fa-star"></i></label>
+                  <input type="radio" name="s01" id="staticr12" value="2"> <label for="staticr12"> <i
+                        class="fa-solid fa-star"></i> </label>
+                  <input type="radio" name="s01" id="staticr13" value="3"> <label for="staticr33"> <i
+                        class="fa-solid fa-star"></i> </label>
+                  <input type="radio" name="s01" id="staticr14" value="4"> <label for="staticr14"> <i
+                        class="fa-regular fa-star"></i> </label>
+                  <input type="radio" name="s01" id="staticr15" value="5"> <label for="staticr15"> <i
+                        class="fa-regular fa-star"></i> </label>
+               </td>
+               <%}%>
+               <%if(i == 4){%>
+               <td>
+                  <input type="radio" name="s01" id="staticr11" value="1"> <label for="staticr11"><i
+                        class="fa-solid fa-star"></i></label>
+                  <input type="radio" name="s01" id="staticr12" value="2"> <label for="staticr12"> <i
+                        class="fa-solid fa-star"></i> </label>
+                  <input type="radio" name="s01" id="staticr13" value="3"> <label for="staticr33"> <i
+                        class="fa-solid fa-star"></i> </label>
+                  <input type="radio" name="s01" id="staticr14" value="4"> <label for="staticr14"> <i
+                        class="fa-solid fa-star"></i> </label>
+                  <input type="radio" name="s01" id="staticr15" value="5"> <label for="staticr15"> <i
+                        class="fa-regular fa-star"></i> </label>
+               </td>
+               <%}%>
+               <%if(i == 5){%>
+               <td>
+                  <input type="radio" name="s01" id="staticr11" value="1"> <label for="staticr11"><i
+                        class="fa-solid fa-star"></i></label>
+                  <input type="radio" name="s01" id="staticr12" value="2"> <label for="staticr12"> <i
+                        class="fa-solid fa-star"></i> </label>
+                  <input type="radio" name="s01" id="staticr13" value="3"> <label for="staticr33"> <i
+                        class="fa-solid fa-star"></i> </label>
+                  <input type="radio" name="s01" id="staticr14" value="4"> <label for="staticr14"> <i
+                        class="fa-solid fa-star"></i> </label>
+                  <input type="radio" name="s01" id="staticr15" value="5"> <label for="staticr15"> <i
+                        class="fa-solid fa-star"></i> </label>
+               </td>
+               <%}%>
             </tr>
             <%}%>
-<!--
-            <tr>
-               <td> Bills and Recharge </td>
-               <td>
-                  <input type="radio" name="s02" id="staticr21" value="1"> <label for="staticr11"><i
-                        class="fa-regular fa-star"></i></label>
-                  <input type="radio" name="s02" id="staticr22" value="2"> <label for="staticr12"> <i
-                        class="fa-regular fa-star"></i> </label>
-                  <input type="radio" name="s02" id="staticr23" value="3"> <label for="staticr33"> <i
-                        class="fa-regular fa-star"></i> </label>
-                  <input type="radio" name="s02" id="staticr24" value="4"> <label for="staticr14"> <i
-                        class="fa-regular fa-star"></i> </label>
-                  <input type="radio" name="s02" id="staticr25" value="5"> <label for="staticr15"> <i
-                        class="fa-regular fa-star"></i> </label>
-
-               </td>
-            </tr>
-
-
-            <tr>
-               <td> QR code scanning </td>
-               <td>
-                  <input type="radio" name="s03" id="staticr31" value="1"> <label for="staticr11"><i
-                        class="fa-regular fa-star"></i></label>
-                  <input type="radio" name="s03" id="staticr32" value="2"> <label for="staticr12"> <i
-                        class="fa-regular fa-star"></i> </label>
-                  <input type="radio" name="s03" id="staticr33" value="3"> <label for="staticr33"> <i
-                        class="fa-regular fa-star"></i> </label>
-                  <input type="radio" name="s03" id="staticr34" value="4"> <label for="staticr14"> <i
-                        class="fa-regular fa-star"></i> </label>
-                  <input type="radio" name="s03" id="staticr35" value="5"> <label for="staticr15"> <i
-                        class="fa-regular fa-star"></i> </label>
-
-               </td>
-            </tr>
-
-
-            <tr>
-               <td> UPI Transaction </td>
-               <td>
-                  <input type="radio" name="s04" id="staticr41" value="1"> <label for="staticr11"><i
-                        class="fa-regular fa-star"></i></label>
-                  <input type="radio" name="s04" id="staticr42" value="2"> <label for="staticr12"> <i
-                        class="fa-regular fa-star"></i> </label>
-                  <input type="radio" name="s04" id="staticr43" value="3"> <label for="staticr33"> <i
-                        class="fa-regular fa-star"></i> </label>
-                  <input type="radio" name="s04" id="staticr44" value="4"> <label for="staticr14"> <i
-                        class="fa-regular fa-star"></i> </label>
-                  <input type="radio" name="s04" id="staticr45" value="5"> <label for="staticr15"> <i
-                        class="fa-regular fa-star"></i> </label>
-               </td>
-            </tr>
-
-
-            <tr>
-               <td> Travels-Movie Tickets </td>
-               <td>
-                  <input type="radio" name="s05" id="staticr51" value="1"> <label for="staticr11"><i
-                        class="fa-regular fa-star"></i></label>
-                  <input type="radio" name="s05" id="staticr52" value="2"> <label for="staticr12"> <i
-                        class="fa-regular fa-star"></i> </label>
-                  <input type="radio" name="s05" id="staticr53" value="3"> <label for="staticr33"> <i
-                        class="fa-regular fa-star"></i> </label>
-                  <input type="radio" name="s05" id="staticr54" value="4"> <label for="staticr14"> <i
-                        class="fa-regular fa-star"></i> </label>
-                  <input type="radio" name="s05" id="staticr55" value="5"> <label for="staticr15"> <i
-                        class="fa-regular fa-star"></i> </label>
-
-               </td>
-            </tr>-->
-
          </table>
       </div>
       <br>
@@ -147,35 +156,35 @@ Company_database cd = new Company_database(ConnectionProvider.getConnection());
       <br>
       <span class="Text-1">Review Your Experiance About Company:</span>
 
-      <form action="">
+      <form action="IndividualReview?name=<%=name%>" method="post">
          <div class="c-service-dynamic c-service">
             <table>
                <%for(Company_services e : list1){%>
             <tr>
                <td><%=e.getCOMPANY_SERVICES() %></td>
                <td>
-                  <input type="radio" name="c1" id="dynamic1" value="1"> <label for="dynamic1"><i
-                        class="fa-regular fa-star"></i></label>
-                  <input type="radio" name="c1" id="dynamic2" value="2"> <label for="dynamic2"> <i
-                        class="fa-regular fa-star"></i> </label>
-                  <input type="radio" name="c1" id="dynamic3" value="3"> <label for="dynamic3"> <i
-                        class="fa-regular fa-star"></i> </label>
-                  <input type="radio" name="c1" id="dynamic4" value="4"> <label for="dynamic4"> <i
-                        class="fa-regular fa-star"></i> </label>
-                  <input type="radio" name="c1" id="dynamic5" value="5"> <label for="dynamic5"> <i
+                   <input type="radio" name="c<%=temp%>" id="dynamic<%=temp%><%=temp2%>" value="1"> <label for="dynamic<%=temp%><%=temp2%>"><i
+                        class="fa-regular fa-star"></i></label><%temp2++;%>
+                  <input type="radio" name="c<%=temp%>" id="dynamic<%=temp%><%=temp2%>" value="2"> <label for="dynamic<%=temp%><%=temp2%>"> <i
+                        class="fa-regular fa-star"></i> </label><%temp2++;%>
+                  <input type="radio" name="c<%=temp%>" id="dynamic<%=temp%><%=temp2%>" value="3"> <label for="dynamic<%=temp%><%=temp2%>"> <i
+                        class="fa-regular fa-star"></i> </label><%temp2++;%>
+                  <input type="radio" name="c<%=temp%>" id="dynamic<%=temp%><%=temp2%>" value="4"> <label for="dynamic<%=temp%><%=temp2%>"> <i
+                        class="fa-regular fa-star"></i> </label><%temp2++;%>
+                  <input type="radio" name="c<%=temp%>" id="dynamic<%=temp%><%=temp2%>" value="5"> <label for="dynamic<%=temp%><%=temp2%>"> <i
                         class="fa-regular fa-star"></i> </label>
                </td>
             </tr>
-            <%}%>
+            <%temp++;}%>
             </table>
             <div id="comm-box">
-               <textarea id="txt-area" rows="8" cols="125"
-                  placeholder="Comment your opinion about the company..."></textarea> </td>
+                <textarea id="txt-area" rows="8" cols="125" name="review"
+                  placeholder="Comment your opinion about the company..."></textarea></td>
             </div>
          </div>
 
          <div id="btn-box">
-            <button class="btn-sub">Submit Review</button>
+             <button type="submit" class="btn-sub">Submit Review</button>
             <input class="btn-sub" type="reset">
          </div>
       </form>

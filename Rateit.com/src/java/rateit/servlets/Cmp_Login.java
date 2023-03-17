@@ -1,27 +1,33 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
 package rateit.servlets;
 
 import dbclasses.Company_database;
+import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import rateit.entities.Company;
+import rateit.entities.Message;
 import rateit.helper.ConnectionProvider;
 
 /**
  *
  * @author Dell
  */
-public class SearchCompany extends HttpServlet {
+public class Cmp_Login extends HttpServlet {
 
-        protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
@@ -29,18 +35,26 @@ public class SearchCompany extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet SearchCompany</title>");            
+            out.println("<title>Servlet Cmp_Login</title>");            
             out.println("</head>");
             out.println("<body>");
-            
-            String name = request.getParameter("name");
+              String login = request.getParameter("name");
+            String password = request.getParameter("password");
             
             Company_database cd = new Company_database(ConnectionProvider.getConnection());
-            ArrayList<Company> list = cd.getCompanyByName1(name);
-            
-            for(Company e : list){out.println(e.getCOMPANY_NAME());}
-           
-            
+            Company cmp = cd.getCompanyByEmail(login, password);
+            HttpSession session = request.getSession(true);
+            session.setMaxInactiveInterval(20*60);
+
+            if (cmp == null) {
+              Message msg  = new Message("incorrect password or id","error");
+              session.setAttribute("Message", msg);
+              response.sendRedirect("comp_login.jsp");
+            } else {
+               session.setAttribute("Company", cmp);
+               response.sendRedirect("comp_home_page.jsp");
+
+            }
             out.println("</body>");
             out.println("</html>");
         }

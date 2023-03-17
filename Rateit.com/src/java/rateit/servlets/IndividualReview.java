@@ -1,9 +1,7 @@
-
+package rateit.servlets;
 
 import dbclasses.Company_database;
 import dbclasses.Company_services_database;
-import dbclasses.Customer_database;
-import dbclasses.Poll_database;
 import dbclasses.Review_database;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -16,11 +14,14 @@ import java.util.ArrayList;
 import rateit.entities.Company;
 import rateit.entities.Company_services;
 import rateit.entities.Customer;
-import rateit.entities.Poll;
 import rateit.entities.Review;
 import rateit.helper.ConnectionProvider;
 
-public class SubmitReview extends HttpServlet {
+/**
+ *
+ * @author Dell
+ */
+public class IndividualReview extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -30,61 +31,47 @@ public class SubmitReview extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet SubmitReview</title>");
+            out.println("<title>Servlet IndividualReview</title>");            
             out.println("</head>");
             out.println("<body>");
-            /*-----------------------fetchig parameters from poll review page --------------------*/
-            int POLL_ID = Integer.parseInt(request.getParameter("POLL_ID"));
-
-            String review1 = request.getParameter("review1");
-            String review2 = request.getParameter("review2");
-
-            int[] ratings = new int[10];
+            //fetching parameters
+      String comment = request.getParameter("review");
+      String name = request.getParameter("name");
+      int[] ratings = new int[30];
             int i = 1;
             while (i < 10 && (request.getParameter("c" + i) != null)) {
                 ratings[i] = Integer.parseInt(request.getParameter("c" + i));
                 i++;
             }
-
-            int ii = 1;
-            boolean f = true;
-
-            Poll_database pd = new Poll_database(ConnectionProvider.getConnection());
-            Poll p = pd.getPoll(POLL_ID);
+            
             Company_database cd = new Company_database(ConnectionProvider.getConnection());
-            Company cmp1 = cd.getCompanyById(p.getCOMPANY1());
-            Company cmp2 = cd.getCompanyById(p.getCOMPANY2());
-            HttpSession session = request.getSession(false);
+            Company cmp = cd.getCompanyByName(name);
+             HttpSession session = request.getSession(false);
             Customer customer = (Customer) session.getAttribute("Customer");
             Review_database rd = new Review_database(ConnectionProvider.getConnection());
             Company_services_database csd = new Company_services_database(ConnectionProvider.getConnection());
-            ArrayList<Company_services> list1 = csd.getAllCategories(cmp1.getCOMPANY_ID());
-            Customer_database cd1 = new Customer_database(ConnectionProvider.getConnection());
+             ArrayList<Company_services> list1 =csd.getAllCategories(cmp.getCOMPANY_ID());
             
-            int num = customer.getATTENDED_POLL();
-            for (int l = 0; ratings[ii] != 0; ii++) {
-                Company_services e = list1.get(ii);
-                
+                        /*-----------------------submitting review of company1------------------------*/
+        int ii = 1;
+            int l;
+                        /*-----------------------submitting review of company1------------------------*/
+
+            for (l = 0; l<list1.size(); ii++, l++) {
+                Company_services e = list1.get(l);
                 if (ii == 1) {
-                    Review r = new Review(p.getPOLL_ID(), cmp1.getCOMPANY_ID(), customer.getUSER_ID(), e.getCOMPANY_SERVICES(), review1, ratings[ii]);
-                    if(rd.submitReview(r)){
-                        num =num+1;
-                        cd1.updateAttendedPoll(customer.getUSER_ID(), num);
-                        out.println("1");}
+                    Review r = new Review(cmp.getCOMPANY_ID(), customer.getUSER_ID(), e.getCOMPANY_SERVICES(), comment, ratings[ii]);
+                    if (rd.submitReview1(r)) {
+                        out.println("11");
+                    }
+                } else {
+                    Review r = new Review( cmp.getCOMPANY_ID(), customer.getUSER_ID(), e.getCOMPANY_SERVICES(), ratings[ii]);
+                    if (rd.submitReview1(r)) {
+                        out.println("1");
+                    }
                 }
-
-                Review r = new Review(p.getPOLL_ID(), cmp1.getCOMPANY_ID(), customer.getUSER_ID(), e.getCOMPANY_SERVICES(), ratings[ii]);
-
             }
-
-//            for(Company_services e : list1){
-//                
-//                if(f){
-//            Review r = new Review(p.getPOLL_ID(),cmp1.getCOMPANY_ID(),customer.getUSER_ID(),e.getCOMPANY_SERVICES(),review1,ratings[1]);
-//              f =false;
-//                }
-//                
-//            }
+            response.sendRedirect("submitted.jsp");
             out.println("</body>");
             out.println("</html>");
         }

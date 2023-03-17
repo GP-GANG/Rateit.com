@@ -72,6 +72,14 @@
         <servlet-name>Rsubmit</servlet-name>
         <servlet-class>rateit.servlets.Rsubmit</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Cmp_Login</servlet-name>
+        <servlet-class>rateit.servlets.Cmp_Login</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>IndividualReview</servlet-name>
+        <servlet-class>rateit.servlets.IndividualReview</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SignUp</servlet-name>
         <url-pattern>/SignUp</url-pattern>
@@ -143,6 +151,14 @@
     <servlet-mapping>
         <servlet-name>Rsubmit</servlet-name>
         <url-pattern>/Rsubmit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Cmp_Login</servlet-name>
+        <url-pattern>/Cmp_Login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>IndividualReview</servlet-name>
+        <url-pattern>/IndividualReview</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

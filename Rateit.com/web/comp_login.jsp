@@ -35,7 +35,7 @@
                 <div id="Login" class="input-group">
     
     
-                    <form action="Company_Login" method="post" onsubmit="return validateLogin()">
+                    <form action="Cmp_Login" method="post" onsubmit="return validateLogin()">
                         <label for="Uname" class="inputs"> Company_Id or Email : </label> <br>
                         <input class="inputs" type="text" id="Uname" name="name" tabindex="1" placeholder="E.x. : user#123">
                         <div class="Error" id="alertUname"></div>
