@@ -4,19 +4,33 @@
  */
 package rateit.servlets;
 
+import dbclasses.Company_services_database;
+import dbclasses.Poll_database;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import rateit.entities.Company_services;
+import rateit.entities.Poll;
+import rateit.helper.ConnectionProvider;
 
 /**
  *
  * @author Dell
  */
-public class Redirect extends HttpServlet {
+public class AddPoll extends HttpServlet {
 
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -25,14 +39,23 @@ public class Redirect extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Redirect</title>");            
+            out.println("<title>Servlet AddPoll</title>");            
             out.println("</head>");
             out.println("<body>");
-    
-           String i = request.getParameter("a");
-           
-           response.sendRedirect("Admin_panel.jsp?aa="+i+"#page1");            
-           out.println("</body>");
+        Company_services_database csd = new Company_services_database(ConnectionProvider.getConnection());
+          int Company1_id = Integer.parseInt(request.getParameter("company1"));            
+          int Company2_id = Integer.parseInt(request.getParameter("company2")); 
+          int poll_id = Integer.parseInt(request.getParameter("poll_id")); 
+          Company_services cs = csd.getCategory(Company1_id);
+          String category = cs.getCATEGORY();
+          out.println(Company1_id+""+Company2_id+""+poll_id+""+category);
+          Poll p = new Poll(poll_id, Company1_id, Company2_id, category);
+          out.println("1");
+          Poll_database pd = new Poll_database(ConnectionProvider.getConnection());
+            if(pd.addPoll(p)){
+            out.println("POll created");
+            }
+            out.println("</body>");
             out.println("</html>");
         }
     }

@@ -91,7 +91,7 @@ public class Poll_database {
     public boolean addPoll(Poll p){
     boolean b = false; 
     try{
-    String query = "insert into poll(POLL_ID,START_DATE,COMPANY1,COMPANY2,CATEGORY,END_DATE) values(?,?,?,?,?,?)";
+    String query = "insert into poll(POLL_ID,START_DATE,COMPANY1,COMPANY2,CATEGORY) values(?,?,?,?,?)";
     PreparedStatement stmt = this.con.prepareStatement(query);
     stmt.setInt(1,p.getPOLL_ID());
     Date date = new Date();
@@ -99,9 +99,9 @@ public class Poll_database {
     stmt.setInt(3,p.getCOMPANY1());
     stmt.setInt(4, p.getCOMPANY2());
     stmt.setString(4, p.getCATEGORY());
-    stmt.setTimestamp(5, p.getEND_DATE());
-    
-    
+//    stmt.setTimestamp(5, p.getEND_DATE());
+    stmt.executeUpdate();
+    b= true;    
    
     
     }

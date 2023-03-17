@@ -29,6 +29,15 @@ public class Poll {
         this.CATEGORY = CATEGORY;
         this.REMOVE_THIS = REMOVE_THIS;
     }
+    public Poll(int POLL_ID, int COMPANY1, int COMPANY2, String CATEGORY) {
+    
+        this.POLL_ID = POLL_ID;
+      
+        this.COMPANY1 = COMPANY1;
+        this.COMPANY2 = COMPANY2;
+        this.CATEGORY = CATEGORY;
+        
+    }
 
     public int getPOLL_NO() {
         return POLL_NO;

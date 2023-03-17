@@ -100,6 +100,14 @@
         <servlet-name>Redirect</servlet-name>
         <servlet-class>rateit.servlets.Redirect</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Redirect1</servlet-name>
+        <servlet-class>rateit.servlets.Redirect1</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddPoll</servlet-name>
+        <servlet-class>rateit.servlets.AddPoll</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SignUp</servlet-name>
         <url-pattern>/SignUp</url-pattern>
@@ -195,6 +203,14 @@
     <servlet-mapping>
         <servlet-name>Redirect</servlet-name>
         <url-pattern>/Redirect</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Redirect1</servlet-name>
+        <url-pattern>/Redirect1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddPoll</servlet-name>
+        <url-pattern>/AddPoll</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

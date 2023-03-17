@@ -15,8 +15,17 @@ import jakarta.servlet.http.HttpServletResponse;
  *
  * @author Dell
  */
-public class Redirect extends HttpServlet {
+public class Redirect1 extends HttpServlet {
 
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -25,14 +34,14 @@ public class Redirect extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Redirect</title>");            
+            out.println("<title>Servlet Redirect1</title>");            
             out.println("</head>");
             out.println("<body>");
-    
-           String i = request.getParameter("a");
-           
-           response.sendRedirect("Admin_panel.jsp?aa="+i+"#page1");            
-           out.println("</body>");
+            String id =request.getParameter("id");
+            
+            response.sendRedirect("Admin_panel.jsp?id="+id+"#page3");
+            
+            out.println("</body>");
             out.println("</html>");
         }
     }
