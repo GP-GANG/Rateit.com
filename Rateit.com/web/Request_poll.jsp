@@ -15,6 +15,7 @@
 </head>
 
 <body>
+    
     <div id="container">
         <div id="com-info">
             <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/amazon.png?raw=true"

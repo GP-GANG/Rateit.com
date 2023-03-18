@@ -60,9 +60,16 @@ $(document).ready(function(){
             profileBtn.addEventListener("click", showProfile);
             
             function showProfile(){
+                if(document.getElementById("profile_btn") != null){
                 document.querySelector(".container").style.opacity = "0.2";
                 document.getElementById("profile_div").style.display = "block";
-            }
+                }
+                else{
+                    $("#errMsg").text(" Please Login or Register first. ");
+                    $("#loginCheck").css("display","flex");
+                    $("#loginCheckContainer").css({"zIndex":"2", "opacity":"1"});
+                }
+             }
 
 
             // console.log(profileClose)
