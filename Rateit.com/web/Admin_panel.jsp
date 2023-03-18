@@ -102,7 +102,7 @@
                     </div>
                 </main>
                 <%} else {
-                    int id = Integer.parseInt(request.getParameter("id"));
+                    int id = Integer.parseInt(request.getParameter("aa"));
                     Company cmp = cd.getCompanyById(id);
                 %>
                 <main id="box-container">

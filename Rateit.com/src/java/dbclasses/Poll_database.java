@@ -98,7 +98,7 @@ public class Poll_database {
     stmt.setTimestamp(2,  new Timestamp(date.getTime()));
     stmt.setInt(3,p.getCOMPANY1());
     stmt.setInt(4, p.getCOMPANY2());
-    stmt.setString(4, p.getCATEGORY());
+    stmt.setString(5, p.getCATEGORY());
 //    stmt.setTimestamp(5, p.getEND_DATE());
     stmt.executeUpdate();
     b= true;    

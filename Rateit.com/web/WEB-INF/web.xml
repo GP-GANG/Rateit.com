@@ -108,6 +108,10 @@
         <servlet-name>AddPoll</servlet-name>
         <servlet-class>rateit.servlets.AddPoll</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AcceptRequest</servlet-name>
+        <servlet-class>rateit.servlets.AcceptRequest</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SignUp</servlet-name>
         <url-pattern>/SignUp</url-pattern>
@@ -211,6 +215,10 @@
     <servlet-mapping>
         <servlet-name>AddPoll</servlet-name>
         <url-pattern>/AddPoll</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AcceptRequest</servlet-name>
+        <url-pattern>/AcceptRequest</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

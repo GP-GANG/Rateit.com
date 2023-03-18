@@ -438,4 +438,37 @@ public class Company_database {
         }
         return list;
     }
+    
+    public boolean updatePollStatus0(int Company_id){
+        boolean b = false;
+        try{
+     String query = "Update company set CURRENT_POLL_STATUS=0 where COMPANY_ID=?";
+                 PreparedStatement stmt = this.con.prepareStatement(query);
+
+      stmt.setInt(1,Company_id);
+
+            int i = stmt.executeUpdate();
+            if (i > 0) {
+                b = true;
+            }
+        }
+        catch(Exception e){e.printStackTrace();}
+        return b;
+    }
+    public boolean updatePollStatus1(int Company_id){
+        boolean b = false;
+        try{
+     String query = "Update company set CURRENT_POLL_STATUS=1 where COMPANY_ID=?";
+                 PreparedStatement stmt = this.con.prepareStatement(query);
+
+      stmt.setInt(1,Company_id);
+
+            int i = stmt.executeUpdate();
+            if (i > 0) {
+                b = true;
+            }
+        }
+        catch(Exception e){e.printStackTrace();}
+        return b;
+    }
 }
