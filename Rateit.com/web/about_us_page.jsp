@@ -5,14 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Rate it | About us</title>
-    <link rel="stylesheet" href="css\about_us_page.css">
+    <link rel="stylesheet" href="css\about_us_page.css?23">
 </head>
 
 <body>
     <header>
         <nav>
             <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/logo.png?raw=true"
-                alt="rateit.com">
+                alt="rateit.com" id="img1">
             <ul>
                 <a href="../user_home_page/user_home.html" class="nev"><b>Home</b></a>
                 <a href="#" class="nev"><b>Feedback</b></a>

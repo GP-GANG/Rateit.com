@@ -8,15 +8,18 @@
 }
 
 body {
-    display: flex;
+    height:50vh;
+    width:100vw;
+    display: inline-block;
     justify-content: center;
 }
 
 #container {
-    margin-top: 5%;
+    margin-top: 7%;
     width: 50%;
     background-color: rgba(211, 211, 211, 0.411);
     padding: 15px;
+    margin-left: 22%;
 }
 
 #com-info {
@@ -121,4 +124,4 @@ button {
 
 button:hover {
     background-color: brown;
-}
+} 
