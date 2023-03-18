@@ -28,7 +28,7 @@
             <ul id="navTool">
                 <li><a data-value="comp_profile_page.jsp" class="header-content"><b>Profile</b></a></li>
                 <li><a data-value="Request_poll.jsp" class="header-content"><b>Request Poll</b></a></li>
-                <li><a href="#" class="header-content"><b>Poll Result</b></a></li>
+                <li><a data-value="poll_result.jsp" class="header-content"><b>Poll Result</b></a></li>
                 <li><a data-value="about_us_page.jsp" class="header-content"><b>About Us</b></a></li>
             </ul>
 
