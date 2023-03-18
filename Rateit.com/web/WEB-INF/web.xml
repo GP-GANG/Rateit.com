@@ -73,12 +73,40 @@
         <servlet-class>rateit.servlets.Rsubmit</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>FilterCompany</servlet-name>
+        <servlet-class>rateit.servlets.FilterCompany</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RemoveCompany</servlet-name>
+        <servlet-class>rateit.servlets.RemoveCompany</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddCompany</servlet-name>
+        <servlet-class>rateit.servlets.AddCompany</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RemovePoll</servlet-name>
+        <servlet-class>rateit.servlets.RemovePoll</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>Cmp_Login</servlet-name>
         <servlet-class>rateit.servlets.Cmp_Login</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>IndividualReview</servlet-name>
         <servlet-class>rateit.servlets.IndividualReview</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Redirect</servlet-name>
+        <servlet-class>rateit.servlets.Redirect</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Redirect1</servlet-name>
+        <servlet-class>rateit.servlets.Redirect1</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddPoll</servlet-name>
+        <servlet-class>rateit.servlets.AddPoll</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>SignUp</servlet-name>
@@ -133,6 +161,10 @@
         <url-pattern>/ReviewSubmit</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>RemoveCompany</servlet-name>
+        <url-pattern>/RemoveCompany</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>CheckReview</servlet-name>
         <url-pattern>/CheckReview</url-pattern>
     </servlet-mapping>
@@ -159,6 +191,26 @@
     <servlet-mapping>
         <servlet-name>IndividualReview</servlet-name>
         <url-pattern>/IndividualReview</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RemovePoll</servlet-name>
+        <url-pattern>/RemovePoll</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddCompany</servlet-name>
+        <url-pattern>/AddCompany</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Redirect</servlet-name>
+        <url-pattern>/Redirect</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Redirect1</servlet-name>
+        <url-pattern>/Redirect1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddPoll</servlet-name>
+        <url-pattern>/AddPoll</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

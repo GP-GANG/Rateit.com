@@ -491,3 +491,7 @@ button:hover {
     margin-top: 40px;
     margin-left: -40%;
 }
+#page10{
+    overflow: scroll;
+    height: auto;
+}
