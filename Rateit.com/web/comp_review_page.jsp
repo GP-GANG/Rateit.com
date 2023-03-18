@@ -205,7 +205,9 @@ int temp2 =1;
       <br>
       <span class="Text-1">Review Your Experiance About Company:</span>
 
-      <form action="IndividualReview?name=<%=name%>" method="post" onsubmit="return validateSubmit(checkForLogin)">
+
+      <form action="IndividualReview?name=<%=name%>" method="post" onsubmit="return checkForLogin(validateSubmit)">
+
           
          <div class="c-service-dynamic c-service">
             <table>
@@ -284,17 +286,21 @@ int temp2 =1;
                     $("#loginCheck").css("display","none");
                     $("#loginCheckContainer").css({"zIndex":"-2", "opacity":"0"});
                 });
-      var flag =1 ;  
+
+      var flag = 0;  
       
-      function validateSubmit(valid){
-    valid();
-//    console.log(flag);
-    return flag;
+    function validateSubmit(){
+    console.log(flag);
+    if(flag == 1)
+        return true;
+    else
+        return false;
       }
       
-      function checkForLogin(){
+       function checkForLogin(valid){
       
-      $.post("CheckForLogin",function(response){
+      $.post("CheckForLogin", function(response){
+
 //                    console.log(response)
                     if(response == 0){
                     $("#errMsg").text(" To provide review, you have to login first. ");
@@ -302,8 +308,11 @@ int temp2 =1;
                     $("#loginCheckContainer").css({"zIndex":"2", "opacity":"1"}); 
                     flag = 0;
                     }
+
+                    else flag = 1;
         });
-        
+        return valid();
+
       }
 
    </script>

@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -5,20 +6,16 @@
 }
 
 body {
-    display: block;
-    width:100vw;
-    height: 100%;
-}
-#about_container{
     display: flex;
+    justify-content: center;
+    text-align: center;
+
 }
-#side1
-{
+
+#side1,
+#side2 {
     width: 50%;
     height: 100%;
-}
-#side2 {
-    width: 65%;
 }
 
 #side1 {
@@ -27,14 +24,12 @@ body {
     padding: 50px 60px;
 }
 
-#img1 {
-    margin-top: 40px;
+img {
+    margin-top: 30px;
     width: 65%;
-    height:75%;
-    margin-left: 20px;
 }
 
-#main_box {
+div {
     display: flex;
     margin-left: 20px;
 }
@@ -58,8 +53,5 @@ p {
     margin-top: 30px;
     text-align: left;
     font-size: 17px;
-}
 
-footer {
-    margin-top: -50px;
 }
