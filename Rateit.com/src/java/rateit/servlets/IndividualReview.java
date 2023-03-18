@@ -55,6 +55,7 @@ public class IndividualReview extends HttpServlet {
                         /*-----------------------submitting review of company1------------------------*/
         int ii = 1;
             int l;
+            
                         /*-----------------------submitting review of company1------------------------*/
 
             for (l = 0; l<list1.size(); ii++, l++) {
