@@ -21,7 +21,7 @@
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <!-- <link rel="stylesheet" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" href="" crossorigin="anonymous"> -->
 
-        <link rel="stylesheet" href="css/index.css?2"/>
+        <link rel="stylesheet" href="css/index.css"/>
 
     </head>
 
