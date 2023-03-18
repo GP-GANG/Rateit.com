@@ -33,7 +33,7 @@ body {
 }
 
 #cont2 {
-    height: 400px;
+    height: 440px;
     width: 50%;
     padding-left: 4%;
     margin-right: 3%;
@@ -79,14 +79,14 @@ input,
     width: 91%;
     height: 35px;
     border: none;
-    margin: 10px 0px;
+    margin: 5px 0px;
     padding-left: 10px;
     background-color: rgba(233, 230, 230, 0.76);
 }
 
 .name {
-    width: 44.2%;
-    margin-right: 10px;
+    width: 44.7%;
+    margin-right: 5px;
 }
 
 textarea {
@@ -95,7 +95,7 @@ textarea {
     border: none;
     padding-top: 5px;
     padding-left: 10px;
-    margin: 10px 0px;
+    margin: 5px 0px;
     resize: none;
     background-color: rgba(233, 230, 230, 0.76);
 }

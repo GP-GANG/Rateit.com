@@ -21,7 +21,7 @@
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <!-- <link rel="stylesheet" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" href="" crossorigin="anonymous"> -->
 
-        <link rel="stylesheet" href="css/index.css?2"/>
+        <link rel="stylesheet" href="css/index.css"/>
 
     </head>
 
@@ -278,7 +278,7 @@
                     <dd><a href="" class="about-text">Up-Coming Polls</a></dd>
                     <dd><a href="" class="about-text">Tranding Polls</a></dd>
                     <dd><a href="" class="about-text">Companies</a></dd>
-                    <dd><a href="" class="about-text">My Profile</a></dd>
+                    <dd><a onclick="showProfile()" class="about-text">My Profile</a></dd>
                     <dd><a href="" class="about-text">About</a></dd>
                     <dd><a href="" class="about-text">Blog</a></dd>
                 </div>

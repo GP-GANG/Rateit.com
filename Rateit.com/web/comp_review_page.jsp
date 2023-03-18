@@ -33,9 +33,58 @@ int temp2 =1;
    <link
       href="https://github.com/GP-GANG/rateit.github.io/blob/b32152f01d68b11cb33f47d2f5d42ea30e8e6d04/CODE/css/headerstyle.css"
       rel="stylesheet">
+   
+   <style>
+       #loginCheckContainer{
+                height:100vh;
+                width:100vw;
+                /*background-color: gray;*/
+                /*opacity:0.4;*/
+                position:fixed;
+                left:0; top:0;
+                z-index:-2;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                opacity: 0;
+            }
+            #loginCheck{
+                height:200px;
+                width:350px;
+                background-color: white;
+                border:2px solid black;
+                display:flex;
+                align-items: center;
+                justify-content: center;
+                padding:30px;
+                z-index:4;
+            }
+            #loginCheck span{
+                width:70%;
+            }
+            #loginCheck button{
+                padding:4px;
+                margin-bottom:10px;
+                height:30px;
+                cursor: pointer;
+            }
+       
+   </style>
 </head>
 
 <body>
+    
+        <div id="loginCheckContainer">
+            <div id="loginCheck">
+                <span><i class="fa-solid fa-triangle-exclamation" style="font-size:25px; color:red"></i>
+                    <br><p style="font-size:13px;" ><b id="errMsg"></b></p></span>
+                <section>
+                    <a href="LogIn&SignUp.jsp"><button class="header-btn alertBtn" id="errBtn1">Login</button></a>
+                    <button class="header-btn alertBtn" id="alertClose">Remind me later</button>
+                </section>
+            </div>
+        </div>
+    
    <div class="container">
       <div class="logo">
           <img src="HelperJSP/DisplayCmpImage.jsp?name=<%=cmp.getCOMPANY_NAME()%>">
@@ -156,7 +205,8 @@ int temp2 =1;
       <br>
       <span class="Text-1">Review Your Experiance About Company:</span>
 
-      <form action="IndividualReview?name=<%=name%>" method="post">
+      <form action="IndividualReview?name=<%=name%>" method="post" onsubmit="return validateSubmit(checkForLogin)">
+          
          <div class="c-service-dynamic c-service">
             <table>
                <%for(Company_services e : list1){%>
@@ -184,8 +234,9 @@ int temp2 =1;
          </div>
 
          <div id="btn-box">
-             <button type="submit" class="btn-sub">Submit Review</button>
+             <!--<button type="button" class="btn-sub" onclick="checkForLogin()">Submit Review</button>-->
             <input class="btn-sub" type="reset">
+            <input class="btn-sub" type="submit">
          </div>
       </form>
    </div>
@@ -229,6 +280,32 @@ int temp2 =1;
             // retes[i]
          });
       });
+      $("#alertClose").click(function(){
+                    $("#loginCheck").css("display","none");
+                    $("#loginCheckContainer").css({"zIndex":"-2", "opacity":"0"});
+                });
+      var flag =1 ;  
+      
+      function validateSubmit(valid){
+    valid();
+//    console.log(flag);
+    return flag;
+      }
+      
+      function checkForLogin(){
+      
+      $.post("CheckForLogin",function(response){
+//                    console.log(response)
+                    if(response == 0){
+                    $("#errMsg").text(" To provide review, you have to login first. ");
+                    $("#loginCheck").css("display","flex");
+                    $("#loginCheckContainer").css({"zIndex":"2", "opacity":"1"}); 
+                    flag = 0;
+                    }
+        });
+        
+      }
+
    </script>
 </body>
 

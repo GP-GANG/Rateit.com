@@ -24,10 +24,11 @@ HttpSession session1 = request.getSession();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <title>Request Poll | rateit.com</title>
-    <link rel="stylesheet" href="css/request_poll.css">
+    <link rel="stylesheet" href="css/request_poll.css?">
 </head>
 
 <body>
+    
     <div id="container">
         <form action="AcceptRequest" method="post">
         <div id="com-info">
