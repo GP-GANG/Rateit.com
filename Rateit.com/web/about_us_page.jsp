@@ -6,13 +6,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="css/about_us.css">
+
     <title>About Us | Rateit.com</title>
 </head>
 
 <body>
+
+    <div id="about_container">
     <section id="side1">
-        <div>
+        <div id="main_box">
+
             <div id="mini-box"></div>
             <h1>ABOUT WORK</h1>
         </div>
@@ -30,8 +35,10 @@
     </section>
 
     <section id="side2">
+
         <img src="about_image.jpg" alt="image">
     </section>
+
 </body>
 
 </html>

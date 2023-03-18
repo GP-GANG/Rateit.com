@@ -9,7 +9,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <title>Contact Us | rateit.com</title>
-    <link rel="stylesheet" href="css/contact_us.css">
+    <link rel="stylesheet" href="css/contact_us.css?1">
 </head>
 
 <body>
@@ -40,8 +40,9 @@
             <div id="content">
                 <CENTER><b> CONTACT US </b></center>
                 <form action="https://formspree.io/f/mqkobyvd" method="post">
-                    <input class="name" type="text" id="username" name="username" placeholder="Name :">
-                    <input class="name" type="text" id="subject" name="subject" placeholder="Subject :"><br>
+                    <input class="name" type="text" id="username" name="username" placeholder="First Name :">
+                    <input class="name" type="text" id="username" name="username" placeholder="Last Name :"><br>
+                    <input style="width: 91%;" class="name" type="text" id="subject" name="subject" placeholder="Subject :"><br>
                 <input type="email" name="email" id="email" placeholder="E-mail Address :"><br>
                 <textarea id="message" name="textarea" placeholder="Description . . ."></textarea><br>
                 <input type="submit" id="my-form-button" class="btn" value="Submit">
@@ -51,7 +52,7 @@
                 
                 </form>
             </div>
-        </div>    
+        </div>
     </div>
 </body>
 </html>
