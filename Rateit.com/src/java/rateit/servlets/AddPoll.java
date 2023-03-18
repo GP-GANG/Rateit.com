@@ -4,6 +4,7 @@
  */
 package rateit.servlets;
 
+import dbclasses.Company_database;
 import dbclasses.Company_services_database;
 import dbclasses.Poll_database;
 import java.io.IOException;
@@ -48,12 +49,13 @@ public class AddPoll extends HttpServlet {
           int poll_id = Integer.parseInt(request.getParameter("poll_id")); 
           Company_services cs = csd.getCategory(Company1_id);
           String category = cs.getCATEGORY();
-          out.println(Company1_id+""+Company2_id+""+poll_id+""+category);
+          Company_database cd = new Company_database(ConnectionProvider.getConnection());
           Poll p = new Poll(poll_id, Company1_id, Company2_id, category);
-          out.println("1");
+          
           Poll_database pd = new Poll_database(ConnectionProvider.getConnection());
             if(pd.addPoll(p)){
-            out.println("POll created");
+                if(cd.updatePollStatus0(Company1_id))
+            out.println("1");
             }
             out.println("</body>");
             out.println("</html>");
