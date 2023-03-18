@@ -40,10 +40,10 @@
             <div id="content">
                 <CENTER><b> CONTACT US </b></center>
                 <form action="https://formspree.io/f/mqkobyvd" method="post">
-                    <input class="name" type="text" id="username" name="username" placeholder="Name :">
-                    <input class="name" type="text" id="subject" name="subject" placeholder="Subject :"><br>
-                <input type="email" name="email" id="email" placeholder="E-mail Address :"><br>
-                <textarea id="message" name="textarea" placeholder="Description . . ."></textarea><br>
+                    <input class="name" type="text" id="username" name="username" placeholder="Name :" required>
+                    <input class="name" type="text" id="subject" name="subject" placeholder="Subject :" required><br>
+                <input type="email" name="email" id="email" placeholder="E-mail Address :" required><br>
+                <textarea id="message" name="textarea" placeholder="Description . . ." required></textarea><br>
                 <input type="submit" id="my-form-button" class="btn" value="Submit">
                 <input type="reset" value="reser" class="btn">
                 
