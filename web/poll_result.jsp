@@ -1,4 +1,19 @@
+<%@page import="dbclasses.Company_database"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="rateit.entities.Poll"%>
+<%@page import="rateit.entities.Company"%>
+<%@page import="dbclasses.Poll_database"%>
+<%@page import="rateit.helper.ConnectionProvider"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+Poll_database pd = new Poll_database(ConnectionProvider.getConnection());
+
+    Company cm= (Company)session.getAttribute("Company");
+    ArrayList<Poll> pList = pd.getPollOfCompany(cm.getCOMPANY_ID());
+    
+ Company_database cd = new Company_database(ConnectionProvider.getConnection());
+ 
+%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,12 +34,15 @@
             <div class="items item1">
 
                 <section class="company1">
-
+                         <%for(Poll e : pList){
+                         Company cmp1 = cd.getCompanyById(e.getCOMPANY1());
+                         Company cmp2 = cd.getCompanyById(e.getCOMPANY2());
+                             %>
                     <div class="logoContainer">
-                        <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/TCS.png?raw=true"
+                        <img src="HelperJSP/DisplayCmpImage.jsp?name=<%=cmp1.getCOMPANY_NAME()%>"
                             class="logo" id="l1" style="height: 25px; width: 30px; margin-top: 5px;">
                     </div>
-                    <p class="company_name">Tata consultancy Service</p>
+                    <p class="company_name"><%=cmp1.getCOMPANY_NAME()%></p>
                     <div class="star-1">
                         <span class="label">Ratings:</span>
                         <i class="fa-solid fa-star"></i>
@@ -39,10 +57,10 @@
 
                 <section class="company2">
                     <div class="logoContainer">
-                        <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/infosys.png?raw=true"
+                        <img src="HelperJSP/DisplayCmpImage.jsp?name=<%=cmp2.getCOMPANY_NAME()%>"
                             class="logo" id="l2" style="height: 50px; width: 55px;">
                     </div>
-                    <p class="company_name">Infosys</p>
+                    <p class="company_name"><%=cmp2.getCOMPANY_NAME()%></p>
                     <div class="star-2">
                         <span class="label">Ratings:</span>
                         <i class="fa-solid fa-star"></i>
@@ -51,12 +69,14 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-regular fa-star"></i>
                     </div>
+                    <a href="HelperJSP/getReport.jsp?cmp_id=4&poll_id=1111" download><button class="btn">Download</button></a>
+<%}%>
                 </section>
 
-                <button class="btn">Download</button>
+               
 
             </div>
-            <!-- Ratings and star code completes -->
+<!--             Ratings and star code completes 
 
             <div class="items item2">
 
@@ -98,7 +118,7 @@
                     </div>
                 </section>
             </div>
-            <!-- Ratings and star code completes -->
+             Ratings and star code completes -->
         </div>
     </main>
 </body>

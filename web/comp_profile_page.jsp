@@ -6,6 +6,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
    Company cmp = (Company)session.getAttribute("Company");
+  
+            session.setMaxInactiveInterval(40*60);
    if(cmp == null){
     response.sendRedirect("comp_login.jsp");
     }

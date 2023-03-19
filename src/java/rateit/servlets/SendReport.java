@@ -4,27 +4,20 @@
  */
 package rateit.servlets;
 
-import dbclasses.Company_database;
+import dbclasses.Report_database;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
-import rateit.entities.Company;
-import rateit.entities.Message;
+import jakarta.servlet.http.Part;
 import rateit.helper.ConnectionProvider;
 
-/**
- *
- * @author Dell
- */
-public class Company_Login extends HttpServlet {
+@MultipartConfig
+public class SendReport extends HttpServlet {
 
-    private static final long serialVersionUID = 1L;
-
-  
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -33,26 +26,23 @@ public class Company_Login extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Company_Login</title>");
+            out.println("<title>Servlet SendReport</title>");
             out.println("</head>");
             out.println("<body>");
 
-            String login = request.getParameter("name");
-            String password = request.getParameter("password");
-            
-            Company_database cd = new Company_database(ConnectionProvider.getConnection());
-            Company cmp = cd.getCompanyByEmail(login, password);
-            HttpSession session = request.getSession();
-            session.setMaxInactiveInterval(40*60);
+            int cmp1_id = Integer.parseInt(request.getParameter("c1"));
+            int cmp2_id = Integer.parseInt(request.getParameter("c2"));
 
-            if (cmp == null) {
-              Message msg  = new Message("incorrect password or id","error");
-              session.setAttribute("Message", msg);
-              response.sendRedirect("comp_login.jsp");
-            } else {
-               session.setAttribute("Company", cmp);
-               response.sendRedirect("comp_home_page.jsp");
+            int poll_id = Integer.parseInt(request.getParameter("poll_id"));
+            Part report1 = request.getPart("report1");
+            Part report2 = request.getPart("report2");
+            Report_database rd = new Report_database(ConnectionProvider.getConnection());
 
+            if (rd.UploadReport(report1.getInputStream(), cmp1_id, poll_id)) {
+                out.println("1");
+            }
+            if (rd.UploadReport(report2.getInputStream(), cmp2_id, poll_id)) {
+                out.println("1");
             }
 
             out.println("</body>");

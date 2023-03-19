@@ -17,15 +17,8 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/git/Rateit.com/Rateit.com/src/java/rateit/servlets/Redirect1.java</file>
-            <file>file:/D:/git/Rateit.com/Rateit.com/src/java/dbclasses/Poll_database.java</file>
-            <file>file:/D:/git/Rateit.com/Rateit.com/src/java/rateit/entities/Poll.java</file>
-            <file>file:/D:/git/Rateit.com/Rateit.com/web/css/admin_panel.css</file>
-            <file>file:/D:/git/Rateit.com/Rateit.com/web/Admin_panel.jsp</file>
-            <file>file:/D:/git/Rateit.com/Rateit.com/src/java/rateit/servlets/Redirect.java</file>
-            <file>file:/D:/git/Rateit.com/Rateit.com/src/java/rateit/servlets/AddPoll.java</file>
-            <file>file:/D:/git/Rateit.com/Rateit.com/web/WEB-INF/web.xml</file>
-            <file>file:/D:/git/Rateit.com/Rateit.com/src/java/dbclasses/Company_database.java</file>
+            <file>file:/D:/git/Rateit.com/web/Admin_panel.jsp</file>
+            <file>file:/D:/git/Rateit.com/web/css/admin_panel.css</file>
         </group>
     </open-files>
 </project-private>

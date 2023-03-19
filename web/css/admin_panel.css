@@ -492,6 +492,7 @@ button:hover {
     margin-left: -40%;
 }
 
-#page9{
-    
+#page8{
+    overflow: scroll;
+    height: auto;
 }

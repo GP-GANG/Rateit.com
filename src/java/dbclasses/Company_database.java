@@ -455,6 +455,7 @@ public class Company_database {
         catch(Exception e){e.printStackTrace();}
         return b;
     }
+    
     public boolean updatePollStatus1(int Company_id){
         boolean b = false;
         try{

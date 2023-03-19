@@ -355,19 +355,25 @@
 
                             <!-- //////...............////............../ page-8 //////....................///.............../// -->
                             <section id="page8">
+                              
                                 <form id="search-poll_com">
                                     <input type="search" placeholder="Search Company" size="30">
                                     <input type="search" placeholder="Search Poll-ID" size="30">
                                     <button id="search-poll_com-btn">Search</button>
                                 </form><br><br><br><br>
+  <%for (Poll e : list2) {
 
+                                        Company_database cd1 = new Company_database(ConnectionProvider.getConnection());
+                                        Company cmp1 = cd1.getCompanyById(e.getCOMPANY1());
+                                        Company cmp2 = cd1.getCompanyById(e.getCOMPANY2());
+  %><form action="SendReport" method="post" enctype="multipart/form-data">
                                 <div id="main-8">
                                     <div class="main-8">
                                         <div class="wole-box">
                                             <div class="comp-cont-box1">
                                                 <div class="img-name">
-                                                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/amazon.png?raw=true" height="30px" width="40px">
-                                                    <p>amazon</p>
+                                                    <img src="HelperJSP/DisplayCmpImage.jsp?name=<%=cmp1.getCOMPANY_NAME()%>" height="30px" width="40px">
+                                                    <p><%=cmp1.getCOMPANY_NAME()%></p>
                                                 </div>
                                                 <div class="rcr-box">
                                                     <div class="star-1">
@@ -379,13 +385,13 @@
                                                     </div>
                                                     <span>online service</span>
                                                     <span>32,43,332</span><br>
-                                                    <input class="file-upload" type="file">
+                                                    <input class="file-upload" name="report1" type="file">
                                                 </div>
                                             </div>
                                             <div class="comp-cont-box2">
                                                 <div class="img-name">
-                                                    <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/flipkart.png?raw=true" height="30px" width="40px">
-                                                    <p>flipkart</p>
+                                                    <img src="HelperJSP/DisplayCmpImage.jsp?name=<%=cmp2.getCOMPANY_NAME()%>" height="30px" width="40px">
+                                                    <p><%=cmp2.getCOMPANY_NAME()%></p>
                                                 </div>
                                                 <div class="rcr-box">
                                                     <div class="star-1">
@@ -397,13 +403,17 @@
                                                     </div>
                                                     <span>online service</span>
                                                     <span>32,43,332</span><br>
-                                                    <input class="file-upload" type="file">
+                                                    <input class="file-upload" name="report2" type="file">
                                                 </div>
                                             </div>
-                                        </div>
-                                        <button style="margin-top: -20px;" class="poll-remove-btn">Send Report</button>
-                                    </div>
+                                        </div> <input type="hidden" name="c1" value="<%=cmp1.getCOMPANY_ID()%>">
+                                        <input type="hidden" name="c2" value="<%=cmp2.getCOMPANY_ID()%>">
+                                        <input type="hidden" name="poll_id" value="<%=e.getPOLL_ID()%>">
+                                                <button  type="submit" style="margin-top: -20px;" class="poll-remove-btn">Send Report</button>
+                                    </div>  
                                 </div>
+                                                <form>
+                              <%}%>
                             </section>
                             <!-- //////...............////............../ page-9 //////....................///.............../// -->
 

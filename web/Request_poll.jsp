@@ -6,6 +6,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
 HttpSession session1 = request.getSession();
+session.setMaxInactiveInterval(40*60);
  Company cc=(Company)session1.getAttribute("Company");
  if(cc == null){
  
