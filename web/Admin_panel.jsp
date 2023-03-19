@@ -366,7 +366,7 @@
                                         Company_database cd1 = new Company_database(ConnectionProvider.getConnection());
                                         Company cmp1 = cd1.getCompanyById(e.getCOMPANY1());
                                         Company cmp2 = cd1.getCompanyById(e.getCOMPANY2());
-  %><form action="SendReport" method="post" enctype="multipart/form-data">
+  %><form action="Sendrepo" method="post" enctype="multipart/form-data">
                                 <div id="main-8">
                                     <div class="main-8">
                                         <div class="wole-box">
@@ -412,7 +412,7 @@
                                                 <button  type="submit" style="margin-top: -20px;" class="poll-remove-btn">Send Report</button>
                                     </div>  
                                 </div>
-                                                <form>
+                                                </form>
                               <%}%>
                             </section>
                             <!-- //////...............////............../ page-9 //////....................///.............../// -->

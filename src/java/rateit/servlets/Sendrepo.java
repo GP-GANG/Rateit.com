@@ -5,19 +5,32 @@
 package rateit.servlets;
 
 import dbclasses.Report_database;
+import jakarta.servlet.annotation.MultipartConfig;
+import jakarta.servlet.http.Part;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.Part;
 import rateit.helper.ConnectionProvider;
 
+/**
+ *
+ * @author Dell
+ */
 @MultipartConfig
-public class SendReport extends HttpServlet {
+public class Sendrepo extends HttpServlet {
 
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -26,10 +39,11 @@ public class SendReport extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet SendReport</title>");
+            out.println("<title>Servlet Sendrepo</title>");
             out.println("</head>");
             out.println("<body>");
-
+            
+            
             int cmp1_id = Integer.parseInt(request.getParameter("c1"));
             int cmp2_id = Integer.parseInt(request.getParameter("c2"));
 
@@ -37,14 +51,13 @@ public class SendReport extends HttpServlet {
             Part report1 = request.getPart("report1");
             Part report2 = request.getPart("report2");
             Report_database rd = new Report_database(ConnectionProvider.getConnection());
-
+//out.println(""+cmp1_id+""+cmp2_id+""+poll_id);
             if (rd.UploadReport(report1.getInputStream(), cmp1_id, poll_id)) {
                 out.println("1");
             }
             if (rd.UploadReport(report2.getInputStream(), cmp2_id, poll_id)) {
                 out.println("1");
             }
-
             out.println("</body>");
             out.println("</html>");
         }

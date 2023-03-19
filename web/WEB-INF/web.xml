@@ -120,6 +120,10 @@
         <servlet-name>SendReport</servlet-name>
         <servlet-class>rateit.servlets.SendReport</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Sendrepo</servlet-name>
+        <servlet-class>rateit.servlets.Sendrepo</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SignUp</servlet-name>
         <url-pattern>/SignUp</url-pattern>
@@ -235,6 +239,10 @@
     <servlet-mapping>
         <servlet-name>SendReport</servlet-name>
         <url-pattern>/SendReport</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Sendrepo</servlet-name>
+        <url-pattern>/Sendrepo</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

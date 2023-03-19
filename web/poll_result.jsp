@@ -1,3 +1,5 @@
+<%@page import="rateit.entities.Report"%>
+<%@page import="dbclasses.Report_database"%>
 <%@page import="dbclasses.Company_database"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="rateit.entities.Poll"%>
@@ -11,8 +13,11 @@ Poll_database pd = new Poll_database(ConnectionProvider.getConnection());
     Company cm= (Company)session.getAttribute("Company");
     ArrayList<Poll> pList = pd.getPollOfCompany(cm.getCOMPANY_ID());
     
- Company_database cd = new Company_database(ConnectionProvider.getConnection());
- 
+   Company_database cd = new Company_database(ConnectionProvider.getConnection());
+  Report_database rd = new Report_database(ConnectionProvider.getConnection());
+    ArrayList<Report> list = rd.getReport(cm.getCOMPANY_ID());
+  
+  
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,10 +38,14 @@ Poll_database pd = new Poll_database(ConnectionProvider.getConnection());
 
             <div class="items item1">
 
-                <section class="company1">
-                         <%for(Poll e : pList){
-                         Company cmp1 = cd.getCompanyById(e.getCOMPANY1());
-                         Company cmp2 = cd.getCompanyById(e.getCOMPANY2());
+                <section class="company1"><%if(list == null){%>
+                    <p>there is no report for your company</p>
+                         <%}else{
+for(Report e : list){
+                          Poll p=pd.getPoll(e.getPOLL_ID());
+                             
+                         Company cmp1 = cd.getCompanyById(p.getCOMPANY1());
+                         Company cmp2 = cd.getCompanyById(p.getCOMPANY2());
                              %>
                     <div class="logoContainer">
                         <img src="HelperJSP/DisplayCmpImage.jsp?name=<%=cmp1.getCOMPANY_NAME()%>"
@@ -69,8 +78,8 @@ Poll_database pd = new Poll_database(ConnectionProvider.getConnection());
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-regular fa-star"></i>
                     </div>
-                    <a href="HelperJSP/getReport.jsp?cmp_id=4&poll_id=1111" download><button class="btn">Download</button></a>
-<%}%>
+                    <a href="HelperJSP/getReport.jsp?cmp_id=<%=cm.getCOMPANY_ID()%>&poll_id=<%=p.getPOLL_ID()%>" download><button class="btn">Download</button></a>
+<%}}%>
                 </section>
 
                

@@ -5,7 +5,10 @@ import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import javax.sql.rowset.serial.SerialBlob;
+import rateit.entities.Poll;
+import rateit.entities.Report;
 
 public class Report_database {
 
@@ -42,8 +45,8 @@ public class Report_database {
             is.read(b);
             Blob blob = new SerialBlob(b);
             PreparedStatement stmt = this.con.prepareStatement(query);
-            stmt.setBlob(2, blob);
             stmt.setInt(1, POLL_ID);
+            stmt.setBlob(2, blob);
             stmt.setInt(3, COMPANY_ID);
 
             if (stmt.executeUpdate() > 0) {
@@ -55,6 +58,34 @@ public class Report_database {
         }
 
         return f;
+    }
+
+    public ArrayList<Report> getReport(int cmp_id) {
+        ArrayList<Report> list = null;
+
+        try {
+            String query = "select * from report where COMPANY_ID=?";
+
+            PreparedStatement stmt = this.con.prepareStatement(query);
+            stmt.setInt(1, cmp_id);
+
+            ResultSet set = stmt.executeQuery();
+            if (set.isBeforeFirst()) {
+                list = new ArrayList<>();
+
+            }
+            while (set.next()) {
+                Report r = new Report();
+                r.setCOMPANY_ID(set.getInt("COMPANY_ID"));
+                r.setPOLL_ID(set.getInt("POLL_ID"));
+                r.setReport(set.getBlob("report"));
+                list.add(r);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
     }
 
 }
