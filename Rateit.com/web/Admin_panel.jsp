@@ -37,37 +37,41 @@
     <body>
         <nav>
             <table id="table1">
+                <img id="rateit-logo" src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/logo.png?raw=true">
                 <tr height="50px">
-                    <td><a href="#page5" class="header-content">‎ ‎ COMPANIES</a></td>
+                    <td><a href="#page5" class="header-content">‎ <i class="fa-solid fa-house"></i> Dashboard</a></td>
                 </tr>
                 <tr height="50px">
-                    <td><a href="#page6" class="header-content">‎ ‎ POLLS</a></td>
+                    <td><a href="#page5" class="header-content">‎ <i class="fa-solid fa-city"></i> Companies</a></td>
                 </tr>
                 <tr height="50px">
-                    <td><a href="#page7" class="header-content">‎ ‎ REPORT</a></td>
+                    <td><a href="#page6" class="header-content">‎ <i class="fa-solid fa-square-poll-vertical"></i> Polls</a></td>
                 </tr>
                 <tr height="50px">
-                    <td><a href="#page9" class="header-content">‎  Registered Company</a></td>
+                    <td><a href="#page7" class="header-content">‎ <i class="fa-solid fa-file-lines"></i> Report</a></td>
                 </tr>
                 <tr height="50px">
-                    <td><a href="#page10" class="header-content">‎  Poll requests</a></td>
+                    <td><a href="#page9" class="header-content">‎ <i class="fa-solid fa-registered"></i> Registered Company</a></td>
+                </tr>
+                <tr height="50px">
+                    <td><a href="#page10" class="header-content">‎ <i class="fa-solid fa-square-poll-horizontal"></i> Poll requests</a></td>
                 </tr>
             </table>
             <table id="table2">
                 <tr height="50px">
-                    <td><a href="#page1" class="header-content">‎ ‎ + Add Company</a></td>
+                    <td><a href="#page1" class="header-content">‎ <i class="fa-solid fa-square-plus"></i> Add Company</a></td>
                 </tr>
                 <tr height="50px">
-                    <td><a href="#page2" class="header-content">‎ ‎ + Remove Company</a></td>
+                    <td><a href="#page3" class="header-content">‎ <i class="fa-solid fa-file-circle-plus"></i> Add Poll</a></td>
                 </tr>
                 <tr height="50px">
-                    <td><a href="#page3" class="header-content">‎ ‎ + Add Poll</a></td>
+                    <td><a href="#page2" class="header-content">‎ <i class="fa-solid fa-square-minus"></i> Remove Company</a></td>
                 </tr>
                 <tr height="50px">
-                    <td><a href="#page4" class="header-content">‎ ‎ + Remove Poll</a></td>
+                    <td><a href="#page4" class="header-content">‎ <i class="fa-solid fa-file-circle-minus"></i> Remove Poll</a></td>
                 </tr>
                 <tr height="50px">
-                    <td><a href="#page8" class="header-content">‎ ‎ + Send Report</a></td>
+                    <td><a href="#page8" class="header-content">‎ <i class="fa-solid fa-share-from-square"></i> Send Report</a></td>
                 </tr>
             </table>
             <button id="logout"><b>Log Out</b></button>

@@ -14,24 +14,33 @@ body {
 nav {
     width: 17%;
     height: 100vh;
-    background-color: rgba(12, 12, 12, 0.938);
-    color: white;
+    background-color: rgba(12, 12, 12, 0.959);
+    color: rgb(112, 112, 112);
     box-shadow: 0.5px 0.5px 15px gray;
     position: fixed;
     overflow-y: scroll;
     overflow-x: hidden;
-    padding-left: 5px;
+}
+
+#rateit-logo{
+    height: 35px;
+    margin: 10px 0px 5px 45px;
+}
+
+i{
+    font-size: 20px;
 }
 
 nav a {
     text-decoration: none;
     font-size: 14px;
     letter-spacing: 0.5px;
+    color: inherit;
+    margin-right: 10px;
 }
 
 table {
     width: 15vw;
-    border: 1px solid white;
     border-radius: 3px;
 }
 
@@ -39,18 +48,14 @@ table {
     margin-top: 10px;
 }
 
-#table2 {
-    margin-top: 20px;
+tr td{
+    padding-left: 10px;
 }
 
 td:hover {
-    background-color: white;
-    color: black;
-    font-weight: bolder;
-}
-
-nav a {
-    color: inherit;
+    background-color: rgba(46, 46, 46, 0.459);
+    color: white;
+    border-radius: 8px;
 }
 
 #header {
@@ -69,18 +74,19 @@ nav a {
 }
 
 #logout {
-    width: 14vw;
-    background-color: rgb(237, 75, 75);
+    background-color: transparent;
+    width: 15vw;
     border: none;
     height: 35px;
-    color: white;
+    color: red;
     font-size: 16px;
     letter-spacing: 1px;
-    margin-top: 10px;
+    margin-top: 15px;
+    margin-left: 5px;
 }
 
 #logout:hover {
-    background-color: brown;
+    background-color: rgba(46, 46, 46, 0.459);
 }
 
 
@@ -300,19 +306,6 @@ nav a {
     border: none;
 }
 
-button {
-    margin-left: 5px;
-    width: 20%;
-    border: none;
-    border-radius: 3px;
-    background-color: rgb(237, 75, 75);
-    color: white;
-}
-
-button:hover {
-    background-color: brown;
-}
-
 /* ...................page4 styling code...................... */
 #page4 {
     width: 81%;
@@ -482,6 +475,10 @@ button:hover {
 #search-poll_com-btn{
     height: 35px;
     width: 10%;
+    background-color: rgb(237, 75, 75);
+    color: white;
+    border: none;
+    border-radius: 2px;
     margin-top: 10px;
 }
 
@@ -492,6 +489,11 @@ button:hover {
     margin-left: -40%;
 }
 
-#page9{
-    
+.poll-remove-btn{
+    height: 35px;
+    width: 20%;
+    background-color: rgb(237, 75, 75);
+    color: white;
+    border: none;
+    border-radius: 2px;
 }
