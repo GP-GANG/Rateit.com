@@ -3,7 +3,6 @@ package dbclasses;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import rateit.entities.Company;
 import rateit.entities.Review;
 
 public class Review_database {
@@ -80,6 +79,28 @@ public class Review_database {
     
     return i;
     }
+    public int getTotalRatings(int cmp_id){
+    int i = 0;
+    try{
+    String query ="select COUNT(RATE) from review where COMPANY_ID=?";
+    
+    PreparedStatement stmt = this.con.prepareStatement(query);
+    stmt.setInt(1,cmp_id);
+    
+    ResultSet set = stmt.executeQuery();
+    
+    if(set.next()){
+           i = (int)set.getFloat("COUNT(RATE)");
+    }
+    
+    }
+    catch(Exception e){e.printStackTrace(); }
+    
+    
+    
+    return i;
+    }
+    
     public boolean submitReview1(Review review) {
         boolean b = false;
 
@@ -101,5 +122,27 @@ public class Review_database {
         }
 
         return b;
+    }
+    
+    public int getOverallRatings(int cmp_id){
+    int i = 0;
+    try{
+    String query ="select AVG(RATE) from review where COMPANY_ID=?";
+    
+    PreparedStatement stmt = this.con.prepareStatement(query);
+    stmt.setInt(1,cmp_id);
+    
+    ResultSet set = stmt.executeQuery();
+    
+    if(set.next()){
+           i = (int)set.getFloat("AVG(RATE)");
+    }
+    
+    }
+    catch(Exception e){e.printStackTrace(); }
+    
+    
+    
+    return i;
     }
 }

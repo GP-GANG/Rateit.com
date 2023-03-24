@@ -34,19 +34,19 @@ Poll_database pd = new Poll_database(ConnectionProvider.getConnection());
 
 <body>
     <main>
-        <div class="container">
-
-            <div class="items item1">
-
-                <section class="company1"><%if(list == null){%>
+        <div class="container"><%if(list == null){%>
                     <p>there is no report for your company</p>
                          <%}else{
 for(Report e : list){
-                          Poll p=pd.getPoll(e.getPOLL_ID());
+Poll p=pd.getPoll(e.getPOLL_ID());
                              
                          Company cmp1 = cd.getCompanyById(p.getCOMPANY1());
                          Company cmp2 = cd.getCompanyById(p.getCOMPANY2());
                              %>
+            <div class="items item1">
+
+                <section class="company1">
+                          
                     <div class="logoContainer">
                         <img src="HelperJSP/DisplayCmpImage.jsp?name=<%=cmp1.getCOMPANY_NAME()%>"
                             class="logo" id="l1" style="height: 25px; width: 30px; margin-top: 5px;">
@@ -79,12 +79,13 @@ for(Report e : list){
                         <i class="fa-regular fa-star"></i>
                     </div>
                     <a href="HelperJSP/getReport.jsp?cmp_id=<%=cm.getCOMPANY_ID()%>&poll_id=<%=p.getPOLL_ID()%>" download><button class="btn">Download</button></a>
-<%}}%>
+
                 </section>
 
                
 
-            </div>
+            </div><%}}%>
+                
 <!--             Ratings and star code completes 
 
             <div class="items item2">

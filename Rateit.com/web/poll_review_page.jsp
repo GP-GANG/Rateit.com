@@ -1,3 +1,4 @@
+<%@page import="dbclasses.Review_database"%>
 <%@page import="rateit.entities.Company_services"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.ArrayList"%>
@@ -28,6 +29,8 @@
     ArrayList<Company_services> list2 = csd.getAllCategories(cmp2.getCOMPANY_ID());
     int temp1 = 1;
     int temp2 = 11;
+    
+    Review_database rd = new Review_database(ConnectionProvider.getConnection());
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,7 +65,7 @@
                         </div>
 
                         <div class="box" align="right">
-                            <b id="b1">3.9</b>
+                            <b id="b1"><%=cmp1.getCOMPANY_RATE()%></b>
                             <i class="fa-solid fa-star" id="i1"></i>
                             <p class="spa">Ratings: 23,43,122</p>
                             <p class="spa">Reviews: 20,42,232</p>
@@ -115,9 +118,9 @@
                         </div>
 
                         <div class="box" align="right">
-                            <b id="b1">3.9</b>
+                            <b id="b1"><%=cmp2.getCOMPANY_RATE()%></b>
                             <i class="fa-solid fa-star" id="i1"></i>
-                            <p class="spa">Ratings: 23,43,433</p>
+                            <p class="spa">Ratings:<%=rd.getTotalRatings(cmp2.getCOMPANY_ID()) %></p>
                             <p class="spa">Reviews: 23,23,432</p>
                         </div>
                     </div>
@@ -157,8 +160,8 @@
                 </section>
 
                 <div id="btn-box">
-                    <button type="submit"class="btn-sub">Submit Review</button>
-                    <input type="reset"  class="btn-sub">Reset</button>
+                    <button type="submit" class="btn-sub">Submit Review</button>
+                    <input id="btn" type="reset" value="reset"  class="btn-sub">
                 </div>
                 <!-- <button class="Read-more_btn" id="btn2" onclick="moreContent('showContent2','btn2')">Show -->
                 <!-- More</button> -->

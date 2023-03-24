@@ -156,11 +156,11 @@
             width: 200px;
             background-color: rgb(237, 75, 75);
             color: white;
-            position: relative;
-            margin: 0px 10px;
-            margin-bottom: 25px;
-            top: 15px;
-            left: 17%;
+            /*position: relative;*/
+            /*margin: 0px 10px;*/
+            /*margin-bottom: 25px;*/
+            /*top: 15px;*/
+            /*left: 17%;*/
             border: none;
             border-radius: 3px;
             letter-spacing: 2px;

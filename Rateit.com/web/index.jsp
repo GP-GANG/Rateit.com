@@ -1,3 +1,4 @@
+<%@page import="dbclasses.Review_database"%>
 <%@page import="rateit.entities.Poll"%>
 <%@page import="dbclasses.Poll_database"%>
 <%@page import="java.util.ArrayList"%>
@@ -8,6 +9,17 @@
 <%@page import="rateit.entities.Message"%>
 <%@page import="rateit.entities.Customer"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" %> 
+<%
+    Customer customer = (Customer) session.getAttribute("Customer");
+    Message msg = (Message) session.getAttribute("Message");
+
+    Company_database cd1 = new Company_database(ConnectionProvider.getConnection());
+    ArrayList<Company> list5 = cd1.getAllCompanies();
+
+    Review_database rd = new Review_database(ConnectionProvider.getConnection());
+
+
+%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -26,18 +38,8 @@
     </head>
 
     <body>
-        <%
-            Customer customer = (Customer) session.getAttribute("Customer");
-            Message msg = (Message)session.getAttribute("Message");
-             
-            Company_database cd1 = new Company_database(ConnectionProvider.getConnection());
-            ArrayList<Company> list5 = cd1.getAllCompanies();
-            
-        %>
+        <div id="loginCheckContainer">
 
-
-            <div id="loginCheckContainer">
-            
             <div id="loginCheck">
                 <span><i class="fa-solid fa-triangle-exclamation" style="font-size:25px; color:red"></i>
                     <br><p style="font-size:13px;" ><b id="errMsg"></b></p></span>
@@ -48,7 +50,7 @@
             </div>
         </div>
 
-        
+
         <header>
             <nav>
                 <img class="main_logo" src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/logo.png?raw=true" alt="RATE-IT.COM">
@@ -90,17 +92,17 @@
 
                     <div id="search-logo"><i class="fa-solid fa-magnifying-glass"></i></div>
                     <div id="search">
-<!--                        <input  list="list" type="search" placeholder="Search . . . .">-->
-                       <div id="search">
-                        <input  list="list" id="search2" onchange="searchCompany()" type="search" placeholder="Search . . . .">
-                        <datalist id="list">
-                           <% for(Company e : list5){%>
-                          <option value="<%=e.getCOMPANY_NAME()%>"></option>
-                            <%}%>
-                        </datalist>
+                        <!--                        <input  list="list" type="search" placeholder="Search . . . .">-->
+                        <div id="search">
+                            <input  list="list" id="search2" onchange="searchCompany()" type="search" placeholder="Search . . . .">
+                            <datalist id="list">
+                                <% for (Company e : list5) {%>
+                                <option value="<%=e.getCOMPANY_NAME()%>"></option>
+                                <%}%>
+                            </datalist>
+                        </div>
                     </div>
-                    </div>
-                    
+
 
                 </div>
                 <%if (customer == null) {%>
@@ -109,10 +111,10 @@
                             Sign Up&nbsp;</b></button></a>
 
 
-                <%}else{%>
+                <%} else {%>
 
 
-                <button id="profile_btn" class="header-btn" ><%=customer.getUSER_NAME() %></button>
+                <button id="profile_btn" class="header-btn" ><%=customer.getUSER_NAME()%></button>
 
                 <!--<a href="LogOut"><button class="header-btn" onclick="alert('log out successfully')"> Logout </button></a>-->
 
@@ -122,78 +124,79 @@
 
             </nav>
         </header>
-                <%
-                   Poll_database pd = new Poll_database(ConnectionProvider.getConnection()); 
-                   ArrayList<Poll> list = pd.getAllPoll();
-                   
-          
-                %>
+        <%
+            Poll_database pd = new Poll_database(ConnectionProvider.getConnection());
+            ArrayList<Poll> list = pd.getAllPoll();
+
+        %>
         <main>
             <div class="container">
-<%for(Poll p : list){%>
- 
-   <%
-   Company_database cd = new Company_database(ConnectionProvider.getConnection());
-   Company cmp1 = cd.getCompanyById(p.getCOMPANY1());
-   Company cmp2 = cd.getCompanyById(p.getCOMPANY2());
-   int ratings1 = cmp1.getCOMPANY_RATE();
-   int ratings2 = cmp1.getCOMPANY_RATE();
-   %>
+                <%for (Poll p : list) {%>
+
+                <%
+                    Company_database cd = new Company_database(ConnectionProvider.getConnection());
+                    Company cmp1 = cd.getCompanyById(p.getCOMPANY1());
+                    Company cmp2 = cd.getCompanyById(p.getCOMPANY2());
+                    int ratings1 = rd.getOverallRatings(cmp1.getCOMPANY_ID());
+                    int ratings2 = rd.getOverallRatings(cmp2.getCOMPANY_ID());
+                    cmp1.setCOMPANY_RATE(ratings1);
+                    cmp2.setCOMPANY_RATE(ratings2);
+                %>
                 <div class="items item1">
 
                     <section class="company1">
 
                         <div class="logoContainer">
-                            <img src="HelperJSP/DisplayCmpImage.jsp?name=<%=cmp1.getCOMPANY_NAME() %>"
-                                 class="logo" id="l1" style="height: 25px; width: 30px; margin-top: 5px;">
+                            <img src="HelperJSP/DisplayCmpImage.jsp?name=<%=cmp1.getCOMPANY_NAME()%>"
+                                 class="logo" id="l1" style="height: 35px; width: 35px; margin-top: 5px;">
                         </div>
 
-                        <p class="company_name"><%=cmp1.getCOMPANY_NAME() %></p>
+                        <p class="company_name"><%=cmp1.getCOMPANY_NAME()%></p>
                         <div class="star-1">
                             <span class="label">Ratings:</span>
-                            <%if(ratings1 == 0){%>
+                            <%if (ratings1 == 0) {%>
                             <i class="fa-regular fa-star"></i>
                             <i class="fa-regular fa-star"></i>
                             <i class="fa-regular fa-star"></i>
                             <i class="fa-regular fa-star"></i>
                             <i class="fa-regular fa-star"></i>
                             <%}%>
-                            <%if(ratings1 == 1){%>
+                            <%if (ratings1 == 1) {%>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-regular fa-star"></i>
                             <i class="fa-regular fa-star"></i>
                             <i class="fa-regular fa-star"></i>
                             <i class="fa-regular fa-star"></i>
                             <%}%>
-                            <%if(ratings1 == 2){%>
+                            <%if (ratings1 == 2) {%>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-regular fa-star"></i>
                             <i class="fa-regular fa-star"></i>
                             <i class="fa-regular fa-star"></i>
                             <%}%>
-                            <%if(ratings1 == 3){%>
+                            <%if (ratings1 == 3) {%>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-regular fa-star"></i>
                             <i class="fa-regular fa-star"></i>
                             <%}%>
-                            <%if(ratings1 == 4){%>
+                            <%if (ratings1 == 4) {%>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-regular fa-star"></i>
                             <%}%>
-                            <%if(ratings1 == 5){%>
+                            <%if (ratings1 == 5) {%>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
                             <%}%>
-                            
+
                         </div>
                     </section>
 
@@ -202,47 +205,47 @@
                     <section class="company2">
                         <div class="logoContainer">
                             <img src="HelperJSP/DisplayCmpImage.jsp?name=<%=cmp2.getCOMPANY_NAME()%>"
-                                 class="logo" id="l2" style="height: 50px; width: 55px;">
+                                 class="logo" id="l2" style="height: 35px; width: 35px;">
                         </div>
                         <p class="company_name"><%=cmp2.getCOMPANY_NAME()%></p>
                         <div class="star-2">
                             <span class="label">Ratings:</span>
-                            <%if(ratings2 == 0){%>
+                            <%if (ratings2 == 0) {%>
                             <i class="fa-regular fa-star"></i>
                             <i class="fa-regular fa-star"></i>
                             <i class="fa-regular fa-star"></i>
                             <i class="fa-regular fa-star"></i>
                             <i class="fa-regular fa-star"></i>
                             <%}%>
-                            <%if(ratings2 == 1){%>
+                            <%if (ratings2 == 1) {%>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-regular fa-star"></i>
                             <i class="fa-regular fa-star"></i>
                             <i class="fa-regular fa-star"></i>
                             <i class="fa-regular fa-star"></i>
                             <%}%>
-                            <%if(ratings2 == 2){%>
+                            <%if (ratings2 == 2) {%>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-regular fa-star"></i>
                             <i class="fa-regular fa-star"></i>
                             <i class="fa-regular fa-star"></i>
                             <%}%>
-                            <%if(ratings2 == 3){%>
+                            <%if (ratings2 == 3) {%>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-regular fa-star"></i>
                             <i class="fa-regular fa-star"></i>
                             <%}%>
-                            <%if(ratings2 == 4){%>
+                            <%if (ratings2 == 4) {%>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-regular fa-star"></i>
                             <%}%>
-                            <%if(ratings2 == 5){%>
+                            <%if (ratings2 == 5) {%>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
@@ -252,8 +255,8 @@
                         </div>
                     </section>
 
-                        <button class="btn compareBtn" value="<%=p.getPOLL_ID()%>">Compare Now</button>
-                    
+                    <button class="btn compareBtn" value="<%=p.getPOLL_ID()%>">Compare Now</button>
+
                 </div>
                 <%}%>
                 <!-- Ratings and star code completes -->

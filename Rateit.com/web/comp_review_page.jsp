@@ -14,10 +14,11 @@ Company_database cd = new Company_database(ConnectionProvider.getConnection());
    Company cmp=cd.getCompanyByName(name);
     Company_services_database csd = new Company_services_database(ConnectionProvider.getConnection());
     ArrayList<Company_services> list1 = csd.getAllCategories(cmp.getCOMPANY_ID());
-    
+
 Review_database rd = new Review_database(ConnectionProvider.getConnection());
 int temp = 1;
 int temp2 =1;
+ int rating = rd.getOverallRatings(cmp.getCOMPANY_ID());
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -92,12 +93,50 @@ int temp2 =1;
       </div>
       <div class="overall-rating">
          <p class="text"><b>Overall Rating:</b></p>
+         
          <div id="uper-star">
+             <%if(rating == 0){%>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            <%}%>
+             <%if(rating == 1){%>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <%}%>
+             <%if(rating == 2){%>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <%}%>
+             <%if(rating == 3){%>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <%}%>
+             <%if(rating == 4){%>
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
             <i class="fa-regular fa-star"></i>
+            <%}%>
+             <%if(rating == 5){%>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <%}%>
          </div>
       </div>
 
