@@ -144,6 +144,10 @@
             </div>
          
             <table>
+                <tr id="newImageContainer">
+                        <td colspan="2" class="t1"> Upload Profile Image : 
+                       <input type="file" name="profile_image" id="get_profile_pic" class="editable" disabled></td>
+                    </tr>
 
                 <tr>
                     <td class="t1">User Name :</td>
@@ -171,10 +175,7 @@
                     <td class="t2"><input type="text" name="attended_poll" class="profile_input" value="<%=cus.getATTENDED_POLL() %>" disabled></td>
                 </tr>
                 
-                <tr id="newImageContainer">
-                        <td colspan="2" class="t1"> Upload Profile Image : 
-                       <input type="file" name="profile_image" id="get_profile_pic" class="editable" disabled></td>
-                    </tr>
+             
             </table>
                 
                 <div id="profile_buttons">

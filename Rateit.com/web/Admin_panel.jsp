@@ -102,7 +102,7 @@
                         <input class="content1" type="datetime" placeholder="Company Joining Date :"><br>
                         <input class="content1" type="text" placeholder="Company Category :"><br>
 
-                        <button id="submit-btn">Submit</button>
+                        <button id="submit-btn">Add Company</button>
                     </div>
                 </main>
                 <%} else {
@@ -271,7 +271,7 @@
                                         <div class="comp-cont-box1">
                                             <div class="img-name">
                                                 <img src="HelperJSP/DisplayCmpImage.jsp?name=<%=cmp1.getCOMPANY_NAME()%>" height="30px" width="40px">
-                                                <p><%=cmp1.getCOMPANY_NAME()%></p>
+                                                <p class="comp-name-poll"><%=cmp1.getCOMPANY_NAME()%></p>
                                             </div>
                                             <div class="rcr-box">
                                                 <div class="star-1">
@@ -281,14 +281,14 @@
                                                     <i class="fa-solid fa-star"></i>
                                                     <i class="fa-regular fa-star"></i>
                                                 </div>
-                                                <span>online service</span>
-                                                <span>32,43,332</span>
+                                                <span class="font-styling">online service</span><br>
+                                                <span class="font-styling">32,43,332</span>
                                             </div>
                                         </div>
                                         <div class="comp-cont-box2">
                                             <div class="img-name">
                                                 <img src="HelperJSP/DisplayCmpImage.jsp?name=<%=cmp2.getCOMPANY_NAME()%>" height="30px" width="40px">
-                                                <p><%=cmp2.getCOMPANY_NAME()%></p>
+                                                <p class="comp-name-poll"><%=cmp2.getCOMPANY_NAME()%></p>
                                             </div>
                                             <div class="rcr-box">
                                                 <div class="star-1">
@@ -298,12 +298,12 @@
                                                     <i class="fa-solid fa-star"></i>
                                                     <i class="fa-regular fa-star"></i>
                                                 </div>
-                                                <span>online service</span>
-                                                <span>32,43,332</span>
+                                                <span class="font-styling">online service</span><br>
+                                                <span class="font-styling">32,43,332</span>
                                             </div>
                                         </div>
                                     </div>
-                                    <button class="poll-remove-btn">Remove</button>
+                                    <button class="poll-remove-btn2">Remove</button>
                                 </div><%}%>
                             </section>
 
@@ -362,9 +362,9 @@
                                                         <i class="fa-solid fa-star"></i>
                                                         <i class="fa-regular fa-star"></i>
                                                     </div>
-                                                    <span>online service</span>
-                                                    <span>32,43,332</span><br>
-                                                    <input class="file-upload" type="file">
+                                                    <span class="font-styling">online service</span><br>
+                                                    <span class="font-styling">32,43,332</span><br>
+                                                    <input class="file-upload" type="file" name="file-upload">
                                                 </div>
                                             </div>
                                             <div class="comp-cont-box2">
@@ -380,13 +380,13 @@
                                                         <i class="fa-solid fa-star"></i>
                                                         <i class="fa-regular fa-star"></i>
                                                     </div>
-                                                    <span>online service</span>
-                                                    <span>32,43,332</span><br>
-                                                    <input class="file-upload" type="file">
+                                                    <span class="font-styling">online service</span><br>
+                                                    <span class="font-styling">32,43,332</span><br>
+                                                    <input class="file-upload" type="file" name="file-upload">
                                                 </div>
                                             </div>
                                         </div>
-                                        <button style="margin-top: -20px;" class="poll-remove-btn">Send Report</button>
+                                        <button class="poll-remove-btn1">Send Report</button>
                                     </div>
                                 </div>
                             </section>

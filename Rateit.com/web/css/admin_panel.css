@@ -100,25 +100,23 @@ td:hover {
 
 #box-container {
     height: 510px;
-    width: 49%;
+    width: 42%;
     padding-top: 15px;
     border: 1px solid black;
-    border-radius: 1%;
     background-color: white;
     position: relative;
     left: 25%;
-    top: 10px;
+    top: 30px;
 }
 
 .block {
     text-align: center;
     height: 110px;
     width: 110px;
-    background-color: rgba(192, 190, 190, 0.568);
+    background-color: rgba(218, 215, 215, 0.445);
     border-radius: 100%;
-    margin-left: 40%;
+    margin-left: 37%;
     padding: 27px 22px;
-    box-shadow: 1px 1px 10px black;
 }
 
 #edit {
@@ -127,28 +125,24 @@ td:hover {
     cursor: pointer;
 }
 
-.content1,
-#submit-btn {
-    border: none;
-    border-radius: 3px;
-}
-
 .content1 {
-    width: 83%;
+    width: 85%;
     height: 35px;
     margin-top: 13px;
     padding-left: 5px;
     background-color: lightgray;
+    border: none;
 }
 
 #submit-btn {
     margin-top: 25px;
-    width: 83%;
+    width: 85%;
     height: 40px;
     color: white;
     letter-spacing: 1px;
     background-color: rgb(237, 75, 75);
     font-size: 17px;
+    border: none;
 }
 
 #submit-btn:hover {
@@ -220,9 +214,9 @@ td:hover {
 .container {
     padding-top: 13px;
     display: grid;
-    width: 85%;
-    margin-left: 6%;
-    margin-top: 70px;
+    width: 75%;
+    margin-left: 12%;
+    margin-top: 20px;
     background-color: white;
     grid-template-columns: 1fr 1fr;
     box-sizing: border-box;
@@ -244,7 +238,6 @@ td:hover {
     margin-left: 40%;
     margin-top: 30px;
     padding: 25px 20px;
-    box-shadow: 2px 2px 10px black;
 }
 
 .input1 {
@@ -272,12 +265,12 @@ td:hover {
 
 .Create_button {
     height: 35px;
-    width: 40%;
+    width: 35%;
     font-size: 16px;
     letter-spacing: 1px;
-    margin-top: 10px;
+    margin-top: 20px;
     margin-bottom: 15px;
-    margin-left: 80%;
+    margin-left: 83%;
     border: none;
     color: white;
     background-color: rgb(237, 75, 75);
@@ -297,10 +290,10 @@ td:hover {
 }
 
 .dating {
-    width: 350px;
-    padding-left: 5px;
-    height: 35px;
-    margin-left: 50px;
+    width: 88%;
+    padding-left: 10px;
+    height: 30px;
+    margin-left: 30px;
     margin-top: 30px;
     background-color: lightgray;
     border: none;
@@ -388,7 +381,7 @@ td:hover {
 }
 
 .poll-box{
-    width: 53%;
+    width: 60%;
     background-color: white;
     margin-left: 22%;
     margin-top: 20px;
@@ -415,9 +408,22 @@ td:hover {
     margin-left: 15px;
 }
 
-.poll-remove-btn{
+.font-styling{
+    font-size: 12px;
+}
+
+.comp-name-poll{
+    width: 90px;
+}
+
+.poll-remove-btn2{
     height: 30px;
+    width: 20%;
     margin: 20px 37% 0px 37%;
+    background-color: rgb(237, 75, 75);
+    color: white;
+    border: none;
+    border-radius: 2px;
 }
 
 /* ............................page7 styling............................. */
@@ -485,15 +491,21 @@ td:hover {
 .file-upload{
     width: 200px;
     height: 40px;
-    margin-top: 40px;
+    margin-top: 25px;
     margin-left: -40%;
 }
 
-.poll-remove-btn{
+.poll-remove-btn1{
     height: 35px;
-    width: 20%;
+    width: 25%;
     background-color: rgb(237, 75, 75);
     color: white;
     border: none;
     border-radius: 2px;
+    margin-left: 35%;
+    margin-top: -10px;
+}
+
+.poll-remove-btn:hover, #search-poll_com-btn:hover{
+    background-color: brown;
 }
