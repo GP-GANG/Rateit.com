@@ -44,28 +44,37 @@
             }
             .profile_input{
                 height:30px;
-                width:230px;
+                width:90%;
                 text-align: center;
                 
             }
 
             .block {
                 background-color: white;
-                height: 480px;
-                width: 500px;
+                height: 500px;
+                width: 36%;
                 box-shadow: 0px 10px 17px 1px rgba(0,0,0,0.75);
 -webkit-box-shadow: 0px 10px 17px 1px rgba(0,0,0,0.75);
 -moz-box-shadow: 0px 10px 17px 1px rgba(0,0,0,0.75);
             }
             .imag img {
-                height: 100px;
-                width: 100px;
-                border-radius:50%;
+                height: 120px;
+                width: 120px;
+                border-radius:100%;
             }
             .imag{
+                height: 120px;
+            width: 120px;
+            position: relative;
+            border: 1px solid black;
+            border-radius: 100%;
+            background-size: 100% 100%;
+            margin: 0px auto;
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                overflow: hidden;
+                background-image: url("img/profile_photo3.png");
             }
             table{
                 /*margin-top:20px;*/
@@ -73,12 +82,17 @@
                 width:93%;
                 height:285px;
                 margin-left: 7%;
-                margin-top: 10px;
-                
+            }
+            
+            #get_profile_pic{
+                position: absolute;
+                font-size: 70px;
+                opacity: 0;
             }
 
 
 .t1{
+    width: 31%;
     font-weight:bold;
     font-size:17px;
 }
@@ -103,6 +117,11 @@
             
         #save_btn, #newImageContainer{
             display: none;
+        }
+        
+        #profile_message{
+            text-align: center;
+            color: gray;
         }
 
         #profile_buttons{
@@ -141,13 +160,17 @@
             <%}else{%>
              <img src="HelperJSP/DisplayImage.jsp" id="profile_pic">
              <%}%>
+             
+             <tr id="newImageContainer">
+                        <td colspan="2" class="t1"> 
+                       <input type="file" name="profile_image" id="get_profile_pic" class="editable" disabled></td>
+                    </tr>
             </div>
          
             <table>
                 <tr id="newImageContainer">
-                        <td colspan="2" class="t1"> Upload Profile Image : 
-                       <input type="file" name="profile_image" id="get_profile_pic" class="editable" disabled></td>
-                    </tr>
+                 <td colspan="2" class="t1" id="profile_message"> Click Profile To Edit...</td>
+                </tr>
 
                 <tr>
                     <td class="t1">User Name :</td>
