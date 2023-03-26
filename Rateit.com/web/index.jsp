@@ -22,6 +22,7 @@
         <!-- <link rel="stylesheet" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" href="" crossorigin="anonymous"> -->
 
         <link rel="stylesheet" href="css/index.css"/>
+        <link rel="stylesheet" href="css\login_checker.css?1">
 
     </head>
 
@@ -145,7 +146,7 @@
 
                         <div class="logoContainer">
                             <img src="HelperJSP/DisplayCmpImage.jsp?name=<%=cmp1.getCOMPANY_NAME() %>"
-                                 class="logo" id="l1" style="height: 25px; width: 30px; margin-top: 5px;">
+                                 class="logo" id="l1" style="height: 45px; width: 50px; margin-top: 5px;">
                         </div>
 
                         <p class="company_name"><%=cmp1.getCOMPANY_NAME() %></p>
@@ -202,7 +203,7 @@
                     <section class="company2">
                         <div class="logoContainer">
                             <img src="HelperJSP/DisplayCmpImage.jsp?name=<%=cmp2.getCOMPANY_NAME()%>"
-                                 class="logo" id="l2" style="height: 50px; width: 55px;">
+                                 class="logo" id="l2" style="height: 45px; width: 50px;">
                         </div>
                         <p class="company_name"><%=cmp2.getCOMPANY_NAME()%></p>
                         <div class="star-2">

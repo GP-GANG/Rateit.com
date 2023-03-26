@@ -87,7 +87,7 @@
             #get_profile_pic{
                 position: absolute;
                 font-size: 70px;
-                opacity: 0;
+                opacity:0;
             }
 
 

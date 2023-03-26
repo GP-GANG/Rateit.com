@@ -153,14 +153,14 @@
 
         .btn-sub {
             height: 40px;
-            width: 200px;
+            width: 44%;
             background-color: rgb(237, 75, 75);
             color: white;
             position: relative;
             margin: 0px 10px;
             margin-bottom: 25px;
             top: 15px;
-            left: 17%;
+            left: 3%;
             border: none;
             border-radius: 3px;
             letter-spacing: 2px;

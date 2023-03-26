@@ -29,47 +29,12 @@ int temp2 =1;
    <title><%=cmp.getCOMPANY_NAME()%></title>
    <script src="https://kit.fontawesome.com/c2a4c35825.js" crossorigin="anonymous"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-   <link rel="stylesheet" href="css\comp_review_page.css">
+   <link rel="stylesheet" href="css\comp_review_page.css?1">
+   <link rel="stylesheet" href="css\login_checker.css?1">
    <link
       href="https://github.com/GP-GANG/rateit.github.io/blob/b32152f01d68b11cb33f47d2f5d42ea30e8e6d04/CODE/css/headerstyle.css"
       rel="stylesheet">
    
-   <style>
-       #loginCheckContainer{
-                height:100vh;
-                width:100vw;
-                /*background-color: gray;*/
-                /*opacity:0.4;*/
-                position:fixed;
-                left:0; top:0;
-                z-index:-2;
-                display:flex;
-                justify-content: center;
-                align-items: center;
-                opacity: 0;
-            }
-            #loginCheck{
-                height:200px;
-                width:350px;
-                background-color: white;
-                border:2px solid black;
-                display:flex;
-                align-items: center;
-                justify-content: center;
-                padding:30px;
-                z-index:4;
-            }
-            #loginCheck span{
-                width:70%;
-            }
-            #loginCheck button{
-                padding:4px;
-                margin-bottom:10px;
-                height:30px;
-                cursor: pointer;
-            }
-       
-   </style>
 </head>
 
 <body>
@@ -91,7 +56,7 @@ int temp2 =1;
          <p class="company_text"><%=cmp.getCOMPANY_NAME() %></p>
       </div>
       <div class="overall-rating">
-         <p class="text"><b>Overall Rating:</b></p>
+         <p class="text"><b>Rating:</b></p>
          <div id="uper-star">
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
@@ -230,7 +195,7 @@ int temp2 =1;
             <%temp++;}%>
             </table>
             <div id="comm-box">
-                <textarea id="txt-area" rows="8" cols="125" name="review"
+                <textarea id="txt-area" rows="8" cols="7" name="review"
                   placeholder="Comment your opinion about the company..."></textarea></td>
             </div>
          </div>

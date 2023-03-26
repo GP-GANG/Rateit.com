@@ -39,7 +39,7 @@
         <title><%=cmp1.getCOMPANY_NAME() %> VS <%=cmp2.getCOMPANY_NAME() %> | Rateit.com</title>
         <script src="https://kit.fontawesome.com/c2a4c35825.js" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="css/poll_review_page.css">
+        <link rel="stylesheet" href="css/poll_review_page.css?1">
         <link
             href="https://github.com/GP-GANG/rateit.github.io/blob/b32152f01d68b11cb33f47d2f5d42ea30e8e6d04/CODE/css/headerstyle.css"
             rel="stylesheet">
@@ -55,7 +55,7 @@
                         <div>
                             <div class="img_container">
                                 <img src="HelperJSP/DisplayCmpImage.jsp?name=<%=cmp1.getCOMPANY_NAME() %>"
-                                     height="80px" width="80px" class="c-logo">
+                                     height="80px" width="100px" class="c-logo">
                             </div>
 
                             <span><%=cmp1.getCOMPANY_NAME() %></span>
@@ -108,7 +108,7 @@
                         <div>
                             <div class="img_container">
                                 <img src="HelperJSP/DisplayCmpImage.jsp?name=<%=cmp2.getCOMPANY_NAME() %>"
-                                     height="80px" width="80px" class="c-logo">
+                                     height="80px" width="100px" class="c-logo">
                             </div>
 
                             <span><%=cmp2.getCOMPANY_NAME() %></span>
@@ -157,8 +157,8 @@
                 </section>
 
                 <div id="btn-box">
-                    <button type="submit"class="btn-sub">Submit Review</button>
-                    <input type="reset"  class="btn-sub">Reset</button>
+                    <button type="submit" class="btn-sub">Submit Review</button>
+                    <button type="reset"  class="btn-sub">Reset</button>
                 </div>
                 <!-- <button class="Read-more_btn" id="btn2" onclick="moreContent('showContent2','btn2')">Show -->
                 <!-- More</button> -->
