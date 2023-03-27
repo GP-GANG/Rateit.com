@@ -64,7 +64,6 @@
                         <div class="box" align="right">
                             <b id="b1">3.9</b>
                             <i class="fa-solid fa-star" id="i1"></i>
-                            <p class="spa">Ratings: 23,43,122</p>
                             <p class="spa">Reviews: 20,42,232</p>
                         </div>
                     </div>
@@ -117,7 +116,6 @@
                         <div class="box" align="right">
                             <b id="b1">3.9</b>
                             <i class="fa-solid fa-star" id="i1"></i>
-                            <p class="spa">Ratings: 23,43,433</p>
                             <p class="spa">Reviews: 23,23,432</p>
                         </div>
                     </div>

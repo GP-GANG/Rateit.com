@@ -36,7 +36,7 @@
 
     <section id="side2">
 
-        <img src="about_image.jpg" alt="image">
+        <img id="img1" src="img/about_back.jpg" alt="image">
     </section>
 
 </body>

@@ -1,4 +1,4 @@
-[10:03 pm, 25/03/2023] Priyanshu(collage): * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,15 +10,17 @@ body {
     height: 100%;
 }
 #about_container{
+    margin-left: 50px;
     display: flex;
 }
 #side1
 {
-    width: 40%;
+    width: 45%;
     height: 100%;
 }
 #side2 {
-    width: 50%;
+    width: 60%;
+    height: 100vh;
 }
 
 #side1 {
@@ -28,9 +30,9 @@ body {
 }
 
 #img1 {
-    margin-top: 40px;
-    width: 50%;
-    height:75%;
+    margin-top: 20px;
+    width: 75%;
+    height:90%;
 margin-left: 5px;
 }
 
@@ -62,3 +64,4 @@ p {
 
 footer {
     margin-top: 50px;
+}

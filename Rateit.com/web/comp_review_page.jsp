@@ -180,15 +180,15 @@ int temp2 =1;
             <tr>
                <td><%=e.getCOMPANY_SERVICES() %></td>
                <td>
-                   <input type="radio" name="c<%=temp%>" id="dynamic<%=temp%><%=temp2%>" value="1"> <label for="dynamic<%=temp%><%=temp2%>"><i
+                   <input type="radio" name="c<%=temp%>" id="dynamic<%=temp%><%=temp2%>" value="1" required> <label for="dynamic<%=temp%><%=temp2%>"><i
                         class="fa-regular fa-star"></i></label><%temp2++;%>
-                  <input type="radio" name="c<%=temp%>" id="dynamic<%=temp%><%=temp2%>" value="2"> <label for="dynamic<%=temp%><%=temp2%>"> <i
+                  <input type="radio" name="c<%=temp%>" id="dynamic<%=temp%><%=temp2%>" value="2" required> <label for="dynamic<%=temp%><%=temp2%>"> <i
                         class="fa-regular fa-star"></i> </label><%temp2++;%>
-                  <input type="radio" name="c<%=temp%>" id="dynamic<%=temp%><%=temp2%>" value="3"> <label for="dynamic<%=temp%><%=temp2%>"> <i
+                  <input type="radio" name="c<%=temp%>" id="dynamic<%=temp%><%=temp2%>" value="3" required> <label for="dynamic<%=temp%><%=temp2%>"> <i
                         class="fa-regular fa-star"></i> </label><%temp2++;%>
-                  <input type="radio" name="c<%=temp%>" id="dynamic<%=temp%><%=temp2%>" value="4"> <label for="dynamic<%=temp%><%=temp2%>"> <i
+                  <input type="radio" name="c<%=temp%>" id="dynamic<%=temp%><%=temp2%>" value="4" required> <label for="dynamic<%=temp%><%=temp2%>"> <i
                         class="fa-regular fa-star"></i> </label><%temp2++;%>
-                  <input type="radio" name="c<%=temp%>" id="dynamic<%=temp%><%=temp2%>" value="5"> <label for="dynamic<%=temp%><%=temp2%>"> <i
+                  <input type="radio" name="c<%=temp%>" id="dynamic<%=temp%><%=temp2%>" value="5" required> <label for="dynamic<%=temp%><%=temp2%>"> <i
                         class="fa-regular fa-star"></i> </label>
                </td>
             </tr>
