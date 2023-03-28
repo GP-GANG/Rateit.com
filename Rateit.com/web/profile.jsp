@@ -22,6 +22,9 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/loading_effect.css">
+    <script src="javascript/loading_effect.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
         <title>Conpany Profile | rateit.com</title>
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@300&display=swap');
@@ -140,6 +143,12 @@
 </head>
 
 <body>
+    
+    <div id="preloader">
+        <div class="load">
+            <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/loading.gif?raw=true" alt="dfd">
+        </div>
+    </div>
     
     <div id="Profile_loading">
         <div id="profile_effect"><image src="img/load.gif" height="20px" width="20px" style="border-radius: 50%;"> Processing...</div>

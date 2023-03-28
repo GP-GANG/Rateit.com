@@ -10,9 +10,17 @@
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <title>Contact Us | rateit.com</title>
     <link rel="stylesheet" href="css/contact_us.css?1">
+    <link rel="stylesheet" href="css/loading_effect.css">
+    <script src="javascript/loading_effect.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 
 <body>
+    <div id="preloader">
+        <div class="load">
+            <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/loading.gif?raw=true" alt="dfd">
+        </div>
+    </div>
     <h2 id="heading"><img class="main_logo" src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/logo.png?raw=true" alt="RATE-IT.COM" height="40px"></h2>
     <div id="main_cont">
         <div id="cont1">

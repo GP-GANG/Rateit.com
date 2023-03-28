@@ -30,11 +30,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/20a4a662a5.js" crossorigin="anonymous"></script>
         <script src="javascript\multiselect-dropdown.js"></script>
-        <link rel="stylesheet" href="css/admin_panel.css">
+        <link rel="stylesheet" href="css/admin_panel.css?1">
+        <link rel="stylesheet" href="css/loading_effect.css">
+    <script src="javascript/loading_effect.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        
         <title>Admin Panel</title>
     </head>
 
     <body>
+        <div id="preloader">
+        <div class="load">
+            <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/loading.gif?raw=true" alt="dfd">
+        </div>
+    </div>
         <nav>
             <table id="table1">
                 <img id="rateit-logo" src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/logo.png?raw=true">

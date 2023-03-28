@@ -17,9 +17,19 @@
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <title>Company-Home Page</title>
     <link rel="stylesheet" href="css\comp_home_page.css">
+    <link rel="stylesheet" href="css/loading_effect.css">
+    <script src="javascript/loading_effect.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 
 <body>
+    
+    <div id="preloader">
+        <div class="load">
+            <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/loading.gif?raw=true" alt="dfd">
+        </div>
+    </div>
+    
     <header>
         <nav>
             <img class="main_logo"

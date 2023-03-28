@@ -8,12 +8,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="css/about_us_page.css?1">
+    <link rel="stylesheet" href="css/loading_effect.css">
+    <script src="javascript/loading_effect.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
     <title>About Us | Rateit.com</title>
 </head>
 
 <body>
 
+    <div id="preloader">
+        <div class="load">
+            <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/loading.gif?raw=true" alt="dfd">
+        </div>
+    </div>
+    
     <div id="about_container">
     <section id="side1">
         <div id="main_box">

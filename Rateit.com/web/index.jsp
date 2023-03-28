@@ -23,10 +23,18 @@
 
         <link rel="stylesheet" href="css/index.css"/>
         <link rel="stylesheet" href="css\login_checker.css?1">
+        <link rel="stylesheet" href="css/loading_effect.css">
+    <script src="javascript/loading_effect.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
     </head>
 
     <body>
+        <div id="preloader">
+        <div class="load">
+            <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/loading.gif?raw=true" alt="dfd">
+        </div>
+    </div>
         <%
             Customer customer = (Customer) session.getAttribute("Customer");
             Message msg = (Message)session.getAttribute("Message");

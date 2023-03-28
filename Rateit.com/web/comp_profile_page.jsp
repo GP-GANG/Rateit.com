@@ -26,10 +26,20 @@ ArrayList<Company_services> list = csd.getAllCategories(cmp.getCOMPANY_ID());
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <title>Company Profile | rateit.com</title>
-    <link rel="stylesheet" href="css\comp_profile_page.css?1">
+    <link rel="stylesheet" href="css\comp_profile_page.css?1">\
+    <link rel="stylesheet" href="css/loading_effect.css">
+    <script src="javascript/loading_effect.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 
 <body>
+    
+    <div id="preloader">
+        <div class="load">
+            <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/loading.gif?raw=true" alt="dfd">
+        </div>
+    </div>
+    
         <div class="profile_container">
             <div class="block">
                 
