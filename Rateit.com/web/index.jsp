@@ -15,9 +15,14 @@
 
     Company_database cd1 = new Company_database(ConnectionProvider.getConnection());
     ArrayList<Company> list5 = cd1.getAllCompanies();
-
+    
+      
+    
     Review_database rd = new Review_database(ConnectionProvider.getConnection());
-
+for(Company e : list5){
+    int i = rd.getOverallRatings(e.getCOMPANY_ID());
+   e.setCOMPANY_RATE(i);
+    }
 
 %>
 <!DOCTYPE html>
@@ -83,7 +88,7 @@
                             </li>
                         </div>
 
-                        <li><a href="#" class="header-content"><b>Rank Status</b></a></li>
+                        <li><a href="rank_status.jsp" class="header-content"><b>Rank Status</b></a></li>
                         <li><a href="#" class="header-content"><b>Companies</b></a></li>
                         <li><a href="about_us_page.jsp" class="header-content"><b>About Us</b></a></li>
                         <li><a href="contact_us.jsp" class="header-content"><b>Contact Us</b></a></li>

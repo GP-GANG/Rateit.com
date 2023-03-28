@@ -3,6 +3,8 @@ package dbclasses;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import rateit.entities.Company;
 import rateit.entities.Review;
 
 public class Review_database {
@@ -79,6 +81,7 @@ public class Review_database {
     
     return i;
     }
+    
     public int getTotalRatings(int cmp_id){
     int i = 0;
     try{
@@ -145,4 +148,6 @@ public class Review_database {
     
     return i;
     }
+    
+    
 }
