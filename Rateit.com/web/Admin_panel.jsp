@@ -30,7 +30,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/20a4a662a5.js" crossorigin="anonymous"></script>
         <script src="javascript\multiselect-dropdown.js"></script>
-        <link rel="stylesheet" href="css/admin_panel.css">
+        <link rel="stylesheet" href="css/admin_panel.css?2">
         <title>Admin Panel</title>
     </head>
 
@@ -259,7 +259,7 @@
 
                             <section id="page5">
                                 <%for (Company e : list) {%>
-                                <div class="box box-3">
+                                <div class="box box-5">
                                     <img src="HelperJSP/DisplayCmpImage.jsp?name=<%=e.getCOMPANY_NAME()%>"
                                          height="50px" width="60px" id="logo"><span id="l1">
                                         <b>Name:</b><%=e.getCOMPANY_NAME()%></span><br>
@@ -335,7 +335,7 @@
                                 %>
                                 <div class="report-box">
 
-                                    <div>
+                                    <div id="comp-logo-name-cont">
                                         <img src="HelperJSP/DisplayCmpImage.jsp?name=<%=e.getCOMPANY_NAME()%>"
                                              height="30px" width="40px">
 
@@ -432,9 +432,9 @@
                                             <b>Name:</b><%=e.getCOMPANY_NAME()%></span><br>
                                         <span id="l2"><b>Category:</b><%=e.getCATEGORY()%></span><br>
                                         <span id="l3" name=""><b>Status:</b>Individual/In-Poll</span>
-
-                                        <!--                <a href="#page1">  <button style="margin-top: -20px;" class="poll-remove-btn">add</button></a>-->
-                                        <input type="submit" value="submit">
+                                        <br><br>
+                                       
+                                        <input id="regis_comp_btn" type="submit" value="submit">
                                     </div>
                                 </form>
                                 <%}
@@ -453,9 +453,9 @@
                                             <b>Name:</b><%=e.getCOMPANY_NAME()%></span><br>
                                         <span id="l2"><b>Category:</b><%=e.getCATEGORY()%></span><br>
                                         <span id="l3" name=""><b>Status:</b>Individual/In-Poll</span>
+                                        <br><br>
 
-                                        <!--                <a href="#page1">  <button style="margin-top: -20px;" class="poll-remove-btn">add</button></a>-->
-                                        <input type="submit" value="Add">
+                                        <input id="regis_comp_btn" type="submit" value="Add">
                                     </div>
                                 </form>
                                 <%}

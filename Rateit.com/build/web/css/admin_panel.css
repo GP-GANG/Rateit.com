@@ -328,9 +328,9 @@ td:hover {
 /* ...................page5 styling code...................... */
 #page5 {
     width: 81%;
-    height: auto;
+    height: 100%;
     position: relative;
-    overflow: scroll;
+    overflow-y: scroll;
     left: 19%;
     /* display: none; */
 }
@@ -343,6 +343,11 @@ td:hover {
     border-radius: 4px;
     margin-left: 20%;
     margin-bottom: 20px;
+}
+
+.box-5{
+    height: 140px;
+    padding-right: 81px;
 }
 
 #logo {
@@ -376,7 +381,7 @@ td:hover {
     height: 100%;
     position: relative;
     left: 25%;
-    overflow: scroll;
+    overflow-y: scroll;
     /* display: none; */
 }
 
@@ -433,22 +438,27 @@ td:hover {
     height: 100%;
     position: relative;
     left: 19%;
-    overflow: scroll;
+    overflow-y: scroll;
     /* display: none; */
 }
 
 .report-box {
-    width: 40%;
-    height: 80px;
+    width: 45%;
+    height: 120px;
     background-color: white;
-    margin-left: 30%;
+    margin-left: 25%;
     margin-top: 20px;
     padding: 15px 15px;
     display: flex;
 }
 
+#comp-logo-name-cont{
+    width: 20%;
+}
+
 .com-content {
     margin-left: 50px;
+    margin-top: 10px;
 }
 
 /*------------------------- page 8 styling ----------------------------------*/
@@ -457,14 +467,14 @@ td:hover {
     height: 100%;
     position: relative;
     left: 19%;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 .main-8{
     background-color: white;
     padding: 20px 20px;
     margin: 0px 20% 10px 20%;
-    width: 60%;
+    width: 62%;
     border-radius: 5px;
 }
 
@@ -509,4 +519,38 @@ td:hover {
 
 .poll-remove-btn:hover, #search-poll_com-btn:hover{
     background-color: brown;
+}
+
+/*////////////////..............////////...page-9..........//////////////........./////*/
+#page9 {
+    width: 81%;
+    height: 100%;
+    position: relative;
+    left: 19%;
+    overflow-y: scroll;
+}
+
+.box-3{
+    height: 160px;
+}
+
+#regis_comp_btn{
+    width: 90%;
+    height: 30px;
+    margin-left: 27px;
+    background-color: rgb(237, 75, 75);
+    color: white;
+    border: none;
+    font-size: 15px;
+}
+
+/*..............////////////////..........page-10................//////////////...........*/
+
+#page10 {
+    width: 81%;
+    height: 100%;
+    position: relative;
+    left: 19%;
+    overflow-y: scroll;
+    /* display: none; */
 }

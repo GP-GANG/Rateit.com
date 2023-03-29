@@ -38,7 +38,7 @@ for(Company e : list5){
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <!-- <link rel="stylesheet" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" href="" crossorigin="anonymous"> -->
 
-        <link rel="stylesheet" href="css/index.css?1"/>
+        <link rel="stylesheet" href="css/index.css?2"/>
 
     </head>
 
@@ -89,9 +89,8 @@ for(Company e : list5){
                         </div>
 
                         <li><a href="rank_status.jsp" class="header-content"><b>Rank Status</b></a></li>
-                        <li><a href="#" class="header-content"><b>Companies</b></a></li>
-                        <li><a href="about_us_page.jsp" class="header-content"><b>About Us</b></a></li>
                         <li><a href="contact_us.jsp" class="header-content"><b>Contact Us</b></a></li>
+                        <li><a href="about_us_page.jsp" class="header-content"><b>About Us</b></a></li>
                     </ul>
 
                     <div id="search-logo"><i class="fa-solid fa-magnifying-glass"></i></div>
