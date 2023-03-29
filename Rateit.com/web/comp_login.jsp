@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/20a4a662a5.js" crossorigin="anonymous"></script>
         <title>Rate It</title>
-        <link href="css/LoginSignup.css" rel="stylesheet">
+        <link href="css/LoginSignup.css?2" rel="stylesheet">
     </head>
     
     <body>
@@ -72,7 +72,7 @@
     
                     <form action="Register_company" id="register" onsubmit="return validateReg()" method="post" enctype="multipart/form-data">
     
-                        <label for="URname" class="inputs"> Companyname : </label> <br>
+                        <label for="URname" class="inputs"> Company name : </label> <br>
                         <input class="inputs" type="text" id="URname" name="name" tabindex="1">
                         <div class="Error" id="usernameAlert"></div>
     
@@ -106,7 +106,7 @@
                             class="inputs submit_btn"><br>
                     </form>
     
-                    <div class="social-media1">
+                    <div class="social-media">
                         <a href="https://www.facebook.com/profile.php?id=100088785978857" target="_blank"><i
                                 class="fa-brands fa-facebook"></i></a>
                         <a href="https://www.instagram.com/rateit_group/" target="_blank"> <i
@@ -120,10 +120,31 @@
         </div>
     
     
-        <script type="text/javascript" src="javascript/LoginSignupValidation.js"> </script>
+        <script type="text/javascript" src="javascript/LoginSignupValidation.js?1"> </script>
         
             <script src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+            
+            <script>
+                        function changeBack() {
+            if (left == 0) {
+                buttonBack.style.left = "200px";
+                login.style.left = "-420px";
+                signUp.style.left = "0px";
+                container.style.height = "680px";
+                document.getElementById('URname').focus();
+                left = 200;
+            }
+            else {
+                buttonBack.style.left = 0 + "px";
+                signUp.style.left = "420px";
+                login.style.left = "0px";
+                document.getElementById('Uname').focus();
+                left = 0;
+                container.style.height = "420px";
+            }
+        }
+            </script>
     
     </body>
     

@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="css/about_us_page.css">
+    <link rel="stylesheet" href="css/about_us_page.css?2">
 
     <title>About Us | Rateit.com</title>
 </head>
@@ -36,7 +36,7 @@
 
     <section id="side2">
 
-        <img src="img/about_image.jpg" alt="image">
+        <img id="img1" src="img/about_back.jpg" alt="image">
     </section>
 
 </body>

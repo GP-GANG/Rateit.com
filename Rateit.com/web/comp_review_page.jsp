@@ -30,7 +30,7 @@ int temp2 =1;
    <title><%=cmp.getCOMPANY_NAME()%></title>
    <script src="https://kit.fontawesome.com/c2a4c35825.js" crossorigin="anonymous"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-   <link rel="stylesheet" href="css\comp_review_page.css">
+   <link rel="stylesheet" href="css\comp_review_page.css?1">
    <link
       href="https://github.com/GP-GANG/rateit.github.io/blob/b32152f01d68b11cb33f47d2f5d42ea30e8e6d04/CODE/css/headerstyle.css"
       rel="stylesheet">
@@ -140,7 +140,7 @@ int temp2 =1;
          </div>
       </div>
 
-      <div class="description">‎<%=cmp.getCOMPANY_DESC() %></div>
+            <div>‎<p class="description"><%=cmp.getCOMPANY_DESC() %></p></div>
      
 
       <div class="c-service-static c-service">
@@ -242,7 +242,7 @@ int temp2 =1;
       <br>
       <hr>
       <br>
-      <span class="Text-1">Review Your Experiance About Company:</span>
+      <span class="Text-1">Review Your Experiance About Company</span>
 
 
       <form action="IndividualReview?name=<%=name%>" method="post" onsubmit="return checkForLogin(validateSubmit)">

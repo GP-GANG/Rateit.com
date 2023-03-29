@@ -14,9 +14,9 @@ body {
 
 .container {
     display: grid;
-    margin: 10px 20px;
+    margin: 10px 25%;
     padding: 10px 0px;
-    width: 97%;
+    width: 50%;
     height: 100%;
     box-shadow: 2px 2px 10px grey;
     background-image: linear-gradient(to left, rgba(247, 211, 211, 0.301) 10%, rgba(183, 229, 243, 0.37) 65%);
@@ -28,7 +28,7 @@ body {
     display: flex;
     height: 60px;
     width: 300px;
-    margin-left: 450px;
+    margin-left: 50px;
 }
 
 .logo img {
@@ -45,7 +45,10 @@ body {
 }
 
 .description {
-    margin-top: 20px;
+    text-align: justify;
+    font-family: sans-serif;
+    font-size: 15px;
+    margin-top: 10px;
     margin-left: 30px;
     margin-right: 30px;
 }
@@ -58,15 +61,15 @@ body {
 .overall-rating {
     display: flex;
     height: 50px;
-    width: 300px;
-    margin-left: 73%;
+    width: auto;
+    margin-right: 5%;
     margin-top: -50px;
     justify-content: flex-end;
     padding-top: 10px;
 }
 
 .text {
-    font-size: 20px;
+    font-size: 17px;
 }
 
 #uper-star {
@@ -75,7 +78,7 @@ body {
 }
 
 #uper-star i {
-    font-size: 17px;
+    font-size: 20px;
 }
 
 td input {
@@ -91,10 +94,9 @@ td input {
 }
 
 .c-service-static table {
-    width: 100%;
+    width: 120%;
     height: 40%;
-    margin-top: 20px;
-    margin-left: 70%;
+    margin-left: 30%;
 }
 
 .c-service td {
@@ -109,7 +111,8 @@ td input {
 }
 
 .Text-1 {
-    font-size: 23px;
+    color: gray;
+    font-size: 20px;
     text-align: center;
     font-weight: 500;
 }
@@ -123,17 +126,17 @@ td input {
 }
 
 .c-service-dynamic table {
-    width: 100%;
+     width: 120%;
     height: 40%;
-    margin-top: 20px;
-    margin-left: 70%;
+    margin-left: 30%;
 }
 
 #comm-box {
-    margin-left: 130px;
+    margin-left: 30px;
 }
 
 #txt-area {
+    width: 225%;
     resize: none;
     padding-left: 10px;
     padding-top: 3px;
@@ -144,12 +147,12 @@ td input {
     display: flex;
     margin-top: 20px;
     margin-bottom: 20px;
-    margin-left: 35%;
+    margin-left: 4%;
 }
 
 .btn-sub {
     height: 40px;
-    width: 200px;
+    width: 45%;
     margin: 0px 10px;
     border: none;
     border-radius: 3px;
@@ -158,6 +161,10 @@ td input {
     letter-spacing: 2px;
     font-size: 16px;
     font-weight: 500;
+}
+
+.btn-sub:hover {
+    background-color: brown;
 }
 
 hr {

@@ -19,7 +19,7 @@
                 buttonBack.style.left = "200px";
                 login.style.left = "-420px";
                 signUp.style.left = "0px";
-                container.style.height = "500px";
+                container.style.height = "480px";
                 document.getElementById('URname').focus();
                 left = 200;
             }

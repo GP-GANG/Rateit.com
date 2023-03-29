@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/20a4a662a5.js" crossorigin="anonymous"></script>
     <title>Rate It</title>
-    <link href="css/LoginSignup.css?1" rel="stylesheet">
+    <link href="css/LoginSignup.css?2" rel="stylesheet">
 </head>
 
 <body>
@@ -105,7 +105,7 @@ session.removeAttribute("Message");
     </div>
 
 
-    <script type="text/javascript" src="javascript/LoginSignupValidation.js"> </script>
+    <script type="text/javascript" src="javascript/LoginSignupValidation.js?1"> </script>
     
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>

@@ -28,7 +28,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Company Ranking | rateit.com</title>
-        <link rel="stylesheet" href="css/rank_status.css">
+        <link rel="stylesheet" href="css/rank_status.css?2">
         <script src="https://kit.fontawesome.com/c2a4c35825.js" crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/20a4a662a5.js" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -37,19 +37,19 @@
     <body>
         <nav>
             <table>
-                <tr height="50px"><td><a href="#" class="header-content">All Companies</a></td></tr>
-                <tr height="50px"><td><a href="#" class="header-content">Health Economics Companies</a></td></tr>
-                <tr height="50px"><td><a href="#" class="header-content">Technology Companies</a></td></tr>
-                <tr height="50px"><td><a href="#" class="header-content">Online Food Ordering Companies</a></td></tr>
-                <tr height="50px"><td><a href="#" class="header-content">Transportation service Companies</a></td></tr>
-                <tr height="50px"><td><a href="#" class="header-content">E-commerce Store Companies</a></td></tr>
-                <tr height="50px"><td><a href="#" class="header-content">Automobile Companies</a></td></tr>
-                <tr height="50px"><td><a href="#" class="header-content">Social-Media Companies</a></td></tr>
-                <tr height="50px"><td><a href="#" class="header-content">Banking Companies</a></td></tr>
-                <tr height="50px"><td><a href="#" class="header-content">Financial Technology Companies</a></td></tr>
-                <tr height="50px"><td><a href="#" class="header-content">Jewellery Companies</a></td></tr>
-                <tr height="50px"><td><a href="#" class="header-content">Beverage Companies</a></td></tr>
-                <tr height="50px"><td><a href="#" class="header-content">Cement Manufacturer Companies</a></td></tr>
+                <tr height="50px"><td><a href="#" class="header-content"><i class="fa-solid fa-earth-americas"></i> All Companies</a></td></tr>
+                <tr height="50px"><td><a href="#" class="header-content"><i class="fa-solid fa-user-nurse"></i> Health Economics Companies</a></td></tr>
+                <tr height="50px"><td><a href="#" class="header-content"><i class="fa-solid fa-microchip"></i> Technology Companies</a></td></tr>
+                <tr height="50px"><td><a href="#" class="header-content"><i class="fa-sharp fa-solid fa-person-biking"></i> Online Food Ordering Companies</a></td></tr>
+                <tr height="50px"><td><a href="#" class="header-content"><i class="fa-sharp fa-solid fa-taxi"></i> Transportation service Companies</a></td></tr>
+                <tr height="50px"><td><a href="#" class="header-content"><i class="fa-solid fa-shop"></i> E-commerce Store Companies</a></td></tr>
+                <tr height="50px"><td><a href="#" class="header-content"><i class="fa-solid fa-car-side"></i> Automobile Companies</a></td></tr>
+                <tr height="50px"><td><a href="#" class="header-content"><i class="fa-solid fa-icons"></i> Social-Media Companies</a></td></tr>
+                <tr height="50px"><td><a href="#" class="header-content"><i class="fa-solid fa-landmark"></i> Banking Companies</a></td></tr>
+                <tr height="50px"><td><a href="#" class="header-content"><i class="fa-solid fa-coins"></i> Financial Technology Companies</a></td></tr>
+                <tr height="50px"><td><a href="#" class="header-content"><i class="fa-solid fa-gem"></i> Jewellery Companies</a></td></tr>
+                <tr height="50px"><td><a href="#" class="header-content"><i class="fa-solid fa-martini-glass-citrus"></i> Beverage Companies</a></td></tr>
+                <tr height="50px"><td><a href="#" class="header-content"><i class="fa-solid fa-house-medical-circle-check"></i> Cement Manufacturer Companies</a></td></tr>
             </table>
         </nav>
 
@@ -62,7 +62,7 @@
             <div class="First-Poll" id="f-poll">
                 <div class="logoContainer">
                     <img src="HelperJSP/DisplayCmpImage.jsp?name=<%=e.getCOMPANY_NAME()%>"
-                         id="l1" style="height: 50px; width: 55px;">
+                         id="l1" style="height: 70px; width: 80px;">
                 </div>
                 <div class="text-section">
                     <p><b><%=e.getCOMPANY_NAME()%></b></p><br>
