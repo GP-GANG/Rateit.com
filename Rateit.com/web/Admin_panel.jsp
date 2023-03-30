@@ -30,7 +30,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/20a4a662a5.js" crossorigin="anonymous"></script>
         <script src="javascript\multiselect-dropdown.js"></script>
-        <link rel="stylesheet" href="css/admin_panel.css?2">
+        <link rel="stylesheet" href="css/admin_panel.css?1">
         <title>Admin Panel</title>
     </head>
 
@@ -154,7 +154,7 @@
                                         <p class="inside_header">Company - 1</p>
                                         <div class="block1">
                                             <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/TCS.png?raw=true"
-                                                 height="45px" width="60px"><br>
+                                                 height="60px" width="70px"><br>
                                         </div>
                                         <input class="input1" type="text" placeholder="Company ID:"><br>
                                         <div class="selector">
@@ -168,7 +168,7 @@
                                         <p class="inside_header">Company - 2</p>
                                         <div class="block1">
                                             <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/infosys.png?raw=true"
-                                                 height="50px" width="60px"><br>
+                                                 height="60px" width="70px"><br>
                                         </div>
                                         <input class="input1" type="text" placeholder="Company ID :"><br>
                                         <div class="selector">
@@ -220,7 +220,7 @@
                                     </div>
                                     <input class="dating" type="text" placeholder="Starting Date :">
                                     <input class="dating" type="text" placeholder="Ending Date :">
-                                    <input type="text" name="poll_id" class="Create_button" placeholder="enter poll id">
+                                    <input type="text" name="poll_id" id="poll-id-sec" placeholder="enter poll id :"><br>
                                     <button type="submit" class="Create_button">Create Poll</button>
 
                                     </form>
@@ -364,7 +364,7 @@
                                     <input type="search" placeholder="Search Company" size="30">
                                     <input type="search" placeholder="Search Poll-ID" size="30">
                                     <button id="search-poll_com-btn">Search</button>
-                                </form><br><br><br><br>
+                                </form><br><br><br>
   <%for (Poll e : list2) {
 
                                         Company_database cd1 = new Company_database(ConnectionProvider.getConnection());
