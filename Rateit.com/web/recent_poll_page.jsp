@@ -10,9 +10,17 @@
     <script src="https://kit.fontawesome.com/c2a4c35825.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/20a4a662a5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/recent_poll_page.css">
+        <link rel="stylesheet" href="css/loading_effect.css">
+    <script src="javascript/loading_effect.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 
 <body>
+    <div id="preloader">
+        <div class="load">
+            <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/loading.gif?raw=true" alt="dfd">
+        </div>
+    </div>
     <main>
         <div class="container">
 

@@ -17,7 +17,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <title>Company-Home Page</title>
-    <link rel="stylesheet" href="css\comp_home_page.css">
+    <link rel="stylesheet" href="css\comp_home_page.css?1">
 </head>
 
 <body>

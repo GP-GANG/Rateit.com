@@ -25,10 +25,18 @@ session.setMaxInactiveInterval(40*60);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <title>Request Poll | rateit.com</title>
-    <link rel="stylesheet" href="css/request_poll.css?">
+    <link rel="stylesheet" href="css/request_poll.css?1">
+    <link rel="stylesheet" href="css/loading_effect.css">
+    <script src="javascript/loading_effect.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 
 <body>
+    <div id="preloader">
+        <div class="load">
+            <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/loading.gif?raw=true" alt="dfd">
+        </div>
+    </div>
     
     <div id="container">
         <form action="AcceptRequest" method="post">

@@ -60,6 +60,8 @@ nav ul li a {
 
 .header-content:hover {
     color: rgb(237, 75, 75);
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgb(237, 75, 75);
 }
 
 

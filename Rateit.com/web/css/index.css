@@ -784,7 +784,7 @@
             #loginCheckContainer{
                 height:100vh;
                 width:100vw;
-                /*background-color: gray;*/
+                background-color: rgba(128, 128, 128, 0.397);
                 /*opacity:0.4;*/
                 position:fixed;
                 left:0; top:0;
@@ -795,22 +795,24 @@
                 opacity: 0;
             }
             #loginCheck{
-                height:200px;
-                width:350px;
+                height:auto;
+                width:25%;
+                text-align: center;
+                flex-direction: column;
                 background-color: white;
                 border:2px solid black;
-                display:flex;
-                align-items: center;
-                justify-content: center;
-                padding:30px;
+                padding:12px 30px;
                 z-index:4;
             }
             #loginCheck span{
-                width:70%;
+                width:90%;
+                margin-left: 10px;
             }
             #loginCheck button{
                 padding:4px;
+                margin-left: 5px;
                 margin-bottom:10px;
                 height:30px;
+                width: 98%;
                 cursor: pointer;
             }

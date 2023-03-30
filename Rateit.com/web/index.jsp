@@ -39,16 +39,25 @@ for(Company e : list5){
         <!-- <link rel="stylesheet" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" href="" crossorigin="anonymous"> -->
 
         <link rel="stylesheet" href="css/index.css?2"/>
+        <link rel="stylesheet" href="css/loading_effect.css?1">
+    <script src="javascript/loading_effect.js?1"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
     </head>
 
     <body>
+        <div id="preloader">
+        <div class="load">
+            <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/loading.gif?raw=true" alt="dfd">
+        </div>
+    </div>
+        
         <div id="loginCheckContainer">
 
             <div id="loginCheck">
-                <span><i class="fa-solid fa-triangle-exclamation" style="font-size:25px; color:red"></i>
-                    <br><p style="font-size:13px;" ><b id="errMsg"></b></p></span>
-                <section>
+                <span><i class="fa-solid fa-triangle-exclamation" style="font-size:35px; color:red"></i>
+                    <br><p style="font-size:15px;" ><b id="errMsg"></b></p></span>
+                    <section style="margin-top: 10px;">
                     <a href="LogIn&SignUp.jsp"><button class="header-btn alertBtn" id="errBtn1">Login</button></a>
                     <button class="header-btn alertBtn" id="alertClose">Remind me later</button>
                 </section>

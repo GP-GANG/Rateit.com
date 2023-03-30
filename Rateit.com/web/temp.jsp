@@ -18,6 +18,11 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <div id="preloader">
+        <div class="load">
+            <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/loading.gif?raw=true" alt="dfd">
+        </div>
+    </div>
         <h1>hii</h1>
          <%
                    Poll_database pd = new Poll_database(ConnectionProvider.getConnection()); 

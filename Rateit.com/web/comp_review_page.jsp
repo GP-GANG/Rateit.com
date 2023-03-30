@@ -34,6 +34,9 @@ int temp2 =1;
    <link
       href="https://github.com/GP-GANG/rateit.github.io/blob/b32152f01d68b11cb33f47d2f5d42ea30e8e6d04/CODE/css/headerstyle.css"
       rel="stylesheet">
+       <link rel="stylesheet" href="css/loading_effect.css">
+    <script src="javascript/loading_effect.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
    
    <style>
        #loginCheckContainer{
@@ -74,6 +77,11 @@ int temp2 =1;
 </head>
 
 <body>
+    <div id="preloader">
+        <div class="load">
+            <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/loading.gif?raw=true" alt="dfd">
+        </div>
+    </div>
     
         <div id="loginCheckContainer">
             <div id="loginCheck">
