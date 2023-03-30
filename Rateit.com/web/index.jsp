@@ -38,7 +38,7 @@ for(Company e : list5){
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <!-- <link rel="stylesheet" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" href="" crossorigin="anonymous"> -->
 
-        <link rel="stylesheet" href="css/index.css"/>
+        <link rel="stylesheet" href="css/index.css?2"/>
 
     </head>
 
@@ -89,10 +89,8 @@ for(Company e : list5){
                         </div>
 
                         <li><a href="rank_status.jsp" class="header-content"><b>Rank Status</b></a></li>
-                        <li><a href="#" class="header-content"><b>Companies</b></a></li>
-                        <li><a href="about_us_page.jsp" class="header-content"><b>About Us</b></a></li>
                         <li><a href="contact_us.jsp" class="header-content"><b>Contact Us</b></a></li>
-                        <li><a href="#" class="header-content"><b>Review Us</b></a></li>
+                        <li><a href="about_us_page.jsp" class="header-content"><b>About Us</b></a></li>
                     </ul>
 
                     <div id="search-logo"><i class="fa-solid fa-magnifying-glass"></i></div>
@@ -153,7 +151,7 @@ for(Company e : list5){
 
                         <div class="logoContainer">
                             <img src="HelperJSP/DisplayCmpImage.jsp?name=<%=cmp1.getCOMPANY_NAME()%>"
-                                 class="logo" id="l1" style="height: 35px; width: 35px; margin-top: 5px;">
+                                 class="logo" id="l1" style="height: 42px; width: 50px; margin-top: 5px;">
                         </div>
 
                         <p class="company_name"><%=cmp1.getCOMPANY_NAME()%></p>
@@ -210,7 +208,7 @@ for(Company e : list5){
                     <section class="company2">
                         <div class="logoContainer">
                             <img src="HelperJSP/DisplayCmpImage.jsp?name=<%=cmp2.getCOMPANY_NAME()%>"
-                                 class="logo" id="l2" style="height: 35px; width: 35px;">
+                                 class="logo" id="l2" style="height: 42px; width: 50px;">
                         </div>
                         <p class="company_name"><%=cmp2.getCOMPANY_NAME()%></p>
                         <div class="star-2">

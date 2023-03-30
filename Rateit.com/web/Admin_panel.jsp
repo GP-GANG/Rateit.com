@@ -30,44 +30,48 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/20a4a662a5.js" crossorigin="anonymous"></script>
         <script src="javascript\multiselect-dropdown.js"></script>
-        <link rel="stylesheet" href="css/admin_panel.css">
+        <link rel="stylesheet" href="css/admin_panel.css?1">
         <title>Admin Panel</title>
     </head>
 
     <body>
         <nav>
             <table id="table1">
+                <img id="rateit-logo" src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/logo.png?raw=true">
                 <tr height="50px">
-                    <td><a href="#page5" class="header-content">‎ ‎ COMPANIES</a></td>
+                    <td><a href="#page5" class="header-content">‎ <i class="fa-solid fa-house"></i> Dashboard</a></td>
                 </tr>
                 <tr height="50px">
-                    <td><a href="#page6" class="header-content">‎ ‎ POLLS</a></td>
+                    <td><a href="#page5" class="header-content">‎ <i class="fa-solid fa-city"></i> Companies</a></td>
                 </tr>
                 <tr height="50px">
-                    <td><a href="#page7" class="header-content">‎ ‎ REPORT</a></td>
+                    <td><a href="#page6" class="header-content">‎ <i class="fa-solid fa-square-poll-vertical"></i> Polls</a></td>
                 </tr>
                 <tr height="50px">
-                    <td><a href="#page9" class="header-content">‎  Registered Company</a></td>
+                    <td><a href="#page7" class="header-content">‎ <i class="fa-solid fa-file-lines"></i> Report</a></td>
                 </tr>
                 <tr height="50px">
-                    <td><a href="#page10" class="header-content">‎  Poll requests</a></td>
+                    <td><a href="#page9" class="header-content">‎ <i class="fa-solid fa-registered"></i> Registered ‎Company</a></td>
+                </tr>
+                <tr height="50px">
+                    <td><a href="#page10" class="header-content">‎ <i class="fa-solid fa-square-poll-horizontal"></i> Poll requests</a></td>
                 </tr>
             </table>
             <table id="table2">
                 <tr height="50px">
-                    <td><a href="#page1" class="header-content">‎ ‎ + Add Company</a></td>
+                    <td><a href="#page1" class="header-content">‎ <i class="fa-solid fa-square-plus"></i> Add Company</a></td>
                 </tr>
                 <tr height="50px">
-                    <td><a href="#page2" class="header-content">‎ ‎ + Remove Company</a></td>
+                    <td><a href="#page3" class="header-content">‎ <i class="fa-solid fa-file-circle-plus"></i> Add Poll</a></td>
                 </tr>
                 <tr height="50px">
-                    <td><a href="#page3" class="header-content">‎ ‎ + Add Poll</a></td>
+                    <td><a href="#page2" class="header-content">‎ <i class="fa-solid fa-square-minus"></i> Remove Company</a></td>
                 </tr>
                 <tr height="50px">
-                    <td><a href="#page4" class="header-content">‎ ‎ + Remove Poll</a></td>
+                    <td><a href="#page4" class="header-content">‎ <i class="fa-solid fa-file-circle-minus"></i> Remove Poll</a></td>
                 </tr>
                 <tr height="50px">
-                    <td><a href="#page8" class="header-content">‎ ‎ + Send Report</a></td>
+                    <td><a href="#page8" class="header-content">‎ <i class="fa-solid fa-share-from-square"></i> Send Report</a></td>
                 </tr>
             </table>
             <button id="logout"><b>Log Out</b></button>
@@ -150,7 +154,7 @@
                                         <p class="inside_header">Company - 1</p>
                                         <div class="block1">
                                             <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/TCS.png?raw=true"
-                                                 height="45px" width="60px"><br>
+                                                 height="60px" width="70px"><br>
                                         </div>
                                         <input class="input1" type="text" placeholder="Company ID:"><br>
                                         <div class="selector">
@@ -164,7 +168,7 @@
                                         <p class="inside_header">Company - 2</p>
                                         <div class="block1">
                                             <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/infosys.png?raw=true"
-                                                 height="50px" width="60px"><br>
+                                                 height="60px" width="70px"><br>
                                         </div>
                                         <input class="input1" type="text" placeholder="Company ID :"><br>
                                         <div class="selector">
@@ -216,7 +220,7 @@
                                     </div>
                                     <input class="dating" type="text" placeholder="Starting Date :">
                                     <input class="dating" type="text" placeholder="Ending Date :">
-                                    <input type="text" name="poll_id" class="Create_button" placeholder="enter poll id">
+                                    <input type="text" name="poll_id" id="poll-id-sec" placeholder="enter poll id :"><br>
                                     <button type="submit" class="Create_button">Create Poll</button>
 
                                     </form>
@@ -255,7 +259,7 @@
 
                             <section id="page5">
                                 <%for (Company e : list) {%>
-                                <div class="box box-3">
+                                <div class="box box-5">
                                     <img src="HelperJSP/DisplayCmpImage.jsp?name=<%=e.getCOMPANY_NAME()%>"
                                          height="50px" width="60px" id="logo"><span id="l1">
                                         <b>Name:</b><%=e.getCOMPANY_NAME()%></span><br>
@@ -317,7 +321,7 @@
                                         <input type="hidden" name="cmp1" value="<%=cmp1.getCOMPANY_NAME()%>">
                                         <input type="hidden" name="cmp2" value="<%=cmp2.getCOMPANY_NAME()%>">
                                         <input type="hidden" name="poll_id" value="<%=e.getPOLL_ID()%>">
-                                        <button type="submit" class="poll-remove-btn">Remove</button>
+                                        <button type="submit" class="poll-remove-btn2">Remove</button>
                                     </form>
                                 </div><%}%>
                             </section>
@@ -331,7 +335,7 @@
                                 %>
                                 <div class="report-box">
 
-                                    <div>
+                                    <div id="comp-logo-name-cont">
                                         <img src="HelperJSP/DisplayCmpImage.jsp?name=<%=e.getCOMPANY_NAME()%>"
                                              height="30px" width="40px">
 
@@ -360,7 +364,7 @@
                                     <input type="search" placeholder="Search Company" size="30">
                                     <input type="search" placeholder="Search Poll-ID" size="30">
                                     <button id="search-poll_com-btn">Search</button>
-                                </form><br><br><br><br>
+                                </form><br><br><br>
   <%for (Poll e : list2) {
 
                                         Company_database cd1 = new Company_database(ConnectionProvider.getConnection());
@@ -409,7 +413,7 @@
                                         </div> <input type="hidden" name="c1" value="<%=cmp1.getCOMPANY_ID()%>">
                                         <input type="hidden" name="c2" value="<%=cmp2.getCOMPANY_ID()%>">
                                         <input type="hidden" name="poll_id" value="<%=e.getPOLL_ID()%>">
-                                                <button  type="submit" style="margin-top: -20px;" class="poll-remove-btn">Send Report</button>
+                                                <button  type="submit" style="margin-top: -20px;" class="poll-remove-btn1">Send Report</button>
                                     </div>  
                                 </div>
                                                 </form>
@@ -428,9 +432,9 @@
                                             <b>Name:</b><%=e.getCOMPANY_NAME()%></span><br>
                                         <span id="l2"><b>Category:</b><%=e.getCATEGORY()%></span><br>
                                         <span id="l3" name=""><b>Status:</b>Individual/In-Poll</span>
-
-                                        <!--                <a href="#page1">  <button style="margin-top: -20px;" class="poll-remove-btn">add</button></a>-->
-                                        <input type="submit" value="submit">
+                                        <br><br>
+                                       
+                                        <input id="regis_comp_btn" type="submit" value="submit">
                                     </div>
                                 </form>
                                 <%}
@@ -449,9 +453,9 @@
                                             <b>Name:</b><%=e.getCOMPANY_NAME()%></span><br>
                                         <span id="l2"><b>Category:</b><%=e.getCATEGORY()%></span><br>
                                         <span id="l3" name=""><b>Status:</b>Individual/In-Poll</span>
+                                        <br><br>
 
-                                        <!--                <a href="#page1">  <button style="margin-top: -20px;" class="poll-remove-btn">add</button></a>-->
-                                        <input type="submit" value="Add">
+                                        <input id="regis_comp_btn" type="submit" value="Add">
                                     </div>
                                 </form>
                                 <%}

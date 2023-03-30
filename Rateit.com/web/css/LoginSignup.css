@@ -12,11 +12,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
             margin: 0;
             padding: 0;
         }
+        
+        body{
+            background-color: #a3acada6;
+        }
 
         .main_container {
-            height: 100vh;
+            height: auto;
             width: 100vw;
-            background-color: #a3acada6;
             position: absolute;
 
         }
@@ -26,10 +29,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
             width: 400px;
             background-color: white;
             position: relative;
-            margin: 6% auto;
             padding: 5px;
-            overflow-y:scroll;
             transition: 0.3s;
+            overflow: hidden;
         }
 
         .button-box {
@@ -38,17 +40,18 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
             position: relative;
             /* box-shadow: 00 10px 9px #ff61241f; */
             border-radius: 3px;
-            margin-top: 15px;
+            margin-top: 5px;
         }
 
         .upper-btn {
-            padding: 7.6px 77.7px;
+            padding: 11px 70px;
             position: relative;
             cursor: pointer;
             background: transparent;
             border: 0;
             outline: none;
-            font-size: 13px;
+            font-size: 15px;
+            font-weight: bolder;
             cursor: pointer;
         }
         
@@ -66,10 +69,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 
         #btn {
             top: 0;
-            left: 0;
+            left: 10px;
             position: absolute;
-            width: 200px;
-            height: 100%;
+            width: 180px;
+            height: 130%;
             background: linear-gradient(to right, #ff105f, #ffad06);
             border-radius: 20px;
             transition: .5s;
@@ -86,7 +89,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
         .inputs {
             margin-top: 5px;
             margin-bottom: 12px;
-            width: 300px;
+            width: 320px;
             height: 25px;
             margin-left: 35px;
             border-radius: 5px;
@@ -127,8 +130,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
         }
 
         .submit_btn{
-            height: 35px;
-            width: 312px;
+            height: 40px;
+            width: 330px;
             margin-top: 10px;
             background-color: rgb(237, 75, 75);
             border: 1.5px solid gray;
@@ -214,18 +217,19 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 
             .form-box {
                 width: 320px;
-                margin-top: 20vh;
+                margin-top: 10vh;
                 margin-left: 10vw;
             }
 
             .inputs {
-                width: 230px;
+                margin-left: 20px;
+                width: 260px;
                 height: 25px;
             }
 
             #submit_btn {
-                height: 35px;
-                width: 240px;
+                height: 40px;
+                width: 260px;
             }
 
             .button-box {
@@ -279,7 +283,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
             }
 
             .inputs {
-                width: 200px;
+                margin-left: 20px;
+                width: 230px;
                 height: 25px;
             }
 
@@ -295,7 +300,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
             }
 
             .upper-btn {
-                padding: 7px 50px;
+                padding: 7px 45px;
                 font-size: 13px;
             }
 
@@ -356,7 +361,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
         /* -------------- For Desktop And Large-screen ---------------------------- */
         @media (min-width:1031px) and (max-width:1500px) {
             .form-box {
-                margin: 20vh auto;
+                margin: 13vh auto;
             }
 
             .Error {
