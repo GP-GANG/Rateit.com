@@ -49,6 +49,7 @@
                         </li>
                     </div>
 
+                    <li><a href="#" class="header-content"><b>COMPARE</b></a></li>
                     <li><a href="#" class="header-content"><b>Rank Status</b></a></li>
                     <li><a href="#" class="header-content"><b>Companies</b></a></li>
                     <li><a href="../about_us_page/about_us.html" class="header-content"><b>About Us</b></a></li>
@@ -63,6 +64,8 @@
 
                 <a href="../sign_in_page/sign_in.html"> <button class="header-btn" onclick=""><b>&nbsp;Log In &nbsp;/&nbsp;
                             Sign Up&nbsp;</b></button></a>
+                
+               
 
             </div>
         </nav>

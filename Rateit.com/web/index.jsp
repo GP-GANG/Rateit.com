@@ -96,7 +96,7 @@ for(Company e : list5){
                                 </div>
                             </li>
                         </div>
-
+                        <li><a href="#" class="header-content"><b>COMPARE </b></a></li>
                         <li><a href="rank_status.jsp" class="header-content"><b>Rank Status</b></a></li>
                         <li><a href="contact_us.jsp" class="header-content"><b>Contact Us</b></a></li>
                         <li><a href="about_us_page.jsp" class="header-content"><b>About Us</b></a></li>
@@ -131,8 +131,9 @@ for(Company e : list5){
                 <!--<a href="LogOut"><button class="header-btn" onclick="alert('log out successfully')"> Logout </button></a>-->
 
 
-
                 <%}%>
+                  
+                
 
             </nav>
         </header>
@@ -267,7 +268,7 @@ for(Company e : list5){
                         </div>
                     </section>
 
-                    <button class="btn compareBtn" value="<%=p.getPOLL_ID()%>">Compare Now</button>
+                    <button class="btn compareBtn" value="<%=p.getPOLL_ID()%>">Give Review</button>
 
                 </div>
                 <%}%>

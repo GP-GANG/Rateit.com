@@ -108,9 +108,22 @@ textarea {
     background-color: rgb(237, 75, 75);
     color: white;
     font-size: 15px;
-    font-weight: bolder;
+    font-weight:bolder;
     letter-spacing: 1px;
-    transition: all 0.3s;
+    cursor: pointer;
+   background-size: 0 0;
+    transition: .8s;
+    background-image: linear-gradient(0,#0A3D5B , #0A3D5B);
+    background-repeat: no-repeat;
+    background-position: center;
+    transition-timing-function: ;
+/*    transition-duration:0.2s;
+    position: relative;
+    cursor:pointer;*/
+}
+.btn:hover{
+      background-size: 100% 100%;
+    color: #fff;
 }
 
 button:hover, .box:hover{

@@ -61,7 +61,7 @@
                     </div>
                 </section>
 
-                <button class="btn">Compare Now</button>
+                <button class="btn">GIVE REVIEW</button>
 
             </div>
             <!-- Ratings and star code completes -->
@@ -106,7 +106,7 @@
                     </div>
                 </section>
 
-                <button class="btn">Compare Now</button>
+                <button class="btn">GIVE REVIEW</button>
 
             </div>
             <!-- Ratings and star code completes -->
@@ -151,7 +151,7 @@
                     </div>
                 </section>
 
-                <button class="btn">Compare Now</button>
+                <button class="btn">GIVE REVIEW</button>
 
             </div>
             <!-- Ratings and star code completes -->
@@ -196,7 +196,7 @@
                     </div>
                 </section>
 
-                <button class="btn">Compare Now</button>
+                <button class="btn">GIVE REVIEW</button>
 
             </div>
             <!-- Ratings and star code -->
@@ -241,7 +241,7 @@
                     </div>
                 </section>
 
-                <button class="btn">Compare Now</button>
+                <button class="btn">GIVE REVIEW</button>
 
             </div>
             <!-- Ratings and star code -->
@@ -286,7 +286,7 @@
                     </div>
                 </section>
 
-                <button class="btn">Compare Now</button>
+                <button class="btn">GIVE REVIEW</button>
 
             </div>
 
@@ -330,7 +330,7 @@
                     </div>
                 </section>
 
-                <button class="btn">Compare Now</button>
+                <button class="btn">GIVE REVIEW</button>
 
             </div>
 
@@ -374,7 +374,7 @@
                     </div>
                 </section>
 
-                <button class="btn">Compare Now</button>
+                <button class="btn">GIVE REVIEW</button>
 
             </div>
         </div>

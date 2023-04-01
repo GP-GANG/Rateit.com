@@ -164,14 +164,20 @@
                 margin-left: 150px;
                 background-color: rgb(237, 75, 75);
                 color: white;
+                  background-image: linear-gradient(0, #ffbd03,#ffbd03);
+                  background-size: 0;
+    transition: .8s;
+    background-repeat: no-repeat;
+    background-position: bottom;
             }
 
             .header-btn:hover {
-                transform: scale(1.03);
-                color: white;
+                transform: scale(1.03); 
                 border: none;
+                background-size: 100%;
+                color: black;
             }
-
+            
             #checkbox {
                 display: none;
             }
@@ -395,6 +401,16 @@
                 left:36%;
                 border-radius: 3px;
                 font-size: 13px;
+                 background-image: linear-gradient(0, #0A3D5B , #0A3D5B);
+                 background-size: 0;
+                 transition: .8s;
+                 background-repeat: no-repeat;
+                 background-position: bottom;
+            }
+            .btn:hover{
+                background-size: 100%;
+               color: #fff;
+               font-size: 14px;
             }
 
             .label {

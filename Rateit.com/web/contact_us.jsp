@@ -9,7 +9,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <title>Contact Us | rateit.com</title>
-    <link rel="stylesheet" href="css/contact_us.css?1">
+    <link rel="stylesheet" href="css/contact_us.css">
         <link rel="stylesheet" href="css/loading_effect.css">
     <script src="javascript/loading_effect.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -54,9 +54,9 @@
                     <input style="width: 91%;" class="name" type="text" id="subject" name="subject" placeholder="Subject :"><br>
                 <input type="email" name="email" id="email" placeholder="E-mail Address :"><br>
                 <textarea id="message" name="textarea" placeholder="Description . . ."></textarea><br>
-                <input type="submit" id="my-form-button" class="btn" value="Submit">
-                <input type="reset" value="reser" class="btn">
-                
+                <input type="submit"  id="my-form-button" class="btn" value="Submit">
+                <input type="reset" value="Reset" class="btn">
+<!--               -->
                 <!--<input type="text" id="captcha-code" class="btn">-->
                 
                 </form>
