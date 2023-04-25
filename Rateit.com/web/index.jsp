@@ -152,8 +152,9 @@ for(Company e : list5){
                     Company cmp2 = cd.getCompanyById(p.getCOMPANY2());
                     int ratings1 = rd.getOverallRatings(cmp1.getCOMPANY_ID());
                     int ratings2 = rd.getOverallRatings(cmp2.getCOMPANY_ID());
-                    cmp1.setCOMPANY_RATE(ratings1);
-                    cmp2.setCOMPANY_RATE(ratings2);
+                    cd.updateRank(cmp1.getCOMPANY_ID() , ratings1);
+                    cd.updateRank(cmp2.getCOMPANY_ID() , ratings2);
+                    int i=1;
                 %>
                 <div class="items item1">
 
@@ -267,11 +268,13 @@ for(Company e : list5){
                             <%}%>
                         </div>
                     </section>
-
-                    <button class="btn compareBtn" value="<%=p.getPOLL_ID()%>">Give Review</button>
+<%if(i<4){%>
+                    <button class="btn compareBtn" value="<%=p.getPOLL_ID()%>">Compare Now</button>
+<%}else{%>
+<button class="btn compareBtn" value="<%=p.getPOLL_ID()%>">Give Review</button><%}%>
 
                 </div>
-                <%}%>
+                <%i++;}%>
                 <!-- Ratings and star code completes -->
             </div>
         </main>
