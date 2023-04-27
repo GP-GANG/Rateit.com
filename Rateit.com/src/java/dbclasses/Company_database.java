@@ -472,4 +472,24 @@ public class Company_database {
         catch(Exception e){e.printStackTrace();}
         return b;
     }
+    
+    public boolean updateRank(int cmp_id , int rank){
+    boolean f = false;
+        try {
+            String query = "udpate company set COMPANY_RATE=? where COMPANY_ID=?";
+            PreparedStatement stmt = this.con.prepareStatement(query);
+
+            stmt.setInt(1, rank);
+            stmt.setInt(2, cmp_id);
+            stmt.executeUpdate();
+            f = true;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return f;
+    
+    
+    }
 }
