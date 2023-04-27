@@ -292,7 +292,7 @@
                     <dd><a href="" class="about-text">previous Polls</a></dd>
                     <dd><a href="" class="about-text">recent Polls</a></dd>
                     <dd><a href="" class="about-text">Up-Coming Polls</a></dd>
-                    <dd><a href="" class="about-text">Tranding Polls</a></dd>
+                    <dd><a href="" class="about-text">Trending Polls</a></dd>
                     <dd><a href="" class="about-text">Companies</a></dd>
                     <dd><a onclick="showProfile()" class="about-text">My Profile</a></dd>
                     <dd><a href="" class="about-text">About</a></dd>
