@@ -492,4 +492,24 @@ public class Company_database {
     
     
     }
+    
+    public int getTotalCompany() {
+        int i = 0;
+
+        try {
+
+            String query = "select COUNT(COMPANY_ID) from company";
+
+            PreparedStatement stmt = this.con.prepareStatement(query);
+            ResultSet set = stmt.executeQuery();
+
+            if (set.next()) {
+                i = set.getInt("COUNT(COMPANY_ID)");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return i;
+    }
 }

@@ -31,6 +31,7 @@
         <script src="https://kit.fontawesome.com/20a4a662a5.js" crossorigin="anonymous"></script>
         <script src="javascript\multiselect-dropdown.js"></script>
         <link rel="stylesheet" href="css/admin_panel.css?1">
+<!--        <link rel="stylesheet" href="bootstrap.css">-->
         <title>Admin Panel</title>
     </head>
 
@@ -81,7 +82,11 @@
         </div>
 
         <div id="container">
-
+            <section id="default_page">
+                <div class="container">
+                    Container 
+                </div>
+            </section>
             <!-- //////...............////............../ page-1 //////....................///.............../// -->
 
 

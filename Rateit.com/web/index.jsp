@@ -19,10 +19,7 @@
       
     
     Review_database rd = new Review_database(ConnectionProvider.getConnection());
-for(Company e : list5){
-    int i = rd.getOverallRatings(e.getCOMPANY_ID());
-   e.setCOMPANY_RATE(i);
-    }
+    Customer_database customer1 = new Customer_database(ConnectionProvider.getConnection());
 
 %>
 <!DOCTYPE html>
@@ -283,9 +280,9 @@ for(Company e : list5){
         <footer>
 
             <div id="footpart1">
-                <p id="tgp">Total Generated polls:- 50,332</p>
-                <p id="trc">Total Registered Companies:- 2,54,574</p>
-                <p id="tlu">Total Logined Users:- 65,64,732</p>
+                <p id="tgp">Total Generated polls:-<%=pd.getTotalPoll()%></p>
+                <p id="trc">Total Registered Companies:-<%=cd1.getTotalCompany()%></p>
+                <p id="tlu">Total Logined Users:-<%=customer1.getTotalUser()%></p>
             </div>
 
             <div id="footpart2">

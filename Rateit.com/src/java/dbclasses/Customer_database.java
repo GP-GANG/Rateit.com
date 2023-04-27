@@ -204,4 +204,24 @@ public class Customer_database {
         return f;
     
     }
+    
+    public int getTotalUser() {
+        int i = 0;
+
+        try {
+
+            String query = "select COUNT(USER_ID) from customer_info";
+
+            PreparedStatement stmt = this.con.prepareStatement(query);
+            ResultSet set = stmt.executeQuery();
+
+            if (set.next()) {
+                i = set.getInt("COUNT(USER_ID)");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return i;
+    }
 }

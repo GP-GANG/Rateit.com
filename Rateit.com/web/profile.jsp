@@ -142,11 +142,11 @@
 </head>
 
 <body>
-    <div id="preloader">
+<!--    <div id="preloader">
         <div class="load">
             <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/loading.gif?raw=true" alt="dfd">
         </div>
-    </div>
+    </div>-->
     
     <div id="Profile_loading">
         <div id="profile_effect"><image src="img/load.gif" height="20px" width="20px" style="border-radius: 50%;"> Processing...</div>
