@@ -4,6 +4,15 @@
     Author     : neesa
 --%>
 
+<%@page import="dbclasses.Review_database"%>
+<%@page import="rateit.entities.Company_services"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="dbclasses.Company_services_database"%>
+<%@page import="rateit.entities.Company"%>
+<%@page import="rateit.entities.Poll"%>
+<%@page import="dbclasses.Company_database"%>
+<%@page import="dbclasses.Poll_database"%>
+<%@page import="rateit.helper.ConnectionProvider"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,8 +23,7 @@
     <title>Compare Poll</title>
     <script src="https://kit.fontawesome.com/c2a4c35825.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/20a4a662a5.js" crossorigin="anonymous"></script>
-    <script
-src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
 </script>
     <style>
 @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@300&display=swap');
@@ -77,8 +85,8 @@ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
 
         .comp_image{
             margin: 10px 30px;
-            height: 100px;
-            width: 100px;
+            height: 80px;
+            width: 80px;
             border-radius: 100%;
             border: 1px solid black;
         }
@@ -92,7 +100,24 @@ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
         }
     </style>
 </head>
+<% 
+  int i =Integer.parseInt(request.getParameter("a"));
 
+  Poll_database pd = new Poll_database(ConnectionProvider.getConnection());
+  Poll p = pd.getPoll(i);
+  
+ 
+  Company_database cd = new Company_database(ConnectionProvider.getConnection());
+ Company cmp1 =  cd.getCompanyById(p.getCOMPANY1());
+ Company cmp2 = cd.getCompanyById(p.getCOMPANY2());
+ 
+Company_services_database csd = new Company_services_database(ConnectionProvider.getConnection());
+ ArrayList<Company_services> list = csd.getAllCategories(cmp1.getCOMPANY_ID());
+ 
+Review_database rd = new Review_database(ConnectionProvider.getConnection());
+
+
+%>
 <body>
     <div id="container">
         <div>
@@ -103,45 +128,65 @@ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
 
         <div id="comps">
             <div class="box1">
-            <img class="comp_image" src="img\tiger.jpeg" alt="image1"><br>
-            <span>dilip</span>
+            <img class="comp_image" src="HelperJSP/DisplayCmpImage.jsp?name=<%=cmp1.getCOMPANY_NAME()%>" alt="image1"><br>
+            <span><%=cmp1.getCOMPANY_NAME() %></span>
         </div>
             VS
             <div class="box1">
-            <img class="comp_image" src="img/tiger.jpeg" alt="imag2"><br>
-            <span>chapri</span>
+            <img class="comp_image" src="HelperJSP/DisplayCmpImage.jsp?name=<%=cmp2.getCOMPANY_NAME()%>" alt="imag2"><br>
+            <span><%=cmp2.getCOMPANY_NAME() %></span>
         </div>
         </div>
             
     <div id="chart-container">
-        <canvas id="myChart" style="width:100%;max-width:1000px"></canvas>
+        <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
     </div>
     </div>
 </body>
 
 <script>
-
+    
+    let company1 = new Array();
+    let company2 = new Array();
+    let labels = new Array();
+    
+<%for(Company_services cs : list){%>
+    labels.push(("<%=cs.getCOMPANY_SERVICES() + "," %>").split(","));
+    <%}%>
+    
+<%for(Company_services cs : list){%>
+    company1.push(("<%=rd.getRatings(cmp1.getCOMPANY_ID() , cs.getCOMPANY_SERVICES())+"," %>").split(","));
+    <%}%>
+    console.log(company1)
+<%for(Company_services cs : list){%>
+    company2.push(("<%=rd.getRatings(cmp2.getCOMPANY_ID() , cs.getCOMPANY_SERVICES()) + ","%>").split(","));
+    <%}%>
+    console.log(company2);
+    
+    for(let i = 0; i< company1.length; i++){
+        labels[i].pop();
+    }
+    console.log(labels)
     let color1 = 'rgba(0, 119, 255, 0.767)',color2 = 'rgba(173, 216, 230, 0.741)';
     const dataVal = {
-      labels:["12","23","34","Refund","Packaging"],
+      labels:[labels[0],labels[1],labels[2]],
       datasets:[{
-              data:[5,3,5,3,4,0],
+              data:[...company1,0,5],
               backgroundColor:[color1,color1,color1,color1,color1],
               label: "Facebook"
       },
       {
-              data:[3,5,2,2,4,0],
+              data:[...company2],
               backgroundColor:[color2,color2,color2,color2,color2],
               label: "Instagram"
       }
     ]
   }
   
-    const myChart = new Chart("myChart", 
+    new Chart(document.getElementById("myChart"), 
 {
   type: "bar",
   data:dataVal
-  
   
 });
 

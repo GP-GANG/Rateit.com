@@ -20,7 +20,7 @@
     
     Review_database rd = new Review_database(ConnectionProvider.getConnection());
     Customer_database customer1 = new Customer_database(ConnectionProvider.getConnection());
-
+ int i=1;
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,7 +45,7 @@
     <body>
         <div id="preloader">
         <div class="load">
-            <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/loading.gif?raw=true" alt="dfd">
+            <img src="img/loading.gif" alt="dfd">
         </div>
     </div>
         
@@ -151,7 +151,7 @@
                     int ratings2 = rd.getOverallRatings(cmp2.getCOMPANY_ID());
                     cd.updateRank(cmp1.getCOMPANY_ID() , ratings1);
                     cd.updateRank(cmp2.getCOMPANY_ID() , ratings2);
-                    int i=1;
+                   
                 %>
                 <div class="items item1">
 
@@ -265,8 +265,8 @@
                             <%}%>
                         </div>
                     </section>
-<%if(i<4){%>
-                    <button class="btn compareBtn" value="<%=p.getPOLL_ID()%>">Compare Now</button>
+<%if(i<=2){%>
+<button class="btn compareBtn" value="<%=p.getPOLL_ID()%>">Compare Now</button>
 <%}else{%>
 <button class="btn compareBtn" value="<%=p.getPOLL_ID()%>">Give Review</button><%}%>
 

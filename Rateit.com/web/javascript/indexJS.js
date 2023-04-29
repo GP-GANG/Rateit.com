@@ -15,8 +15,16 @@ $(document).ready(function(){
             if($(window).width() < 800){
                 
             }
-            $(".compareBtn").click(function(){
+            $(".compareBtn").click(function(e){
                 
+                
+                if(e.target.innerText === "Compare Now"){
+                    var query = e.target.value;
+                    window.location.assign("compare_poll_page.jsp?a="+query);
+                }
+                    
+                
+                else{
                 // Ajax call to check for validation
                 let query = this.value;
                 $.post("CheckForLogin",function(response){
@@ -44,6 +52,7 @@ $(document).ready(function(){
                 }).fail(function(){
                     alert("Some error occured");
                 })
+            }
             });
             let searchlogo = 750;
 

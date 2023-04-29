@@ -9,8 +9,9 @@
 
     <link rel="stylesheet" href="css/about_us_page.css?2">
         <link rel="stylesheet" href="css/loading_effect.css">
-    <script src="javascript/loading_effect.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script src="javascript/loading_effect.js"></script>
+   
 
     <title>About Us | Rateit.com</title>
 </head>
