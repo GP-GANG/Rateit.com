@@ -19,11 +19,8 @@
       
     
     Review_database rd = new Review_database(ConnectionProvider.getConnection());
-for(Company e : list5){
-    int i = rd.getOverallRatings(e.getCOMPANY_ID());
-   e.setCOMPANY_RATE(i);
-    }
-
+    Customer_database customer1 = new Customer_database(ConnectionProvider.getConnection());
+ int i=1;
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -48,7 +45,7 @@ for(Company e : list5){
     <body>
         <div id="preloader">
         <div class="load">
-            <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/loading.gif?raw=true" alt="dfd">
+            <img src="img/loading.gif" alt="dfd">
         </div>
     </div>
         
@@ -154,7 +151,7 @@ for(Company e : list5){
                     int ratings2 = rd.getOverallRatings(cmp2.getCOMPANY_ID());
                     cd.updateRank(cmp1.getCOMPANY_ID() , ratings1);
                     cd.updateRank(cmp2.getCOMPANY_ID() , ratings2);
-                    int i=1;
+                   
                 %>
                 <div class="items item1">
 
@@ -268,8 +265,8 @@ for(Company e : list5){
                             <%}%>
                         </div>
                     </section>
-<%if(i<4){%>
-                    <button class="btn compareBtn" value="<%=p.getPOLL_ID()%>">Compare Now</button>
+<%if(i<=2){%>
+<button class="btn compareBtn" value="<%=p.getPOLL_ID()%>">Compare Now</button>
 <%}else{%>
 <button class="btn compareBtn" value="<%=p.getPOLL_ID()%>">Give Review</button><%}%>
 
@@ -283,9 +280,9 @@ for(Company e : list5){
         <footer>
 
             <div id="footpart1">
-                <p id="tgp">Total Generated polls:- 50,332</p>
-                <p id="trc">Total Registered Companies:- 2,54,574</p>
-                <p id="tlu">Total Logined Users:- 65,64,732</p>
+                <p id="tgp">Total Generated polls:-<%=pd.getTotalPoll()%></p>
+                <p id="trc">Total Registered Companies:-<%=cd1.getTotalCompany()%></p>
+                <p id="tlu">Total Logined Users:-<%=customer1.getTotalUser()%></p>
             </div>
 
             <div id="footpart2">
@@ -295,7 +292,7 @@ for(Company e : list5){
                     <dd><a href="" class="about-text">previous Polls</a></dd>
                     <dd><a href="" class="about-text">recent Polls</a></dd>
                     <dd><a href="" class="about-text">Up-Coming Polls</a></dd>
-                    <dd><a href="" class="about-text">Tranding Polls</a></dd>
+                    <dd><a href="" class="about-text">Trending Polls</a></dd>
                     <dd><a href="" class="about-text">Companies</a></dd>
                     <dd><a onclick="showProfile()" class="about-text">My Profile</a></dd>
                     <dd><a href="" class="about-text">About</a></dd>

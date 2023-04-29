@@ -1,5 +1,6 @@
 package dbclasses;
 
+import com.mysql.cj.protocol.Resultset;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -141,5 +142,25 @@ public class Poll_database {
             e.printStackTrace();
         }
         return list;
+    }
+
+    public int getTotalPoll() {
+        int i = 0;
+
+        try {
+
+            String query = "select COUNT(POLL_NO) from poll";
+
+            PreparedStatement stmt = this.con.prepareStatement(query);
+            ResultSet set = stmt.executeQuery();
+
+            if (set.next()) {
+                i = set.getInt("COUNT(POLL_NO)");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return i;
     }
 }

@@ -9,6 +9,11 @@
         <error-code>404</error-code>
         <location>/error_page.jsp</location>
     </error-page>
+    <error-page>
+        
+        <error-code>500</error-code>
+        <location>/error_page.jsp</location>
+    </error-page>
     <servlet>
         <servlet-name>LogIn</servlet-name>
         <servlet-class>rateit.servlets.LogIn</servlet-class>

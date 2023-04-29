@@ -43,21 +43,23 @@
             <img src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/loading.gif?raw=true" alt="dfd">
         </div>
     </div>
+        
+        
         <nav>
             <table>
-                <tr height="50px"><td><a href="#" class="header-content"><i class="fa-solid fa-earth-americas"></i> All Companies</a></td></tr>
-                <tr height="50px"><td><a href="#" class="header-content"><i class="fa-solid fa-user-nurse"></i> Health Economics Companies</a></td></tr>
-                <tr height="50px"><td><a href="#" class="header-content"><i class="fa-solid fa-microchip"></i> Technology Companies</a></td></tr>
-                <tr height="50px"><td><a href="#" class="header-content"><i class="fa-sharp fa-solid fa-person-biking"></i> Online Food Ordering Companies</a></td></tr>
-                <tr height="50px"><td><a href="#" class="header-content"><i class="fa-sharp fa-solid fa-taxi"></i> Transportation service Companies</a></td></tr>
-                <tr height="50px"><td><a href="#" class="header-content"><i class="fa-solid fa-shop"></i> E-commerce Store Companies</a></td></tr>
-                <tr height="50px"><td><a href="#" class="header-content"><i class="fa-solid fa-car-side"></i> Automobile Companies</a></td></tr>
-                <tr height="50px"><td><a href="#" class="header-content"><i class="fa-solid fa-icons"></i> Social-Media Companies</a></td></tr>
-                <tr height="50px"><td><a href="#" class="header-content"><i class="fa-solid fa-landmark"></i> Banking Companies</a></td></tr>
-                <tr height="50px"><td><a href="#" class="header-content"><i class="fa-solid fa-coins"></i> Financial Technology Companies</a></td></tr>
-                <tr height="50px"><td><a href="#" class="header-content"><i class="fa-solid fa-gem"></i> Jewellery Companies</a></td></tr>
-                <tr height="50px"><td><a href="#" class="header-content"><i class="fa-solid fa-martini-glass-citrus"></i> Beverage Companies</a></td></tr>
-                <tr height="50px"><td><a href="#" class="header-content"><i class="fa-solid fa-house-medical-circle-check"></i> Cement Manufacturer Companies</a></td></tr>
+                <tr height="50px"><td><a href="#" data-category="All" class="header-content"><i class="fa-solid fa-earth-americas"></i> All Companies</a></td></tr>
+                <tr height="50px"><td><a href="#" data-category="Health" class="header-content"><i class="fa-solid fa-user-nurse"></i> Health Economics Companies</a></td></tr>
+                <tr height="50px"><td><a href="#" data-category="Electronic" class="header-content"><i class="fa-solid fa-microchip"></i> Technology Companies</a></td></tr>
+                <tr height="50px"><td><a href="#" data-category="Food" class="header-content"><i class="fa-sharp fa-solid fa-person-biking"></i> Online Food Ordering Companies</a></td></tr>
+                <tr height="50px"><td><a href="#" data-category="Airline" class="header-content"><i class="fa-sharp fa-solid fa-taxi"></i> Transportation service Companies</a></td></tr>
+                <tr height="50px"><td><a href="#" data-category="Online-shopping" class="header-content"><i class="fa-solid fa-shop"></i> E-commerce Store Companies</a></td></tr>
+                <tr height="50px"><td><a href="#" data-category="Automobile" class="header-content"><i class="fa-solid fa-car-side"></i> Automobile Companies</a></td></tr>
+                <tr height="50px"><td><a href="#" data-category="Social-media" class="header-content"><i class="fa-solid fa-icons"></i> Social-Media Companies</a></td></tr>
+                <tr height="50px"><td><a href="#" data-category="Banking" class="header-content"><i class="fa-solid fa-landmark"></i> Banking Companies</a></td></tr>
+                <tr height="50px"><td><a href="#" data-category="Finance" class="header-content"><i class="fa-solid fa-coins"></i> Financial Technology Companies</a></td></tr>
+                <tr height="50px"><td><a href="#" data-category="Jawellery" class="header-content"><i class="fa-solid fa-gem"></i> Jewellery Companies</a></td></tr>
+                <tr height="50px"><td><a href="#" data-category="Beverages" class="header-content"><i class="fa-solid fa-martini-glass-citrus"></i> Beverage Companies</a></td></tr>
+                <tr height="50px"><td><a href="#" data-category="Cement" class="header-content"><i class="fa-solid fa-house-medical-circle-check"></i> Cement Manufacturer Companies</a></td></tr>
             </table>
         </nav>
 
@@ -67,7 +69,7 @@
                 Company e = list.get(i);
                     int rating = e.getCOMPANY_RATE();
             %>
-            <div class="First-Poll" id="f-poll">
+            <div class="First-Poll <%=e.getCATEGORY()%>" id="f-poll">
                 <div class="logoContainer">
                     <img src="HelperJSP/DisplayCmpImage.jsp?name=<%=e.getCOMPANY_NAME()%>"
                          id="l1" style="height: 70px; width: 80px;">
@@ -127,22 +129,44 @@
                     <p><%=e.getCOMPANY_DESC() %></p>
                 </div>
             </div>
+                   
             <%}%>
         </section>
-
+        <div id="noList"> <p>There is no match for "<span id="optionIndicator"></span>" category.</p></div>
         <script>
             $(document).ready(function () {
+                const AllCompanies = [...$(".First-Poll")];
+//                console.log(AllCompanies)
                 $("tr:first").css("backgroundColor", "rgb(237, 75, 75)");
                 $("nav table tr:first").css("color", "white");
 
-                $("tr").click(function (e) {
+                $("a").click(function (e) {
                     $("tr").css("backgroundColor", "white");
                     $("tr").css("color", "black");
 
                     $(e.target).parent().parent().css("color", "white");
                     $(e.target).parent().parent().css("backgroundColor", "rgb(237, 75, 75)");
-                });
-            });
+                    
+//                $(".First-Poll").hide();
+//                $(".First-Poll").hasClass(e.target.dataset["category"]).show();
+                if(e.target.dataset["category"] == "All")
+                    $(AllCompanies).show();
+                else if(AllCompanies.every((val)=>!(val.classList.contains(e.target.dataset["category"])))){
+                    $("#optionIndicator").text(e.target.innerText);
+                    $(AllCompanies).hide();
+                }
+                else{
+                
+                $(AllCompanies).hide();
+//                console.log(e.target.dataset["category"])
+                $(AllCompanies.filter((val)=>{
+//                    console.log(val.classList)
+            return val.classList.contains(e.target.dataset["category"])?val:false;
+                   
+                })).show();
+            }
+            })
+        });
         </script>
 
     </body>

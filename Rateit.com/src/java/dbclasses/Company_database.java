@@ -167,7 +167,7 @@ public class Company_database {
         return cmp;
 
     }
-    
+
     public Blob getCompanyImage(String COMPANY_NAME) {
         Blob blob = null;
 
@@ -251,7 +251,7 @@ public class Company_database {
 
     }
 
-    public boolean removeCompany(int cmp_id){
+    public boolean removeCompany(int cmp_id) {
         boolean f = false;
         try {
             String query = "delete from company where COMPANY_ID=?";
@@ -267,7 +267,7 @@ public class Company_database {
 
         return f;
     }
-    
+
     public ArrayList<Company> getRegisterCompanies() {
         ArrayList<Company> list = null;
         try {
@@ -276,11 +276,11 @@ public class Company_database {
             PreparedStatement stmt = this.con.prepareStatement(query);
 
             ResultSet set = stmt.executeQuery();
-            if(set.isBeforeFirst()){
-            list = new ArrayList<>();
-            
+            if (set.isBeforeFirst()) {
+                list = new ArrayList<>();
+
             }
-           
+
             while (set.next()) {
                 Company cmp = new Company();
                 cmp.setCOMPANY_ID(set.getInt("COMPANY_ID"));
@@ -308,7 +308,7 @@ public class Company_database {
             e.printStackTrace();
         }
         return list;
-    }   
+    }
 
     public boolean UpdateCompany(Company cmp) {
         boolean f = false;
@@ -333,7 +333,7 @@ public class Company_database {
 
         return f;
     }
-    
+
     public boolean UploadImage(InputStream is, int COMPANY_ID) {
         boolean f = false;
         try {
@@ -344,8 +344,9 @@ public class Company_database {
             PreparedStatement stmt = this.con.prepareStatement(query);
             stmt.setBlob(1, blob);
             stmt.setInt(2, COMPANY_ID);
-            if(stmt.executeUpdate()>0)
-            f = true;
+            if (stmt.executeUpdate() > 0) {
+                f = true;
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -353,7 +354,7 @@ public class Company_database {
 
         return f;
     }
- 
+
     public ArrayList<Company> getCompanyByName1(String COMPANY_NAME) {
         ArrayList<Company> list = new ArrayList<>();
         try {
@@ -386,7 +387,7 @@ public class Company_database {
                 cmp.setCOMPANY_IMG(set.getBlob("COMPANY_IMG"));
                 cmp.setCOMPANY_RATE(set.getInt("COMPANY_RATE"));
                 cmp.setCOMPANY_DESC(set.getString("COMPANY_DESC"));
-                  list.add(cmp);
+                list.add(cmp);
             }
 
         } catch (Exception e) {
@@ -396,7 +397,7 @@ public class Company_database {
         return list;
 
     }
-     
+
     public ArrayList<Company> getPollrequets() {
         ArrayList<Company> list = null;
         try {
@@ -405,11 +406,11 @@ public class Company_database {
             PreparedStatement stmt = this.con.prepareStatement(query);
 
             ResultSet set = stmt.executeQuery();
-            if(set.isBeforeFirst()){
-            list = new ArrayList<>();
-            
+            if (set.isBeforeFirst()) {
+                list = new ArrayList<>();
+
             }
-           
+
             while (set.next()) {
                 Company cmp = new Company();
                 cmp.setCOMPANY_ID(set.getInt("COMPANY_ID"));
@@ -438,45 +439,47 @@ public class Company_database {
         }
         return list;
     }
-    
-    public boolean updatePollStatus0(int Company_id){
+
+    public boolean updatePollStatus0(int Company_id) {
         boolean b = false;
-        try{
-     String query = "Update company set CURRENT_POLL_STATUS=0 where COMPANY_ID=?";
-                 PreparedStatement stmt = this.con.prepareStatement(query);
-
-      stmt.setInt(1,Company_id);
-
-            int i = stmt.executeUpdate();
-            if (i > 0) {
-                b = true;
-            }
-        }
-        catch(Exception e){e.printStackTrace();}
-        return b;
-    }
-    
-    public boolean updatePollStatus1(int Company_id){
-        boolean b = false;
-        try{
-     String query = "Update company set CURRENT_POLL_STATUS=1 where COMPANY_ID=?";
-                 PreparedStatement stmt = this.con.prepareStatement(query);
-
-      stmt.setInt(1,Company_id);
-
-            int i = stmt.executeUpdate();
-            if (i > 0) {
-                b = true;
-            }
-        }
-        catch(Exception e){e.printStackTrace();}
-        return b;
-    }
-    
-    public boolean updateRank(int cmp_id , int rank){
-    boolean f = false;
         try {
-            String query = "udpate company set COMPANY_RATE=? where COMPANY_ID=?";
+            String query = "Update company set CURRENT_POLL_STATUS=0 where COMPANY_ID=?";
+            PreparedStatement stmt = this.con.prepareStatement(query);
+
+            stmt.setInt(1, Company_id);
+
+            int i = stmt.executeUpdate();
+            if (i > 0) {
+                b = true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return b;
+    }
+
+    public boolean updatePollStatus1(int Company_id) {
+        boolean b = false;
+        try {
+            String query = "Update company set CURRENT_POLL_STATUS=1 where COMPANY_ID=?";
+            PreparedStatement stmt = this.con.prepareStatement(query);
+
+            stmt.setInt(1, Company_id);
+
+            int i = stmt.executeUpdate();
+            if (i > 0) {
+                b = true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return b;
+    }
+
+    public boolean updateRank(int cmp_id, int rank) {
+        boolean f = false;
+        try {
+            String query = "update company set COMPANY_RATE=? where COMPANY_ID=?";
             PreparedStatement stmt = this.con.prepareStatement(query);
 
             stmt.setInt(1, rank);
@@ -489,7 +492,27 @@ public class Company_database {
         }
 
         return f;
-    
-    
+
     }
-}
+
+    public int getTotalCompany() {
+        int i = 0;
+
+        try {
+
+            String query = "select COUNT(COMPANY_ID) from company";
+
+            PreparedStatement stmt = this.con.prepareStatement(query);
+            ResultSet set = stmt.executeQuery();
+
+            if (set.next()) {
+                i = set.getInt("COUNT(COMPANY_ID)");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return i;
+    }
+
+   }
