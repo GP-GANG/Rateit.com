@@ -42,7 +42,7 @@
         <title><%=cmp1.getCOMPANY_NAME() %> VS <%=cmp2.getCOMPANY_NAME() %> | Rateit.com</title>
         <script src="https://kit.fontawesome.com/c2a4c35825.js" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="css/poll_review_page.css?2">
+        <link rel="stylesheet" href="css/poll_review_page.css?1">
         <link
             href="https://github.com/GP-GANG/rateit.github.io/blob/b32152f01d68b11cb33f47d2f5d42ea30e8e6d04/CODE/css/headerstyle.css"
             rel="stylesheet">
@@ -113,6 +113,7 @@
 
                 </section>
 
+                        <h2 style="margin-left: 45%;">vs</h2>
 
                 <section id="section2">
                     <div class="logo-name-box">
@@ -174,6 +175,18 @@
                 <!-- <button class="Read-more_btn" id="btn2" onclick="moreContent('showContent2','btn2')">Show -->
                 <!-- More</button> -->
             </main>
+            <div id="thank-div">
+             <div style="display: flex;"><div id="style-line"></div><h3 style="margin: 7px 0px 18px 5px;">Keep it Real</h3></div>
+             
+             <p id="thank-dis">Thank you for contributing to the community. Your opinion will help others make decisions about companies.</p>
+             <br><p id="thank-dis"><b>Please stick to the Community Guidelines and do not post:</b></p>
+             <ul>
+             <li id="thank-li">Aggressive or discriminatory language</li>
+             <li id="thank-li">Profanities</li>
+             <li id="thank-li">Trade secrets/confidential information</li>
+             </ul>
+             <p id="thank-dis">Thank you for doing your part to keep <b>Rateit</b> the most trusted place to find a company you love. See the <b>Community Guidelines</b> for more details.</p>
+         </div>
         </form>
 
 <!--<--        <script type="text/javascript">

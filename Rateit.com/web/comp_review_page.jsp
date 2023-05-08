@@ -30,11 +30,11 @@ int temp2 =1;
    <title><%=cmp.getCOMPANY_NAME()%></title>
    <script src="https://kit.fontawesome.com/c2a4c35825.js" crossorigin="anonymous"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-   <link rel="stylesheet" href="css\comp_review_page.css?1">
+   <link rel="stylesheet" href="css\comp_review_page.css?2">
    <link
       href="https://github.com/GP-GANG/rateit.github.io/blob/b32152f01d68b11cb33f47d2f5d42ea30e8e6d04/CODE/css/headerstyle.css"
       rel="stylesheet">
-       <link rel="stylesheet" href="css/loading_effect.css">
+       <link rel="stylesheet" href="css/loading_effect.css?1">
     <script src="javascript/loading_effect.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
    
@@ -93,14 +93,16 @@ int temp2 =1;
                 </section>
             </div>
         </div>
-    
+    <div id="head-rateit"><h2>RATE IT</h2></div>
    <div class="container">
+       <div style="display: flex;">
+       <div id="info-div">
       <div class="logo">
           <img src="HelperJSP/DisplayCmpImage.jsp?name=<%=cmp.getCOMPANY_NAME()%>">
          <p class="company_text"><%=cmp.getCOMPANY_NAME() %></p>
       </div>
       <div class="overall-rating">
-         <p class="text"><b>Overall Rating:</b></p>
+         <p class="text">Overall Rating*</p>
          
          <div id="uper-star">
              <%if(rating == 0){%>
@@ -247,10 +249,24 @@ int temp2 =1;
             <%}%>
          </table>
       </div>
+       </div>
+         <div id="thank-div">
+             <div style="display: flex;"><div id="style-line"></div><h3 style="margin: 7px 0px 18px 5px;">Keep it Real</h3></div>
+             
+             <p id="thank-dis">Thank you for contributing to the community. Your opinion will help others make decisions about companies.</p>
+             <br><p id="thank-dis"><b>Please stick to the Community Guidelines and do not post:</b></p>
+             <ul>
+             <li id="thank-li">Aggressive or discriminatory language</li>
+             <li id="thank-li">Profanities</li>
+             <li id="thank-li">Trade secrets/confidential information</li>
+             </ul>
+             <p id="thank-dis">Thank you for doing your part to keep <b>Rateit</b> the most trusted place to find a company you love. See the <b>Community Guidelines</b> for more details.</p>
+         </div>
+       </div>
       <br>
-      <hr>
       <br>
-      <span class="Text-1">Review Your Experiance About Company</span>
+      <div id="dynamic-div">
+      <span class="Text-1">Rate a Company</span>
 
 
       <form action="IndividualReview?name=<%=name%>" method="post" onsubmit="return checkForLogin(validateSubmit)">
@@ -288,6 +304,7 @@ int temp2 =1;
             <input class="btn-sub" type="submit">
          </div>
       </form>
+      </div>
    </div>
 
    <script>
