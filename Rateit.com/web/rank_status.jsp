@@ -48,18 +48,18 @@
         <nav>
             <table>
                 <tr height="50px"><td><a href="#" data-category="All" class="header-content"><i class="fa-solid fa-earth-americas"></i> All Companies</a></td></tr>
-                <tr height="50px"><td><a href="#" data-category="Health" class="header-content"><i class="fa-solid fa-user-nurse"></i> Health Economics Companies</a></td></tr>
+                <tr height="50px"><td><a href="#" data-category="Health-economics-companies" class="header-content"><i class="fa-solid fa-user-nurse"></i> Health Economics Companies</a></td></tr>
                 <tr height="50px"><td><a href="#" data-category="Electronic" class="header-content"><i class="fa-solid fa-microchip"></i> Technology Companies</a></td></tr>
                 <tr height="50px"><td><a href="#" data-category="Food" class="header-content"><i class="fa-sharp fa-solid fa-person-biking"></i> Online Food Ordering Companies</a></td></tr>
                 <tr height="50px"><td><a href="#" data-category="Airline" class="header-content"><i class="fa-sharp fa-solid fa-taxi"></i> Transportation service Companies</a></td></tr>
-                <tr height="50px"><td><a href="#" data-category="Online-shopping" class="header-content"><i class="fa-solid fa-shop"></i> E-commerce Store Companies</a></td></tr>
+                <tr height="50px"><td><a href="#" data-category="E-commerce-store" class="header-content"><i class="fa-solid fa-shop"></i> E-commerce Store Companies</a></td></tr>
                 <tr height="50px"><td><a href="#" data-category="Automobile" class="header-content"><i class="fa-solid fa-car-side"></i> Automobile Companies</a></td></tr>
-                <tr height="50px"><td><a href="#" data-category="Social-media" class="header-content"><i class="fa-solid fa-icons"></i> Social-Media Companies</a></td></tr>
-                <tr height="50px"><td><a href="#" data-category="Banking" class="header-content"><i class="fa-solid fa-landmark"></i> Banking Companies</a></td></tr>
-                <tr height="50px"><td><a href="#" data-category="Finance" class="header-content"><i class="fa-solid fa-coins"></i> Financial Technology Companies</a></td></tr>
-                <tr height="50px"><td><a href="#" data-category="Jawellery" class="header-content"><i class="fa-solid fa-gem"></i> Jewellery Companies</a></td></tr>
-                <tr height="50px"><td><a href="#" data-category="Beverages" class="header-content"><i class="fa-solid fa-martini-glass-citrus"></i> Beverage Companies</a></td></tr>
-                <tr height="50px"><td><a href="#" data-category="Cement" class="header-content"><i class="fa-solid fa-house-medical-circle-check"></i> Cement Manufacturer Companies</a></td></tr>
+                <tr height="50px"><td><a href="#" data-category="Social-media-companies" class="header-content"><i class="fa-solid fa-icons"></i> Social-Media Companies</a></td></tr>
+                <tr height="50px"><td><a href="#" data-category="Banking-companies" class="header-content"><i class="fa-solid fa-landmark"></i> Banking Companies</a></td></tr>
+                <tr height="50px"><td><a href="#" data-category="Financial-technology-companies" class="header-content"><i class="fa-solid fa-coins"></i> Financial Technology Companies</a></td></tr>
+                <tr height="50px"><td><a href="#" data-category="Jewellery-companies" class="header-content"><i class="fa-solid fa-gem"></i> Jewellery Companies</a></td></tr>
+                <tr height="50px"><td><a href="#" data-category="Beverage-companies" class="header-content"><i class="fa-solid fa-martini-glass-citrus"></i> Beverage Companies</a></td></tr>
+                <tr height="50px"><td><a href="#" data-category="Cement-manufacturer" class="header-content"><i class="fa-solid fa-house-medical-circle-check"></i> Cement Manufacturer Companies</a></td></tr>
             </table>
         </nav>
 

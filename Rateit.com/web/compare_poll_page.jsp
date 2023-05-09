@@ -89,6 +89,7 @@
             width: 80px;
             border-radius: 100%;
             border: 1px solid black;
+            margin-top: -40px;
         }
         .box1{
             flex-direction: column;
@@ -97,6 +98,45 @@
         .box1 span{
             margin-left: 40px;
             font-size: 30px;
+        }
+        table{
+            height:60vh;
+            width:60vw;
+            margin:10% 20%;
+           border: 1px solid black;
+           
+        }
+        table tr{
+            height:10vh; 
+        }
+         .label{
+            position:relative;
+            top:0px;
+        }
+        th,td{
+            border-bottom: 1px solid black;
+        }
+        td{
+            text-align: center;
+            border-right:1px solid black;
+
+        }
+        #t1{
+            border-bottom:none;
+        }
+        .right{
+            border-right:none;
+        }
+        .bottom{
+            border-bottom: none
+        }
+        button{
+            height:30px;
+            width:70px;
+            border-radius:10px;
+            border:1px solid black;
+            color:white;
+            background-color:black;
         }
     </style>
 </head>
@@ -120,23 +160,47 @@ Review_database rd = new Review_database(ConnectionProvider.getConnection());
 %>
 <body>
     <div id="container">
-        <div>
-        <img class="main_logo"
-            src="https://github.com/GP-GANG/rateit.github.io/blob/main/Other%20Files/photos/logo.png?raw=true"
-            alt="RATE-IT.COM">
-        </div><br><br>
-
-        <div id="comps">
-            <div class="box1">
-            <img class="comp_image" src="HelperJSP/DisplayCmpImage.jsp?name=<%=cmp1.getCOMPANY_NAME()%>" alt="image1"><br>
-            <span><%=cmp1.getCOMPANY_NAME() %></span>
-        </div>
-            VS
-            <div class="box1">
-            <img class="comp_image" src="HelperJSP/DisplayCmpImage.jsp?name=<%=cmp2.getCOMPANY_NAME()%>" alt="imag2"><br>
-            <span><%=cmp2.getCOMPANY_NAME() %></span>
-        </div>
-        </div>
+      
+//<!--        <img class="comp_image" src="HelperJSP/DisplayCmpImage.jsp?name=<%=cmp1.getCOMPANY_NAME()%>" alt="image1"><br>-->
+<!--//            -->
+        <table>
+            <tr>
+                <th>BASIC COMPARISON</th>
+                <th><img class="comp_image" src="HelperJSP/DisplayCmpImage.jsp?name=<%=cmp1.getCOMPANY_NAME()%>" alt="image1"><br>
+                    <span class="label"><%=cmp1.getCOMPANY_NAME() %></span></th>
+                <th><img class="comp_image" src="HelperJSP/DisplayCmpImage.jsp?name=<%=cmp2.getCOMPANY_NAME()%>" alt="imag2"><br>
+                    <span class="label"><%=cmp2.getCOMPANY_NAME() %></span></th>
+                
+            </tr>
+            <tr><td>CATEGORY</td>
+            <td>20/30 </td>
+            <td class="right">23/30 </td>
+            </tr>
+            
+            <tr><td>OVERALL RATINGS </td>
+            <td>20/30 </td>
+            <td class="right">23/30 </td></tr>
+            
+            <tr><td>TOTAL REVIEWS </td>
+            <td>20/30 </td>
+            <td class="right">23/30 </td></tr>
+            
+            <tr><td>ACTIVE CUSTOMER PROBLEM [ACP]</td>
+            <td>20/30 </td> 
+            <td class="right">23/30 </td>
+            </tr>
+            <tr>
+                <td>SOLVED CUSTOMER PROBLEM [SCP] </td>
+            <td>20/30 </td>
+            <td class="right">23/30 </td>
+            </tr>
+            
+            <tr>
+                <td id="t1"></td>
+                <td class="bottom"><button>SUBMIT</button></td>
+                <td class=" bottom right"><button>SUBMIT</button></td>
+            </tr>
+        </table>   
             
     <div id="chart-container">
         <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
@@ -169,16 +233,16 @@ Review_database rd = new Review_database(ConnectionProvider.getConnection());
     console.log(labels)
     let color1 = 'rgba(0, 119, 255, 0.767)',color2 = 'rgba(173, 216, 230, 0.741)';
     const dataVal = {
-      labels:[labels[0],labels[1],labels[2]],
+      labels:[...labels],
       datasets:[{
               data:[...company1,0,5],
               backgroundColor:[color1,color1,color1,color1,color1],
-              label: "Facebook"
+              label: "<%=cmp1.getCOMPANY_NAME()%>"
       },
       {
               data:[...company2],
               backgroundColor:[color2,color2,color2,color2,color2],
-              label: "Instagram"
+              label: "<%=cmp2.getCOMPANY_NAME()%>"
       }
     ]
   }
