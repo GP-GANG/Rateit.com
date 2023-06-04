@@ -39,7 +39,7 @@ session.removeAttribute("Message");
 
 
                 <form action="LogIn" method="post" onsubmit="return validateLogin()">
-                    <label for="Uname" class="inputs"> UserId or Email : </label> <br>
+                    <label for="Uname" class="inputs"> Email : </label> <br>
                     <input class="inputs" type="text" id="Uname" name="name" tabindex="1" placeholder="E.x. : user#123">
                     <div class="Error" id="alertUname"></div>
                     <br>

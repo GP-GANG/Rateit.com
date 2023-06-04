@@ -169,16 +169,16 @@ Review_database rd = new Review_database(ConnectionProvider.getConnection());
     console.log(labels)
     let color1 = 'rgba(0, 119, 255, 0.767)',color2 = 'rgba(173, 216, 230, 0.741)';
     const dataVal = {
-      labels:[labels[0],labels[1],labels[2]],
+      labels:[...labels],
       datasets:[{
               data:[...company1,0,5],
               backgroundColor:[color1,color1,color1,color1,color1],
-              label: "Facebook"
+              label: "<%=cmp1.getCOMPANY_NAME() %>"
       },
       {
               data:[...company2],
               backgroundColor:[color2,color2,color2,color2,color2],
-              label: "Instagram"
+              label: "<%=cmp2.getCOMPANY_NAME()%>"
       }
     ]
   }

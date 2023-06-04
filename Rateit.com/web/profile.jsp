@@ -13,9 +13,9 @@
         }
         
      Customer_database cd = new Customer_database(ConnectionProvider.getConnection());
-     
+   cus=cd.getCustomerByEmail(cus.getEMAIL(), cus.getPASSWORD());
      Blob blob=cd.getImage(cus.getUSER_ID());
-     
+      
     %>
 
     <head>

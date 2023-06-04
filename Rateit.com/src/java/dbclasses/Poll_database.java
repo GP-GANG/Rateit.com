@@ -163,4 +163,72 @@ public class Poll_database {
         }
         return i;
     }
+    
+    public ArrayList<Poll> getActivePolls() {
+        ArrayList<Poll> list = null;
+
+        try {
+            String query = "select * from poll where now() BETWEEN START_DATE and END_DATE";
+
+            PreparedStatement stmt = this.con.prepareStatement(query);
+            
+            
+            ResultSet set = stmt.executeQuery();
+            if (set.isBeforeFirst()) {
+                list = new ArrayList<>();
+
+            }
+            while (set.next()) {
+                Poll p = new Poll();
+                p.setPOLL_NO(set.getInt("POLL_NO"));
+                p.setPOLL_ID(set.getInt("POLL_ID"));
+                p.setSTART_DATE(set.getTimestamp("START_DATE"));
+                p.setCOMPANY2(set.getInt("COMPANY2"));
+                p.setCOMPANY1(set.getInt("COMPANY1"));
+                p.setCATEGORY(set.getString("CATEGORY"));
+                p.setEND_DATE(set.getTimestamp("END_DATE"));
+                list.add(p);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+    
+    public ArrayList<Poll> getExpiredPolls() {
+        ArrayList<Poll> list = null;
+
+        try {
+            String query = "select * from poll where now() > END_DATE";
+
+            PreparedStatement stmt = this.con.prepareStatement(query);
+            
+            
+            ResultSet set = stmt.executeQuery();
+            if (set.isBeforeFirst()) {
+                list = new ArrayList<>();
+
+            }
+            while (set.next()) {
+                Poll p = new Poll();
+                p.setPOLL_NO(set.getInt("POLL_NO"));
+                p.setPOLL_ID(set.getInt("POLL_ID"));
+                p.setSTART_DATE(set.getTimestamp("START_DATE"));
+                p.setCOMPANY2(set.getInt("COMPANY2"));
+                p.setCOMPANY1(set.getInt("COMPANY1"));
+                p.setCATEGORY(set.getString("CATEGORY"));
+                p.setEND_DATE(set.getTimestamp("END_DATE"));
+                list.add(p);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+    
+   
+
+    
 }

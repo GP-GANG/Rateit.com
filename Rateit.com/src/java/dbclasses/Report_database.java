@@ -87,5 +87,27 @@ public class Report_database {
         }
         return list;
     }
+    
+    public ArrayList<Report> getAllReport() {
+        ArrayList<Report> list = new ArrayList<>();
+        try {
+            String query = "select * from report";
+
+            PreparedStatement stmt = this.con.prepareStatement(query);
+
+            ResultSet set = stmt.executeQuery();
+
+            while (set.next()) {
+                Report r = new Report();
+                r.setCOMPANY_ID(set.getInt("COMPANY_ID"));
+                list.add(r);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
 
 }

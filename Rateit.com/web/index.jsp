@@ -20,6 +20,7 @@
     
     Review_database rd = new Review_database(ConnectionProvider.getConnection());
     Customer_database customer1 = new Customer_database(ConnectionProvider.getConnection());
+    
  int i=1;
 %>
 <!DOCTYPE html>
@@ -121,7 +122,7 @@
 
 
                 <%} else {%>
-
+<%customer = customer1.getCustomerByEmail(customer.getEMAIL());%>
 
                 <button id="profile_btn" class="header-btn" ><%=customer.getUSER_NAME()%></button>
 
